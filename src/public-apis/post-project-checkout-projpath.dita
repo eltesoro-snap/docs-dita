@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="post-project-checkout-projpath">
+
+  <title>POST /project/checkout/{project_path}</title>
+  <titlealts><navtitle>POST /project/checkout/{projpath}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">checks out the specified GitHub branch for the specified project.</ph> Equivalent to <codeph>git checkout</codeph>.</p>
+
+      <p><ph conkeyref="k-api/ph-github-cicd"/> You can use this API to update a project to a newly tagged version or to revert to a previously stable tag.</p>
+
+      <note type="note">
+        <ul>
+          <li><ph conkeyref="k-api/ph-proj-exists"/></li>
+          <li><ph conkeyref="k-api/ph-use-slmgr-for-initial-checkout"/></li>
+        </ul>
+      </note>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-write-access"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/project/checkout/{project_path}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-projpath"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+        <p>None.</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+
+        <codeblock id="request-body" outputclass="normalize-space lang-json">
+          { "ref" : "<varname>git_repository</varname>/<varname>branch_name</varname>" }
+        </codeblock>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>ref</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conkeyref="k-api/ph-reqd"/> The Git branch to check out.
+                  Format: <codeph>git_repository/branch_name</codeph>
+                </entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Example - </title>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://mysnaplogic.atlassian.net/wiki/spaces/SPD/pages/598409895/GitHub+Integration+--+Alpha+Doc+Version">
+      <linktext>SnapLogic GitHub Integration</linktext>
+    </link>
+    <link scope="external" format="html" href="https://guides.github.com/">
+      <linktext>GitHub Documentation</linktext>
+    </link>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('/checkout/<path:project_path>', self.checkout_project,
+                       methods=[slcommon.snap_http_lib.HTTP_POST],
+                       arguments=[
+                           Argument('user_id', Argument.USER_ID),
+                           Argument('project_path', Argument.URL),
+                           Argument('ref', Argument.BODY),
+                       ])
+-->

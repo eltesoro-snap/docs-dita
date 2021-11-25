@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en-US" id="public-apis">
+
+  <title>Public APIs</title>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Activity APIs</navtitle></topicmeta>
+    <topicref href="get-activities-org.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>GitHub APIs</navtitle></topicmeta>
+    <topicref href="post-project-checkout-projpath.dita"/>
+    <topicref href="post-project-pull-projpath.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Log APIs</navtitle></topicmeta>
+    <topicref href="get-log-org.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Pipeline Monitoring APIs</navtitle></topicmeta>
+    <topicref href="get-runtime-org.dita"/>
+    <topicref href="get-runtime-org-ruuid.dita"/>
+    <topicref href="get-runtime-apistats-org.dita"/>
+    <topicref href="get-runtime-apistats-org-daily.dita"/>
+    <topicref href="get-runtime-apistats-org-concurrent.dita"/>
+    <topicref href="post-runtime-start-org-ruuid.dita"/>
+    <topicref href="post-runtime-stop-org-ruuid.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Project Migration APIs</navtitle></topicmeta>
+    <topicref href="post-project-migrate-projpath.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Snaplex Management APIs</navtitle></topicmeta>
+    <topicref href="get-snaplex-config-plexpath.dita"/>
+    <!-- <topicref href="post-snaplex-restart-plexpath.dita"/> -->
+    <topicref href="post-snaplex-restart-plexpath-hostname.dita"/>
+    <topicref href="post-snaplex-maintenance-plexpath-hostname.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Snaplex Monitoring APIs</navtitle></topicmeta>
+    <topicref href="get-snaplex-org.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Snaplex Version APIs</navtitle></topicmeta>
+    <topicref href="get-snaplex-version.dita"/>
+    <topicref href="get-snaplex-version-latest.dita"/>
+    <topicref href="post-snaplex-version-plexpath.dita"/>
+    <topicref href="post-snaplex-version-latest-plexpath.dita"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>User and Group Management APIs</navtitle></topicmeta>
+  </topichead>
+
+</map>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<div class="footer">
+
+  <div class="ftrlegal">
+    <ul class="pipelist">
+      <li><ph class="copyright">Copyright © 2021 SnapLogic. All rights reserved.</ph></li>
+    </ul>
+  </div>
+
+  <script src="/theme/sldocs.js"/>
+</div>

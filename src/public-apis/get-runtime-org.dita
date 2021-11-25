@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="get-runtime-org">
+
+  <title>GET /runtime/{org}</title>
+  <titlealts><navtitle>GET /runtime/{org}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">returns information about Task runs that match the specified filters.</ph></p>
+
+      <note type="note">If a timespan is not set, this API returns information about Task runs within the last hour.</note>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/runtime/{org}?{query_parameters}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>plex_label</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified Snaplex.</entry>
+              </row>
+              <row>
+                <entry><codeph>cc_label</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified CC label (JCC node’s hostname).</entry>
+              </row>
+              <row>
+                <entry><codeph>pipe_name</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified Pipeline.</entry>
+              </row>
+              <row>
+                <entry><codeph>user_id</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs triggered by the specified user.</entry>
+              </row>
+              <row>
+                <entry><codeph>state</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs in the specified state.
+                  <p>Valid values:
+                    <ul>
+                      <li><codeph>Queued</codeph> – Task is queued for processing; all Tasks start in this state.</li>
+                      <li><codeph>NoUpdate</codeph> – Intermediate state at startup.</li>
+                      <li><codeph>Prepared</codeph> – Task has been prepared.</li>
+                      <li><codeph>Started</codeph> – Task has started running.</li>
+                      <li><codeph>Completed</codeph> – Task has completed successfully.</li>
+                      <li><codeph>Failing</codeph> – Task encountered an error and is waiting for Snaps to complete execution before moving to the Failed state.</li>
+                      <li><codeph>Failed</codeph> – Task failed.</li>
+                      <li><codeph>Stopped</codeph> – Task was stopped either by the user or by the system, as indicated by the "stopper" key.</li>
+                      <li><codeph>Stopping</codeph> – Task is stopping.</li>
+                      <li><codeph>Suspending</codeph> – Resumable Task encountered an error and is storing its state.</li>
+                      <li><codeph>Suspended</codeph> – Resumable Task encountered an error and is suspended.</li>
+                      <li><codeph>Resuming</codeph> – Resumable Task is loading its state and will resume execution where it left off.</li>
+                    </ul>
+                  </p>
+                  <p>Default: <codeph>Started</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs that were invoked in the specified way.
+                  <p>Valid values:
+                    <ul>
+                      <li><codeph>triggered</codeph> – Triggered Tasks</li>
+                      <li><codeph>scheduled</codeph> – Scheduled Tasks</li>
+                      <li><codeph>always_on</codeph> – Ultra Tasks</li>
+                      <li><codeph>manual</codeph> – User-triggered Tasks</li>
+                    </ul>
+                  </p>
+                  <p>Default: <codeph>scheduled</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>project_path</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified project.
+                  <p>Allowed formats:
+                    <ul>
+                      <li><codeph>/{org}/projects/{project_name}</codeph></li>
+                      <li><codeph>/{org}/shared</codeph></li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>last_hours</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs within the specified number of hours, counting backwards from the current time.
+                  <p>Valid values: 1 to 1080 hours (45 days)</p>
+                  <p>Default: 1</p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>start</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs since the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>end</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-api/ph-desc-limit"/>
+                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
+                  <p>Valid values: 0 to 1,000 ???</p>
+                  <p>Default: 10 ???</p>
+                </entry>
+              </row>
+              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Example - </title>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('/<organization>', self.get_summary,
+                       methods=[httplib.HTTP_GET],
+                       arguments=[
+                           Argument('caller', Argument.USER_ID),
+                           Argument('organization', Argument.URL),
+                           Argument('start', Argument.QS, Argument.INT),
+                           Argument('end', Argument.QS, Argument.INT),
+                           Argument('last_hours', Argument.QS, Argument.INT),
+                           Argument('offset', Argument.QS, Argument.INT),
+                           Argument('limit', Argument.QS, Argument.INT),
+                           Argument('plex_label', Argument.QS),
+                           Argument('cc_label', Argument.QS),
+                           Argument('pipe_name', Argument.QS),
+                           Argument('user_id', Argument.QS),
+                           Argument('state', Argument.QS),
+                           Argument('invoker', Argument.QS),
+                           Argument('project_path', Argument.QS),
+                           ])
+-->

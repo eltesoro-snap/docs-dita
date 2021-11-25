@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="put-users-email">
+
+  <title>PUT /users/{email}</title>
+  <titlealts><navtitle>PUT /users/{email}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">...</ph></p>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        PUT <ph conkeyref="k-api/ph-endpoint-full-url"/>/users/{email}?{query_parameters}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-email"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+        <p>None.</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+
+        <codeblock id="request-body" outputclass="normalize-space lang-json">
+          {
+            "first_name" : "...",
+            "last_name" : "...",
+            "allow_password_login" : true,
+            "revoke_old_password" : true,
+            "utility" : true,
+            "ui_access" : true,
+            "created_by" : "...",
+            "certificate" : "...",
+            "file_handle" : "..."
+          }
+        </codeblock>
+
+        <p>where:</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>first_name</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>last_name</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>allow_password_login</codeph></entry>
+                <entry>string</entry>
+                <entry>Boolean</entry>
+              </row>
+              <row>
+                <entry><codeph>revoke_old_password</codeph></entry>
+                <entry>string</entry>
+                <entry>Boolean</entry>
+              </row>
+              <row>
+                <entry><codeph>utility</codeph></entry>
+                <entry>string</entry>
+                <entry>Boolean</entry>
+              </row>
+              <row>
+                <entry><codeph>ui_access</codeph></entry>
+                <entry>string</entry>
+                <entry>Boolean</entry>
+              </row>
+              <row>
+                <entry><codeph>created_by</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>certificate</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>file_handle</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Example - </title>
+    </section>
+
+  </conbody>
+
+  <related-links>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('/<email>', self.update_user, methods=[slcommon.snap_http_lib.HTTP_PUT],
+                       arguments=[
+                           Argument('caller', Argument.USER_ID),
+                           Argument('email', Argument.URL),
+                           Argument('first_name', Argument.BODY),
+                           Argument('last_name', Argument.BODY),
+                           Argument('allow_password_login', Argument.BODY, Argument.BOOL),
+                           Argument('revoke_old_password', Argument.BODY, Argument.BOOL),
+                           Argument('utility', Argument.BODY, Argument.BOOL),
+                           Argument('ui_access', Argument.BODY, Argument.BOOL),
+                           Argument('created_by', Argument.BODY),
+                           Argument('certificate', Argument.BODY),
+                           Argument('file_handle', Argument.BODY),
+                       ])
+-->
+

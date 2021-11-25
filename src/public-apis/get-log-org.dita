@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="get-log-org">
+
+  <title>GET /log/{org}</title>
+  <titlealts><navtitle>GET /log/{org}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">returns the pipeline log information for the specified organization.</ph></p>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/log/{org}?{query_parameters}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conkeyref="k-api/ph-reqd"/> Returns log information about the task with the specified runtime ID.</entry>
+              </row>
+              <row>
+                <entry><codeph>cc_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+              <row>
+                <entry><codeph>log_type</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns logs of the specified type.
+                  <p>Valid values: ???
+                    <ul>
+                      <li></li>
+                    </ul>
+                  </p>
+                  <p>Default: <codeph>???</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>log_level</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns log information at the specified level of detail.
+                  <p>Valid values:
+                    <ul>
+                      <li><codeph>error</codeph> – Returns error logs only.</li>
+                      <li><codeph>warn</codeph> –  Returns both warning logs and error logs.</li>
+                      <li><codeph>info</codeph> –  Returns all logged information, including warning logs and error logs.</li>
+                    </ul>
+                  </p>
+                  <p>Default: <codeph>info</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>start</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns log entries since the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>end</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns log entries before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-api/ph-desc-limit"/>
+                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
+                  <p>Valid values: 0 to 10,000 ???</p>
+                  <p>Default: 100 ???</p>
+                </entry>
+              </row>
+              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Example - </title>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('<organization>', self.get_pipeline_logs,
+                       methods=[http.HTTP_GET],
+                       arguments=[
+                           Argument('organization', Argument.URL),
+                           Argument('user_id', Argument.USER_ID),
+                           Argument('start', Argument.QS),
+                           Argument('end', Argument.QS),
+                           Argument('ruuid', Argument.QS),
+                           Argument('cc_id', Argument.QS),
+                           Argument('log_type', Argument.QS),
+                           Argument('log_level', Argument.QS),
+                           Argument('offset', Argument.QS, Argument.INT),
+                           Argument('limit', Argument.QS, Argument.INT)
+                       ])
+-->

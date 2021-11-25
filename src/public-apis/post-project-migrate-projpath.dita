@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="post-project-migrate-projpath">
+
+  <title>POST /project/migrate/{project_path}</title>
+  <titlealts><navtitle>POST /project/migrate/{project_path}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">migrates a SnapLogic Project from one Org to another.</ph></p>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-write-access-tgt-org"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/project/migrate/{project_path}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-projpath"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+        <p>None.</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+
+        <codeblock id="request-body" outputclass="normalize-space lang-json">
+          {
+            "dest_path" : "",
+            "asset_types" : "",
+            "async" : true,
+            "duplicate_check" : true
+          }
+        </codeblock>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>dest_path</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>asset_types</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>async</codeph></entry>
+                <entry>Boolean</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry><codeph>duplicate_check</codeph></entry>
+                <entry>Boolean</entry>
+                <entry></entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+
+        <codeblock id="response-body" outputclass="normalize-space lang-json">
+        </codeblock>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Example - </title>
+    </section>
+
+
+
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('/migrate/<path:project_path>', self.migrate_project,
+                       methods=[httplib.HTTP_POST],
+                       arguments=[
+                           Argument('req', Argument.REQUEST),
+                           Argument('project_path', Argument.URL),
+                           Argument('dest_path', Argument.BODY),
+                           Argument('asset_types', Argument.BODY),
+                           Argument('async', Argument.BODY, Argument.BOOL),
+                           Argument('duplicate_check', Argument.BODY, Argument.BOOL)
+                       ])
+-->

@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="get-activities-org">
+
+  <title>GET /activities/{org}</title>
+  <titlealts><navtitle>GET /activities/{org}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc">retrieves information about activities performed within an organization.</ph></p>
+      <p>You can filter the results based on one or more of the following criteria:
+        <ul>
+          <li>project space</li>
+          <li>project</li>
+          <li>asset</li>
+          <li>asset_type</li>
+          <li>user</li>
+          <li>event_type</li>
+          <li>alert_state</li>
+          <li>is_alert</li>
+          <li>start</li>
+          <li>end</li>
+          <li>offset</li>
+          <li>limit</li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <p>You need:
+        <ul>
+          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
+        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/activities/{org}?{query_parameters}
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-name" colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>filter_project_space</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities related to a project space.</entry>
+              </row>
+              <row>
+                <entry><codeph>filter_project</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities related to a project. Must be used with <codeph>filter_project_space</codeph>.
+                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_project_space=myProjSpace&amp;filter_project=My%20Test%20Project</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>filter_asset</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities related to the specified asset. Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>.
+                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File&amp;filter_asset=Sales2019July.csv</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>filter_asset_type</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities related to specific type of assets.
+                  <p>Valid values: <codeph>File</codeph>, <codeph>Pipeline</codeph>, <codeph>Plex</codeph>, <codeph>Org</codeph>, <codeph>Account</codeph></p>
+                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File</codeph></p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>filter_user</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities related to a user.</entry>
+              </row>
+              <row>
+                <entry><codeph>filter_event_type</codeph></entry>
+                <entry>CSV string</entry>
+                <entry>Returns activities of a one or more event types separated by comma.</entry>
+              </row>
+              <row>
+                <entry><codeph>filter_alert_state</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns activities that match the specified alert state.
+                  <p>Valid values:
+                    <ul>
+                      <li><codeph>open</codeph> indicates that a potential issue in the activity must be investigated.</li>
+                      <li><codeph>closed</codeph> indicates that an issue occurred in the activity and has been automatically resolved.</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+              <row>
+                <entry><codeph>filter_is_alert</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, returns activities that are alerts (<codeph>filter_is_alert=true</codeph>);
+					otherwise, returns activities that are not alerts (<codeph>filter_is_alert=false</codeph>).</entry>
+              </row>
+              <row>
+                <entry><codeph>start</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns activities that occurred since the specified timestamp. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>end</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns activities that occurred before the specified timestamp. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-api/ph-desc-limit"/>
+                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
+                  <p>Valid values: 0 to 10,000 ???</p>
+                  <p>Default: 100 ???</p>
+                </entry>
+              </row>
+              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth-basic/">
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+
+        <codeblock id="response-body" outputclass="normalize-space lang-json">
+          {
+            "total" : ...,
+            "limit" : ...,
+            "offset" : ...,
+            "entries" : [ ... ]
+          }
+        </codeblock>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-response-total"><entry/></row>
+              <row conkeyref="k-api/row-response-limit"><entry/></row>
+              <row conkeyref="k-api/row-response-offset"><entry/></row>
+              <row conkeyref="k-api/row-response-entries"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Notes</title>
+
+      <p>The activity logs capture the following events:
+        <ul>
+          <li>session_start</li>
+          <li>session_end</li>
+          <li>user_create</li>
+          <li>user_delete</li>
+          <li>user_auth_failure</li>
+          <li>user_lockout</li>
+          <li>user_unlock</li>
+          <li>password_change</li>
+          <li>password_reset</li>
+          <li>asset_create</li>
+          <li>asset_update</li>
+          <li>asset_delete</li>
+          <li>asset_rename</li>
+          <li>asset_owner_change</li>
+          <li>asset_move</li>
+          <li>acl_add</li>
+          <li>acl_remove</li>
+          <li>plex_node_add</li>
+          <li>plex_node_restart</li>
+          <li>dist_change</li>
+          <li>dist_override</li>
+          <li>group_create</li>
+          <li>group_delete</li>
+          <li>group_update</li>
+          <li>plex_congestion</li>
+          <li>plex_node_enter_maintenance_mode</li>
+          <li>plex_node_leave_maintenance_mode</li>
+        </ul>
+      </p>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438857/Activity+Log">
+      <linktext>Activity Log</linktext>
+    </link>
+  </related-links>
+
+</concept>
+
+
+<!--
+        self.add_route('/<organization>', self.get_activity,
+                       methods=[slcommon.snap_http_lib.HTTP_GET],
+                       arguments=[
+                           Argument('organization', Argument.URL),
+                           Argument('req', Argument.REQUEST),
+                           Argument('filter_project', Argument.QS),
+                           Argument('filter_project_space', Argument.QS),
+                           Argument('filter_asset', Argument.QS),
+                           Argument('filter_user', Argument.QS),
+                           Argument('filter_event_type', Argument.QS),
+                           Argument('filter_asset_type', Argument.QS),
+                           Argument('filter_is_alert', Argument.QS, Argument.BOOL),
+                           Argument('filter_alert_state', Argument.QS),
+                           Argument('start', Argument.QS, Argument.FLOAT),
+                           Argument('end', Argument.QS, Argument.FLOAT),
+                           Argument('limit', Argument.QS, Argument.INT),
+                           Argument('offset', Argument.QS, Argument.INT)
+                       ])
+-->

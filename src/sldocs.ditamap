@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en-US" id="main">
+
+  <title>Main</title>
+
+  <mapref href="keys.ditamap"/>
+
+  <topicref href="index.dita" toc="no"/>
+  <mapref href="public-apis/public-apis.ditamap"/>
+
+</map>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="post-snaplex-version-splexpath">
+<concept xml:lang="en-US" id="post-snaplex-version-plexpath">
 
   <title>POST /snaplex/version/{plex_path}</title>
   <titlealts><navtitle>POST /snaplex/version/{plex_path}</navtitle></titlealts>
@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">updates the Snaplex applications to the specified version.</ph></p>
+      <p>This API <ph id="ph-shortdesc">updates the Snaplex to the specified version.</ph></p>
     </section>
 
 
@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/snaplex/version/{plex_path}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig"><ph id="ph-sig">/snaplex/version/{plex_path}</ph></ph>
       </codeblock>
 
       <sectiondiv>
@@ -57,7 +57,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -66,6 +66,25 @@
         <codeblock id="request-body" outputclass="normalize-space lang-json">
           { "version" : "9.99" }
         </codeblock>
+
+        <p>where:</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>version</codeph></entry>
+                <entry>string</entry>
+                <entry>The version to upgrade to.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+
       </sectiondiv>
     </section>
 
@@ -83,14 +102,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

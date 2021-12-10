@@ -1,0 +1,431 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="public-apis">
+
+  <title>SnapLogic Public APIs</title>
+
+  <shortdesc></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>SnapLogic Public APIs provide basic functionality that you can use to programmatically manage your integration.
+        Note that you can also create your own custom APIs from your Pipelines using the API Management tool.
+      </p>
+
+      <ul>
+        <li>The timeout for these APIs is set to 15 minutes.
+          This timeout setting can be changed on the client-side network, but it remains 15 minutes in the SnapLogic Platform.</li>
+        <li>The total API limit is affected only by triggered Pipeline executions; it is not affected by the use of SnapLogic Public APIs.</li>
+      </ul>
+    </section>
+
+    <section>
+      <title>Authentication</title>
+
+      <p>API requests are authenticated using basic authentication over HTTPS.
+        Additional authentication methods are under consideration for future updates.
+      </p>
+
+      <p>You can run these APIs regardless of the permissions or user roles assigned to you in your Org.
+        Access to the information returned by these APIs is based on asset permissions,
+        which are set in <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439061">SnapLogic Manager</xref>.
+      </p>
+
+      <p>If your account is locked or your password is expired, you cannot invoke SnapLogic Public APIs.</p>
+
+    </section>
+
+    <section>
+      <title>API Reference</title>
+
+      <p>SnapLogic provides the following APIs:</p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Activity APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-activities-org.dita#get-activities-org/ph-method"/>
+                  <ph conref="get-activities-org.dita#get-activities-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-activities-org.dita#get-activities-org/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">GitHub APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-project-checkout-projpath.dita#post-project-checkout-projpath/ph-method"/>
+                  <ph conref="post-project-checkout-projpath.dita#post-project-checkout-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-project-checkout-projpath.dita#post-project-checkout-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-project-pull-projpath.dita#post-project-pull-projpath/ph-method"/>
+                  <ph conref="post-project-pull-projpath.dita#post-project-pull-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-project-pull-projpath.dita#post-project-pull-projpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Log APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-log-org.dita#get-log-org/ph-method"/>
+                  <ph conref="get-log-org.dita#get-log-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-log-org.dita#get-log-org/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Pipeline Monitoring APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-org.dita#get-runtime-org/ph-method"/>
+                  <ph conref="get-runtime-org.dita#get-runtime-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-org.dita#get-runtime-org/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-org.dita#get-runtime-org/ph-method"/>
+                  <ph conref="get-runtime-org.dita#get-runtime-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-org.dita#get-runtime-org/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-org-ruuid.dita#get-runtime-org-ruuid/ph-method"/>
+                  <ph conref="get-runtime-org-ruuid.dita#get-runtime-org-ruuid/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-org-ruuid.dita#get-runtime-org-ruuid/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-apistats-org.dita#get-runtime-apistats-org/ph-method"/>
+                  <ph conref="get-runtime-apistats-org.dita#get-runtime-apistats-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-apistats-org.dita#get-runtime-apistats-org/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-apistats-org-daily.dita#get-runtime-apistats-org-daily/ph-method"/>
+                  <ph conref="get-runtime-apistats-org-daily.dita#get-runtime-apistats-org-daily/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-apistats-org-daily.dita#get-runtime-apistats-org-daily/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-runtime-apistats-org-concurrent.dita#get-runtime-apistats-org-concurrent/ph-method"/>
+                  <ph conref="get-runtime-apistats-org-concurrent.dita#get-runtime-apistats-org-concurrent/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-runtime-apistats-org-concurrent.dita#get-runtime-apistats-org-concurrent/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-runtime-start-org-ruuid.dita#post-runtime-start-org-ruuid/ph-method"/>
+                  <ph conref="post-runtime-start-org-ruuid.dita#post-runtime-start-org-ruuid/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-runtime-start-org-ruuid.dita#post-runtime-start-org-ruuid/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-runtime-stop-org-ruuid.dita#post-runtime-stop-org-ruuid/ph-method"/>
+                  <ph conref="post-runtime-stop-org-ruuid.dita#post-runtime-stop-org-ruuid/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-runtime-stop-org-ruuid.dita#post-runtime-stop-org-ruuid/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Project Migration APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-project-migrate-projpath.dita#post-project-migrate-projpath/ph-method"/>
+                  <ph conref="post-project-migrate-projpath.dita#post-project-migrate-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-project-migrate-projpath.dita#post-project-migrate-projpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Snaplex Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-method"/>
+                  <ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-method"/>
+                  <ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-method"/>
+                  <ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Snaplex Monitoring APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-org.dita#get-snaplex-org/ph-method"/>
+                  <ph conref="get-snaplex-org.dita#get-snaplex-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-org.dita#get-snaplex-org/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Snaplex Version APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-version.dita#get-snaplex-version/ph-method"/>
+                  <ph conref="get-snaplex-version.dita#get-snaplex-version/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-version.dita#get-snaplex-version/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-method"/>
+                  <ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-method"/>
+                  <ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-method"/>
+                  <ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">User Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-users-email.dita#get-users-email/ph-method"/>
+                  <ph conref="get-users-email.dita#get-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-users-email.dita#get-users-email/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-users.dita#post-users/ph-method"/>
+                  <ph conref="post-users.dita#post-users/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-users.dita#post-users/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="put-users-email.dita#put-users-email/ph-method"/>
+                  <ph conref="put-users-email.dita#put-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="put-users-email.dita#put-users-email/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="delete-users-email.dita#delete-users-email/ph-method"/>
+                  <ph conref="delete-users-email.dita#delete-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="delete-users-email.dita#delete-users-email/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Group Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-groups-org.dita#get-groups-org/ph-method"/>
+                  <ph conref="get-groups-org.dita#get-groups-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-groups-org.dita#get-groups-org/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-groups-org-group.dita#get-groups-org-group/ph-method"/>
+                  <ph conref="get-groups-org-group.dita#get-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-groups-org-group.dita#get-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-groups.dita#post-groups/ph-method"/>
+                  <ph conref="post-groups.dita#post-groups/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-groups.dita#post-groups/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-method"/>
+                  <ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="put-groups-org-group.dita#put-groups-org-group/ph-method"/>
+                  <ph conref="put-groups-org-group.dita#put-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="put-groups-org-group.dita#put-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-method"/>
+                  <ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </conbody>
+
+</concept>

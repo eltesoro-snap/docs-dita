@@ -32,8 +32,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/snaplex/config/{plex_path}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/config/{plex_path}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -67,7 +67,7 @@
                 <entry>integer</entry>
                 <entry>The number of hours before the returned URI expires. The URI is a link to the software to download.
                   <p>Valid range: 1 to ??? hours</p>
-                  <p>Default: 1 hour</p>
+                  <p><ph conkeyref="k-api/ph-default"/> 1 hour</p>
                 </entry>
               </row>
             </tbody>
@@ -77,11 +77,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -99,14 +100,15 @@
     </section>
 
 
+    <!-- 
     <section>
       <title>Example - </title>
     </section>
-
+    -->
+    
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/runtime/stop/{org}/{ruuid}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/stop/{org}/{ruuid}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -58,11 +58,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -80,20 +81,15 @@
     </section>
 
 
+    <!-- 
     <section>
       <title>Example - </title>
     </section>
-
+    -->
+    
   </conbody>
 
-  <related-links>
-    <link scope="external" format="html" href="http://www.example.org">
-      <linktext>Example 1</linktext>
-    </link>
-    <link scope="external" format="html" href="http://www.example.com">
-      <linktext>Example 2</linktext>
-    </link>
-  </related-links>
+  <related-links/>
 
 </concept>
 

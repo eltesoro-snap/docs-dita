@@ -50,8 +50,9 @@
 
       <ul>
 
-        <!-- <ph conkeyref="k-api/ph-prereq-read-access"/> -->
+        <!-- <ph conkeyref="k-api/ph-prereq-read-access-..."/> -->
         <li><ph id="ph-prereq-read-access">Read access to the assets requested.</ph></li>
+        <li><ph id="ph-prereq-read-access-src-proj">Read access to the source Project.</ph></li>
 
         <!-- <ph conkeyref="k-api/ph-prereq-write-access-..."/> -->
         <li><ph id="ph-prereq-write-access">Write access to the assets to be added or updated.</ph></li>
@@ -70,8 +71,13 @@
       <sectiondiv>
         <p>Shorts</p>
 
-        <!-- <ph conkeyref="k-api/ph-reqd"/> -->
+        <!-- <ph conkeyref="k-api/ph-..."/> -->
         <ph id="ph-reqd"><b>Required.</b></ph>
+        <ph id="ph-valid">Valid values:</ph>
+        <ph id="ph-default">Default:</ph>
+        <ph id="ph-format">Format:</ph>
+        <ph id="ph-example">Example:</ph>
+
       </sectiondiv>
 
 
@@ -90,27 +96,35 @@
         <p>Plexpath and hostname</p>
 
         <!-- <ph conkeyref="k-api/ph-plexpath-desc"/> -->
-        <!-- <ph conkeyref="k-api/ph-plexpath-format"/> -->
+        <!-- <p><ph conkeyref="k-api/ph-format"/> <ph conkeyref="k-api/ph-plexpath-format"/></p> -->
         <!-- <ph conkeyref="k-api/ph-plexpath-xmpl"/> -->
         <ph id="ph-plexpath-desc">The path to the Snaplex to access.</ph>
-        <ph id="ph-plexpath-format">Format: <codeph>{org}/{project_space}/{project_name}/{snaplex_name}</codeph></ph>
-        <ph id="ph-plexpath-xmpl">/snaplogic/shared/My%20Cloud</ph>
+        <ph id="ph-plexpath-format"><codeph>/{org}/{project_space}/{project_name}/{snaplex_name}</codeph></ph>
+        <ph id="ph-plexpath-xmpl"><codeph>/snaplogic/shared/My%20Cloud</codeph></ph>
 
         <!-- <ph conkeyref="k-api/ph-hostname-desc"/> -->
         <!-- <ph conkeyref="k-api/ph-hostname-example"/> -->
         <ph id="ph-hostname-desc">The JCC node path.</ph>
-        <ph id="ph-hostname-xmpl">Example: <codeph>canxl-jcc8.clouddev.snaplogic.com</codeph></ph>
+        <ph id="ph-hostname-xmpl"><codeph>canxl-jcc8.clouddev.snaplogic.com</codeph></ph>
 
         <!-- <ph conkeyref="k-api/ph-hostname-list-desc"/> -->
         <!-- <ph conkeyref="k-api/ph-hostname-list-desc"/> -->
         <ph id="ph-hostname-list-desc">A single JCC node path or a comma-separated list of JCC node paths.</ph>
-        <ph id="ph-hostname-list-xmpl">Example: <codeph>canxl-jcc8.clouddev.snaplogic.com,canxl-jcc9.clouddev.snaplogic.com</codeph></ph>
+        <ph id="ph-hostname-list-xmpl"><codeph>canxl-jcc8.clouddev.snaplogic.com,canxl-jcc9.clouddev.snaplogic.com</codeph></ph>
 
         <!-- <ph conkeyref="k-api/ph-groupname-desc"/> -->
         <ph id="ph-groupname-desc">The name of the group.</ph>
 
         <!-- <ph conkeyref="k-api/ph-email-desc"/> -->
         <ph id="ph-email-desc">The email address associated with the user record.</ph>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Org and Project</p>
+
+        <!-- <p><ph conkeyref="k-api/ph-format"/> <ph conkeyref="k-api/ph-projpath-format"/></p> -->
+        <ph id="ph-projpath-format"><codeph>/{org}/{project_space}/{project_name}</codeph></ph>
       </sectiondiv>
 
 
@@ -136,7 +150,7 @@
               <row id="row-pathparam-podpath">
                 <entry><codeph>pod_path</codeph></entry>
                 <entry><ph conref="#./ph-reqd"/> The path to your SnapLogic pod.
-                  <p>Example: <codeph>elastic.snaplogic.com</codeph></p>
+                  <p><ph conref="#./ph-example"/> <codeph>elastic.snaplogic.com</codeph></p>
                 </entry>
               </row>
 
@@ -150,7 +164,7 @@
               <row id="row-pathparam-projpath">
                 <entry><codeph>project_path</codeph></entry>
                 <entry><ph conref="#./ph-reqd"/> The path to the SnapLogic Project to access.
-                  <p>Format: <codeph>{org}/{project_space}/{project_name}</codeph></p>
+                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-projpath-format"/></p>
                 </entry>
               </row>
 
@@ -165,8 +179,8 @@
                 <entry><codeph>plex_path</codeph></entry>
                 <entry><ph conref="#./ph-reqd"/>
                   <ph conref="#./ph-plexpath-desc"/>
-                  <p><ph conref="#./ph-plexpath-format"/></p>
-                  <p><ph conref="#./ph-plexpath-xmpl"/></p>
+                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-plexpath-xmpl"/></p>
                 </entry>
               </row>
 
@@ -174,7 +188,7 @@
               <row id="row-pathparam-hostname">
                 <entry><codeph>hostname</codeph></entry>
                 <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
-                  <p><ph conref="#./ph-hostname-list-xmpl"/></p>
+                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-hostname-list-xmpl"/></p>
                 </entry>
               </row>
 
@@ -199,7 +213,7 @@
       <sectiondiv>
         <p>Query Parameters</p>
 
-        <!-- <ph conkeyref="k-api/ph-desc-..."><entry/></row> -->
+        <!-- <ph conkeyref="k-api/ph-desc-..."/> -->
         <ph id="ph-desc-limit">Returns no more than the specified number of results.</ph>
         <ph id="ph-desc-offset">Returns a subset of the results starting at this 0-based index.</ph>
 
@@ -224,12 +238,12 @@
               <row>
                 <entry><codeph>start</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns ... that occurred since the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns ... that occurred since the specified time. <ph conref="#./ph-unixtime-millisecs"/></entry>
               </row>
               <row>
                 <entry><codeph>end</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns ... that occurred before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns ... that occurred before the specified time. <ph conref="#./ph-unixtime-millisecs"/></entry>
               </row>
               -->
 
@@ -239,7 +253,7 @@
                 <entry>integer</entry>
                 <entry><ph conref="#./ph-desc-offset"/>
                   <ph conref="#./ph-limit-offset-pagination"/>
-                  <p>Default: 0</p>
+                  <p><ph conref="#./ph-default"/> 0</p>
                 </entry>
               </row>
 
@@ -249,7 +263,7 @@
                 <entry>string</entry>
                 <entry><ph conref="#./ph-reqd"/>
                   <ph conref="#./ph-plexpath-desc"/>
-                  <p><ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
                 </entry>
               </row>
 
@@ -258,15 +272,16 @@
                 <entry><codeph>hostname</codeph></entry>
                 <entry>string</entry>
                 <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
-                  <p><ph conref="#./ph-hostname-xmpl"/></p>
+                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-hostname-xmpl"/></p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-query-param-hostname-list"><entry/></row> -->
               <row id="row-query-param-hostname-list">
                 <entry><codeph>hostname</codeph></entry>
+                <entry>string</entry>
                 <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-list-desc"/>
-                  <p><ph conref="#./ph-hostname-list-xmpl"/></p>
+                  <p><ph conref="#./ph-example"/><ph conref="#./ph-hostname-list-xmpl"/></p>
                 </entry>
               </row>
 
@@ -296,14 +311,23 @@
       <sectiondiv>
         <p>Request Header</p>
 
-        <!-- <div conkeyref="k-api/div-auth-basic/"> -->
-        <div id="div-auth-basic">
+        <!-- <div conkeyref="k-api/div-auth"/> -->
+        <div id="div-auth">
           <p>Specify <term>Basic Auth</term> for authorization.</p>
 
-          <codeblock id="request-hdr" outputclass="normalize-space lang-json">
+          <codeblock id="request-hdr" outputclass="normalize-space">
             Authorization: Basic {your_encoded_security_credentials}
           </codeblock>
+        </div>
 
+        <!-- <div conkeyref="k-api/div-auth-contenttype"/> -->
+        <div id="div-auth-contenttype">
+          <p>Specify <term>Basic Auth</term> for authorization and <term>JSON</term> for content type.</p>
+
+          <codeblock id="request-hdr" outputclass="normalize-space">
+            Authorization: Basic {your_encoded_security_credentials}
+            Content-Type: application/json
+          </codeblock>
         </div>
       </sectiondiv>
 

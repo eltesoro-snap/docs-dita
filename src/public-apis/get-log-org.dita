@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">returns the pipeline log information for the specified organization.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves the pipeline log information for the specified organization.</ph></p>
     </section>
 
 
@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/log/{org}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/log/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -74,26 +74,26 @@
                 <entry><codeph>log_type</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns logs of the specified type.
-                  <p>Valid values: ???
+                  <p><ph conkeyref="k-api/ph-valid"/> ???
                     <ul>
                       <li></li>
                     </ul>
                   </p>
-                  <p>Default: <codeph>???</codeph></p>
+                  <p><ph conkeyref="k-api/ph-default"/> <codeph>???</codeph></p>
                 </entry>
               </row>
               <row>
                 <entry><codeph>log_level</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns log information at the specified level of detail.
-                  <p>Valid values:
+                  <p><ph conkeyref="k-api/ph-valid"/>
                     <ul>
                       <li><codeph>error</codeph> – Returns error logs only.</li>
                       <li><codeph>warn</codeph> –  Returns both warning logs and error logs.</li>
                       <li><codeph>info</codeph> –  Returns all logged information, including warning logs and error logs.</li>
                     </ul>
                   </p>
-                  <p>Default: <codeph>info</codeph></p>
+                  <p><ph conkeyref="k-api/ph-default"/> <codeph>info</codeph></p>
                 </entry>
               </row>
               <row>
@@ -111,8 +111,8 @@
                 <entry>integer</entry>
                 <entry><ph conkeyref="k-api/ph-desc-limit"/>
                   <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p>Valid values: 0 to 10,000 ???</p>
-                  <p>Default: 100 ???</p>
+                  <p><ph conkeyref="k-api/ph-valid"/> 0 to 10,000 ???</p>
+                  <p><ph conkeyref="k-api/ph-default"/> 100 ???</p>
                 </entry>
               </row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
@@ -123,11 +123,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -145,20 +146,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 
-  <related-links>
-    <link scope="external" format="html" href="http://www.example.org">
-      <linktext>Example 1</linktext>
-    </link>
-    <link scope="external" format="html" href="http://www.example.com">
-      <linktext>Example 2</linktext>
-    </link>
-  </related-links>
+  <related-links/>
 
 </concept>
 

@@ -46,8 +46,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/activities/{org}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/activities/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -71,7 +71,7 @@
 
         <table>
           <tgroup cols="3">
-            <colspec colname="col-name" colwidth="25%"/>
+            <colspec colname="col-key" colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
@@ -84,23 +84,33 @@
               <row>
                 <entry><codeph>filter_project</codeph></entry>
                 <entry>string</entry>
-                <entry>Returns activities related to a project. Must be used with <codeph>filter_project_space</codeph>.
-                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_project_space=myProjSpace&amp;filter_project=My%20Test%20Project</codeph></p>
+                <entry>Returns activities related to a project.
+                  Requires <codeph>filter_project_space</codeph>.
+                  <p><ph conkeyref="k-api/ph-example"/> <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_project_space=myProjSpace&amp;filter_project=My%20Test%20Project</codeph></p>
                 </entry>
               </row>
               <row>
                 <entry><codeph>filter_asset</codeph></entry>
                 <entry>string</entry>
-                <entry>Returns activities related to the specified asset. Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>.
-                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File&amp;filter_asset=Sales2019July.csv</codeph></p>
+                <entry>Returns activities related to the specified asset.
+                  Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>. ??? <!-- Found in the live docs. -->
+                  <p><ph conkeyref="k-api/ph-example"/> <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File&amp;filter_asset=Sales2019July.csv</codeph></p>
                 </entry>
               </row>
               <row>
                 <entry><codeph>filter_asset_type</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns activities related to specific type of assets.
-                  <p>Valid values: <codeph>File</codeph>, <codeph>Pipeline</codeph>, <codeph>Plex</codeph>, <codeph>Org</codeph>, <codeph>Account</codeph></p>
-                  <p>Example: <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File</codeph></p>
+                  <p><ph conkeyref="k-api/ph-valid"/>
+                    <ul>
+                      <li><codeph>Account</codeph></li>
+                      <li><codeph>File</codeph></li>
+                      <li><codeph>Org</codeph></li>
+                      <li><codeph>Pipeline</codeph></li>
+                      <li><codeph>Plex</codeph></li>
+                    </ul>
+                  </p>
+                  <p><ph conkeyref="k-api/ph-example"/> <codeph>https://elastic.snaplogic.com/api/1/rest/public/activities/myOrg?filter_asset_type=File</codeph></p>
                 </entry>
               </row>
               <row>
@@ -117,7 +127,7 @@
                 <entry><codeph>filter_alert_state</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns activities that match the specified alert state.
-                  <p>Valid values:
+                  <p><ph conkeyref="k-api/ph-valid"/>
                     <ul>
                       <li><codeph>open</codeph> indicates that a potential issue in the activity must be investigated.</li>
                       <li><codeph>closed</codeph> indicates that an issue occurred in the activity and has been automatically resolved.</li>
@@ -146,8 +156,8 @@
                 <entry>integer</entry>
                 <entry><ph conkeyref="k-api/ph-desc-limit"/>
                   <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p>Valid values: 0 to 10,000 ???</p>
-                  <p>Default: 100 ???</p>
+                  <p><ph conkeyref="k-api/ph-valid"/> 0 to 10,000 ???</p>
+                  <p><ph conkeyref="k-api/ph-default"/> 100 ???</p>
                 </entry>
               </row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
@@ -158,11 +168,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -239,6 +250,12 @@
         </ul>
       </p>
     </section>
+
+    <!--
+    <section>
+      <title>Example - </title>
+    </section>
+    -->
 
   </conbody>
 

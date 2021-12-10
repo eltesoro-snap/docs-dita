@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/snaplex/restart/{plex_path}/{hostname}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/restart/{plex_path}/{hostname}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -58,7 +58,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -113,14 +113,15 @@
     </section>
 
 
+    <!-- 
     <section>
       <title>Example - </title>
     </section>
-
+    -->
+    
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

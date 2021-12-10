@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">...</ph></p>
+      <p>This API <ph id="ph-shortdesc">updates the user record associated with the specified email address.</ph></p>
     </section>
 
 
@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        PUT <ph conkeyref="k-api/ph-endpoint-full-url"/>/users/{email}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">PUT</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/users/{email}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -57,7 +57,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -98,23 +98,23 @@
               </row>
               <row>
                 <entry><codeph>allow_password_login</codeph></entry>
-                <entry>string</entry>
                 <entry>Boolean</entry>
+                <entry></entry>
               </row>
               <row>
                 <entry><codeph>revoke_old_password</codeph></entry>
-                <entry>string</entry>
                 <entry>Boolean</entry>
+                <entry></entry>
               </row>
               <row>
                 <entry><codeph>utility</codeph></entry>
-                <entry>string</entry>
                 <entry>Boolean</entry>
+                <entry></entry>
               </row>
               <row>
                 <entry><codeph>ui_access</codeph></entry>
-                <entry>string</entry>
                 <entry>Boolean</entry>
+                <entry></entry>
               </row>
               <row>
                 <entry><codeph>created_by</codeph></entry>
@@ -151,14 +151,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

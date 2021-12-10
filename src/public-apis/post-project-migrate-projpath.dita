@@ -21,6 +21,7 @@
 
       <p>You need:
         <ul>
+          <li><ph conkeyref="k-api/ph-prereq-read-access-src-proj"/></li>
           <li><ph conkeyref="k-api/ph-prereq-write-access-tgt-org"/></li>
         </ul>
       </p>
@@ -30,8 +31,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/project/migrate/{project_path}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/migrate/{project_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -57,7 +58,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -65,8 +66,8 @@
 
         <codeblock id="request-body" outputclass="normalize-space lang-json">
           {
-            "dest_path" : "",
-            "asset_types" : "",
+            "dest_path" : "...",
+            "asset_types" : [ ... ],
             "async" : true,
             "duplicate_check" : true
           }
@@ -82,22 +83,39 @@
               <row>
                 <entry><codeph>dest_path</codeph></entry>
                 <entry>string</entry>
-                <entry></entry>
+                <entry><ph conkeyref="k-api/ph-reqd"/> The path to the destination Project.</entry>
               </row>
               <row>
                 <entry><codeph>asset_types</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
+                <entry>array of strings</entry>
+                <entry>The types of assets to migrate.
+                  <p><ph conkeyref="k-api/ph-valid"/>
+                    <ul>
+                      <li><codeph>File</codeph></li>
+                      <li><codeph>Job</codeph></li>
+                      <li><codeph>Account</codeph></li>
+                      <li><codeph>Pipeline</codeph></li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
               </row>
               <row>
                 <entry><codeph>async</codeph></entry>
                 <entry>Boolean</entry>
-                <entry></entry>
+                <entry>If <codeph>true</codeph>, the migration is done asynchronously.
+                  <p>A response is immediately returned with <codeph>status_token</codeph> and <codeph>status_url</codeph>, which you can use to check on the status of the migration (<msgph>Started</msgph>, <msgph>Completed</msgph>, or <msgph>Failed</msgph>).</p>
+                  <p><ph conkeyref="k-api/ph-default"/> <codeph>true</codeph></p>
+                </entry>
               </row>
               <row>
                 <entry><codeph>duplicate_check</codeph></entry>
                 <entry>Boolean</entry>
-                <entry></entry>
+                <entry>
+                  <p>If <codeph>true</codeph>, throws an exception if a project with the same name already exists at the specified path.</p>
+                  <p>If <codeph>false</codeph>, overwrites any existing project with the same name at the specified path.</p>
+                  <p><ph conkeyref="k-api/ph-default"/> <codeph>true</codeph></p>
+                </entry>
               </row>
             </tbody>
           </tgroup>
@@ -122,23 +140,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
-
-
-
+    -->
 
   </conbody>
 
-  <related-links>
-    <link scope="external" format="html" href="http://www.example.org">
-      <linktext>Example 1</linktext>
-    </link>
-    <link scope="external" format="html" href="http://www.example.com">
-      <linktext>Example 2</linktext>
-    </link>
-  </related-links>
+  <related-links/>
 
 </concept>
 

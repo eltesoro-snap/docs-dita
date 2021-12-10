@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">returns Snaplex and JCC wrapper information about all nodes or about the specified node.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves Snaplex and JCC wrapper information about all nodes or about the specified node.</ph></p>
 
       <ul>
         <li>If called without parameters, the API returns information about all the nodes in the Org.</li>
@@ -35,8 +35,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/snaplex/{org}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -74,7 +74,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -97,14 +97,15 @@
     </section>
 
 
+    <!-- 
     <section>
       <title>Example - </title>
     </section>
-
+    -->
+    
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

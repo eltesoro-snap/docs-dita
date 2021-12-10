@@ -39,8 +39,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        POST <ph conkeyref="k-api/ph-endpoint-full-url"/>/project/checkout/{project_path}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/checkout/{project_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -66,7 +66,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -87,7 +87,7 @@
                 <entry><codeph>ref</codeph></entry>
                 <entry>string</entry>
                 <entry><ph conkeyref="k-api/ph-reqd"/> The Git branch to check out.
-                  Format: <codeph>git_repository/branch_name</codeph>
+                  <p><ph conkeyref="k-api/ph-format"/> <codeph>git_repository/branch_name</codeph></p>
                 </entry>
               </row>
             </tbody>
@@ -103,17 +103,21 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <p>None.</p>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 

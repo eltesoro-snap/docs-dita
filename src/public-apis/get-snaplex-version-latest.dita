@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> determines the latest available versions of applications that can be installed on the Snaplex. ???</ph></p>
+      <p>This API <ph id="ph-shortdesc"> determines the latest available version of the Snaplex package. ???</ph></p>
     </section>
 
 
@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/snaplex/version/latest
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/version/latest</ph>
       </codeblock>
 
       <sectiondiv>
@@ -56,11 +56,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -78,14 +79,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 
-  <related-links>
-  </related-links>
+  <related-links/>
 
 </concept>
 

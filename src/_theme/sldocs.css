@@ -214,6 +214,10 @@ nav[role='toc'] > ul > li > a {
   text-transform: uppercase;
   font-weight: bold;
 }
+nav[role='toc'] > ul > li > ul > li > span,
+nav[role='toc'] > ul > li > ul > li > a {
+  text-transform: uppercase;
+}
 
 
 /* ==============================
@@ -233,6 +237,7 @@ main {
   color: var(--shortdesc-textcolor);
 }
 .shortdesc::first-letter { text-transform: uppercase !important; }
+.casesent::first-letter { text-transform: uppercase !important; }
 
 
 /* ==============================

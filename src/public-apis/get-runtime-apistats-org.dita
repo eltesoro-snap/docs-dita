@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">returns concurrent and daily metrics of Tasks running at the specified time.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves the concurrent and daily metrics of Tasks running at the specified time.</ph></p>
     </section>
 
 
@@ -30,8 +30,8 @@
     <section>
       <title>Request</title>
 
-      <codeblock id="endpoint" outputclass="normalize-space lang-uri">
-        GET <ph conkeyref="k-api/ph-endpoint-full-url"/>/runtime/api-stats/{org}?{query_parameters}
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/api-stats/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -64,8 +64,8 @@
                 <entry><codeph>date_time</codeph></entry>
                 <entry>string</entry>
                 <entry>The time in UTC format.
-                  <p>Default: The current time.</p>
-                  <p>Example: <codeph>date_time=2021-12-31T01:01:01</codeph></p>
+                  <p><ph conkeyref="k-api/ph-default"/> The current time.</p>
+                  <p><ph conkeyref="k-api/ph-example"/> <codeph>date_time=2021-12-31T01:01:01</codeph></p>
                 </entry>
               </row>
             </tbody>
@@ -75,11 +75,12 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-basic/">
+        <div conkeyref="k-api/div-auth"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -97,20 +98,15 @@
     </section>
 
 
+    <!--
     <section>
       <title>Example - </title>
     </section>
+    -->
 
   </conbody>
 
-  <related-links>
-    <link scope="external" format="html" href="http://www.example.org">
-      <linktext>Example 1</linktext>
-    </link>
-    <link scope="external" format="html" href="http://www.example.com">
-      <linktext>Example 2</linktext>
-    </link>
-  </related-links>
+  <related-links/>
 
 </concept>
 

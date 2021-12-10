@@ -6,7 +6,8 @@
 :   * Docker - Required to run the DITA-OT build on a container.
 :       https://hub.docker.com/
 :   * Node.js and http-server - (Optional) Runs a local webserver.
-:       https://www.npmjs.com/get-npm
+:       https://nodejs.org/en/download/
+:       npm -v
 :       npm install http-server -g
 : ----------------------------------------
 
@@ -15,7 +16,7 @@ color 0E
 
 if _%1_ equ _startsrvr_  goto %1
 
-set basedir=D:\SnapLogic\Git-Snap\docs-dita
+set basedir=%USERPROFILE%\g\Git\docs-dita
   if _%1_ neq __  set basedir=%1
 set outdir=html5
 set container=ditabld

@@ -5,7 +5,8 @@
   <title>KeyDefs</title>
 
   <!-- Conrefs -->
-  <keydef keys="k-api"   href="common/api.dita#api"/>
+  <keydef keys="k-api"     href="common/api.dita#api"/>
+  <keydef keys="k-icons"   href="common/icons.dita#icons"/>
 
   <!-- <keydef keys="k-urls"   href="_conrefs/urls.dita#urls"/> -->
   <!-- <keydef keys="k-vars"   href="_conrefs/vars.dita#vars"/> -->

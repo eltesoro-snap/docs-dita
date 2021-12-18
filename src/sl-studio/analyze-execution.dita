@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="analyze-execution">
+
+  <title>BETA | Analyze: Execution Overview</title>
+
+  <shortdesc>How to use the Execution Overview.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <p>In the <uicontrol>Execution Overview</uicontrol>, you can see information about running Executions and completed Executions of Pipelines and Tasks at a glance.</p>
+    </section>
+
+
+    <section>
+
+      <div outputclass="modalimg"><image href="../img/studio-analyze-execution-all.png" placement="break" align="left" outputclass="img900px"><alt>Execution Overview with numbered callouts</alt></image></div>
+
+      <ol outputclass="colist">
+        <li>Choose the SnapLogic Studio feature from the left navigation.
+          <ul>
+            <li>To expand the navigation panel, click <image conkeyref="k-icons/image-studio-menu-expand"/>.</li>
+            <li>To collapse the navigation panel, click <image conkeyref="k-icons/image-studio-menu-collapse"/>.</li>
+          </ul>
+        </li>
+        <li>Choose your Org from the dropdown.</li>
+        <li>The <uicontrol>Execution overview</uicontrol> cards display the number of Pipeline and Task Executions that match the filter.
+          <ul>
+            <li><term>Failed</term> — The number of Executions that failed.</li>
+            <li><term>Executing</term> — The number of Executions that are currently running.</li>
+            <li><term>Completed</term> — The number of Executions that have successfully completed.</li>
+            <li><term>Ultra Executions</term> — The number of Ultra Executions that were started, including failed runs and successful runs.</li>
+          </ul>
+        </li>
+        <li>The table displays the list of Pipeline and Task Executions that match the filter.
+          <ul>
+            <li>To view more details about a specific Execution, click the row of the Execution to view. Learn more: <xref href="analyze-execution-detail.dita">Execution Detail</xref></li>
+            <li>To sort the table, click the column header for the field to sort by.</li>
+          </ul>
+        </li>
+        <li>Filter the list of Executions by time or date.
+          <ul>
+            <li>The last hour</li>
+            <li>The last 8 hours</li>
+            <li>The last 24 hours</li>
+            <li>A specific calendar date</li>
+          </ul>
+        </li>
+        <li>Filter the list of Executions by search criteria.
+          <ul>
+            <li>Search by any string or conditional expression.</li>  <!-- Can it accept AND, OR, etc? -->
+            <li>Click <image conkeyref="k-icons/image-studio-settings"/>:
+              <ul>
+                <li>To define an advanced search based on a number of fields.</li>
+                <li>To select which columns are displayed.</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>Group the results based on the Pipeline or the Task. If both are deselected, the list is not grouped.</li>
+        <li>Export the current result list into a local CSV file.</li>
+        <li>Refresh the list to pick up any changes since the last update of the list.</li>
+        <li>View the time that the list was last refreshed.</li>
+        <li>Expand the list and hide the Execution Overview cards. Or collapse the list and show the cards.</li>
+        <li>Change the number of items displayed in each page.</li>
+        <li>Switch to the previous page, the next page, or a specific page number.</li>
+      </ol>
+
+    </section>
+
+  </conbody>
+
+  <!--
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+  -->
+
+</concept>

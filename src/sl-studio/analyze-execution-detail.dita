@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="analyze-execution-detail">
+
+  <title>BETA | Analyze: Execution Details</title>
+
+  <shortdesc>Details about a specific Execution.</shortdesc>
+
+  <conbody>
+
+    <section>
+
+      <p>When you click a row in the <uicontrol>Execution Overview</uicontrol>, you can view the details of that Execution, including information about the Snaps and Pipelines within the Execution.</p>
+
+    </section>
+
+
+    <section>
+      <title>Execution Metadata</title>
+
+      <p>The Execution details panel includes the metadata about the Execution.</p>
+
+      <div outputclass="modalimg"><image href="../img/studio-analyze-execution-detail.png" placement="break" align="left" outputclass="img900px"><alt>Execution Detail dialog showing the Execution metadata</alt></image></div>
+
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">Field</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Path</entry>
+              <entry>The location of the Pipeline.</entry>
+            </row>
+            <row>
+              <entry>Username</entry>
+              <entry>The user account associated with the Execution.</entry>
+            </row>
+            <row>
+              <entry>Snaplex/Node Name</entry>
+              <entry>The Snaplex where the Execution happened.</entry>
+            </row>
+            <row>
+              <entry>Prepared at</entry>
+              <entry>The date and time when the Execution was configured.</entry>
+            </row>
+            <row>
+              <entry>Started at</entry>
+              <entry>The date and time when the Execution started running.</entry>
+            </row>
+            <row>
+              <entry>Completed at</entry>
+              <entry>The date and time when the Execution completed.</entry>
+            </row>
+            <row>
+              <entry>Execution Duration</entry>
+              <entry>The length of time the Execution ran; the difference between <uicontrol>Started at</uicontrol> and <uicontrol>Completed at</uicontrol>.</entry>
+            </row>
+            <row>
+              <entry>Parent Pipeline Path</entry>
+              <entry>The path to the parent Pipeline that triggered a child Pipeline included in this Execution.</entry>
+            </row>
+            <row>
+              <entry>Root Pipeline Path</entry>
+              <entry>The path to the highest-level ancestor Pipeline that triggered a child Pipeline included in this Execution.
+                If the parent Pipeline has no parent of its own, it is also the root Pipeline.
+              </entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+
+    <section>
+      <title>Snap Statistics</title>
+
+      <p>The <uicontrol>Snap Statistics</uicontrol> tab shows information about each Snap included in the Execution.</p>
+
+      <div outputclass="modalimg"><image href="../img/studio-analyze-execution-detail-snapstatistics.png" placement="break" align="left" outputclass="img900px"><alt>The Snap Statistics tab of the Execution Detail dialog</alt></image></div>
+
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">Field</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Snap</entry>
+              <entry>The name of the Snap included in the Execution.</entry>
+            </row>
+            <row>
+              <entry>Duration</entry>
+              <entry>A colored bar that indicates the lengths of time that the Snap took to complete each process, relative to the total time.
+                <ul>
+                  <li>A green segment indicates the input time.</li>
+                  <li>A blue segment indicates the execution time.</li>
+                  <li>A purple segment indicates the output time.</li>
+                </ul>
+                <note type="tip">Hover over the bars to show a legend with the exact lengths of time.
+                  <div outputclass="modalimg"><image href="../img/studio-analyze-execution-detail-duration.png" placement="break" align="left"><alt>Legend showing exact lengths of time</alt></image></div>
+                </note>
+              </entry>
+            </row>
+            <row>
+              <entry>View</entry>
+              <entry>The name of an input or output port of the Snap. The data in the <uicontrol>Bytes</uicontrol>, <uicontrol>Documents</uicontrol>, and <uicontrol>Rate</uicontrol> columns are associated with the indicated View.</entry>
+            </row>
+            <row>
+              <entry>Bytes</entry>
+              <entry>The number of bytes that passed through the indicated View.</entry>
+            </row>
+            <row>
+              <entry>Documents</entry>
+              <entry>The number of documents that passed through the indicated View.</entry>
+            </row>
+            <row>
+              <entry>Rate</entry>
+              <entry>The throughput of the indicated View (number of documents that passed through per second).</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+
+    <section>
+      <title>Pipeline Logs</title>
+
+      <p>The <uicontrol>Pipeline Logs</uicontrol> tab shows the log entries that were generated during the Execution.</p>
+
+      <div outputclass="modalimg"><image href="../img/studio-analyze-execution-detail-pipelinelogs.png" placement="break" align="left" outputclass="img900px"><alt>The Pipeline Logs tab of the Execution Detail dialog</alt></image></div>
+
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">Filter</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row><entry><uicontrol>All</uicontrol></entry><entry>All log entries associated with the Execution.</entry></row>
+            <row><entry><uicontrol>Info</uicontrol></entry><entry>Only informational messages.</entry></row>
+            <row><entry><uicontrol>Warn</uicontrol></entry><entry>Only warning messages during the Execution.</entry></row>
+            <row><entry><uicontrol>Error</uicontrol></entry><entry>Only error messages that occurred during the Execution.</entry></row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+
+    <section>
+      <title>Pipeline Parameters</title>
+
+      <p>If the Pipelines in the Execution required parameters, the <uicontrol>Pipeline Parameters</uicontrol> tab shows information about the parameters passed to the Pipeline.</p>
+
+      <div outputclass="modalimg"><image href="../img/studio-analyze-execution-detail-pipelineparameters.png" placement="break" align="left" outputclass="img900px"><alt>The Pipeline Parameters tab of the Execution Detail dialog</alt></image></div>
+
+      <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438254/Pipeline+Properties">Pipeline Properties</xref></p>
+    </section>
+
+  </conbody>
+
+  <!--
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+  -->
+
+</concept>

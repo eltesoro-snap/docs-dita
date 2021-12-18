@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="about-studio">
+
+  <title>SnapLogic Studio</title>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p><ph id="ph-shortdesc">The upcoming <image conkeyref="k-icons/image-studio-logo"/> SnapLogic Studio replaces the existing UI to simplify and optimize the user experience.</ph></p>
+
+      <p>
+        The SnapLogic Studio features are released in stages.
+      </p>
+
+      <table outputclass="flddesc">
+        <tgroup cols="3">
+          <colspec colname="col-name"  colwidth="20%"/>
+          <colspec colname="col-avail" colwidth="20%"/>
+          <colspec colname="col-desc"  colwidth="60%"/>
+          <thead>
+            <row id="row-header-fad">
+              <entry colname="col-name"  valign="top">Feature</entry>
+              <entry colname="col-avail" valign="top">Availability</entry>
+              <entry colname="col-desc"  valign="top">Description</entry>
+            </row>
+            <row><entry namest="col-name" nameend="col-desc" outputclass="table-subheader">Develop</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Pipeline</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry>APIs</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="3">
+          <colspec colname="col-name"  colwidth="20%"/>
+          <colspec colname="col-avail" colwidth="20%"/>
+          <colspec colname="col-desc"  colwidth="60%"/>
+          <thead>
+            <!-- <row conref="#./row-header-fad"><entry/></row> -->
+            <row><entry namest="col-name" nameend="col-desc" outputclass="table-subheader">Analyze</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Infrastructure</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry><xref href="analyze-execution.dita">Execution</xref></entry>
+              <entry>Beta</entry>
+              <entry>Provides information about running and completed Pipeline and Task Executions.</entry>
+            </row>
+            <row>
+              <entry>Reports</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="3">
+          <colspec colname="col-name"  colwidth="20%"/>
+          <colspec colname="col-avail" colwidth="20%"/>
+          <colspec colname="col-desc"  colwidth="60%"/>
+          <thead>
+            <!-- <row conref="#./row-header-fad"><entry/></row> -->
+            <row><entry namest="col-name" nameend="col-desc" outputclass="table-subheader">Explore</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>Patterns</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry>Snaps</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry>Projects</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry>Community</entry>
+              <entry>Coming soon</entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </conbody>
+
+</concept>

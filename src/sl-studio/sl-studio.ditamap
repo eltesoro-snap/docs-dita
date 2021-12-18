@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en-US" id="snaplogic-studio">
+
+  <title>SnapLogic Studio</title>
+
+  <topicref href="about-studio.dita">
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Develop</navtitle></topicmeta>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Analyze</navtitle></topicmeta>
+      <topicref href="analyze-execution.dita" collection-type="family">
+        <topicref href="analyze-execution-detail.dita"/>
+      </topicref>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Explore</navtitle></topicmeta>
+    </topichead>
+
+  </topicref>
+
+</map>

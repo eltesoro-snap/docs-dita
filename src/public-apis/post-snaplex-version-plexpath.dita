@@ -31,7 +31,7 @@
       <title>Request</title>
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig"><ph id="ph-sig">/snaplex/version/{plex_path}</ph></ph>
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/version/{plex_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -94,6 +94,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -116,6 +117,8 @@
 
 
 <!--
+Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
+Last refreshed: 20211201
         # update snaplex to target version
         self.add_route('/version/<path:plex_path>', self.update_plex,
                        methods=[httplib.HTTP_POST],

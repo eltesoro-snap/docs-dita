@@ -63,7 +63,7 @@
               <row>
                 <entry><codeph>ruuid</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conkeyref="k-api/ph-reqd"/> Returns log information about the task with the specified runtime ID.</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> Returns log information about the task with the specified runtime ID.</entry>
               </row>
               <row>
                 <entry><codeph>cc_id</codeph></entry>
@@ -74,26 +74,26 @@
                 <entry><codeph>log_type</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns logs of the specified type.
-                  <p><ph conkeyref="k-api/ph-valid"/> ???
+                  <p><ph conkeyref="k-misc/ph-valid"/> ???
                     <ul>
                       <li></li>
                     </ul>
                   </p>
-                  <p><ph conkeyref="k-api/ph-default"/> <codeph>???</codeph></p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>???</codeph></p>
                 </entry>
               </row>
               <row>
                 <entry><codeph>log_level</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns log information at the specified level of detail.
-                  <p><ph conkeyref="k-api/ph-valid"/>
+                  <p><ph conkeyref="k-misc/ph-valid"/>
                     <ul>
                       <li><codeph>error</codeph> – Returns error logs only.</li>
                       <li><codeph>warn</codeph> –  Returns both warning logs and error logs.</li>
                       <li><codeph>info</codeph> –  Returns all logged information, including warning logs and error logs.</li>
                     </ul>
                   </p>
-                  <p><ph conkeyref="k-api/ph-default"/> <codeph>info</codeph></p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>info</codeph></p>
                 </entry>
               </row>
               <row>
@@ -111,8 +111,8 @@
                 <entry>integer</entry>
                 <entry><ph conkeyref="k-api/ph-desc-limit"/>
                   <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p><ph conkeyref="k-api/ph-valid"/> 0 to 10,000 ???</p>
-                  <p><ph conkeyref="k-api/ph-default"/> 100 ???</p>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 0 to 10,000 ???</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 100 ???</p>
                 </entry>
               </row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
@@ -138,10 +138,28 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
+
+        <!--
+        <codeblock outputclass="normalize-space lang-json">
+        </codeblock>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+            </tbody>
+          </tgroup>
+        </table>
+        -->
+
       </sectiondiv>
     </section>
 
@@ -160,6 +178,8 @@
 
 
 <!--
+Source: Tectonic\slserver\src\main\python\slserver\services\public\public_log_handler.py
+Last refreshed: 20211201
         self.add_route('<organization>', self.get_pipeline_logs,
                        methods=[http.HTTP_GET],
                        arguments=[

@@ -81,6 +81,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -89,12 +90,12 @@
     </section>
 
 
-    <!-- 
+    <!--
     <section>
       <title>Example - </title>
     </section>
     -->
-    
+
   </conbody>
 
   <related-links>
@@ -110,6 +111,8 @@
 
 
 <!--
+Source: Tectonic\slserver\src\main\python\slserver\services\public\project_handler.py
+Last refreshed: 20211201
         self.add_route('/pull/<path:project_path>', self.pull_project,
                        methods=[slcommon.snap_http_lib.HTTP_POST],
                        arguments=[

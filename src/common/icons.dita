@@ -4,6 +4,7 @@
 
   <title>Icons</title>
 
+  <!-- GitHub source: ClientApps repo, develop branch -->
 
   <conbody>
 
@@ -11,19 +12,23 @@
       <title>SnapLogic Studio icons</title>
 
       <!-- <image conkeyref="k-icons/image-studio-logo"/> -->
-      <image id="image-studio-logo" scope="external" href="https://raw.githubusercontent.com/SnapLogic/ClientApps/develop/client/studio/public/icons/sl_product_iip.svg?token=AWKYVUWLQZNQU5TIQP5Y2C3BY2P6A" placement="inline" outputclass="inline-icon"><alt>SnapLogic Studio logo</alt></image>
+      <!-- GitHub path: /ClientApps/client/studio/public/icons/sl_product_iip.svg -->
+      <image id="image-studio-logo" href="../img/icons/sl_product_iip.svg" placement="inline" outputclass="inline-icon"><alt>SnapLogic Studio logo</alt></image>
 
 
       <p>Execution</p>
 
         <!-- <image conkeyref="k-icons/image-studio-menu-expand"/> -->
-        <image id="image-studio-menu-expand" scope="external" href="https://raw.githubusercontent.com/SnapLogic/ClientApps/develop/client/SL_UI/v3/icons/menu-expand.svg?token=AWKYVUUDV3JGFNLGZ3OCJLDBY2KSU" placement="inline" outputclass="inline-icon"><alt>the menu-expand icon (circled right-pointing chevron)</alt></image>
+        <!-- GitHub path: /ClientApps/client/SL_UI/v3/icons/menu-expand.svg -->
+        <image id="image-studio-menu-expand" href="../img/icons/menu-expand.svg" placement="inline" outputclass="inline-icon"><alt>the menu-expand icon (circled right-pointing chevron)</alt></image>
 
         <!-- <image conkeyref="k-icons/image-studio-menu-collapse"/> -->
-        <image id="image-studio-menu-collapse" scope="external" href="https://raw.githubusercontent.com/SnapLogic/ClientApps/develop/client/SL_UI/v3/icons/menu-collapse.svg?token=AWKYVUVL4E2KXXVVY2GQWP3BY2MDY" placement="inline" outputclass="inline-icon"><alt>the menu-collapse icon (circled left-pointing chevron)</alt></image>
+        <!-- GitHub path: /ClientApps/client/SL_UI/v3/icons/menu-collapse.svg -->
+        <image id="image-studio-menu-collapse" href="../img/icons/menu-collapse.svg" placement="inline" outputclass="inline-icon"><alt>the menu-collapse icon (circled left-pointing chevron)</alt></image>
 
         <!-- <image conkeyref="k-icons/image-studio-settings"/> -->
-        <image id="image-studio-settings" scope="external" href="https://raw.githubusercontent.com/SnapLogic/ClientApps/develop/client/SL_UI/v3/icons/settings.svg?token=AWKYVUS5CJKZC3NWOB7GYU3BY2MTA" placement="inline" outputclass="inline-icon"><alt>the settings icon</alt></image>
+        <!-- GitHub path: /ClientApps/client/SL_UI/v3/icons/settings.svg -->
+        <image id="image-studio-settings" href="../img/icons/settings.svg" placement="inline" outputclass="inline-icon"><alt>the settings icon</alt></image>
 
 
     </section>

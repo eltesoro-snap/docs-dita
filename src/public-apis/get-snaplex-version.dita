@@ -71,10 +71,28 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
+
+        <!-- 
+        <codeblock outputclass="normalize-space lang-json">
+        </codeblock>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+            </tbody>
+          </tgroup>
+        </table>
+        -->
+
       </sectiondiv>
     </section>
 
@@ -93,6 +111,8 @@
 
 
 <!--
+Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
+Last refreshed: 20211201
         # get snaplex versions
         self.add_route('/version', self.get_versions,
                        methods=[httplib.HTTP_GET])

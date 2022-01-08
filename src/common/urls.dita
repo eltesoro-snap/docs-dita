@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="urls">
+
+  <title>URLs</title>
+
+  <conbody>
+
+    <section>
+      <title>Customer Support</title>
+
+      <!-- <ph conkeyref="k-urls/ph-support"/> -->
+      <ph id="ph-support">support@snaplogic.com</ph>
+
+      <!--
+      <xref id="xref-support" scope="external" format="html" href="https://www.snaplogic.com/services/customer-support">SnapLogic Customer Support</xref>
+      -->
+
+    </section>
+
+  </conbody>
+
+  <related-links>
+
+    <!--
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    -->
+
+  </related-links>
+
+</concept>

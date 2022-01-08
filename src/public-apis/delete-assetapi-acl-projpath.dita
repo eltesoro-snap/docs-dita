@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="post-snaplex-restart-plexpath">
+<concept xml:lang="en-US" id="delete-assetapi-acl-projpath">
 
-  <title>POST /snaplex/restart/{plex_path}</title>
-  <titlealts><navtitle>POST /snaplex/restart/{plex_path}</navtitle></titlealts>
+  <title>DELETE /assetapi/acl/{projpath}</title>
+  <titlealts><navtitle>DELETE /assetapi/acl/{projpath}</navtitle></titlealts>
 
   <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
 
@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">requests a rolling restart of the specified Snaplex.</ph></p>
+      <p>This API <ph id="ph-shortdesc"> revokes all project access from a user or group.</ph></p>
     </section>
 
 
@@ -21,7 +21,7 @@
 
       <p>You need:
         <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/> ???</li>
         </ul>
       </p>
     </section>
@@ -31,7 +31,7 @@
       <title>Request</title>
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/restart/{plex_path}</ph>?{query_parameters}
+        <ph id="ph-method">DELETE</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{projpath}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -44,7 +44,7 @@
             <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              ...
+              <row conkeyref="k-api/row-pathparam-projpath"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -60,16 +60,8 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
-              <row>
-                <entry><codeph></codeph></entry>
-                <entry></entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph></codeph></entry>
-                <entry></entry>
-                <entry></entry>
-              </row>
+              <row conkeyref="k-api/row-request-grant-type"><entry/></row>
+              <row conkeyref="k-api/row-request-grantee"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -92,7 +84,6 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -115,6 +106,14 @@
 
 
 <!--
-  Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
-  ???
+Source: Tectonic\sldb\src\main\python\sldb\services\public\asset_handler.py
+Last refreshed: 20211223
+        self.add_route('/acl/<path:path>', self.delete_permission, methods=[http_lib.HTTP_DELETE],
+                       arguments=[
+                           Argument(name='path', arg_from=Argument.URL, default='/'),
+                           Argument(name='grant_type', arg_from=Argument.QS),
+                           Argument(name='grantee', arg_from=Argument.QS),
+                           Argument(name='granter', arg_from=Argument.USER_ID),
+                       ],
+                       trailing_optional=True)
 -->

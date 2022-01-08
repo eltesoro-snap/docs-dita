@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map xml:lang="en-US" id="manager">
+
+  <title>Manager</title>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Manager</navtitle></topicmeta>
+    <topicref href="manager-features.dita"/>
+  </topichead>
+
+</map>

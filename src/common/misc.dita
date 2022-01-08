@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="misc">
+
+  <title>Misc</title>
+
+  <conbody>
+
+    <section>
+      <title>Shorts</title>
+
+      <!-- <ph conkeyref="k-misc/ph-..."/> -->
+      <ph id="ph-reqd"><b>Required.</b></ph>
+      <ph id="ph-valid">Valid values:</ph>
+      <ph id="ph-default">Default:</ph>
+      <ph id="ph-format">Format:</ph>
+      <ph id="ph-example">Example:</ph>
+
+    </section>
+
+
+    <section>
+      <title>Formats</title>
+
+      <!-- <ph conkeyref="k-misc/ph-format-..."/> -->
+      <ph id="ph-format-utc"><ph conref="#./ph-format"/> <xref scope="external" format="html" href="https://www.w3.org/TR/NOTE-datetime">UTC</xref></ph>
+
+    </section>
+
+  </conbody>
+
+</concept>

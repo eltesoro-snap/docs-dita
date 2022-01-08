@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="manager-features">
+
+  <title>SnapLogic Features for Orgs</title>
+
+  <shortdesc>Features available to Orgs.</shortdesc>
+
+  <conbody>
+
+    <section>
+
+      <p>Depending on your SnapLogic Org’s configuration and your security authorization, several SnapLogic platform features can be available to you in <menucascade><uicontrol>Manager</uicontrol> <uicontrol>Features</uicontrol></menucascade>.</p>
+
+      <p>To request access to a feature that does not appear in your Features list, contact <ph conkeyref="k-urls/ph-support"/>.</p>
+
+    </section>
+
+
+    <section>
+
+      <div outputclass="modalimg"><image href="../img/manager-features.png" placement="break" align="left" outputclass="img-medium"><alt>Features dialog</alt></image></div>
+
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">Feature</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1402142725">API Management</xref></entry>
+              <entry>The API Management feature allows you to easily manage APIs within the SnapLogic Intelligent Integrated Platform (IIP):
+                <ul>
+                  <li>Bundle and publish your Ultra and Triggered Tasks as Proxies using a four-step wizard.</li>
+                  <li>Manage a range of API Policies for web applications that consume APIs in SnapLogic. These API Policies include:
+                    <ul>
+                      <li>Basic Authentication</li>
+                      <li>IP Restriction</li>
+                      <li>Rate Limiting</li>
+                      <li>Request and Response Transformers</li>
+                      <li>Cross-Origin Sharing (CORs)</li>
+                      <li>OAuth 2.0 integration</li>
+                    </ul>
+                  </li>
+                  <li>Review analytics, such as historical API usage and performance metrics.</li>
+                  <li>View your APIs in the Open API Specification format.</li>
+                </ul>
+              </entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/730006083">Data Catalog Service</xref></entry>
+              <entry>Data Catalog Service allows you to save, manage, and retrieve metadata about data stored in external file systems, such as S3, so you can query the actual source data, even without knowing its location.</entry>
+            </row>
+            <!-- Elastic Runtime feature is replaced by autoscaling on EKS. -->
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1437994">Enhanced Account Encryption</xref></entry>
+              <entry>With Enhanced Account Encryption, you can store and use your own keys for encrypting account information in a Groundplex. The account information can be decrypted only in Groundplex nodes that have the private key.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2317320252/Email+Encryption">Enhanced Email Encryption</xref></entry>
+              <entry>With Email Encryption, Org administrators can add keys to a user to encrypt that user's emails.</entry>
+            </row>
+            <!-- eXtreme has been deprecated. -->
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1942159838/SnapLogic+Fast+Data+Loader">Fast Data Loader (FDL)</xref></entry>
+              <entry>SnapLogic Fast Data Loader (FDL) is a data ingestion tool that simplifies the tasks of replicating data and synchronizing data for data analysts and business analysts. You can quickly load data from your cloud applications into a cloud data warehouse, using FDL's simple point-and-click user interface.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://www.snaplogic.com/resources/data-sheets/snaplogic-flows">Flows</xref></entry>
+              <entry>SnapLogic Flows are templates for common business processes that you can use to build and manage integrations easily.
+                <note type="note">Flows is included in your SnapLogic subscription, currently free of charge for a limited time. To get started, <xref scope="external" format="html" href="https://www.snaplogic.com/products/snaplogic-flows">register for Flows</xref>.</note>
+              </entry>
+            </row>
+            <!-- Full Pack Access is internal only. -->
+            <row>
+              <entry>Intelligent Integration Platform (IIP)</entry>
+              <entry>SnapLogic’s Intelligent Integration Platform (IIP) uses AI-powered workflows to automate all stages of IT integration projects – design, development, deployment, and maintenance – whether on-premises, in the cloud, or in hybrid environments.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2411331647">OEM</xref></entry>
+              <entry>The Custom Org Branding (or OEM) feature allows you to customize the appearance (such as the colors and logo) of your SnapLogic platform for each Org.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1094811693/Automated+Regression+Tests">Regression Testing</xref></entry>
+              <entry>You can automate regression testing against your Pipelines before and after a Snaplex upgrade. You can run the regression tests on the Pipelines in an Org at the Project level.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/721944618">Resumable Pipelines</xref></entry>
+              <entry>If a target endpoint becomes unavailable, a Resumable Pipeline pauses processing, instead of failing and stopping altogether. When the endpoint becomes available again and you restart the suspended Pipeline, the Resumable Pipeline continues processing where it paused, instead of restarting from the beginning.</entry>
+            </row>
+            <row>
+              <entry><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1437955">Ultra Pipelines and Tasks</xref></entry>
+              <entry>An Ultra Task continuously runs its associated Ultra Pipeline. This always-on execution provides fast responses with low latency and high throughput.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </conbody>
+
+</concept>

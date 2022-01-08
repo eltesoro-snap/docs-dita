@@ -8,6 +8,7 @@
 
   <topicref href="index.dita" toc="no"/>
   <mapref href="sl-studio/sl-studio.ditamap"/>
+  <mapref href="manager/manager.ditamap"/>
   <mapref href="public-apis/public-apis.ditamap"/>
 
 </map>

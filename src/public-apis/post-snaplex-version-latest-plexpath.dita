@@ -73,6 +73,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -95,6 +96,8 @@
 
 
 <!--
+Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
+Last refreshed: 20211201
         # update snaplex to the latest version
         self.add_route('/version/latest/<path:plex_path>', self.update_plex_to_latest,
                        methods=[httplib.HTTP_POST],

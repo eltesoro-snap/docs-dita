@@ -97,9 +97,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-
-        <codeblock id="response-hdr" outputclass="normalize-space lang-json">
-        </codeblock>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -111,12 +109,12 @@
     </section>
 
 
-    <!-- 
+    <!--
     <section>
       <title>Example - </title>
     </section>
     -->
-    
+
   </conbody>
 
   <related-links/>
@@ -125,6 +123,8 @@
 
 
 <!--
+Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
+Last refreshed: 20211201
         self.add_route('/maintenance/<path:plex_path>/<hostname>', self.maintenance_cc,
                        methods=[httplib.HTTP_POST],
                        arguments=[

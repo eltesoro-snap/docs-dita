@@ -12,6 +12,13 @@
     </topichead>
 
     <topichead collection-type="family">
+      <topicmeta><navtitle>Asset APIs</navtitle></topicmeta>
+      <topicref href="post-assetapi-acl-projpath.dita"/>
+      <topicref href="delete-assetapi-acl-projpath.dita"/>
+      <topicref href="get-assetapi-acl-projpath.dita"/>
+    </topichead>
+
+    <topichead collection-type="family">
       <topicmeta><navtitle>GitHub APIs</navtitle></topicmeta>
       <topicref href="post-project-checkout-projpath.dita"/>
       <topicref href="post-project-pull-projpath.dita"/>

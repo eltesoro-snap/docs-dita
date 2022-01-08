@@ -1,7 +1,5 @@
 @echo off
 : ----------------------------------------
-: Copyright 2021 sldocs.com
-:
 : Prerequisites:
 :   * Docker - Required to run the DITA-OT build on a container.
 :       https://hub.docker.com/

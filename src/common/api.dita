@@ -32,15 +32,15 @@
       <title>Syntaxes</title>
 
 
-      <!-- <ph conkeyref="k-api/ph-endpoint-http"/> -->
+      <!-- <ph conkeyref="k-api/ph-endpoint-https"/> -->
       <!-- NOTE: pod_path is included in the Path Parameters sections. -->
-      <ph id="ph-endpoint-http">http://{pod_path}</ph>
+      <ph id="ph-endpoint-https">https://{pod_path}</ph>
 
       <!-- <ph conkeyref="k-api/ph-endpoint-subpath"/> -->
       <ph id="ph-endpoint-subpath">/api/1/rest/public</ph>
 
       <!-- <ph conkeyref="k-api/ph-endpoint-full-url"/> -->
-      <ph id="ph-endpoint-full-url"><ph conref="#./ph-endpoint-http"/><ph conref="#./ph-endpoint-subpath"/></ph>
+      <ph id="ph-endpoint-full-url"><ph conref="#./ph-endpoint-https"/><ph conref="#./ph-endpoint-subpath"/></ph>
 
     </section>
 
@@ -69,19 +69,6 @@
       <title>Parameters</title>
 
       <sectiondiv>
-        <p>Shorts</p>
-
-        <!-- <ph conkeyref="k-api/ph-..."/> -->
-        <ph id="ph-reqd"><b>Required.</b></ph>
-        <ph id="ph-valid">Valid values:</ph>
-        <ph id="ph-default">Default:</ph>
-        <ph id="ph-format">Format:</ph>
-        <ph id="ph-example">Example:</ph>
-
-      </sectiondiv>
-
-
-      <sectiondiv>
         <p>Common Descriptions</p>
 
         <!-- <ph conkeyref="k-api/ph-unixtime-millisecs"/> -->
@@ -96,7 +83,7 @@
         <p>Plexpath and hostname</p>
 
         <!-- <ph conkeyref="k-api/ph-plexpath-desc"/> -->
-        <!-- <p><ph conkeyref="k-api/ph-format"/> <ph conkeyref="k-api/ph-plexpath-format"/></p> -->
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-plexpath-format"/></p> -->
         <!-- <ph conkeyref="k-api/ph-plexpath-xmpl"/> -->
         <ph id="ph-plexpath-desc">The path to the Snaplex to access.</ph>
         <ph id="ph-plexpath-format"><codeph>/{org}/{project_space}/{project_name}/{snaplex_name}</codeph></ph>
@@ -111,6 +98,11 @@
         <!-- <ph conkeyref="k-api/ph-hostname-list-desc"/> -->
         <ph id="ph-hostname-list-desc">A single JCC node path or a comma-separated list of JCC node paths.</ph>
         <ph id="ph-hostname-list-xmpl"><codeph>canxl-jcc8.clouddev.snaplogic.com,canxl-jcc9.clouddev.snaplogic.com</codeph></ph>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Other path parameters</p>
 
         <!-- <ph conkeyref="k-api/ph-groupname-desc"/> -->
         <ph id="ph-groupname-desc">The name of the group.</ph>
@@ -123,7 +115,7 @@
       <sectiondiv>
         <p>Org and Project</p>
 
-        <!-- <p><ph conkeyref="k-api/ph-format"/> <ph conkeyref="k-api/ph-projpath-format"/></p> -->
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-projpath-format"/></p> -->
         <ph id="ph-projpath-format"><codeph>/{org}/{project_space}/{project_name}</codeph></ph>
       </sectiondiv>
 
@@ -149,59 +141,59 @@
               <!-- <row conkeyref="k-api/row-pathparam-podpath"><entry/></row> -->
               <row id="row-pathparam-podpath">
                 <entry><codeph>pod_path</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> The path to your SnapLogic pod.
-                  <p><ph conref="#./ph-example"/> <codeph>elastic.snaplogic.com</codeph></p>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to your SnapLogic pod.
+                  <p><ph conkeyref="k-misc/ph-example"/> <codeph>elastic.snaplogic.com</codeph></p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-org"><entry/></row> -->
               <row id="row-pathparam-org">
                 <entry><codeph>org</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> The name of the SnapLogic Org to access.</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The name of the SnapLogic Org to access.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-projpath"><entry/></row> -->
               <row id="row-pathparam-projpath">
                 <entry><codeph>project_path</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> The path to the SnapLogic Project to access.
-                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-projpath-format"/></p>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic Project to access.
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-projpath-format"/></p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-ruuid"><entry/></row> -->
               <row id="row-pathparam-ruuid">
                 <entry><codeph>ruuid</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> The Runtime ID of the Task run.</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The Runtime ID of the Task run.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-plexpath"><entry/></row> -->
               <row id="row-pathparam-plexpath">
                 <entry><codeph>plex_path</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/>
+                <entry><ph conkeyref="k-misc/ph-reqd"/>
                   <ph conref="#./ph-plexpath-desc"/>
-                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
-                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-plexpath-xmpl"/></p>
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-plexpath-xmpl"/></p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-hostname"><entry/></row> -->
               <row id="row-pathparam-hostname">
                 <entry><codeph>hostname</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
-                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-hostname-list-xmpl"/></p>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-hostname-list-xmpl"/></p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-groupname"><entry/></row> -->
               <row id="row-pathparam-groupname">
                 <entry><codeph>groupname</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-email"><entry/></row> -->
               <row id="row-pathparam-email">
                 <entry><codeph>email</codeph></entry>
-                <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-email-desc"/></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-email-desc"/></entry>
               </row>
 
             </tbody>
@@ -253,7 +245,7 @@
                 <entry>integer</entry>
                 <entry><ph conref="#./ph-desc-offset"/>
                   <ph conref="#./ph-limit-offset-pagination"/>
-                  <p><ph conref="#./ph-default"/> 0</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 0</p>
                 </entry>
               </row>
 
@@ -261,9 +253,9 @@
               <row id="row-query-param-plexpath">
                 <entry><codeph>plex_path</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conref="#./ph-reqd"/>
+                <entry><ph conkeyref="k-misc/ph-reqd"/>
                   <ph conref="#./ph-plexpath-desc"/>
-                  <p><ph conref="#./ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
                 </entry>
               </row>
 
@@ -271,8 +263,8 @@
               <row id="row-query-param-hostname">
                 <entry><codeph>hostname</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
-                  <p><ph conref="#./ph-example"/> <ph conref="#./ph-hostname-xmpl"/></p>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-hostname-xmpl"/></p>
                 </entry>
               </row>
 
@@ -280,8 +272,8 @@
               <row id="row-query-param-hostname-list">
                 <entry><codeph>hostname</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conref="#./ph-reqd"/> <ph conref="#./ph-hostname-list-desc"/>
-                  <p><ph conref="#./ph-example"/><ph conref="#./ph-hostname-list-xmpl"/></p>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-hostname-list-desc"/>
+                  <p><ph conkeyref="k-misc/ph-example"/><ph conref="#./ph-hostname-list-xmpl"/></p>
                 </entry>
               </row>
 
@@ -333,7 +325,62 @@
 
 
       <sectiondiv>
-        <p>Reequest Body</p>
+        <p>Request Body</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-api/row-request-grant-type"><entry/></row> -->
+              <row id="row-request-grant-type">
+                <entry><codeph>grant_type</codeph></entry>
+                <entry>string</entry>
+                <entry>The type of the grantee.
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li><codeph>USER</codeph></li>
+                      <li><codeph>GROUP</codeph></li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-grantee"><entry/></row> -->
+              <row id="row-request-grantee">
+                <entry><codeph>grantee</codeph></entry>
+                <entry>string</entry>
+                <entry>The UUID ??? of the user or group.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-permission-list"><entry/></row> -->
+              <row id="row-request-permission-list">
+                <entry><codeph>permission_list</codeph></entry>
+                <entry>array</entry>
+                <entry>An array containing one or more of the following permissions:
+                  <ul>
+                    <li><codeph>R</codeph> – read</li>
+                    <li><codeph>W</codeph> – write</li>
+                    <li><codeph>X</codeph> – execute</li>
+                    <li><codeph>A</codeph> – add ???</li>
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-inherit"><entry/></row> -->
+              <row id="row-request-inherit">
+                <entry><codeph>inherit</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the permissions apply to all assets under the specified project path.???</entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
       </sectiondiv>
 
     </section>
@@ -342,7 +389,21 @@
     <section>
 
       <sectiondiv>
-        <p>Response Body</p>
+        <p>Response Header</p>
+
+        <!-- <div conkeyref="k-api/div-table-status-code-only"/> -->
+        <div id="div-table-status-code-only">
+          <table>
+            <tgroup cols="2">
+              <colspec colname="col-key"  colwidth="20%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+              <tbody>
+                <row conref="#./row-response-status-code"><entry/></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </div>
 
         <table>
           <tgroup cols="2">
@@ -351,33 +412,61 @@
             <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
             <tbody>
 
+              <!-- <row conkeyref="k-api/row-response-status-code"><entry/></row> -->
+              <row id="row-response-status-code">
+                <entry><codeph>X-SL-StatusCode</codeph></entry>
+                <entry>Status code indicating the results of the request.
+                  <p>Learn more: <xref scope="external" format="html" href="https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">HTTP Status Code Registry</xref></p>
+                </entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+
+      <sectiondiv>
+        <p>Response Body</p>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+
               <!-- <row conkeyref="k-api/row-response-total"><entry/></row> -->
               <row id="row-response-total">
                 <entry><codeph>total</codeph></entry>
+                <entry>integer</entry>
                 <entry>The total number of results available.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-response-limit"><entry/></row> -->
               <row id="row-response-limit">
                 <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
                 <entry>The number of results returned.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-response-offset"><entry/></row> -->
               <row id="row-response-offset">
                 <entry><codeph>offset</codeph></entry>
+                <entry>integer</entry>
                 <entry>The index of the first result returned.</entry>
               </row>
 
-              <!-- <row conkeyref="k-api/row-response-entries"><entry/></row> -->
-              <row id="row-response-entries">
-                <entry><codeph>entries</codeph></entry>
-                <entry>Details about each activity.</entry>
+              <row id="row-response-">
+                <entry><codeph>...</codeph></entry>
+                <entry>...</entry>
+                <entry>...</entry>
               </row>
+
             </tbody>
           </tgroup>
         </table>
-
 
       </sectiondiv>
 

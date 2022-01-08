@@ -7,10 +7,10 @@
   <!-- Conrefs -->
   <keydef keys="k-api"     href="common/api.dita#api"/>
   <keydef keys="k-icons"   href="common/icons.dita#icons"/>
+  <keydef keys="k-misc"    href="common/misc.dita#misc"/>
+  <keydef keys="k-urls"    href="common/urls.dita#urls"/>
 
-  <!-- <keydef keys="k-urls"   href="_conrefs/urls.dita#urls"/> -->
   <!-- <keydef keys="k-vars"   href="_conrefs/vars.dita#vars"/> -->
-  <!-- <keydef keys="k-ph"     href="_conrefs/ph.dita#ph"/> -->
   <!-- <keydef keys="k-image"  href="_conrefs/image.dita#image"/> -->
   <!-- <keydef keys="k-prereqs"    href="common/prereqs.dita#prereqs"/> -->
   <!-- <keydef keys="k-steps-xxx"  href="common/steps-xxx.dita#steps-xxx"/> -->

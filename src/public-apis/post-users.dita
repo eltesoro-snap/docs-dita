@@ -161,6 +161,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -169,12 +170,12 @@
     </section>
 
 
-    <!-- 
+    <!--
     <section>
       <title>Example - </title>
     </section>
     -->
-    
+
   </conbody>
 
   <related-links/>
@@ -183,20 +184,22 @@
 
 
 <!--
-        self.add_route('" :  self.create_user, methods=[slcommon.snap_http_lib.HTTP_POST],
+Source: Tectonic\sldb\src\main\python\sldb\services\public\user_handler.py
+Last refreshed: 20211223
+        self.add_route('', self.create_user, methods=[slcommon.snap_http_lib.HTTP_POST],
                        arguments=[
-                           Argument('caller" :  Argument.USER_ID),
-                           Argument('email" :  Argument.BODY),
-                           Argument('first_name" :  Argument.BODY),
-                           Argument('last_name" :  Argument.BODY),
-                           Argument('organization" :  Argument.BODY),
-                           Argument('administrator" :  Argument.BODY, Argument.BOOL),
-                           Argument('allow_password_login" :  Argument.BODY, Argument.BOOL),
-                           Argument('utility" :  Argument.BODY, Argument.BOOL),
-                           Argument('ui_access" :  Argument.BODY, Argument.BOOL),
-                           Argument('create_home_directory" :  Argument.BODY, Argument.BOOL),
-                           Argument('email_notification" :  Argument.BODY, Argument.BOOL),
-                           Argument('certificate" :  Argument.BODY),
-                           Argument('file_handle" :  Argument.BODY),
+                           Argument('caller', Argument.USER_ID),
+                           Argument('email', Argument.BODY),
+                           Argument('first_name', Argument.BODY),
+                           Argument('last_name', Argument.BODY),
+                           Argument('organization', Argument.BODY),
+                           Argument('administrator', Argument.BODY, Argument.BOOL),
+                           Argument('allow_password_login', Argument.BODY, Argument.BOOL),
+                           Argument('utility', Argument.BODY, Argument.BOOL),
+                           Argument('ui_access', Argument.BODY, Argument.BOOL),
+                           Argument('create_home_directory', Argument.BODY, Argument.BOOL),
+                           Argument('email_notification', Argument.BODY, Argument.BOOL),
+                           Argument('certificate', Argument.BODY),
+                           Argument('file_handle', Argument.BODY),
                        ])
 -->

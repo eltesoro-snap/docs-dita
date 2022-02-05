@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-assetapi-acl-projpath">
 
-  <title>GET /assetapi/acl/{projpath}</title>
-  <titlealts><navtitle>GET /assetapi/acl/{projpath}</navtitle></titlealts>
+  <title>GET /assetapi/acl/{project_path}</title>
+  <titlealts><navtitle>GET /assetapi/acl/{project_path}</navtitle></titlealts>
 
   <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
 
@@ -12,18 +12,16 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> retrieves the current permissions of a user or group to access a project.</ph></p>
+      <p>This API <ph id="ph-shortdesc"> retrieves the privileges of the current user to access the specified project.</ph></p>
     </section>
 
 
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/> ???</li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -31,7 +29,7 @@
       <title>Request</title>
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{projpath}</ph>
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -72,6 +70,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -102,4 +101,6 @@ Last refreshed: 20211223
                             Argument(name='granter', arg_from=Argument.USER_ID)
                        ],
                        trailing_optional=True)
+
+Jiras: PLAT-8417
 -->

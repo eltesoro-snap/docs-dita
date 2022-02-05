@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-assetapi-acl-projpath">
 
-  <title>POST /assetapi/acl/{projpath}</title>
-  <titlealts><navtitle>POST /assetapi/acl/{projpath}</navtitle></titlealts>
+  <title>POST /assetapi/acl/{project_path}</title>
+  <titlealts><navtitle>POST /assetapi/acl/{project_path}</navtitle></titlealts>
 
   <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
 
@@ -12,18 +12,16 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> grants the specified permissions to a user or group to access a project.</ph></p>
+      <p>This API <ph id="ph-shortdesc"> grants a user or group access to the specified project.</ph></p>
     </section>
 
 
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/> ???</li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -31,7 +29,7 @@
       <title>Request</title>
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{projpath}</ph>
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -67,7 +65,7 @@
           {
             "grant_type" : "...",
             "grantee" : "...",
-            "permission_list" : ['R', 'W', 'X', 'A'],
+            "permission_list" : [ ... ],
             "inherit" : true
           }
         </codeblock>
@@ -80,7 +78,7 @@
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-request-grant-type"><entry/></row>
-              <row conkeyref="k-api/row-request-grantee"><entry/></row>
+              <row conkeyref="k-api/row-request-grantee-grant"><entry/></row>
               <row conkeyref="k-api/row-request-permission-list"><entry/></row>
               <row conkeyref="k-api/row-request-inherit"><entry/></row>
             </tbody>
@@ -95,6 +93,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -129,4 +128,6 @@ Last refreshed: 20211223
                            Argument(name='inherit', arg_from=Argument.BODY, arg_type=Argument.BOOL)
                        ],
                        trailing_optional=True)
+
+Jiras: PLAT-8417
 -->

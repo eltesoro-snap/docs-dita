@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -77,10 +75,18 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "comment": "4.28 RC (Recommended)",
+              "status": "active",
+              "version": "4.28_rc-11033"
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
+        <!--
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
@@ -116,4 +122,6 @@ Last refreshed: 20211201
         # get the latest snaplex version
         self.add_route('/version/latest', self.get_latest_version,
                        methods=[httplib.HTTP_GET])
+
+Jiras: PLAT-8417
 -->

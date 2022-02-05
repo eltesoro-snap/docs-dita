@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -102,10 +100,221 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "feed_call": ...,
+              "subpipeline_parameters": { ... },
+              "llfeed_status": {
+                "message_history": [ ... ],
+                "messages": [ ... ],
+                "documents_count": ...,
+                "max_in_flight": ...,
+                "summary": "..."
+              },
+              "class_fqid": "...",
+              "snode_id": "...",
+              "ttl": ...,
+              "org_snode_id": "...",
+              "cc_prepare_end_ms": ...,
+              "parent_path": "...",
+              "error_list": [ ... ],
+              "child_count": ...,
+              "data_locations": [ ... ],
+              "env_map": { ... },
+              "restart_attempts": ...,
+              "error_documents_count": ...,
+              "env_map_list": [
+                {
+                  "ciphertext": "...",
+                  "sym_key": {
+                    "alias": "...",
+                    "key": "..."
+                  }
+                }
+              ],
+              "statistics_time_stamp": "...",
+              "job_trigger": "...",
+              "cc_fast_push_expire_time_ms": ...,
+              "fault_injections": ...,
+              "slserver_lease_expire_time": "...",
+              "cc_poll_ms": ...,
+              "instance_id": "...",
+              "mode": "...",
+              "async": ...,
+              "pipe_invoker": "...",
+              "create_time": "...",
+              "duration": ...,
+              "notification": {
+                "slack_recipients": [
+                  {
+                    "user": [ ... ],
+                    "channel": [ ... ]
+                  }
+                ]
+              },
+              "label": "...",
+              "state": "...",
+              "replicaset_label": "...",
+              "invoker": "...",
+              "cc_user": "...",
+              "time_stamp": "...",
+              "cc_external_uri": "...",
+              "partition_snode_id": "...",
+              "lint_id_list": [ ... ],
+              "reason": "...",
+              "threads": [ ... ],
+              "prepare_handoff_timestamp": "...",
+              "slot_count": ...,
+              "end_stage": "...",
+              "search": "...",
+              "limits": "...",
+              "class_id": "...",
+              "has_lints": ...,
+              "q_threshold_time": "...",
+              "control_plane_scheduling": [
+                {
+                  "update_buckets": { ... },
+                  "leases": { ... },
+                  "stats": {
+                    "active_pipelines": [ ... ],
+                    "cpu_user": ...,
+                    "mem_used": ...,
+                    "active_threads": ...,
+                    "open_file_descriptors": ...,
+                    "system_load_average": ...
+                  },
+                  "generation": ...,
+                  "slots_in_use": ...,
+                  "time_stamp": "...",
+                  "_id": "..."
+                }
+              ],
+              "suggest_uris": "...",
+              "task_status": [ ... ],
+              "cc_prepare_start_ms": ...,
+              "phase_snode_id": "...",
+              "duration_ms": ...,
+              "parent_ruuid": "...",
+              "references": [
+                {
+                  "path": "...",
+                  "pipe_origin": "...",
+                  "time_updated": "...",
+                  "asset_type": "...",
+                  "snode_id": "..."
+                }
+              ],
+              "do_start": ...,
+              "statistics": {
+                "output_views": { ... },
+                "input_views": { ... }
+              },
+              "user_id": "...",
+              "connect_pipeline_views": ...,
+              "container_type": "...",
+              "priority": ...,
+              "instance_fqid": "...",
+              "info_flag_list": [ ... ],
+              "runtime_path_id": "...",
+              "lint_list": [ ... ],
+              "failure": "...",
+              "state_log": [
+                {
+                  "timestamp": ...,
+                  "ccid": "...",
+                  "new_state": "NoUpdate"
+                },
+                {
+                  "timestamp": ...,
+                  "new_state": "Prepared"
+                },
+                {
+                  "timestamp": ...,
+                  "new_state": "Started"
+                }
+              ],
+              "ruuid": "...",
+              "parent_pipeline_fqid": "...",
+              "execution_timeout": "...",
+              "path_id": "...",
+              "plex_snode_id": "...",
+              "error": { ... },
+              "plex_path": "...",
+              "invoker_snode_id": "...",
+              "invoker_path_id": "...",
+              "snaplex_label": "...",
+              "platform_globals": {
+                "task": {
+                  "start": {
+                    "_snaptype_datetime": "..."
+                  },
+                  "end": {
+                    "_snaptype_datetime": "..."
+                  }
+                }
+              },
+              "init_xid": "...",
+              "nested_pipeline": ...,
+              "project_snode_id": "...",
+              "class_version": ...,
+              "warning_list": [ ... ],
+              "root_ruuid": "...",
+              "cc_start_ms": ...,
+              "poll_time_stamp": "...",
+              "artifacts_map": {
+                "...": "..."
+              },
+              "artifact_snap_id_map": {
+                "...": "..."
+              },
+              "ccid": "...",
+              "delivery_options": { ... },
+              "metrics": {
+                "queuedCount": ...,
+                "totalSnapDelay": ...,
+                "idleTime": ...,
+                "memoryOverhead": ...,
+                "inFlightCount": ...,
+                "startTime": ...
+              },
+              "expire_time": "...",
+              "runtime_label": "...",
+              "cc_stop_ms": ...,
+              "root_path": "...",
+              "invoker_name": "...",
+              "error_fp_list": [ ... ],
+              "flags": {
+                "immediate_mode": ...,
+                "is_suggest": ...,
+                "connect_views_to_relay": ...
+              },
+              "captured_env_map": {
+                "key1": {
+                  "captured": ...,
+                  "value": "..."
+                }
+              },
+              "llfeed_context": {
+                "path_id": "...",
+                "job_alias": "...",
+                "masters": [
+                  {
+                    "uri": "...",
+                    "certificate": "...",
+                    "cc_id": "..."
+                  }
+                ],
+                "max_in_flight": ...
+              },
+              "documents_count": ...,
+              "resolution": "..."
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
+        <!--
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
@@ -113,6 +322,827 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+
+              <row id="row-response-task-run-feed-call">
+                <entry><codeph>feed_call</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <row id="row-response-task-run-subpipeline-parameters">
+                <entry><codeph>subpipeline_parameters</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-llfeed-status">
+                <entry><codeph>llfeed_status</codeph></entry>
+                <entry>Object</entry>
+                <entry>???
+                  <ul>
+                    <li><codeph>message_history</codeph>. (array) An array of ??? containing the message history.</li>
+                    <li><codeph>messages</codeph>. (array) An array of ??? containing messages. ???</li>
+                    <li><codeph>documents_count</codeph>. (integer) The number of documents processed. ???</li>
+                    <li><codeph>max_in_flight</codeph>. (integer) The maximum number of documents processed concurrently. ???</li>
+                    <li><codeph>summary</codeph>. (string) A summary of ???</li>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-class-fqid">
+                <entry><codeph>class_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-snode-id">
+                <entry><codeph>snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID Of the Snaplex node. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-ttl">
+                <entry><codeph>ttl</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-org-snode-id">
+                <entry><codeph>org_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID Of the Snaplex node that hosts the Org. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-prepare-end-ms">
+                <entry><codeph>cc_prepare_end_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              <row id="row-response-task-run-parent-path">
+                <entry><codeph>parent_path</codeph></entry>
+                <entry>string ???</entry>
+                <entry>The path to the parent of ???.
+                  <p><ph conkeyref="k-misc/ph-..."/> ???</p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-error-list">
+                <entry><codeph>error_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-child-count">
+                <entry><codeph>child_count</codeph></entry>
+                <entry>inteThe number of children of ger</entry>
+                <entry>The number of children of ???</entry>
+              </row>
+
+              <row id="row-response-task-run-data-locations">
+                <entry><codeph>data_locations</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-env-map">
+                <entry><codeph>env_map</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-restart-attempts">
+                <entry><codeph>restart_attempts</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of attempts to restart the Task after a failure or suspension. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-error-documents-count">
+                <entry><codeph>error_documents_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of documents that had errors. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-env-map-list">
+                <entry><codeph>env_map_list</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of Objects containing ???:
+                  <ul>
+                    <li><codeph>ciphertext</codeph>. (string) ???</li>
+                    <li><codeph>sym_key</codeph>. (Object) An object containing the <codeph>alias</codeph> and <codeph>key</codeph> of ???.</li>
+                  </ul>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-statistics-time-stamp">
+                <entry><codeph>statistics_time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-job-trigger">
+                <entry><codeph>job_trigger</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-fast-push-expire-time-ms">
+                <entry><codeph>cc_fast_push_expire_time_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              <row id="row-response-task-run-fault-injections">
+                <entry><codeph>fault_injections</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-slserver-lease-expire-time">
+                <entry><codeph>slserver_lease_expire_time</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-cc-poll-ms">
+                <entry><codeph>cc_poll_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              <row id="row-response-task-run-instance-id">
+                <entry><codeph>instance_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The UUID of the Task run. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-mode">
+                <entry><cmodeph>...</codeph></entry>
+                <entry>string</entry>
+                <entry>The mode of the Task run. ???
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>standard</codeph></li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-async">
+                <entry><casyncph>...</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <row id="row-response-task-run-pipe-invoker">
+                <entry><codeph>pipe_invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>What triggered the Task Run. ???
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li>always_on</li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-create-time">
+                <entry><codeph>create_time</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the Task run was created. ???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-duration">
+                <entry><codeph>duration</codeph></entry>
+                <entry>integer</entry>
+                <entry>The duration of the Task run in milliseconds. ???</entry>
+              </row>
+
+              "": {
+                "slack_recipients": [
+                  {
+                    "user": [],
+                    "channel": []
+                  }
+                ]
+              },
+              <row id="row-response-task-run-notification">
+                <entry><codeph>notification</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-label">
+                <entry><codeph>label</codeph></entry>
+                <entry>string</entry>
+                <entry>The label or name of the Task run.</entry>
+              </row>
+
+              <row id="row-response-task-run-state">
+                <entry><codeph>state</codeph></entry>
+                <entry>string</entry>
+                <entry>The status of the Task run. ???
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li>Started</li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-replicaset-label">
+                <entry><codeph>replicaset_label</codeph></entry>
+                <entry>string</entry>
+                <entry>The label of ???</entry>
+              </row>
+
+              <row id="row-response-task-run-invoker">
+                <entry><codeph>invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>The user that invoked the Task run. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-user">
+                <entry><codeph>cc_user</codeph></entry>
+                <entry>string</entry>
+                <entry>The user that ???</entry>
+              </row>
+
+              <row id="row-response-task-run-time-stamp">
+                <entry><codeph>time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the Task run started. ???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              "": "http://ip-172-27-177-152.us-west-2.compute.internal:8090",
+              <row id="row-response-task-run-cc-external-uri">
+                <entry><codeph>cc_external_uri</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-partition-snode-id">
+                <entry><codeph>partition_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-lint-id-list">
+                <entry><codeph>lint_id_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-reason">
+                <entry><codeph>reason</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-threads">
+                <entry><codeph>threads</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-prepare-handoff-timestamp">
+                <entry><codeph>prepare_handoff_timestamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when ???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-slot-count">
+                <entry><codeph>slot_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-end-stage">
+                <entry><codeph>end_stage</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>EXECUTE</codeph></li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              "": "flag ultra 1 psrikantesh@snaplogic.com groundplex_poornima/ip-172-27-177-152 testing123",
+              <row id="row-response-task-run-search">
+                <entry><codeph>search</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-limits">
+                <entry><codeph>limits</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-class-id">
+                <entry><codeph>class_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-has-lints">
+                <entry><codeph>has_lints</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <row id="row-response-task-run-q-threshold-time">
+                <entry><codeph>q_threshold_time</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when ???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              "": [
+                {
+                  "update_buckets": {
+                    "0": 1642198001.933051
+                  },
+                  "leases": {
+                    "563cec53d97c824743a013ff_2c09f7d2-6b4b-4aa8-91ce-583b93fdf882": {
+                      "timestamp": "2022-01-14T22:09:23.850000+00:00",
+                      "slots": 10
+                    },
+                    "563cec53d97c824743a013ff_24ca01ca-c133-4240-8552-56325a80bf05": {
+                      "timestamp": "2022-01-14T22:09:24.550000+00:00",
+                      "slots": 1
+                    },
+                    "563cec53d97c824743a013ff_32e3ab1a-51dd-4cfa-9e44-0b96705db63e": {
+                      "timestamp": "2022-01-14T22:09:24.118000+00:00",
+                      "slots": 2
+                    },
+                    "563cec53d97c824743a013ff_d5a28e06-ae0f-424b-a257-f4ec0e6bb038": {
+                      "timestamp": "2022-01-14T22:09:25.976000+00:00",
+                      "slots": 1
+                    },
+                    "563cec53d97c824743a013ff_64e4389c-264c-4337-8432-92a338f960d8": {
+                      "timestamp": "2022-01-14T22:09:25.955000+00:00",
+                      "slots": 3
+                    }
+                  },
+                  "stats": {
+                    "active_pipelines": [],
+                    "cpu_user": 0.1875,
+                    "mem_used": 0.03349485,
+                    "active_threads": 210,
+                    "open_file_descriptors": 373,
+                    "system_load_average": 0.155
+                  },
+                  "generation": 5,
+                  "slots_in_use": 227,
+                  "time_stamp": "2022-01-14T22:06:41.933000+00:00",
+                  "_id": "61e1f3e3048673663f58198f"
+                }
+              ],
+              <row id="row-response-task-run-control-plane-scheduling">
+                <entry><codeph>control_plane_scheduling</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-suggest-uris">
+                <entry><codeph>suggest_uris</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-task-status">
+                <entry><codeph>task_status</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-prepare-start-ms">
+                <entry><codeph>cc_prepare_start_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds</entry>
+              </row>
+
+              <row id="row-response-task-run-phase-snode-id">
+                <entry><codeph>phase_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-duration-ms">
+                <entry><codeph>duration_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              <row id="row-response-task-run-parent-ruuid">
+                <entry><codeph>parent_ruuid</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              "": [
+                {
+                  "path": "/PlatformQA/Poornima/4.28 Ultra/Flag Ultra 1",
+                  "pipe_origin": null,
+                  "time_updated": "2022-01-13T07:50:05.529000+00:00",
+                  "asset_type": "Pipeline",
+                  "snode_id": "61c28c4ec9c443425b86a9b7"
+                }
+              ],
+              <row id="row-response-task-run-references">
+                <entry><codeph>references</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-do-start">
+                <entry><codeph>do_start</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              "": {
+                "output_views": {},
+                "input_views": {}
+              },
+              <row id="row-response-task-run-statistics">
+                <entry><codeph>statistics</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-user-id">
+                <entry><codeph>user_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-connect-pipeline-views">
+                <entry><codeph>connect_pipeline_views</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <row id="row-response-task-run-container-type">
+                <entry><codeph>container_type</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>regular</codeph></li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <row id="row-response-task-run-priority">
+                <entry><codeph>priority</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-instance-fqid">
+                <entry><codeph>instance_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-info-flag-list">
+                <entry><codeph>info_flag_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "PlatformQA/rt/sidekick/env",
+              <row id="row-response-task-run-runtime-path-id">
+                <entry><codeph>runtime_path_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-lint-list">
+                <entry><codeph>lint_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-failure">
+                <entry><codeph>failure</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              "": [
+                {
+                  "timestamp": 1642198166801,
+                  "ccid": "61e1f3e3048673663f58198f",
+                  "new_state": "NoUpdate"
+                },
+                {
+                  "timestamp": 1642198181276,
+                  "new_state": "Prepared"
+                },
+                {
+                  "timestamp": 1642198181276,
+                  "new_state": "Started"
+                }
+              ],
+              <row id="row-response-task-run-state-log">
+                <entry><codeph>state_log</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-ruuid">
+                <entry><codeph>ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-parent-pipeline-fqid">
+                <entry><codeph>parent_pipeline_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-execution-timeout">
+                <entry><codeph>execution_timeout</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "/PlatformQA/Poornima/4.28 Ultra",
+              <row id="row-response-task-run-path-id">
+                <entry><codeph>path_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-plex-snode-id">
+                <entry><codeph>plex_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              "error": {},
+              <row id="row-response-task-run-...">
+                <entry><codeph>...</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "/PlatformQA/shared/Groundplex_poornima",
+              <row id="row-response-task-run-plex-path">
+                <entry><codeph>plex_path</codeph></entry>
+                <entry>string</entry>
+                <entry>The path to the Snaplex where the Task ran. ???
+                  <p></p>
+                </entry>
+              </row>
+
+              "": "61e1d9166416240934be9d20",
+              <row id="row-response-task-run-invoker-snode-id">
+                <entry><codeph>invoker_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "/PlatformQA/Poornima/4.28 Ultra",
+              <row id="row-response-task-run-invoker-path-id">
+                <entry><codeph>invoker_path_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "Groundplex_poornima/ip-172-27-177-152",
+              <row id="row-response-task-run-snaplex-label">
+                <entry><codeph>snaplex_label</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "task": {
+                  "start": {
+                    "_snaptype_datetime": "2022-01-14T22:09:25.532Z"
+                  },
+                  "end": {
+                    "_snaptype_datetime": "9999-12-31T23:59:59.999Z"
+                  }
+                }
+              },
+              <row id="row-response-task-run-platform-globals">
+                <entry><codeph>platform_globals</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-init-xid">
+                <entry><codeph>init_xid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-nested-pipeline">
+                <entry><codeph>nested_pipeline</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the Task run is for a nested Pipeline and was triggered by the Task running the parent Pipeline. ???</entry>
+              </row>
+
+              <row id="row-response-task-run-project-snode-id">
+                <entry><codeph>project_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-class-version">
+                <entry><codeph>class_version</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-warning-list">
+                <entry><codeph>warning_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-root-ruuid">
+                <entry><codeph>root_ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-start-ms">
+                <entry><codeph>cc_start_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              <row id="row-response-task-run-poll-time-stamp">
+                <entry><codeph>poll_time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              "": {
+                "61c28c4ec9c443425b86a9b7": "art:a8ca59d65d41c5ae9ec270cc6140a059301f4cbe489fa5c8e64698310310b1d5"
+              },
+              <row id="row-response-task-run-artifacts-map">
+                <entry><codeph>artifacts_map</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "fcf7d226-d0f6-4b64-8710-4476711e4d0b": "11111111-1111-1111-1111-000000000000"
+              },
+              <row id="row-response-task-run-artifact-snap-id-map">
+                <entry><codeph>artifact_snap_id_map</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "61e1f3e3048673663f58198f",
+              <row id="row-response-task-run-ccid">
+                <entry><cccidph>...</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-delivery-options">
+                <entry><codeph>delivery_options</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "queuedCount": 0,
+                "totalSnapDelay": 0,
+                "idleTime": 8656787338429,
+                "memoryOverhead": 0,
+                "inFlightCount": 0,
+                "startTime": 15135302099088213
+              },
+              <row id="row-response-task-run-metrics">
+                <entry><codeph>metrics</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-expire-time">
+                <entry><codeph>expire_time</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              "": "Groundplex_poornima",
+              <row id="row-response-task-run-runtime-label">
+                <entry><codeph>runtime_label</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-cc-stop-ms">
+                <entry><codeph>cc_stop_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>??? in milliseconds.</entry>
+              </row>
+
+              "": "/PlatformQA/Poornima/4.28 Ultra/Flag Ultra 1",
+              <row id="row-response-task-run-root-path">
+                <entry><codeph>root_path</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              "": "ultra test 1",
+              <row id="row-response-task-run-invoker-name">
+                <entry><codeph>invoker_name</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-error-fp-list">
+                <entry><codeph>error_fp_list</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "immediate_mode": true,
+                "is_suggest": false,
+                "connect_views_to_relay": false
+              },
+              <row id="row-response-task-run-flags">
+                <entry><codeph>flags</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "key1": {
+                  "captured": true,
+                  "value": "testing123"
+                }
+              },
+              <row id="row-response-task-run-captured-env-map">
+                <entry><codeph>captured_env_map</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              "": {
+                "path_id": "/PlatformQA/Poornima/4.28 Ultra/ultra test 1",
+                "job_alias": null,
+                "masters": [
+                  {
+                    "uri": "https://ip-172-27-187-230.us-west-2.compute.internal:8084",
+                    "certificate": "...",
+                    "cc_id": "61e1f3edbd0dd3e958b5f857"
+                  }
+                ],
+                "max_in_flight": 200
+              },
+              <row id="row-response-task-run-llfeed-context">
+                <entry><codeph>llfeed_context</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-documents-count">
+                <entry><codeph>documents_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+
+              <row id="row-response-task-run-resolution">
+                <entry><codeph>resolution</codeph></entry>
+                <entry>string ???</entry>
+                <entry>???</entry>
+              </row>
+
             </tbody>
           </tgroup>
         </table>
@@ -147,4 +1177,6 @@ Last refreshed: 20211201
                            Argument('ruuid', Argument.URL),
                            Argument('level', Argument.QS)
                        ])
+
+Jiras: PLAT-8417
 -->

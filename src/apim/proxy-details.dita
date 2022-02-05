@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxy-details">
+
+  <title>Proxy Details</title>
+
+  <shortdesc>View and edit the proxy details, choose Snaplexes to host your proxy, and apply security policies.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Viewing the Proxy Settings</title>
+
+      <p>To view the settings of a proxy,
+        <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left" outputclass="img-medium"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/>
+            <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
+          </li>
+          <li><ph conkeyref="k-apim/ph-click-proxy-name"/></li>
+        </ol>
+      </p>
+
+      <p>The <uicontrol>Proxy Details</uicontrol> tab displays the details of the selected proxy.
+        <div outputclass="modalimg"><image href="../img/apim-proxy-details.png" placement="break" align="left" outputclass="img-medium"><alt>Proxy settings</alt></image></div>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Editing the Proxy Settings</title>
+
+      <p>To edit the <uicontrol>Description</uicontrol> and <uicontrol>Tags</uicontrol> of the proxy, click <uicontrol>Edit Details</uicontrol>.</p>
+
+      <div outputclass="modalimg"><image href="../img/apim-proxy-details-edit-details.png" placement="break" align="left" outputclass="img-medium"><alt>Edit Details dialog</alt></image></div>
+
+      <note type="note"><ph conkeyref="k-apim/ph-only-description-tags"/></note>
+    </section>
+
+
+    <section>
+      <title>Choosing Proxy Hosts</title>
+
+      <p>To choose which Snaplexes host your proxy, click <uicontrol>View URL(s)</uicontrol> under <uicontrol>Proxy Hosts</uicontrol>.</p>
+
+      <div outputclass="modalimg"><image href="../img/apim-proxy-details-hosts.png" placement="break" align="left" outputclass="img-medium"><alt>Proxy Hosts dialog</alt></image></div>
+
+      <p>The suffixes of the URLs are the proxy's <uicontrol>Hostname</uicontrol> setting, which includes the <uicontrol>Proxy Name</uicontrol>.</p>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2463301901/Proxies+for+APIs">
+      <linktext>Proxies for APIs</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">
+      <linktext>Proxy Security Policies</linktext>
+    </link>
+  </related-links>
+
+</concept>

@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -115,6 +113,8 @@
 
 
 <!--
-  Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
-  ???
+Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
+???
+
+Jiras: PLAT-8417
 -->

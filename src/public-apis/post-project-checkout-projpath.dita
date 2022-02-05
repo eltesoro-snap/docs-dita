@@ -3,7 +3,7 @@
 <concept xml:lang="en-US" id="post-project-checkout-projpath">
 
   <title>POST /project/checkout/{project_path}</title>
-  <titlealts><navtitle>POST /project/checkout/{projpath}</navtitle></titlealts>
+  <titlealts><navtitle>POST /project/checkout/{project_path}</navtitle></titlealts>
 
   <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
 
@@ -28,11 +28,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-write-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-write-access"/></li>
+      </ul>
     </section>
 
 
@@ -143,4 +141,6 @@ Last refreshed: 20211201
                            Argument('project_path', Argument.URL),
                            Argument('ref', Argument.BODY),
                        ])
+
+Jiras: PLAT-8417
 -->

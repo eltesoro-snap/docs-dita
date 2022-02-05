@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -96,8 +94,17 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "daily_limit": ...,
+              "organization": "...",
+              "concurrent_call_in_progress": ...,
+              "concurrent_limit": ...,
+              "daily_call_used": ...
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
         <table>
@@ -107,10 +114,34 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row id="row-response-task-run-daily-limit">
+                <entry><codeph>daily_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+              <row id="row-response-task-run-organization">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+              <row id="row-response-task-run-concurrent-call-in-progress">
+                <entry><codeph>concurrent_call_in_progress</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+              <row id="row-response-task-run-concurrent-limit">
+                <entry><codeph>concurrent_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+              <row id="row-response-task-run-daily-call-used">
+                <entry><codeph>daily_call_used</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -140,4 +171,6 @@ Last refreshed: 20211201
                            Argument('organization', Argument.URL),
                            Argument('date_time', Argument.QS)
                        ])
+
+Jiras: PLAT-8417
 -->

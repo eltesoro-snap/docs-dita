@@ -21,11 +21,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -150,15 +148,7 @@
                 <entry>integer</entry>
                 <entry>Returns information about Task runs before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
               </row>
-              <row>
-                <entry><codeph>limit</codeph></entry>
-                <entry>integer</entry>
-                <entry><ph conkeyref="k-api/ph-desc-limit"/>
-                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p><ph conkeyref="k-misc/ph-valid"/> 0 to 1,000 ???</p>
-                  <p><ph conkeyref="k-misc/ph-default"/> 10 ???</p>
-                </entry>
-              </row>
+              <row conkeyref="k-api/row-query-param-runtime-limit"><entry/></row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
             </tbody>
           </tgroup>
@@ -188,8 +178,16 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+        {
+          "response_map": {
+            "entries": [ ... ],
+            "total": ...,
+            "limit": ...,
+            "offset": ...
+          },
+          "http_status_code": 200
+        }
         </codeblock>
 
         <table>
@@ -199,10 +197,13 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row conkeyref="k-api/row-response-entries-task-run"><entry/></row>
+              <row conkeyref="k-api/row-response-total"><entry/></row>
+              <row conkeyref="k-api/row-response-limit"><entry/></row>
+              <row conkeyref="k-api/row-response-offset"><entry/></row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -242,4 +243,6 @@ Last refreshed: 20211201
                            Argument('invoker', Argument.QS),
                            Argument('project_path', Argument.QS),
                            ])
+
+Jiras: PLAT-8417
 -->

@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -126,4 +124,6 @@ Last refreshed: 20211201
                            Argument('name', Argument.URL),
                            Argument('members', Argument.BODY, Argument.LIST)
                        ])
+
+Jiras: PLAT-8417
 -->

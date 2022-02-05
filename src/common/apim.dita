@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apim">
+
+  <title>Conrefs: API Manager</title>
+
+  <conbody>
+
+    <section>
+      <title>Requirements</title>
+
+      <!-- <ul conkeyref="k-apim/ul-label-rules"><li/></ul> -->
+      <ul id="ul-label-rules">
+        <li>Must be unique.</li>
+        <li>Must begin with alphanumeric characters A-Z, a-z, or 0-9.</li>
+        <li>Cannot contain |, &lt;, &gt;, [, ], {, }, #, ?, /, and \.</li>
+        <li>Must be no more than 256 characters. If the name includes double-byte characters, the maximum length is shorter.</li>
+      </ul>
+
+    </section>
+
+
+    <section>
+      <title>Navigation</title>
+
+      <!-- <ph conkeyref="k-apim/ph-go-to-api-manager"/> -->
+      <ph id="ph-go-to-api-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>API Manager</uicontrol></menucascade>.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-go-to-portal-manager"/> -->
+      <ph id="ph-go-to-portal-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>Portal Manager</uicontrol></menucascade>.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-go-to-subscription-manager"/> -->
+      <ph id="ph-go-to-subscription-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>Subscription Manager</uicontrol></menucascade>.</ph>
+
+    </section>
+
+
+    <section>
+      <title>Proxies</title>
+
+      <!-- <ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/> -->
+      <ph id="ph-go-to-apis-proxies-tab">In the API Manager, go to the <uicontrol>APIs &amp; Proxies</uicontrol> tab.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-filter-for-proxies"/> -->
+      <ph id="ph-filter-for-proxies">Set <uicontrol>Filter by Type</uicontrol> to <uicontrol>Proxy</uicontrol> and click <uicontrol>Search</uicontrol>.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-click-proxy-name"/> -->
+      <ph id="ph-click-proxy-name">Click the proxy's name in the list.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-click-endpoint-name"/> -->
+      <ph id="ph-click-endpoint-name">Click the endpoint's name in the list.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-click-edit-details"/> -->
+      <ph id="ph-click-edit-details">To edit the proxy details, click the <uicontrol>Edit Details</uicontrol> button.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/> -->
+      <ph id="ph-go-to-proxy-endpoints-tab">In the API Manager, open a proxy for editing, then go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-only-description-tags"/> -->
+      <ph id="ph-only-description-tags">You can update only the <uicontrol>Description</uicontrol> and <uicontrol>Tags</uicontrol> of the proxy.</ph>
+
+      <!-- <ph conkeyref="k-apim/ph-only-url-methods"/> -->
+      <ph id="ph-only-url-methods">You can update only the <uicontrol>URL</uicontrol> and <uicontrol>HTTP Method(s)</uicontrol> of the endpoint.</ph>
+
+      <!-- <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol> -->
+      <ol id="ol-go-to-list-proxies">
+        <li><ph conref="#./ph-go-to-api-manager"/></li>
+        <li><ph conref="#./ph-go-to-apis-proxies-tab"/></li>
+        <li><ph conref="#./ph-filter-for-proxies"/></li>
+      </ol>
+
+      <!-- <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol> -->
+      <ol id="ol-go-to-list-endpoints">
+        <li><ph conref="#./ph-go-to-api-manager"/></li>
+        <li><ph conref="#./ph-go-to-apis-proxies-tab"/></li>
+        <li><ph conref="#./ph-filter-for-proxies"/></li>
+        <li><ph conref="#./ph-click-proxy-name"/></li>
+        <li>Go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</li>
+      </ol>
+
+
+    </section>
+
+
+    <section>
+      <title>Templates</title>
+
+      <!-- <ph conkeyref="k-apim/ph-FOO"/> -->
+      <ph id="ph-FOO">BAR</ph>
+
+    </section>
+
+  </conbody>
+
+</concept>

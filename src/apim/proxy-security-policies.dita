@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxy-security-policies">
+
+  <title>Proxy Security Policies</title>
+
+  <shortdesc>Manage and apply security policies for proxies and endpoints.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager#APIPolicyManager-SupportedAPIPolicies">Supported security policies</xref> for proxies and endpoints are the same as those for APIs and API Versions.</p>
+
+      <p>To apply security policies to the proxy or to the endpoints, editing the proxy settings or the endpoint settings.</p>
+
+      <note type="note">A proxy and its endpoints can have a maximum of one enabled policy of each policy type. If both the proxy and the endpoint have defined policies of the same type, the endpoint policy has precedence over the proxy policy.</note>
+
+      <p>Learn more about each policy type and its settings: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager#APIPolicyManager-SupportedAPIPolicies">Supported API Policies</xref></p>
+    </section>
+
+
+    <section>
+      <title>Viewing Security Policies</title>
+
+      <p>To view the list of security policies that are defined for a proxy or for an endpoint, go to the details page of the proxy or the endpoint.</p>
+      <ul>
+        <li>To go to the proxy details page,
+          <ol>
+            <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/>
+              <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
+            </li>
+            <li><ph conkeyref="k-apim/ph-click-proxy-name"/></li>
+          </ol>
+        </li>
+        <li>To go to the endpoint details page,
+          <ol>
+            <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/>
+              <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
+            </li>
+            <li><ph conkeyref="k-apim/ph-click-endpoint-name"/></li>
+          </ol>
+        </li>
+      </ul>
+
+      <p>The defined security policies are listed in the table at the bottom.</p>
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">Field</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><uicontrol>Policy</uicontrol></entry>
+              <entry>The name of the policy instance.</entry>
+            </row>
+            <row>
+              <entry><uicontrol>Type</uicontrol></entry>
+              <entry>The type of the security policy.</entry>
+            </row>
+            <row>
+              <entry><uicontrol>Owner</uicontrol></entry>
+              <entry>The owner of the policy instance, typically the creator of the policy instance.</entry>
+            </row>
+            <row>
+              <entry><uicontrol>Updated</uicontrol></entry>
+              <entry>The datetime when the policy was last updated.</entry>
+            </row>
+            <row>
+              <entry><uicontrol>Status</uicontrol></entry>
+              <entry>Indicates whether the policy is <uicontrol>Enabled</uicontrol> or <uicontrol>Disabled</uicontrol>.</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+
+    <section>
+      <title>Adding a Policy</title>
+
+      <p>To add and apply security policies to your proxy or endpoint, click the plus icon (<image conkeyref="k-icons/image-add-icon"/>) and choose a policy type.</p>
+
+      <p>The fields in the <wintitle>Add Policy</wintitle> dialog vary according to the policy type.</p>
+    </section>
+
+
+    <section>
+      <title>Editing a Policy</title>
+
+      <p>To edit a policy, click its name on the list.</p>
+
+      <p>The fields in the <wintitle>Edit Policy</wintitle> dialog vary according to the policy type.</p>
+    </section>
+
+
+    <section>
+      <title>Viewing the Hierarchy of Policies</title>
+
+      <p>To view the hierarchy of the applied policies, click <uicontrol>View Applied Policies</uicontrol> and go to the <uicontrol>Hierarchy</uicontrol> tab.</p>
+
+      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-policies-hierarchy.png" placement="break" align="left" outputclass="img-medium"><alt>Hierarchy tab in the Related Policies dialog of an endpoint</alt></image></div>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager">
+      <linktext>API Policy Manager</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager#APIPolicyManager-SupportedAPIPolicies">
+      <linktext>Supported API Policies</linktext>
+    </link>
+  </related-links>
+
+</concept>

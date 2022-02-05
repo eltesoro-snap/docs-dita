@@ -35,11 +35,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -93,7 +91,7 @@
                 <entry><codeph>filter_asset</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns activities related to the specified asset.
-                  Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>. ??? <!-- Found in the live docs. -->
+                  Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>. ??? <!-- Found in the old docs. -->
                   <p><ph conkeyref="k-misc/ph-example"/> <codeph>filter_asset_type=File&amp;filter_asset=Sales2019July.csv</codeph></p>
                 </entry>
               </row>
@@ -145,7 +143,7 @@
               <row>
                 <entry><codeph>filter_snaplogic_admin_update</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
+                <entry>If <codeph>true</codeph>, returns activities that were initiated by a SnapLogic process.</entry>
               </row>
               <row>
                 <entry><codeph>start</codeph></entry>
@@ -157,15 +155,7 @@
                 <entry>integer</entry>
                 <entry>Returns activities that occurred before the specified timestamp. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
               </row>
-              <row>
-                <entry><codeph>limit</codeph></entry>
-                <entry>integer</entry>
-                <entry><ph conkeyref="k-api/ph-desc-limit"/>
-                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p><ph conkeyref="k-misc/ph-valid"/> 0 to 10,000 ???</p>
-                  <p><ph conkeyref="k-misc/ph-default"/> 100 ???</p>
-                </entry>
-              </row>
+              <row conkeyref="k-api/row-query-param-limit"><entry/></row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
             </tbody>
           </tgroup>
@@ -474,4 +464,6 @@ Last refreshed: 20211223
                            Argument('limit', Argument.QS, Argument.INT),
                            Argument('offset', Argument.QS, Argument.INT)
                        ])
+
+Jiras: PLAT-8417
 -->

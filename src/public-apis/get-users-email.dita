@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -83,21 +81,21 @@
             "last_name": "...",
             "first_name": "...",
             "password_last_updated": "...",
-            "password_expired": false,
-            "allow_password_login": true,
+            "password_expired": ...,
+            "allow_password_login": ...,
             "organizations": [
               {
-                "administrator": false,
+                "administrator": ...,
                 "id": "...",
-                "name": "orgname"
+                "name": "..."
               },
               ...
             ],
             "basic_access": "...",
-            "ui_access": true,
-            "user_locked_out": false,
-            "service_account": false,
-            "email": "user@example.com"
+            "ui_access": ...,
+            "user_locked_out": ...,
+            "service_account": ...,
+            "email": "..."
           }
         </codeblock>
 
@@ -121,7 +119,7 @@
               <row>
                 <entry><codeph>password_last_updated</codeph></entry>
                 <entry>string</entry>
-                <entry>When the user's password was last updated. <ph conkeyref="k-misc/ph-format-utc"/></entry>
+                <entry>When the user's password was last changed. <ph conkeyref="k-misc/ph-format-utc"/></entry>
               </row>
               <row>
                 <entry><codeph>password_expired</codeph></entry>
@@ -194,4 +192,6 @@ Last refreshed: 20211201
                            Argument('email', Argument.URL),
                            Argument('caller', Argument.USER_ID)
                        ])
+
+Jiras: PLAT-8417
 -->

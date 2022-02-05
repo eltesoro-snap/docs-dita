@@ -12,18 +12,16 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">retrieves the pipeline log information for the specified organization.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves the Pipeline log information for the specified Org.</ph></p>
     </section>
 
 
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -66,23 +64,6 @@
                 <entry><ph conkeyref="k-misc/ph-reqd"/> Returns log information about the task with the specified runtime ID.</entry>
               </row>
               <row>
-                <entry><codeph>cc_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-              <row>
-                <entry><codeph>log_type</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns logs of the specified type.
-                  <p><ph conkeyref="k-misc/ph-valid"/> ???
-                    <ul>
-                      <li></li>
-                    </ul>
-                  </p>
-                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>???</codeph></p>
-                </entry>
-              </row>
-              <row>
                 <entry><codeph>log_level</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns log information at the specified level of detail.
@@ -96,6 +77,24 @@
                   <p><ph conkeyref="k-misc/ph-default"/> <codeph>info</codeph></p>
                 </entry>
               </row>
+              <row conkeyref="k-api/row-query-param-limit"><entry/></row>
+
+              <!-- The following are no longer used because they are not used in the call to get_pipeline_logs_from_cc: ccid (JCC node ID), logtype, start, end, offset.
+                    self.log_manager.get_pipeline_logs_from_cc(user_id, ruuid, log_level, limit=limit)
+                   Therefore, no pagination for /log.
+              <row>
+                <entry><codeph>cc_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the JCC node.</entry>
+              </row>
+              <row>
+                <entry><codeph>log_type</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns logs of the specified type.
+                  <p><ph conkeyref="k-misc/ph-valid"/> ??? </p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>???</codeph></p>
+                </entry>
+              </row>
               <row>
                 <entry><codeph>start</codeph></entry>
                 <entry>integer</entry>
@@ -106,16 +105,9 @@
                 <entry>integer</entry>
                 <entry>Returns log entries before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
               </row>
-              <row>
-                <entry><codeph>limit</codeph></entry>
-                <entry>integer</entry>
-                <entry><ph conkeyref="k-api/ph-desc-limit"/>
-                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p><ph conkeyref="k-misc/ph-valid"/> 0 to 10,000 ???</p>
-                  <p><ph conkeyref="k-misc/ph-default"/> 100 ???</p>
-                </entry>
-              </row>
               <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+              -->
+
             </tbody>
           </tgroup>
         </table>
@@ -144,8 +136,41 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!--
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "extra": {},
+              "total": ...,
+              "entries": [
+                {
+                  "_source": {
+                    "msg": "...",
+                    "lvl": "...",
+                    "ts": "...",
+                    "prc": "...",
+                    "fi": "..."
+                  }
+                },
+                ...
+                {
+                  "_source": {
+                    "xid": "...",
+                    "snrd": "...",
+                    "prc": "...",
+                    "linid": "...",
+                    "ts": "...",
+                    "plrd": "...",
+                    "fi": "...",
+                    "msg": "...",
+                    "lvl": "...",
+                    "snlb": "...",
+                    "exc": "..."
+                  }
+                }
+              ]
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
         <table>
@@ -155,10 +180,47 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row>
+                <entry><codeph>extra</codeph></entry>
+                <entry>Object</entry>
+                <entry>???</entry>
+              </row>
+              <row>
+                <entry><codeph>total</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of log entries returned.</entry>
+              </row>
+              <row>
+                <entry><codeph>entries</codeph></entry>
+                <entry>array of Objects</entry>
+                <entry>Metadata about the source of each log entry.
+                  <ul>
+                    <li><codeph>msg</codeph>. The message in the log.</li>
+                    <li><codeph>lvl</codeph>. The type of the log entry. Possible values:
+                      <ul>
+                        <li><codeph>INFO</codeph></li>
+                        <li><codeph>WARN</codeph></li>
+                        <li><codeph>ERROR</codeph></li>
+                      </ul>
+                    </li>
+                    <li><codeph>ts</codeph>. The timestamp of the entry. Format: UTC</li>
+                    <li><codeph>prc</codeph>. The process that was logged.</li>
+                    <li><codeph>fi</codeph>. The line in the code that generated the log entry.</li>
+                  </ul>
+                  <p>If <codeph>lvl</codeph> is <codeph>ERROR</codeph>:</p>
+                  <ul>
+                    <li><codeph>xid</codeph>. The transaction ID.</li>
+                    <li><codeph>snrd</codeph>. The Snap runtime ID.</li>
+                    <li><codeph>linid</codeph>. ???</li>
+                    <li><codeph>plrd</codeph>. The Pipeline runtime ID.</li>
+                    <li><codeph>snlb</codeph>. The Snap label or name.</li>
+                    <li><codeph>exc</codeph>. Any exception that occurred.</li>
+                  </ul>
+                </entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -194,4 +256,6 @@ Last refreshed: 20211201
                            Argument('offset', Argument.QS, Argument.INT),
                            Argument('limit', Argument.QS, Argument.INT)
                        ])
+
+Jiras: PLAT-8417
 -->

@@ -12,16 +12,24 @@
     </topichead>
 
     <topichead collection-type="family">
-      <topicmeta><navtitle>Asset APIs</navtitle></topicmeta>
+      <topicmeta><navtitle>Asset ACL APIs</navtitle></topicmeta>
       <topicref href="post-assetapi-acl-projpath.dita"/>
-      <topicref href="delete-assetapi-acl-projpath.dita"/>
       <topicref href="get-assetapi-acl-projpath.dita"/>
+      <topicref href="delete-assetapi-acl-projpath.dita"/>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Project APIs</navtitle></topicmeta>
+      <topicref href="post-project-projpath.dita"/>
+      <topicref href="put-project-projpath.dita"/>
     </topichead>
 
     <topichead collection-type="family">
       <topicmeta><navtitle>GitHub APIs</navtitle></topicmeta>
       <topicref href="post-project-checkout-projpath.dita"/>
       <topicref href="post-project-pull-projpath.dita"/>
+      <topicref href="post-ghwebhook.dita"/>
+      <topicref href="get-repo-status-projpath.dita"/>
     </topichead>
 
     <topichead collection-type="family">
@@ -43,6 +51,7 @@
     <topichead collection-type="family">
       <topicmeta><navtitle>Project Migration APIs</navtitle></topicmeta>
       <topicref href="post-project-migrate-projpath.dita"/>
+      <topicref href="get-migrate-status-token.dita"/>
     </topichead>
 
     <topichead collection-type="family">
@@ -60,29 +69,27 @@
 
     <topichead collection-type="family">
       <topicmeta><navtitle>Snaplex Version APIs</navtitle></topicmeta>
-      <topicref href="get-snaplex-version.dita"/>
-      <topicref href="get-snaplex-version-latest.dita"/>
       <topicref href="post-snaplex-version-plexpath.dita"/>
       <topicref href="post-snaplex-version-latest-plexpath.dita"/>
+      <topicref href="get-snaplex-version.dita"/>
+      <topicref href="get-snaplex-version-latest.dita"/>
     </topichead>
 
     <topichead collection-type="family">
-      <topicmeta><navtitle>User Management APIs</navtitle></topicmeta>
-      <topicref href="get-users-email.dita"/>
+      <topicmeta><navtitle>User and Group Management APIs</navtitle></topicmeta>
       <topicref href="post-users.dita"/>
+      <topicref href="get-users-email.dita"/>
       <topicref href="put-users-email.dita"/>
       <topicref href="delete-users-email.dita"/>
-    </topichead>
-
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Group Management APIs</navtitle></topicmeta>
+      <topicref href="post-groups.dita"/>
       <topicref href="get-groups-org.dita"/>
       <topicref href="get-groups-org-group.dita"/>
-      <topicref href="post-groups.dita"/>
       <topicref href="patch-groups-org-group.dita"/>
       <topicref href="put-groups-org-group.dita"/>
       <topicref href="delete-groups-org-group.dita"/>
     </topichead>
+
+    <topicref href="api-perms-vs-manager-perms.dita"/>
 
   </topicref>
 

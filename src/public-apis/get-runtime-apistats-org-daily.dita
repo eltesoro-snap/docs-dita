@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -96,8 +94,18 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "top_tasks": [ ... ],
+              "task_count": ...,
+              "daily_call_used": ...,
+              "date": "...",
+              "organization": "...",
+              "daily_call_available": ...
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
         <table>
@@ -107,10 +115,37 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row>
+                <entry><codeph>top_tasks</codeph></entry>
+                <entry>array</entry>
+                <entry>???</entry>
+              </row>
+              <row>
+                <entry><codeph>task_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of tasks that completed ??? in the past 24 hours / during the current calendar day ???.</entry>
+              </row>
+              <row>
+                <entry><codeph>daily_call_used</codeph></entry>
+                <entry>integer</entry>
+                <entry>???</entry>
+              </row>
+              <row>
+                <entry><codeph>date</codeph></entry>
+                <entry>???</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+              <row conkeyref="k-api/row-response-organization"><entry/></row>
+              <row>
+                <entry><codeph>daily_call_available</codeph></entry>
+                <entry>integer</entry>
+                <entry>The maximum number of triggered tasks allowed within a 24-hour period / within a calendar day ???.</entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -140,4 +175,6 @@ Last refreshed: 20211201
                            Argument('organization', Argument.URL),
                            Argument('date', Argument.QS)
                        ])
+
+Jiras: PLAT-8417
 -->

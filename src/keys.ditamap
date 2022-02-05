@@ -6,6 +6,7 @@
 
   <!-- Conrefs -->
   <keydef keys="k-api"     href="common/api.dita#api"/>
+  <keydef keys="k-apim"    href="common/apim.dita#apim"/>
   <keydef keys="k-icons"   href="common/icons.dita#icons"/>
   <keydef keys="k-misc"    href="common/misc.dita#misc"/>
   <keydef keys="k-urls"    href="common/urls.dita#urls"/>

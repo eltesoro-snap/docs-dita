@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -68,12 +66,12 @@
             "first_name" : "...",
             "last_name" : "...",
             "organization" : "...",
-            "administrator" : true,
-            "allow_password_login" : true,
-            "utility" : true,
-            "ui_access" : true,
-            "create_home_directory" : true,
-            "email_notification" : true,
+            "administrator" : ...,
+            "allow_password_login" : ...,
+            "utility" : ...,
+            "ui_access" : ...,
+            "create_home_directory" : ...,
+            "email_notification" : ...,
             "certificate" : "...",
             "file_handle" : "..."
           }
@@ -88,66 +86,18 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
-              <row>
-                <entry><codeph>email</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>first_name</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>last_name</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>organization</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>administrator</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>allow_password_login</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>utility</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>ui_access</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>create_home_directory</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>email_notification</codeph></entry>
-                <entry>Boolean</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>certificate</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>file_handle</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
+              <row conkeyref="k-api/row-request-user-email"><entry/></row>
+              <row conkeyref="k-api/row-request-user-first-name"><entry/></row>
+              <row conkeyref="k-api/row-request-user-last-name"><entry/></row>
+              <row conkeyref="k-api/row-request-user-org"><entry/></row>
+              <row conkeyref="k-api/row-request-user-administrator"><entry/></row>
+              <row conkeyref="k-api/row-request-user-allow-password-login"><entry/></row>
+              <row conkeyref="k-api/row-request-user-utility"><entry/></row>
+              <row conkeyref="k-api/row-request-user-ui-access"><entry/></row>
+              <row conkeyref="k-api/row-request-user-create-home-directory"><entry/></row>
+              <row conkeyref="k-api/row-request-user-email-notification"><entry/></row>
+              <row conkeyref="k-api/row-request-user-certificate"><entry/></row>
+              <row conkeyref="k-api/row-request-user-file-handle"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -202,4 +152,6 @@ Last refreshed: 20211223
                            Argument('certificate', Argument.BODY),
                            Argument('file_handle', Argument.BODY),
                        ])
+
+Jiras: PLAT-8417
 -->

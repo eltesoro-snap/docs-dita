@@ -21,11 +21,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -98,8 +96,60 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "config": "https://elastic.snaplogicdev.com/api/1/rest/plex/config/myOrg/shared/Cloud?expires=1642213187&amp;user_id=myUsername%40snaplogic.com&amp;_sl_authproxy_key=...",
+              "pkgs": {
+                "plex-rpm": {
+                  "comment": "4.28 RC Linux/RPM",
+                  "status": "active",
+                  "kind": "plex-rpm",
+                  "signatures": {
+                    "md5": "..."
+                  },
+                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033-x86_64.rpm",
+                  "driver": null,
+                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033-x86_64.rpm?versionId=...",
+                  "version": "4.28_rc-11033",
+                  "create_time": "2022-01-14T17:12:59.468000+00:00",
+                  "_id": "...",
+                  "compatible_version": "4.28_rc-11033"
+                },
+                "plex-deb": {
+                  "comment": "4.28 RC Linux/DEB",
+                  "status": "active",
+                  "kind": "plex-deb",
+                  "signatures": {
+                    "md5": "..."
+                  },
+                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033-x86_64.deb",
+                  "driver": null,
+                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033-x86_64.deb?versionId=...",
+                  "version": "4.28_rc-11033",
+                  "create_time": "2022-01-14T17:13:43.145000+00:00",
+                  "_id": "...",
+                  "compatible_version": "4.28_rc-11033"
+                },
+                "plex-win": {
+                  "comment": "4.28 RC Windows/ZIP",
+                  "status": "active",
+                  "kind": "plex-win",
+                  "signatures": {
+                    "md5": "..."
+                  },
+                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033.zip",
+                  "driver": null,
+                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033.zip?versionId=...",
+                  "version": "4.28_rc-11033",
+                  "create_time": "2022-01-14T17:13:54.609000+00:00",
+                  "_id": "...",
+                  "compatible_version": "4.28_rc-11033"
+                }
+              }
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
         <table>
@@ -109,10 +159,19 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row>
+                <entry>config</entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+              <row>
+                <entry>pkgs</entry>
+                <entry>Object</entry>
+                <entry>Contains the configuration for each node??? to configure in your Groundplex. ???</entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -141,4 +200,6 @@ Last refreshed: 20211201
                            Argument('plex_path', Argument.URL),
                            Argument('expire_hours', Argument.QS, Argument.INT)
                        ])
+
+Jiras: PLAT-8417
 -->

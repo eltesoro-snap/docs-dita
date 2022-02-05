@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxy-endpoint-details">
+
+  <title>Proxy Endpoint Details</title>
+
+  <shortdesc>View and edit the endpoint details and apply security policies.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Viewing the Proxy Endpoint Settings</title>
+
+      <p>To view the settings of a proxy endpoint,
+        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoints-list-checkbox.png" placement="break" align="left" outputclass="img-medium"><alt>The Proxy Endpoints tab of the API Manager</alt></image></div>
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/>
+            <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
+          </li>
+          <li><ph conkeyref="k-apim/ph-click-endpoint-name"/></li>
+        </ol>
+      </p>
+
+      <p>The <uicontrol>Proxy Endpoint Details</uicontrol> tab displays the details of the selected proxy.
+        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-details.png" placement="break" align="left" outputclass="img-medium"><alt>Proxy endpoint settings</alt></image></div>
+      </p>
+    </section>
+
+
+    <section>
+      <title>Editing the Proxy Endpoint Settings</title>
+
+      <p>To edit the <uicontrol>URL</uicontrol> and <uicontrol>HTTP Method(s)</uicontrol> of the endpoint, click <uicontrol>Edit Details</uicontrol>.</p>
+
+      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-edit.png" placement="break" align="left" outputclass="img-medium"><alt>Edit Detail dialog for an endpoint</alt></image></div>
+
+      <note type="note"><ph conkeyref="k-apim/ph-only-url-methods"/></note>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2463301901/Proxies+for+APIs">
+      <linktext>Proxies for APIs</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">
+      <linktext>Proxy Security Policies</linktext>
+    </link>
+  </related-links>
+
+</concept>

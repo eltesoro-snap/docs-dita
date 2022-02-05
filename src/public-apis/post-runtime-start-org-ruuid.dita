@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-write-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-write-access"/></li>
+      </ul>
     </section>
 
 
@@ -105,4 +103,6 @@ Last refreshed: 20211201
                            Argument('organization', Argument.URL),
                            Argument('ruuid', Argument.URL)
                        ])
+
+Jiras: PLAT-8417
 -->

@@ -2,8 +2,8 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="delete-assetapi-acl-projpath">
 
-  <title>DELETE /assetapi/acl/{projpath}</title>
-  <titlealts><navtitle>DELETE /assetapi/acl/{projpath}</navtitle></titlealts>
+  <title>DELETE /assetapi/acl/{project_path}</title>
+  <titlealts><navtitle>DELETE /assetapi/acl/{project_path}</navtitle></titlealts>
 
   <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
 
@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/> ???</li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -31,7 +29,7 @@
       <title>Request</title>
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">DELETE</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{projpath}</ph>?{query_parameters}
+        <ph id="ph-method">DELETE</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_path}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -61,7 +59,7 @@
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-request-grant-type"><entry/></row>
-              <row conkeyref="k-api/row-request-grantee"><entry/></row>
+              <row conkeyref="k-api/row-request-grantee-revoke"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -84,6 +82,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -116,4 +115,6 @@ Last refreshed: 20211223
                            Argument(name='granter', arg_from=Argument.USER_ID),
                        ],
                        trailing_optional=True)
+
+Jiras: PLAT-8417
 -->

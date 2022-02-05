@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
     </section>
 
 
@@ -127,4 +125,6 @@ Last refreshed: 20211201
                            Argument('plex_path', Argument.URL),
                            Argument('version', Argument.BODY),
                        ])
+
+Jiras: PLAT-8417
 -->

@@ -51,15 +51,15 @@
       <ul>
 
         <!-- <ph conkeyref="k-api/ph-prereq-read-access-..."/> -->
-        <li><ph id="ph-prereq-read-access">Read access to the assets requested.</ph></li>
-        <li><ph id="ph-prereq-read-access-src-proj">Read access to the source Project.</ph></li>
+        <li><ph id="ph-prereq-read-access">Read access to the assets requested</ph></li>
+        <li><ph id="ph-prereq-read-access-src-proj">Read access to the source Project</ph></li>
 
         <!-- <ph conkeyref="k-api/ph-prereq-write-access-..."/> -->
-        <li><ph id="ph-prereq-write-access">Write access to the assets to be added or updated.</ph></li>
-        <li><ph id="ph-prereq-write-access-tgt-org">Write access to the target Org.</ph></li>
+        <li><ph id="ph-prereq-write-access">Write access to the assets to be added or updated</ph></li>
+        <li><ph id="ph-prereq-write-access-tgt-org">Write access to the target Org</ph></li>
 
         <!-- <ph conkeyref="k-api/ph-prereq-org-admin-role"/> -->
-        <li><ph id="ph-prereq-org-admin-role">Org Admin permissions.</ph></li>
+        <li><ph id="ph-prereq-org-admin-role">Org Admin permissions</ph></li>
 
       </ul>
     </section>
@@ -85,7 +85,7 @@
         <!-- <ph conkeyref="k-api/ph-plexpath-desc"/> -->
         <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-plexpath-format"/></p> -->
         <!-- <ph conkeyref="k-api/ph-plexpath-xmpl"/> -->
-        <ph id="ph-plexpath-desc">The path to the Snaplex to access.</ph>
+        <ph id="ph-plexpath-desc">The path to the Snaplex.</ph>
         <ph id="ph-plexpath-format"><codeph>/{org}/{project_space}/{project_name}/{snaplex_name}</codeph></ph>
         <ph id="ph-plexpath-xmpl"><codeph>/snaplogic/shared/My%20Cloud</codeph></ph>
 
@@ -108,7 +108,10 @@
         <ph id="ph-groupname-desc">The name of the group.</ph>
 
         <!-- <ph conkeyref="k-api/ph-email-desc"/> -->
-        <ph id="ph-email-desc">The email address associated with the user record.</ph>
+        <ph id="ph-email-desc">The email address of the user.</ph>
+
+        <!-- <ph conkeyref="k-api/ph-migration-status-token"/> -->
+        <ph id="ph-migration-status-token">The status token of the asynchronous migration process.</ph>
       </sectiondiv>
 
 
@@ -117,6 +120,9 @@
 
         <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-projpath-format"/></p> -->
         <ph id="ph-projpath-format"><codeph>/{org}/{project_space}/{project_name}</codeph></ph>
+
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-projspace-format"/></p> -->
+        <ph id="ph-projspace-format"><codeph>/{org}/{project_space}</codeph></ph>
       </sectiondiv>
 
 
@@ -149,21 +155,42 @@
               <!-- <row conkeyref="k-api/row-pathparam-org"><entry/></row> -->
               <row id="row-pathparam-org">
                 <entry><codeph>org</codeph></entry>
-                <entry><ph conkeyref="k-misc/ph-reqd"/> The name of the SnapLogic Org to access.</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The name of the SnapLogic Org.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-projpath"><entry/></row> -->
               <row id="row-pathparam-projpath">
                 <entry><codeph>project_path</codeph></entry>
-                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic Project to access.
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic project.
                   <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-projpath-format"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-pathparam-projorspacepath"><entry/></row> -->
+              <row id="row-pathparam-projorspacepath">
+                <entry><codeph>project_or_space_path</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic project or project space.
+                  <p><ph conkeyref="k-misc/ph-format"/>
+                    <ul>
+                      <li>Project: <ph conref="#./ph-projpath-format"/></li>
+                      <li>Project space: <ph conkeyref="k-api/ph-projspace-format"/></li>
+                    </ul>
+                  </p>
                 </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-ruuid"><entry/></row> -->
               <row id="row-pathparam-ruuid">
                 <entry><codeph>ruuid</codeph></entry>
-                <entry><ph conkeyref="k-misc/ph-reqd"/> The Runtime ID of the Task run.</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The Runtime ID of the Pipeline.
+                  <p>To get the Runtime ID of a running Pipeline:
+                    <ol>
+                      <li>Go to <menucascade><uicontrol>Dashboard</uicontrol> <uicontrol>Pipeline</uicontrol></menucascade>.</li>
+                      <li>In the <uicontrol>Executing Pipelines of All Projects</uicontrol> list, click the Pipeline you want.</li>
+                      <li>From the address bar of the web browser tab that displays the Pipeline, copy the value of the parameter <codeph>pipe_runtime_id</codeph>.</li>
+                    </ol>
+                  </p>
+                </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-pathparam-plexpath"><entry/></row> -->
@@ -194,6 +221,14 @@
               <row id="row-pathparam-email">
                 <entry><codeph>email</codeph></entry>
                 <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-email-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-pathparam-migration-status-token"><entry/></row> -->
+              <row id="row-pathparam-migration-status-token">
+                <entry><codeph>status-token</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-migration-status-token"/>
+                  <p>To determine the status token, ???</p>
+                </entry>
               </row>
 
             </tbody>
@@ -277,13 +312,34 @@
                 </entry>
               </row>
 
-              <row>
-                <entry><codeph></codeph></entry>
-                <entry></entry>
-                <entry></entry>
+              <!-- <row conkeyref="k-api/row-query-param-limit"><entry/></row> -->
+              <row id="row-query-param-limit">
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-api/ph-desc-limit"/>
+                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 100,000</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 100</p>
+                </entry>
               </row>
 
-              <row>
+              <!-- <row conkeyref="k-api/row-query-param-runtime-limit"><entry/></row> -->
+              <row id="row-query-param-runtime-limit">
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-api/ph-desc-limit"/>
+                  <ph conkeyref="k-api/ph-limit-offset-pagination"/>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1,000 ???</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 10
+                    <!-- Source: https://github.com/SnapLogic/Tectonic/blob/67026f401f7ea99ad8e52f0571130beee7ba9021/slserver/src/main/python/slserver/services/pipeline/runtime_handler.py#L1575 -->
+                  </p>
+                </entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-api/row-query-param-"><entry/></row> -->
+              <row id="row-query-param-">
                 <entry><codeph></codeph></entry>
                 <entry></entry>
                 <entry></entry>
@@ -327,6 +383,16 @@
       <sectiondiv>
         <p>Request Body</p>
 
+
+        <!-- <p conkeyref="k-api/p-valid-values-user-group"/> -->
+        <p id="p-valid-values-user-group"><ph conkeyref="k-misc/ph-valid"/>
+          <ul>
+            <li><codeph>USER</codeph></li>
+            <li><codeph>GROUP</codeph></li>
+          </ul>
+        </p>
+
+
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
@@ -339,42 +405,189 @@
               <row id="row-request-grant-type">
                 <entry><codeph>grant_type</codeph></entry>
                 <entry>string</entry>
-                <entry>The type of the grantee.
-                  <p><ph conkeyref="k-misc/ph-valid"/>
-                    <ul>
-                      <li><codeph>USER</codeph></li>
-                      <li><codeph>GROUP</codeph></li>
-                    </ul>
-                  </p>
+                <entry>The type of the <codeph>grantee</codeph>.
+                  <p conref="#./p-valid-values-user-group"/>
                 </entry>
               </row>
 
-              <!-- <row conkeyref="k-api/row-request-grantee"><entry/></row> -->
-              <row id="row-request-grantee">
+              <!-- <row conkeyref="k-api/row-request-grantee-grant"><entry/></row> -->
+              <row id="row-request-grantee-grant">
                 <entry><codeph>grantee</codeph></entry>
                 <entry>string</entry>
-                <entry>The UUID ??? of the user or group.</entry>
+                <entry>The user or group to whom to grant access.</entry>
               </row>
+
+              <!-- <row conkeyref="k-api/row-request-grantee-revoke"><entry/></row> -->
+              <row id="row-request-grantee-revoke">
+                <entry><codeph>grantee</codeph></entry>
+                <entry>string</entry>
+                <entry>The user or group from whom to revoke access.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-subject-type"><entry/></row> -->
+              <row id="row-request-subject-type">
+                <entry><codeph>subject_type</codeph></entry>
+                <entry>string</entry>
+                <entry>The type of the <codeph>subject</codeph>.
+                  <p conref="#./p-valid-values-user-group"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-subject"><entry/></row> -->
+              <row id="row-request-subject">
+                <entry><codeph>subject</codeph></entry>
+                <entry>string</entry>
+                <entry>The user or group who can access the new project or project space.</entry>
+              </row>
+
 
               <!-- <row conkeyref="k-api/row-request-permission-list"><entry/></row> -->
               <row id="row-request-permission-list">
                 <entry><codeph>permission_list</codeph></entry>
                 <entry>array</entry>
-                <entry>An array containing one or more of the following permissions:
+                <entry id="entry-permissions-desc">An array containing one or more of the following permissions:
                   <ul>
-                    <li><codeph>R</codeph> – read</li>
-                    <li><codeph>W</codeph> – write</li>
-                    <li><codeph>X</codeph> – execute</li>
-                    <li><codeph>A</codeph> – add ???</li>
+                    <li><codeph>"R"</codeph> – read</li>
+                    <li><codeph>"W"</codeph> – write</li>
+                    <li><codeph>"X"</codeph> – execute</li>
+                    <!-- <li><codeph>"A"</codeph> – admin</li> Per Slack conversation with TLikarish (https://snaplogic-all.slack.com/archives/D0302D9BY9F/p1643400967793839), won't document "A" since it's not exposed in the UI. -->
                   </ul>
+                  <p>Learn more: <xref href="../public-apis/api-perms-vs-manager-perms.dita">Permissions in Manager and in APIs</xref></p>
                 </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-perms"><entry/></row> -->
+              <row id="row-request-perms">
+                <entry><codeph>perms</codeph></entry>
+                <entry>array</entry>
+                <entry conref="#./entry-permissions-desc"/>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-inherit"><entry/></row> -->
               <row id="row-request-inherit">
                 <entry><codeph>inherit</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the permissions apply to all assets under the specified project path.???</entry>
+                <entry>If <codeph>true</codeph>, the permissions apply to all assets under the specified project path.</entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-api/row-request-user-email"><entry/></row> -->
+              <row id="row-request-user-email">
+                <entry><codeph>email</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conref="#./ph-email-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-first-name"><entry/></row> -->
+              <row id="row-request-user-first-name">
+                <entry><codeph>first_name</codeph></entry>
+                <entry>string</entry>
+                <entry>The first name of the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-last-name"><entry/></row> -->
+              <row id="row-request-user-last-name">
+                <entry><codeph>last_name</codeph></entry>
+                <entry>string</entry>
+                <entry>The last name of the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-org"><entry/></row> -->
+              <row id="row-request-user-org">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The Org to assign the user to.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-administrator"><entry/></row> -->
+              <row id="row-request-user-administrator">
+                <entry><codeph>administrator</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user assigned as an Org administrator.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-allow-password-login"><entry/></row> -->
+              <row id="row-request-user-allow-password-login">
+                <entry><codeph>allow_password_login</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-revoke-old-password"><entry/></row> -->
+              <row id="row-request-user-revoke-old-password">
+                <entry><codeph>revoke_old_password</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-utility"><entry/></row> -->
+              <row id="row-request-user-utility">
+                <entry><codeph>utility</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-ui-access"><entry/></row> -->
+              <row id="row-request-user-ui-access">
+                <entry><codeph>ui_access</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user is granted access to the SnapLogic UI.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-create-home-directory"><entry/></row> -->
+              <row id="row-request-user-create-home-directory">
+                <entry><codeph>create_home_directory</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, a home directory is created for the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-email-notification"><entry/></row> -->
+              <row id="row-request-user-email-notification">
+                <entry><codeph>email_notification</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, ???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-certificate"><entry/></row> -->
+              <row id="row-request-user-certificate">
+                <entry><codeph>certificate</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-user-file-handle"><entry/></row> -->
+              <row id="row-request-user-file-handle">
+                <entry><codeph>file_handle</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-created-by"><entry/></row> -->
+              <row id="row-request-created-by">
+                <entry><codeph>created_by</codeph></entry>
+                <entry>string</entry>
+                <entry>???</entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-api/row-request-"><entry/></row> -->
+              <row id="row-request-">
+                <entry><codeph>...</codeph></entry>
+                <entry>...</entry>
+                <entry>...</entry>
               </row>
 
             </tbody>
@@ -437,6 +650,13 @@
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
 
+              <!-- <row conkeyref="k-api/row-response-entries-task-run"><entry/></row> -->
+              <row id="row-response-entries-task-run">
+                <entry><codeph>entries</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of Objects containing information about each Task run.</entry>
+              </row>
+
               <!-- <row conkeyref="k-api/row-response-total"><entry/></row> -->
               <row id="row-response-total">
                 <entry><codeph>total</codeph></entry>
@@ -458,6 +678,15 @@
                 <entry>The index of the first result returned.</entry>
               </row>
 
+              <!-- <row conkeyref="k-api/row-response-organization"><entry/></row> -->
+              <row id="row-response-organization">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The name of the SnapLogic Org.</entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-api/row-response-"><entry/></row> -->
               <row id="row-response-">
                 <entry><codeph>...</codeph></entry>
                 <entry>...</entry>

@@ -29,7 +29,7 @@
         Additional authentication methods are under consideration for future updates.
       </p>
 
-      <p>You can run these APIs regardless of the permissions or user roles assigned to you in your Org.
+      <p>You can run these APIs regardless of the privileges or user roles assigned to you in your Org.
         Access to the information returned by these APIs is based on asset permissions,
         which are set in <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439061">SnapLogic Manager</xref>.
       </p>
@@ -38,6 +38,7 @@
 
     </section>
 
+    <!--
     <section>
       <title>API Reference</title>
 
@@ -67,7 +68,7 @@
           <colspec colname="col-key" colwidth="40%"/>
           <colspec colname="col-desc" colwidth="60%"/>
           <thead>
-            <row><entry namest="col-key" nameend="col-desc" valign="top">Asset APIs</entry></row>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Asset ACL APIs</entry></row>
           </thead>
           <tbody>
             <row>
@@ -97,6 +98,24 @@
               </entry>
               <entry outputclass="casesent"><ph conref="get-assetapi-acl-projpath.dita#get-assetapi-acl-projpath/ph-shortdesc"/></entry>
             </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-project-projpath.dita#post-project-projpath/ph-method"/>
+                  <ph conref="post-project-projpath.dita#post-project-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-project-projpath.dita#post-project-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="put-project-projpath.dita#put-project-projpath/ph-method"/>
+                  <ph conref="put-project-projpath.dita#put-project-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="put-project-projpath.dita#put-project-projpath/ph-shortdesc"/></entry>
+            </row>
           </tbody>
         </tgroup>
 
@@ -124,6 +143,24 @@
                 </codeph>
               </entry>
               <entry outputclass="casesent"><ph conref="post-project-pull-projpath.dita#post-project-pull-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-ghwebhook.dita#post-ghwebhook/ph-method"/>
+                  <ph conref="post-ghwebhook.dita#post-ghwebhook/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-ghwebhook.dita#post-ghwebhook/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-repo-status.dita#get-repo-status/ph-method"/>
+                  <ph conref="get-repo-status.dita#get-repo-status/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-repo-status.dita#get-repo-status/ph-shortdesc"/></entry>
             </row>
           </tbody>
         </tgroup>
@@ -244,6 +281,15 @@
                 </codeph>
               </entry>
               <entry outputclass="casesent"><ph conref="post-project-migrate-projpath.dita#post-project-migrate-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-migrate-status-token.dita#get-migrate-status-token/ph-method"/>
+                  <ph conref="get-migrate-status-token.dita#get-migrate-status-token/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-migrate-status-token.dita#get-migrate-status-token/ph-shortdesc"/></entry>
             </row>
           </tbody>
         </tgroup>
@@ -462,7 +508,12 @@
       </table>
 
     </section>
+    -->
 
   </conbody>
 
 </concept>
+
+<!--
+Jiras: PLAT-8417
+-->

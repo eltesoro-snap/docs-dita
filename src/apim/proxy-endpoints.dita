@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxy-endpoints">
+
+  <title>Proxy Endpoints</title>
+
+  <shortdesc>View and edit the endpoints for your proxy.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>Proxy endpoints allow users to access your APIs and third-party APIs.</p>
+
+      <p>You can:
+        <ul>
+          <li><xref href="#./section-view-list-endpoints">View the list of endpoints for the proxy.</xref></li>
+          <li><xref href="#./section-create-endpoint">Create an endpoint.</xref></li>
+          <li><xref href="#./section-edit-endpoint">View and edit the settings of an endpoint.</xref></li>
+          <li><xref href="#./section-delete-endpoint">Delete an endpoint.</xref></li>
+          <li><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">Manage security policies to control access to the endpoint.</xref></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section id="section-prerequisites">
+      <title>Prerequisites</title>
+
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
+    </section>
+
+
+    <section id="section-view-list-endpoints">
+      <title>Viewing the List of Endpoints</title>
+
+      <div>To view the list of endpoints for a proxy,
+        <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
+      </div>
+
+      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoints-list-checkbox.png" placement="break" align="left" outputclass="img-medium"><alt>The Proxy Endpoints tab of the proxy in the API Manager</alt></image></div>
+    </section>
+
+
+    <section id="section-create-endpoint">
+      <title>Creating an Endpoint</title>
+
+      <div>To create an endpoint,
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+          <li>Click the plus icon (<image conkeyref="k-icons/image-add-icon"/>).</li>
+          <li>Configure the new endpoint.
+            <image href="../img/apim-proxy-endpoint-add.png" placement="break" align="left" outputclass="img-medium"><alt>Create Proxy Endpoint dialog</alt></image>
+            <table outputclass="flddesc">
+              <tgroup cols="2">
+                <colspec colname="col-name" colwidth="25%"/>
+                <colspec colname="col-desc" colwidth="75%"/>
+                <thead>
+                  <row>
+                    <entry colname="col-name" valign="top">Field</entry>
+                    <entry colname="col-desc" valign="top">Description</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry><uicontrol>Endpoint Name</uicontrol></entry>
+                    <entry>The name for your proxy's endpoint.
+                      <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><uicontrol>URL</uicontrol></entry>
+                    <entry>The URL to which users send their requests.
+                      <p>Example: <codeph>https://www.example.com/path/to/the/api</codeph></p>
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><uicontrol>HTTP Method(s)</uicontrol></entry>
+                    <entry>One or more REST methods for the API that this endpoint will service.
+                      <ul>
+                        <li>Get</li>
+                        <li>Put</li>
+                        <li>Head</li>
+                        <li>Post</li>
+                        <li>Patch</li>
+                        <li>Delete</li>
+                      </ul>
+                    </entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <section id="section-edit-endpoint">
+      <title>Editing an Endpoint</title>
+
+      <div>To edit an endpoint,
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-click-endpoint-name"/>
+            <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-details.png" placement="break" align="left" outputclass="img-medium"><alt>Details about the endpoint</alt></image></div>
+            <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2453078030/Proxy+Endpoint+Details">Proxy Endpoint Details</xref></p>
+          </li>
+          <li><ph conkeyref="k-apim/ph-click-edit-details"/>
+            <note type="note"><ph conkeyref="k-apim/ph-only-url-methods"/></note>
+          </li>
+          <li>To apply security policies to the endpoint, click the plus icon (<image conkeyref="k-icons/image-add-icon"/>) below the <uicontrol>View Applied Policies</uicontrol> button.</li>
+        </ol>
+      </div>
+    </section>
+
+
+    <section id="section-delete-endpoint">
+      <title>Deleting an Endpoint</title>
+
+      <div>To delete an endpoint,
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+          <li>Check the box for the endpoint to delete.</li>
+          <li>Click the trash icon (<image conkeyref="k-icons/image-delete-icon"/>).</li>
+        </ol>
+      </div>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2463301901/Proxies+for+APIs">
+      <linktext>Proxies for APIs</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">
+      <linktext>Proxy Security Policies</linktext>
+    </link>
+  </related-links>
+
+</concept>

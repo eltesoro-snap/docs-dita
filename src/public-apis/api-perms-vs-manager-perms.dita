@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="api-perms-vs-manager-perms">
+
+  <title>Permissions in Manager and in APIs</title>
+
+  <shortdesc>Mapping between Manager permissions and API permissions.</shortdesc>
+
+  <refbody>
+
+    <section>
+      <p>The following table shows the mapping between permissions in the APIs and permissions in the SnapLogic Manager.</p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-ui"/>
+          <colspec colname="col-api"/>
+          <thead>
+            <row>
+              <entry colname="col-ui" valign="top">Manager Permissions</entry>
+              <entry colname="col-api" valign="top">API Permissions</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry><term>Full Access</term></entry>
+              <entry>["R", "W", "X"]</entry>
+            </row>
+            <row>
+              <entry><term>Read &amp; Execute</term></entry>
+              <entry>["R", "X"]</entry>
+            </row>
+            <row>
+              <entry><term>Read &amp; Write</term></entry>
+              <entry>["R", "W"]</entry>
+            </row>
+            <row>
+              <entry><term>Read Only</term></entry>
+              <entry>["R"]</entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </refbody>
+
+</reference>
+
+<!--
+Sources:
+* https://mysnaplogic.atlassian.net/wiki/spaces/~685847265/pages/2645852365/Notes
+* https://github.com/SnapLogic/ClientApps/blob/develop/client/prod/js/manager/sla.view.asset.js#L292
+
+Jiras: PLAT-8626
+-->

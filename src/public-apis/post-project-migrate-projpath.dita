@@ -19,12 +19,10 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access-src-proj"/></li>
-          <li><ph conkeyref="k-api/ph-prereq-write-access-tgt-org"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access-src-proj"/></li>
+        <li><ph conkeyref="k-api/ph-prereq-write-access-tgt-org"/></li>
+      </ul>
     </section>
 
 
@@ -167,4 +165,6 @@ Last refreshed: 20211201
                            Argument('async', Argument.BODY, Argument.BOOL),
                            Argument('duplicate_check', Argument.BODY, Argument.BOOL)
                        ])
+
+Jiras: PLAT-8417
 -->

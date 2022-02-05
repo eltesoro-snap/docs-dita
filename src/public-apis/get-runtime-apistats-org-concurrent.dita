@@ -19,11 +19,9 @@
     <section>
       <title>Prerequisites</title>
 
-      <p>You need:
-        <ul>
-          <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
-        </ul>
-      </p>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+      </ul>
     </section>
 
 
@@ -96,8 +94,16 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
-        <!-- 
         <codeblock outputclass="normalize-space lang-json">
+          {
+            "response_map": {
+              "concurrent_call_in_progress": ...,
+              "organization": "...",
+              "tasks": [ ... ],
+              "time_stamp": "..."
+            },
+            "http_status_code": 200
+          }
         </codeblock>
 
         <table>
@@ -107,10 +113,27 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
             <tbody>
+              <row>
+                <entry><codeph>concurrent_call_in_progress</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of tasks that are currently running.</entry>
+              </row>
+              <row conkeyref="k-api/row-response-organization"><entry/></row>
+              <row>
+                <entry><codeph>tasks</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of Objects containing information about each running task. ???</entry>
+              </row>
+              <row>
+                <entry><codeph>time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The date and time when the information was collected.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
@@ -140,4 +163,6 @@ Last refreshed: 20211201
                            Argument('organization', Argument.URL),
                            Argument('date_time', Argument.QS)
                        ])
+
+Jiras: PLAT-8417
 -->

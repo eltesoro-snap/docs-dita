@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="put-project-projpath">
+
+  <title>PUT /project/{project_or_space_path}</title>
+  <titlealts><navtitle>PUT /project/{project_or_space_path}</navtitle></titlealts>
+
+  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>This API <ph id="ph-shortdesc"> renames an existing project or project space.</ph></p>
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
+    </section>
+
+
+    <section>
+      <title>Request</title>
+
+      <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
+        <ph id="ph-method">PUT</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/{project_or_space_path}</ph>
+      </codeblock>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-projorspacepath"><entry/></row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Query Parameters</p>
+        <p>None.</p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Header</p>
+        <div conkeyref="k-api/div-auth"/>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Request Body</p>
+
+        <codeblock id="request-body" outputclass="normalize-space lang-json">
+          {
+            "name" : "..."
+          }
+        </codeblock>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <tbody>
+              <row>
+                <entry><codeph>name</codeph></entry>
+                <entry>string</entry>
+                <entry>The new name for the project.</entry>
+              </row>
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+    </section>
+
+
+    <section>
+      <title>Response</title>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Header</p>
+        <div conkeyref="k-api/div-table-status-code-only"/>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Response Body</p>
+      </sectiondiv>
+    </section>
+
+
+    <!--
+    <section>
+      <title>Example - </title>
+    </section>
+    -->
+
+  </conbody>
+
+  <related-links/>
+
+</concept>
+
+
+<!--
+Source: Tectonic\sldb\src\main\python\sldb\services\public\asset_handler.py
+Last refreshed: 20220125
+        self.add_route('project/<path:path>', self.update_project, methods=[http_lib.HTTP_PUT],
+                      arguments=[
+                            Argument(name='path', arg_from=Argument.URL, default='/'),
+                            Argument(name='name', arg_from=Argument.BODY),
+                            Argument(name='caller', arg_from=Argument.USER_ID),
+                      ])
+
+Jiras: PLAT-8626
+-->

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxies">
+
+  <title>Proxies for APIs</title>
+
+  <shortdesc>Managing proxies for your APIs and third-party APIs.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>SnapLogic's proxies allow you to seamlessly integrate with your APIs and third-party APIs by providing API administration, monitoring, and security management within the API Manager.</p>
+
+      <p>You can:
+        <ul>
+          <li><xref href="#./section-view-list-proxies">View the list of proxies.</xref></li>
+          <li><xref href="#./section-create-proxy">Create a proxy.</xref></li>
+          <li><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2453143554/Proxy+Details">View and edit the settings of a proxy.</xref></li>
+          <li><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2453372929/Proxy+Endpoints">Add or remove endpoints in the proxy.</xref></li>
+          <!-- <li>Publish or unpublish a proxy.</li> -->
+          <li><xref href="#./section-delete-proxy">Delete a proxy.</xref></li>
+          <li><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">Manage security policies to control access to the proxy and its endpoints.</xref></li>
+        </ul>
+      </p>
+    </section>
+
+
+    <section id="section-prerequisites">
+      <title>Prerequisites</title>
+
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
+    </section>
+
+
+    <section id="section-view-list-proxies">
+      <title>Viewing the List of Proxies</title>
+
+      <div>
+        To view the list of proxies,
+        <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
+      </div>
+
+      <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left" outputclass="img-medium"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>
+    </section>
+
+
+    <section id="section-create-proxy">
+      <title>Creating a Proxy</title>
+
+      <div>
+        To create a proxy,
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li>Click the plus icon (<image conkeyref="k-icons/image-add-icon"/>).</li>
+          <li>Select <uicontrol>New Proxy</uicontrol> from the dropdown.</li>
+          <li>Configure the new proxy.
+            <image href="../img/apim-apisproxies-create-proxy.png" placement="break" align="left" outputclass="img-medium"><alt>Create Proxy dialog</alt></image>
+            <table outputclass="flddesc">
+              <tgroup cols="2">
+                <colspec colname="col-name" colwidth="25%"/>
+                <colspec colname="col-desc" colwidth="75%"/>
+                <thead>
+                  <row>
+                    <entry colname="col-name" valign="top">Field</entry>
+                    <entry colname="col-desc" valign="top">Description</entry>
+                  </row>
+                </thead>
+                <tbody>
+                  <row>
+                    <entry><uicontrol>Proxy Name</uicontrol></entry>
+                    <entry>The name for your proxy.
+                      <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
+                      <p>The proxy name is appended to the <uicontrol>Hostname</uicontrol>.</p>
+                      <!-- <li>Searching for a proxy by name is case-insensitive.</li> -->
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><uicontrol>Proxy Description</uicontrol></entry>
+                    <entry>(Optional) Information about the proxy.</entry>
+                  </row>
+                  <row>
+                    <entry><uicontrol>Hostname</uicontrol></entry>
+                    <entry>The prefix <codeph>/gateway/</codeph> is concatenated with the <uicontrol>Proxy Name</uicontrol>.
+                    </entry>
+                  </row>
+                  <row>
+                    <entry><uicontrol>Tags</uicontrol></entry>
+                    <entry>(Optional) Tags you can use to organize your proxies.</entry>
+                  </row>
+                </tbody>
+              </tgroup>
+            </table>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <section id="section-delete-proxy">
+      <title>Deleting a Proxy</title>
+
+      <div>To delete a proxy,
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li>Hover over the row of the proxy.</li>
+          <li>Click the trash icon (<image conkeyref="k-icons/image-delete-icon"/>) that appears at the end of the row.</li>
+        </ol>
+      </div>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2465399255/Proxy+Security+Policies">
+      <linktext>Proxy Security Policies</linktext>
+    </link>
+  </related-links>
+
+</concept>

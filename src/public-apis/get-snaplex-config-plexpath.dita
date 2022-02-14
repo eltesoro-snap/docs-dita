@@ -14,7 +14,7 @@
 
       <p>This API <ph id="ph-shortdesc">retrieves the information needed to install and configure a node on a Groundplex.</ph></p>
 
-      <p>You can use this API when automating the installation of Groundplex nodes.</p>
+      <p>You can use this API to automate the installation of Groundplex nodes.</p>
     </section>
 
 
@@ -27,8 +27,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/config/{plex_path}</ph>?{query_parameters}
@@ -58,12 +63,12 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>expire_hours</codeph></entry>
                 <entry>integer</entry>
-                <entry>The number of hours before the returned URI expires. The URI is a link to the software to download.
+                <entry>The number of hours before the returned URL expires. The URL is a link to the Snaplex configuration file. ???
                   <p>Valid range: 1 to ??? hours</p>
                   <p><ph conkeyref="k-misc/ph-default"/> 1 hour</p>
                 </entry>
@@ -85,8 +90,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -99,52 +104,28 @@
         <codeblock outputclass="normalize-space lang-json">
           {
             "response_map": {
-              "config": "https://elastic.snaplogicdev.com/api/1/rest/plex/config/myOrg/shared/Cloud?expires=1642213187&amp;user_id=myUsername%40snaplogic.com&amp;_sl_authproxy_key=...",
+              "config": "...",
               "pkgs": {
                 "plex-rpm": {
-                  "comment": "4.28 RC Linux/RPM",
-                  "status": "active",
+                  "comment": "...",
+                  "status": "...",
                   "kind": "plex-rpm",
                   "signatures": {
                     "md5": "..."
                   },
-                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033-x86_64.rpm",
-                  "driver": null,
-                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033-x86_64.rpm?versionId=...",
-                  "version": "4.28_rc-11033",
-                  "create_time": "2022-01-14T17:12:59.468000+00:00",
-                  "_id": "...",
-                  "compatible_version": "4.28_rc-11033"
+                  "pkg_file": "...",
+                  "driver": ...,
+                  "uri": "...",
+                  "version": "...",
+                  "compatible_version": "...",
+                  "create_time": "...",
+                  "_id": "..."
                 },
                 "plex-deb": {
-                  "comment": "4.28 RC Linux/DEB",
-                  "status": "active",
-                  "kind": "plex-deb",
-                  "signatures": {
-                    "md5": "..."
-                  },
-                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033-x86_64.deb",
-                  "driver": null,
-                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033-x86_64.deb?versionId=...",
-                  "version": "4.28_rc-11033",
-                  "create_time": "2022-01-14T17:13:43.145000+00:00",
-                  "_id": "...",
-                  "compatible_version": "4.28_rc-11033"
+                  ...
                 },
                 "plex-win": {
-                  "comment": "4.28 RC Windows/ZIP",
-                  "status": "active",
-                  "kind": "plex-win",
-                  "signatures": {
-                    "md5": "..."
-                  },
-                  "pkg_file": "snaplogic-sidekick-4.4.28_rc-11033.zip",
-                  "driver": null,
-                  "uri": "https://snaplogic-canary-sldb.s3.amazonaws.com/pkgs/snaplogic-sidekick-4.4.28_rc-11033.zip?versionId=...",
-                  "version": "4.28_rc-11033",
-                  "create_time": "2022-01-14T17:13:54.609000+00:00",
-                  "_id": "...",
-                  "compatible_version": "4.28_rc-11033"
+                  ...
                 }
               }
             },
@@ -157,17 +138,59 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
+
+              <!-- "config": "https://elastic.snaplogicdev.com/api/1/rest/plex/config/myOrg/shared/Cloud?expires=1642213187&amp;user_id=myUsername%40snaplogic.com&amp;_sl_authproxy_key=...", -->
               <row>
                 <entry>config</entry>
                 <entry>string</entry>
-                <entry></entry>
+                <entry>The signed URL where you can download the configuration file (<codeph>.slpropz</codeph>) for the Snaplex node.
+                  <note type="note">
+                    If you are an Org administrator, the configuration file contains generic credentials for the Snaplex node.
+                    Otherwise, the configuration file contains the caller's credentials.
+                  </note>
+                </entry>
               </row>
               <row>
                 <entry>pkgs</entry>
-                <entry>Object</entry>
-                <entry>Contains the configuration for each node??? to configure in your Groundplex. ???</entry>
+                <entry>object</entry>
+                <entry>The Snaplex software packages that are available for installation.
+                  <p>The following metadata is included for each package type:
+                    <ul>
+                      <li><codeph>comment</codeph> – A description of the Snaplex package.</li>
+                      <li><codeph>status</codeph> – The status of the Snaplex version.
+                        <p conkeyref="k-api/p-response-possible-snaplex-version-status"/>
+                      </li>
+                      <li><codeph>kind</codeph> – The type of the Snaplex package.
+                        <p>Available types:
+                          <ul>
+                            <li><codeph>plex-rpm</codeph></li>
+                            <li><codeph>plex-deb</codeph></li>
+                            <li><codeph>plex-win</codeph></li>
+                          </ul>
+                        </p>
+                      </li>
+                      <li><codeph>signatures</codeph> – Key-value pairs where the keys represent the hash algorithm and the values contain the hashed signatures that are used for ???.
+                        <p><ph conkeyref="k-misc/ph-possible-keys"/>
+                          <ul>
+                            <li><codeph>md5</codeph></li>
+                            <li>???</li>
+                          </ul>
+                        </p>
+                      </li>
+                      <li><codeph>pkg_file</codeph> – The zip file that contains the installation files.</li>
+                      <li><codeph>driver</codeph> – ???</li>
+                      <li><codeph>uri</codeph> – The URI where you can download the Snaplex package.</li>
+                      <li><codeph>version</codeph> – The SnapLogic version included in the zip file. ???</li>
+                      <li><codeph>compatible_version</codeph> – SnapLogic versions that the package is compatible with. ???</li>
+                      <li><codeph>create_time</codeph> – The time that the zip file was created. ???
+                        <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                      </li>
+                      <li><codeph>_id</codeph> – The ID of the Snaplex package. ???</li>
+                    </ul>
+                  </p>
+                </entry>
               </row>
             </tbody>
           </tgroup>
@@ -178,8 +201,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

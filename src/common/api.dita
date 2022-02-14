@@ -7,6 +7,19 @@
   <conbody>
 
     <section>
+      <title>API Tabs</title>
+
+      <!-- <ul conkeyref="k-api/ul-tabmenu2"><li/></ul> -->
+      <ul id="ul-tabmenu2" outputclass="tabs">
+        <li outputclass="api-request sectiontitle tablink">Request</li>
+        <li outputclass="api-response sectiontitle tablink">Response</li>
+        <li outputclass="api-notes sectiontitle tablink">Notes</li>
+        <li outputclass="api-examples sectiontitle tablink">Examples</li>
+      </ul>
+    </section>
+
+
+    <section>
       <title>Overviews</title>
 
       <p>GitHub APIs</p>
@@ -28,9 +41,9 @@
 
     </section>
 
+
     <section>
       <title>Syntaxes</title>
-
 
       <!-- <ph conkeyref="k-api/ph-endpoint-https"/> -->
       <!-- NOTE: pod_path is included in the Path Parameters sections. -->
@@ -60,6 +73,9 @@
 
         <!-- <ph conkeyref="k-api/ph-prereq-org-admin-role"/> -->
         <li><ph id="ph-prereq-org-admin-role">Org Admin permissions</ph></li>
+
+        <!-- <ph conkeyref="k-api/ph-prereq-org-admin-role-for-all-orgs-of-user"/> -->
+        <li><ph id="ph-prereq-org-admin-role-for-all-orgs-of-user">Org Admin permissions for all Orgs that the user belongs to</ph></li>
 
       </ul>
     </section>
@@ -249,16 +265,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead>
-
-              <!-- <row conkeyref="k-api/row-thead-key-type-desc"><entry/></row> -->
-              <row id="row-thead-key-type-desc">
-                <entry colname="col-key"  valign="top">Key</entry>
-                <entry colname="col-type" valign="top">Type</entry>
-                <entry colname="col-desc" valign="top">Description</entry>
-              </row>
-
-            </thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
 
               <!--
@@ -288,8 +295,7 @@
               <row id="row-query-param-plexpath">
                 <entry><codeph>plex_path</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conkeyref="k-misc/ph-reqd"/>
-                  <ph conref="#./ph-plexpath-desc"/>
+                <entry><ph conref="#./ph-plexpath-desc"/>
                   <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
                 </entry>
               </row>
@@ -298,7 +304,8 @@
               <row id="row-query-param-hostname">
                 <entry><codeph>hostname</codeph></entry>
                 <entry>string</entry>
-                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
+                <entry><ph conref="#./ph-hostname-desc"/>
+                  <p>You can specify multiple hostnames separated by commas.</p>
                   <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-hostname-xmpl"/></p>
                 </entry>
               </row>
@@ -398,7 +405,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
 
               <!-- <row conkeyref="k-api/row-request-grant-type"><entry/></row> -->
@@ -480,7 +487,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
 
               <!-- <row conkeyref="k-api/row-request-user-email"><entry/></row> -->
@@ -488,6 +495,12 @@
                 <entry><codeph>email</codeph></entry>
                 <entry>string</entry>
                 <entry><ph conref="#./ph-email-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-groupname"><entry/></row> -->
+              <row id="row-request-groupname">
+                <entry><codeph>name</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-first-name"><entry/></row> -->
@@ -511,32 +524,41 @@
                 <entry>The Org to assign the user to.</entry>
               </row>
 
+              <!-- <row conkeyref="k-api/row-request-group-org"><entry/></row> -->
+              <row id="row-request-group-org">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The Org to create the group in.</entry>
+              </row>
+
               <!-- <row conkeyref="k-api/row-request-user-administrator"><entry/></row> -->
               <row id="row-request-user-administrator">
                 <entry><codeph>administrator</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the user assigned as an Org administrator.</entry>
+                <entry>If <codeph>true</codeph>, the user is assigned as an Org administrator.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-allow-password-login"><entry/></row> -->
               <row id="row-request-user-allow-password-login">
                 <entry><codeph>allow_password_login</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
+                <entry>If <codeph>true</codeph>, the user is allowed to log in with a password.
+                  Otherwise, ???.
+                </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-revoke-old-password"><entry/></row> -->
               <row id="row-request-user-revoke-old-password">
                 <entry><codeph>revoke_old_password</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
+                <entry>If <codeph>true</codeph>, the user's password is invalidated. ???</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-utility"><entry/></row> -->
               <row id="row-request-user-utility">
                 <entry><codeph>utility</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
+                <entry>If <codeph>true</codeph>, the account is tagged as a service account, not a user account, for use with automated processes. ???</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-ui-access"><entry/></row> -->
@@ -557,7 +579,7 @@
               <row id="row-request-user-email-notification">
                 <entry><codeph>email_notification</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
+                <entry>If <codeph>true</codeph>, the user is sent a welcome email when the account is created.</entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-certificate"><entry/></row> -->
@@ -578,9 +600,25 @@
               <row id="row-request-created-by">
                 <entry><codeph>created_by</codeph></entry>
                 <entry>string</entry>
-                <entry>???</entry>
+                <entry>The user who originally created the account, if it is a service account.
+                  <!-- From the old docs (needs verification and clarification): This parameter enables an Org admin to change the user who originally created the service account in cases where the password recovery email for that user needs to be reset. You cannot specify the current Service Account user with this parameter. -->
+                  <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439028">Creating a User</xref></p>
+                </entry>
               </row>
 
+              <!-- <row conkeyref="k-api/row-request-members-add"><entry/></row> -->
+              <row id="row-request-members-add">
+                <entry><codeph>members</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of strings containing email addresses of users to add to the group.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-request-members-replace"><entry/></row> -->
+              <row id="row-request-members-replace">
+                <entry><codeph>members</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of strings containing the new list of group members' email addresses.</entry>
+              </row>
 
 
               <!-- <row conkeyref="k-api/row-request-"><entry/></row> -->
@@ -647,14 +685,85 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
 
-              <!-- <row conkeyref="k-api/row-response-entries-task-run"><entry/></row> -->
-              <row id="row-response-entries-task-run">
-                <entry><codeph>entries</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of Objects containing information about each Task run.</entry>
+              <row>
+                <entry namest="col-key" nameend="col-desc">
+
+                  <!-- <ph conkeyref="k-api/ph-response-array-task-metadata"/> -->
+                  <ph id="ph-response-array-task-metadata">An array of objects containing metadata about each Task run.</ph>
+
+                  <!-- <ph conkeyref="k-api/ph-response-array-activity-metadata"/> -->
+                  <!-- <ph conkeyref="k-api/ph-response-object-varies-by-event-type"/> -->
+                  <ph id="ph-response-array-activity-metadata">An array of objects containing metadata about each activity.</ph>
+                  <ph id="ph-response-object-varies-by-event-type">The structure of each object depends on the event type.</ph>
+
+
+                  <!-- <ph conkeyref="k-api/ph-response-number-executed-tasks-today"/> -->
+                  <ph id="ph-response-number-executed-tasks-today">The number of Task runs that were executed in the current day.</ph>
+
+                  <!-- <ph conkeyref="k-api/ph-response-task-run-max-concurrent"/> -->
+                  <ph id="ph-response-task-run-max-concurrent">The maximum number of concurrent Task runs that the Org is allowed.</ph>
+
+
+                  <!-- <ph conkeyref="k-api/ph-response-fqid"/> -->
+                  <ph id="ph-response-fqid">The fully-qualified ID of a Snap. It consists of the Snap class ID and the class version.</ph>
+
+                  <!-- <ph conkeyref="k-api/="ph-response-snode-id"/> -->
+                  <ph id="ph-response-snode-id">The ID Of the Snaplex node that processed the Task run.</ph>
+
+                  <!-- <ph conkeyref="k-api/ph-response-org-snode-id"/> -->
+                  <ph id="ph-response-org-snode-id">The ID of the Snaplex node that hosts the Org.</ph>
+
+                  <!-- <p conkeyref="k-api/p-response-possible-snaplex-version-status"/> -->
+                  <p id="p-response-possible-snaplex-version-status">
+                    <ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li>active</li>
+                      <li>deprecated</li>
+                    </ul>
+                  </p>
+
+                  <!-- <p conkeyref="k-api/p-response-possible-task-run-status"/> -->
+                  <p id="p-response-possible-task-run-status">
+                    <ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li>Started</li>
+                      <li>Prepared</li>
+                      <li>NoUpdate</li>
+                      <li>???</li>
+                    </ul>
+                  </p>
+
+
+                </entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-api/row-response-organization"><entry/></row> -->
+              <row id="row-response-organization">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The name of the SnapLogic Org.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-apistats-date"><entry/></row> -->
+              <row id="row-response-apistats-date">
+                <entry><codeph>date</codeph></entry>
+                <entry>string</entry>
+                <entry>The date when the statistics were collected.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-apistats-time"><entry/></row> -->
+              <row id="row-response-apistats-time">
+                <entry><codeph>time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The timestamp when the statistics were collected.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-response-total"><entry/></row> -->
@@ -678,11 +787,62 @@
                 <entry>The index of the first result returned.</entry>
               </row>
 
-              <!-- <row conkeyref="k-api/row-response-organization"><entry/></row> -->
-              <row id="row-response-organization">
-                <entry><codeph>organization</codeph></entry>
+              <!-- <row conkeyref="k-api/row-response-task-run-daily-limit"><entry/></row> -->
+              <row id="row-response-task-run-daily-limit">
+                <entry><codeph>daily_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry>The maximum number of Task runs that the Org is allowed in a day.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-task-run-daily-call-used"><entry/></row> -->
+              <row id="row-response-task-run-daily-call-used">
+                <entry><codeph>daily_call_used</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conref="#./ph-response-number-executed-tasks-today"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-task-run-concurrent-limit"><entry/></row> -->
+              <row id="row-response-task-run-concurrent-limit">
+                <entry><codeph>concurrent_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conref="#./ph-response-task-run-max-concurrent"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-task-run-concurrent-call-in-progress"><entry/></row> -->
+              <row id="row-response-task-run-concurrent-call-in-progress">
+                <entry><codeph>concurrent_call_in_progress</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of Task runs that are concurrently in progress.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-task-run-top-tasks"><entry/></row> -->
+              <row id="row-response-task-run-top-tasks">
+                <entry><codeph>top_tasks</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of objects containing metadata about ???</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-task-run-daily-call-available"><entry/></row> -->
+              <row id="row-response-task-run-daily-call-available">
+                <entry><codeph>daily_call_available</codeph></entry>
+                <entry>integer</entry>
+                <entry>The difference between the daily limit for Task runs and the number of Task runs that were already executed during the day.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-snaplex-version-comment"><entry/></row> -->
+              <row id="row-response-snaplex-version-comment">
+                <entry><codeph>comment</codeph></entry>
                 <entry>string</entry>
-                <entry>The name of the SnapLogic Org.</entry>
+                <entry>A description of the Snaplex version.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-snaplex-version-status"><entry/></row> -->
+              <row id="row-response-snaplex-version-status">
+                <entry><codeph>status</codeph></entry>
+                <entry>string</entry>
+                <entry>The status of the Snaplex version.
+                  <p conref="#./p-response-possible-snaplex-version-status"/>
+                </entry>
               </row>
 
 

@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_path}</ph>
@@ -65,8 +70,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -80,8 +85,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

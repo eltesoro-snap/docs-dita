@@ -7,7 +7,16 @@
   <conbody>
 
     <section>
-      <title>Customer Support</title>
+      <title>Doc team</title>
+
+      <!-- <ph conkeyref="k-urls/ph-docteam"/> -->
+      <ph id="ph-docteam">documentation@snaplogic.com</ph>
+
+    </section>
+
+
+    <section>
+      <title>Customer Support and Community</title>
 
       <!-- <ph conkeyref="k-urls/ph-support"/> -->
       <ph id="ph-support">support@snaplogic.com</ph>
@@ -15,6 +24,10 @@
       <!--
       <xref id="xref-support" scope="external" format="html" href="https://www.snaplogic.com/services/customer-support">SnapLogic Customer Support</xref>
       -->
+
+      <!-- <ph conkeyref="k-urls/ph-community"/> -->
+      <ph id="ph-community"><xref scope="external" format="html" href="https://community.snaplogic.com/">SnapLogic Community</xref></ph>
+
     </section>
 
 
@@ -25,6 +38,14 @@
       <ph id="ph-security-policies"><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager">API Policy Manager</xref></ph>
     </section>
 
+
+    <section>
+      <title>Footer</title>
+
+      <!-- <ph conkeyref="k-urls/ph-copyright"/> -->
+      <ph id="ph-copyright"><xref href="../refs/copyright.dita">© 2017-2022 SnapLogic, Inc.</xref></ph>
+
+    </section>
 
   </conbody>
 

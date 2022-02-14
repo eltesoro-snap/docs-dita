@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">deletes the specified group.</ph></p>
+      <p>This API <ph id="ph-shortdesc">deletes the group from the Org.</ph></p>
     </section>
 
 
@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">DELETE</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/groups/{org}/{groupname}</ph>
@@ -66,8 +71,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -80,9 +85,16 @@
     </section>
 
 
-    <section>
-      <title>Example - </title>
+    <!--
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
     </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
+    </section>
+    -->
 
   </conbody>
 

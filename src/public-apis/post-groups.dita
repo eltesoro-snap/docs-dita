@@ -13,6 +13,16 @@
       <title>Overview</title>
 
       <p>This API <ph id="ph-shortdesc">creates a group.</ph></p>
+
+      <p>To create the group and add its members,
+        <ol>
+          <li>Verify that the target Org exists.</li>
+          <li>Create the group using this API.</li>
+          <li>Add the members to the group using this API.</li>
+        </ol>
+      </p>
+
+      <note type="important">Avoid space characters in your Group name; instead, use underscores.</note>
     </section>
 
 
@@ -25,8 +35,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/groups</ph>
@@ -68,30 +83,16 @@
           }
         </codeblock>
 
-        <p>where:</p>
-
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row>
-                <entry><codeph>organization</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>name</codeph></entry>
-                <entry>string</entry>
-                <entry></entry>
-              </row>
-              <row>
-                <entry><codeph>members</codeph></entry>
-                <entry>array of ???</entry>
-                <entry></entry>
-              </row>
+              <row conkeyref="k-api/row-request-group-org"><entry/></row>
+              <row conkeyref="k-api/row-request-groupname"><entry/></row>
+              <row conkeyref="k-api/row-request-members-add"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -99,8 +100,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -114,8 +115,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

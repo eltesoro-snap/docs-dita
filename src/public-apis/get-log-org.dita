@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/log/{org}</ph>?{query_parameters}
@@ -56,7 +61,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>ruuid</codeph></entry>
@@ -125,8 +130,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -178,11 +183,11 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>extra</codeph></entry>
-                <entry>Object</entry>
+                <entry>object</entry>
                 <entry>???</entry>
               </row>
               <row>
@@ -192,8 +197,8 @@
               </row>
               <row>
                 <entry><codeph>entries</codeph></entry>
-                <entry>array of Objects</entry>
-                <entry>Metadata about the source of each log entry.
+                <entry>array</entry>
+                <entry>An array of objects containing metadata about each log entry.
                   <ul>
                     <li><codeph>msg</codeph>. The message in the log.</li>
                     <li><codeph>lvl</codeph>. The type of the log entry. Possible values:
@@ -227,8 +232,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

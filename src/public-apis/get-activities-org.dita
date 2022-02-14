@@ -41,8 +41,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/activities/{org}</ph>?{query_parameters}
@@ -72,7 +77,7 @@
             <colspec colname="col-key" colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>filter_project_space</codeph></entry>
@@ -91,8 +96,8 @@
                 <entry><codeph>filter_asset</codeph></entry>
                 <entry>string</entry>
                 <entry>Returns activities related to the specified asset.
-                  Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>. ??? <!-- Found in the old docs. -->
-                  <p><ph conkeyref="k-misc/ph-example"/> <codeph>filter_asset_type=File&amp;filter_asset=Sales2019July.csv</codeph></p>
+                  Requires <codeph>filter_project_space</codeph> and <codeph>filter_ project</codeph>.
+                  <p><ph conkeyref="k-misc/ph-example"/> <codeph>filter_asset_type=File&amp;filter_asset=Sales2021Dec.csv</codeph></p>
                 </entry>
               </row>
               <row>
@@ -174,8 +179,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -199,15 +204,19 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-response-total"><entry/></row>
               <row conkeyref="k-api/row-response-offset"><entry/></row>
               <row conkeyref="k-api/row-response-limit"><entry/></row>
               <row>
                 <entry><codeph>entries</codeph></entry>
-                <entry>array of objects</entry>
-                <entry>Details about each activity. The structure of the entry object depends on the event type.</entry>
+                <entry>array</entry>
+                <entry>
+                  <ph conkeyref="k-api/ph-response-array-activity-metadata"/>
+                  <ph conkeyref="k-api/ph-response-object-varies-by-event-type"/>
+                  <p>Learn more: <xref href="ref-activity-metadata.dita"/></p>
+                </entry>
               </row>
             </tbody>
           </tgroup>
@@ -217,8 +226,8 @@
     </section>
 
 
-    <section>
-      <title>Notes</title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!-- <title>Notes</title> -->
 
       <p>The activity logs capture the following events:
         <ul>
@@ -253,9 +262,10 @@
       </p>
     </section>
 
+
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
 
       <p>Response body:</p>
       <codeblock outputclass="normalize-space lang-json">

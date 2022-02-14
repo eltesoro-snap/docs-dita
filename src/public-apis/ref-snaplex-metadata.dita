@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="ref-snaplex-metadata">
+
+  <title>Reference: Snaplex Metadata</title>
+
+  <shortdesc>Information about a Snaplex</shortdesc>
+
+  <refbody>
+
+    <section>
+      <p>You can get information about a Snaplex through the public API <xref href="get-snaplex-org.dita"><codeph>GET /snaplex/{org}</codeph></xref>.</p>
+
+      <p>The response includes several of the following information:</p>
+
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col-key"  colwidth="25%"/>
+          <colspec colname="col-type" colwidth="15%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+          <tbody>
+
+            <!-- (From the old topic)
+active_thread	The total thread count of the VM.
+
+broker_name
+	The name of the broker in the FeedMaster.
+container_type​	The type of container: regular or FeedMaster​.
+cpu_user	The CPU load at the time of collecting the cc_info stats from the JCC node. The value is stated as a percentage and is stated as in decimal form. The value may represent less than 1 percent of overall system CPU usage at the time of the API call.
+current_load	The number of current active Pipelines.
+disabled_notification
+
+If true, then the notifications related to the concerned JCC node are not sent (even to the default recipient). Default: False.
+dynamic_settings	Snaplex settings that are resolved at runtime. As of now, it displays only log settings associated with the Snaplex.
+environment	The name of the environment to which the Snaplex belongs. This detail is taken from the data you provided when you created the Snaplex in SnapLogic.
+feed_master_load_balancer
+
+The load balancer being used to send tasks to the FeedMaster configured with the Snaplex. If configured, requests are sent first to the load balancer (instead of directly to the FeedMaster).
+
+It is possible to configure more than one FeedMaster to a Snaplex. In that configuration, you may want to put a load balancer in front of the FeedMasters, so that the requests are automatically distributed.
+generation	The unique identifier used to lease slots on the JCC node (not applicable to a FeedMaster).
+instance_id	The unique identifier of this Snaplex.
+jcc_load_balancer
+
+The load balancer being used to send tasks to the JCC node. If configured, requests are first sent to the load balancer (instead of directly to this JCC node).
+label	The name of the Snaplex.
+location
+
+The location of the Snaplex: cloud if it is a Cloudplex, or sidekick if it is a Groundplex.
+max_execution_time	The longest execution time of a Pipelines in the Snaplex.
+max_mem	The maximum percentage of memory that the Snaplex can use.
+max_slots	The maximum slots that this Snaplex supports.
+mean_execution_time	The mean execution time of Pipelines in the Snaplex.
+mem_used
+
+The memory load at the time of collecting the cc info from the JCC node. The value is stated as a percentage and is stated as in decimal form. The value may represent less than 1 percent of overall system memory is used when you make this API call.
+memory_percent_usage	The percentage of memory used in a FeedMaster by a broker.
+min_execution_time	The shortest execution time of a Pipelines in the Snaplex.
+min_jcc	The minimum number of JCCs that should be running at any time.
+node_settings	Additional settings associated with this Snaplex (HTTP, HTTPS proxy, Jetty, and heap settings).
+notification	Email addresses to which Snaplex notifications are sent.
+open_file_descriptors	The keys to files.
+org	The name of the org to which the Snaplex belongs.
+owner	The owner of the Snaplex.
+path	The path of the Snaplex.
+pkg_version
+
+The SnapLogic release version that the JCC supports.
+queue_size
+
+The maximum number of Pipelines queued for a Snaplex.
+rejected_requests	The number of rejected API requests.
+request_response
+
+The REST API request and response metrics from the metrics registry.
+
+The key includes the following subfields:
+
+    request_meter: The number of requests and the mean rate at which requests have occurred since the meter was created.
+    response_timer: Includes the number of responses and the total minimum, maximum, and mean times in milliseconds of processing each incoming request and return response.
+
+reserved_slots	The number of slots that the Snaplex should reserve for pipelines run from the SnapLogic UI. Triggered, Ultra Tasks, and Scheduled Tasks do not use these slots.
+
+restart_max_waiting_time
+
+
+The maximum amount of time for which the Snaplex should wait for Pipelines to finish before restarting. This setting is applicable only after a Snaplex restart is triggered through the UI.
+
+restart_request_time
+
+
+The timestamp at the time of the most recent Snaplex restart.
+
+restart_request_user
+
+
+The user who last restarted the Snaplex. A Snaplex rolling restart can be triggered from the Dashboard or when a Snaplex version is changed.
+
+runtime_path_id
+
+
+An internal identifier for the Snaplex that is used by SnapLogic.
+
+slow_queue
+
+
+A message queue is too slow, dropping all new requests.
+
+stddev_exec_time_ms
+
+
+The standard deviation of execution time.
+
+system_load_average
+
+
+System CPU load normalized by the number of available CPUs.
+
+timed_out_requests
+
+
+The number of timed out requests.
+            -->
+
+
+
+            <!--
+            <row id="row-" outputclass="">
+              <entry><codeph></codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+            -->
+
+          </tbody>
+        </tgroup>
+      </table>
+
+
+    </section>
+
+  </refbody>
+
+</reference>

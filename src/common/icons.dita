@@ -9,6 +9,16 @@
   <conbody>
 
     <section>
+      <title>Logo</title>
+
+      <!-- <image conkeyref="k-icons/snaplogic-logo"/> -->
+      <!-- GitHub path: /ClientApps/client/prod/img/common/LogoN.svg -->
+      <image id="snaplogic-logo" href="../img/icons/LogoN.svg" placement="inline" outputclass="inline-icon"><alt>SnapLogic logo</alt></image>
+
+    </section>
+
+
+    <section>
       <title>Generic UI icons</title>
 
       <!-- <image conkeyref="k-icons/image-add-icon"/> -->

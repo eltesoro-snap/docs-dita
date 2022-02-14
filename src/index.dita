@@ -2,17 +2,28 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="index">
 
-  <title>My Title</title>
-  <titlealts><navtitle>Title</navtitle></titlealts>
-
-  <shortdesc>A short description of the topic.</shortdesc>
+  <title>About Our Documentation</title>
+  <titlealts><navtitle>About Our Documentation</navtitle></titlealts>
 
   <conbody>
 
     <section>
-      <title>My Section Title</title>
+      <p>
+        SnapLogic’s Intelligent Integration Platform (IIP) uses AI-powered workflows to automate all stages of IT integration projects – design, development, deployment, and maintenance – whether on-premises, in the cloud, or in hybrid environments.
+        The platform’s easy-to-use, self-service interface enables both expert and citizen integrators to manage all application integration, data integration, and data engineering projects on a single, scalable platform.
+        With SnapLogic, organizations can connect all of their enterprise systems quickly and easily to automate business processes, accelerate analytics, and drive transformation.
+      </p>
 
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed volutpat quis massa sed consectetur. Fusce euismod elit velit, in blandit sem tempor ut.</p>
+      <p>
+        The SnapLogic platform is HTML5-based and delivered as a multi-tenant cloud service.
+        It uses Snaps, our integration connectors, which allow you to easily connect any combination of SaaS and on-premises applications and data sources.
+        SnapLogic provides Snaps for all styles of integration – batch, real-time and streaming, for data of all varieties – both structured and unstructured.
+      </p>
+
+      <p>
+        Leveraging Amazon’s Elastic Compute Cloud (EC2) infrastructure, SnapLogic is able to scale out to suit enterprise integration needs in the Cloud. With appropriate configurations of hardware or leveraging private Cloud infrastructure, customers can implement elastic integration in on-premises data centers as well.
+        Customers can ship functions closer to where their data resides (rather than moving large data sets) and optimize compute power consumption.
+      </p>
     </section>
 
   </conbody>

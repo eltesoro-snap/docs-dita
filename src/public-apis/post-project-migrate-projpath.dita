@@ -26,8 +26,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/migrate/{project_path}</ph>
@@ -76,7 +81,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>dest_path</codeph></entry>
@@ -93,7 +98,7 @@
                       <li><codeph>Job</codeph></li>
                       <li><codeph>Account</codeph></li>
                       <li><codeph>Pipeline</codeph></li>
-                      <li>???</li>
+                      <!-- <li>???</li> -->
                     </ul>
                   </p>
                 </entry>
@@ -122,8 +127,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -139,9 +144,85 @@
     </section>
 
 
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!-- <title>Notes</title> -->
+
+      <!-- From the old docs. -->
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Project Migration Guidelines</p>
+
+        <ul>
+          <li>The first migration to the destination Org creates a new Project if there is no conflict.
+            However, the existing Project is overwritten if there is a conflict.
+          </li>
+          <li>When you include previously migrated accounts and Tasks in subsequent migrations, the API overwrites any changes that you may have manually made to the assets after the initial migration.</li>
+          <li>If the account name is changed after the migration, you must update all references to that account in the Pipelines.</li>
+          <li>Every time you migrate a Project, SnapLogic retains existing associations between Pipelines and Tasks if the associated Tasks are included in the migration.</li>
+        </ul>
+      </sectiondiv>
+    </section>
+
+
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
+
+      (From the old docs)
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Sample Request</p>
+
+        <codeblock outputclass="normalize-space lang-json">
+          {
+          "dest_path":"/<org_name>/<project_space>/<project_name>",
+          "asset_types":["File","Job","Account","Pipeline"],
+          "async_mode":"true",
+          "duplicate_check":"false"
+          }
+        </codeblock>
+        <p>When the async_mode parameter is set to true, the request returns immediately with status_token and status_url. </p>
+      </sectiondiv>
+
+      <sectiondiv>
+        <p outputclass="sectiondivtitle">Sample Response</p>
+
+        <codeblock outputclass="normalize-space lang-json">
+          {
+          "response_map": {"status_token": "xxxxxxxxxxxxxx", "status_url": "https://<pod_name>/api/1/rest/public/project/migrate/<status_token>"} ,
+          "http_status_code": 200
+          }
+        </codeblock>
+
+        <p>The status URL is a public API that checks the migration status: Started, Completed, or Failed. If the status is Failed, then the response includes error messages.</p>
+
+        <p>The following example shows a status document:</p>
+        <codeblock outputclass="normalize-space lang-json">
+          {
+          "_id" : "a8f70684-f422-42ed-83d1-78fa3aa1759a",
+          "status" : "Completed",
+          "user_id" : "inttest@snaplogic.com",
+          "src_path" : "exportorg/projects/acct",
+          "create_time" : ISODate("2017-03-21T18:37:46.249Z"),
+          "dest_path" : "/importorg/projects/acct",
+          "asset_types" : [
+          "File",
+          "Job",
+          "Account",
+          "Pipeline"
+          ],
+          "successful" : [
+          { "snode_id" : "58d172f773fe032daac6350c", "name" : "rest_account" }
+          ,
+          { "snode_id" : "58d172fa73fe032daac63510", "name" : "import_pipe" }
+          ],
+          "failed" : [ ],
+          "warnings" : [ ]
+          }
+        </codeblock>
+      </sectiondiv>
+
+
     </section>
     -->
 

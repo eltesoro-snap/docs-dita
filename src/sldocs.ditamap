@@ -7,9 +7,77 @@
   <mapref href="keys.ditamap"/>
 
   <topicref href="index.dita" toc="no"/>
-  <mapref href="apim/apim.ditamap"/>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Getting Started</navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Release Notes</navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic Concepts</navtitle></topicmeta>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Snaps and Pipelines</navtitle></topicmeta>
+
+      <topichead collection-type="family">
+        <topicmeta><navtitle>Snap Reference</navtitle></topicmeta>
+      </topichead>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Tasks</navtitle></topicmeta>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Flows</navtitle></topicmeta>
+    </topichead>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic Designer</navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic Manager</navtitle></topicmeta>
+    <mapref href="apim/apim.ditamap"/>
+    <mapref href="manager/manager.ditamap"/>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic Monitoring Dashboard</navtitle></topicmeta>
+  </topichead>
+
   <mapref href="sl-studio/sl-studio.ditamap"/>
-  <mapref href="manager/manager.ditamap"/>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic Platform</navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>Administration and Configuration</navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle>SnapLogic API Management</navtitle></topicmeta>
+  </topichead>
+
   <mapref href="public-apis/public-apis.ditamap"/>
 
+  <topichead collection-type="family">
+    <topicmeta><navtitle></navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle></navtitle></topicmeta>
+  </topichead>
+
+  <topichead collection-type="family">
+    <topicmeta><navtitle></navtitle></topicmeta>
+  </topichead>
+
+
+  <topicref href="refs/copyright.dita" toc="no"/>
 </map>

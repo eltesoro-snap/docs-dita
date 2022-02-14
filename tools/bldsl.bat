@@ -37,6 +37,13 @@ docker run -it  --name %container%  -v %basedir%:/dita ghcr.io/dita-ot/dita-ot:3
 :. Copy other files.
 echo f | xcopy %basedir%\src\_theme\sldocs.js %basedir%\%outdir%\theme\sldocs.js /i /v /y
 
+:. Copy to github.io repo.
+set githubiodir=%USERPROFILE%\g\Git\sldocs.github.io
+xcopy %basedir%\%outdir% %githubiodir%\live /s /v /y
+xcopy %basedir%\%outdir%\theme\sldocs.* %githubiodir%\k /i /v /y
+
+
+:. Start the localhost.
 if exist %basedir%/%gitsub%/%outdir%/index.html  (
   start /min %0 startsrvr
   timeout /t 1

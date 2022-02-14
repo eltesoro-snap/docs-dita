@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> determines all the versions of all Snaplex packages. ???</ph></p>
+      <p>This API <ph id="ph-shortdesc"> retrieves information about all versions of the Snaplex packages.</ph></p>
     </section>
 
 
@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/version</ph>
@@ -64,8 +69,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -79,65 +84,46 @@
           {
             "response_map": [
               {
-                "comment": "4.28 RC (Recommended)",
-                "status": "active",
-                "version": "4.28_rc-11033"
+                "version": "...",
+                "comment": "...",
+                "status": "..."
               },
-              {
-                "comment": "4.27 Patch 3.1 (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10919"
-              },
-              {
-                "comment": "4.27 Patch 3 (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10918"
-              },
-              {
-                "comment": "4.27 Patch 2.1 (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10904"
-              },
-              {
-                "comment": "4.27 Patch 2 (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10895"
-              },
-              {
-                "comment": "4.27 Patch 1 (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10894"
-              },
-              {
-                "comment": "4.27 GA (Deprecated)",
-                "status": "deprecated",
-                "version": "main-10704"
-              }
+              ...
             ],
             "http_status_code": 200
           }
         </codeblock>
 
-        <!--
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
+              <row>
+                <entry><codeph>version</codeph></entry>
+                <entry>string</entry>
+                <entry>The Snaplex version.</entry>
+              </row>
+              <row conkeyref="k-api/row-response-snaplex-version-comment"><entry/></row>
+              <row conkeyref="k-api/row-response-snaplex-version-status"><entry/></row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

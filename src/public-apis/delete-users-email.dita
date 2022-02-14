@@ -13,6 +13,11 @@
       <title>Overview</title>
 
       <p>This API <ph id="ph-shortdesc">deletes the user record associated with the specified email address.</ph></p>
+
+      <note type="warning">This action permanently removes the user from the SnapLogic system.
+        (The  SnapLogic UI deletes the user from the Org only, not from the system).
+        To check if the user belongs to other Orgs (before deletion), use <xref href="patch-groups-org-group.dita">PATCH /groups/{org}/{groupname}</xref>.
+      </note>
     </section>
 
 
@@ -20,13 +25,18 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role-for-all-orgs-of-user"/></li>
       </ul>
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">DELETE</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/users/{email}</ph>
@@ -65,8 +75,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -80,8 +90,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

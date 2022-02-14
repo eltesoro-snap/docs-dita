@@ -2,7 +2,7 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en-US" id="public-apis">
 
-  <title>Public APIs</title>
+  <title>SnapLogic Public APIs</title>
 
   <topicref href="public-apis.dita">
 
@@ -90,6 +90,7 @@
     </topichead>
 
     <topicref href="api-perms-vs-manager-perms.dita"/>
+    <topicref href="ref-activity-metadata.dita"/>
 
   </topicref>
 

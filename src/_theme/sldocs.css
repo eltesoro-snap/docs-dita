@@ -50,7 +50,9 @@
   --quoteblock-bgcolor: #EEEEEE;
   --quoteblock-textcolor: #888888;
   --card-bgcolor: #F8F8F8;
-  --tab-bgcolor-active: #EEEEEE;
+  --tab-bgcolor-active: #F9F9F9;
+  --tab-bgcolor-inactive: #999999;
+  --tab-font-inactive: #888888;
   --stepsection-bgcolor: #F9F9F9;
 
   /* callouts */
@@ -128,10 +130,11 @@ header a {
 }
 
 header img {
-  max-width: 100px;
+  font-size: 3rem;
+  max-width: 150px;
   height: auto;
-  vertical-align: -15px;
-  padding: 0 20px;
+  vertical-align: -20px;
+  padding: 0 10px 0 0;
 }
 
 header .site-title {
@@ -147,11 +150,22 @@ header .site-title {
 
 footer {
   padding: 20px;
+  font-size: 90%;
   color: var(--ftr-textcolor);
 }
 
-footer p, footer ul { margin: 0; padding: 0; }
-footer li { list-style-type: none; line-height: 1.5; }
+footer p, footer ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+footer li {
+  list-style-type: none;
+  float: left;
+  padding: 0 5px;
+  line-height: 1.5;
+}
 
 footer a {
   text-decoration: none;
@@ -161,6 +175,9 @@ footer a:hover {
   font-weight: bolder;
   transition: 0.3s;
 }
+
+.pipelist li { border-left: 1px solid black; }
+.pipelist li:first-child { border-left: 0; }
 
 
 /* ==============================
@@ -451,27 +468,28 @@ pre, .codeblock, .msgblock { padding: 10px; }
 .tabs {
   overflow: hidden;
   padding: 0 0 0 15px;
-  margin: inherit 0 0 0;
+  margin-bottom: 0 !important;
 }
 .tabs li {
   list-style-type: none;
   background-color: inherit;
   float: left;
   border: var(--borderline);
-  border-bottom: none;
   border-radius: 5px 5px 0 0;
   outline: none;
   cursor: pointer;
-  padding: 3px 16px;
+  padding: 3px 16px 10px 16px;
+  color: var(--tab-font-inactive);
   text-decoration: none;
   transition: 0.3s;
 }
 .tabs li:hover {
-  font-weight: bold;
+  color: inherit;
 }
 .tabs li.active {
   background-color: var(--tab-bgcolor-active);
-  font-weight: bold;
+  border-bottom-color: var(--tab-bgcolor-active);
+  color: inherit;
 }
 .tabcontent {
   display: none;

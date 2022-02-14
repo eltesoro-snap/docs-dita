@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="ref-pipeline-metadata">
+
+  <title>Reference: Pipeline Metadata</title>
+
+  <shortdesc>Information about a Pipeline in a Task Run.</shortdesc>
+
+  <refbody>
+
+    <section>
+      <p>You can get information about a Pipeline through the public API <xref href="get-runtime-org-ruuid.dita"><codeph>GET /runtime/{org}/{ruuid}</codeph></xref>.</p>
+
+    </section>
+
+
+  </refbody>
+
+</reference>

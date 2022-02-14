@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">retrieves Snaplex and JCC wrapper information about all nodes or about the specified node.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves Snaplex and JCC wrapper information about all nodes or about the node, specified by the Snaplex path or the hostname.</ph></p>
 
       <ul>
         <li>If called without parameters, the API returns information about all the nodes in the Org.</li>
@@ -30,8 +30,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/{org}</ph>?{query_parameters}
@@ -61,7 +66,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-query-param-plexpath"><entry/></row>
               <row conkeyref="k-api/row-query-param-hostname-list"><entry/></row>
@@ -82,14 +87,15 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
         <div conkeyref="k-api/div-table-status-code-only"/>
       </sectiondiv>
 
+      <!--
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
@@ -102,26 +108,76 @@
           }
         </codeblock>
 
-        <!--
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
             </tbody>
           </tgroup>
         </table>
-        -->
+
+        From the old topic:
+          The API request retrieves the following data headers:
+
+              statusLine: Indicates whether the request was successful and provides request-related data.
+              entity: Contains the actual API response.
+                  response_map: Contains the API response map. This is the data for which you execute the API request.
+                  headers: Contains metadata related to the API request and response.
+
+          The actual content of the API call is included in the response_map section. The remainder of this document details the contents of this section.
+
+          The response_map section of the API response contains the actual data returned as a result of API execution. This section is a map where the plex_path ("/snaplogic/shared/Test%20Cloud" in our example above) serves as the key. The map returned contains details associated with the plex_path.
+
+          The response_map section organizes Snaplex information into two sections:
+
+              cc_info: Provides information about the JCCs running on the specified Snaplex.
+              plex_info: Provides metadata related to the specified Snaplex.
+
+
+          Understanding JCC Information (cc_info)
+
+          The cc_info section of the API response comprises the following pieces of information about JCC nodes:
+
+            * container_type	The type of container: regular, mixed, or null.
+
+            * down	Lists all the JCC nodes that were in down state and not processing requests when the API request was made​. Each item in the list is a map containing more details about the container. For example, a message is returned under alerts if your Snaplex version is deprecated and needs to be updated.
+
+            * running	Lists all the containers that were in running state when the API request was made. Each item in the list is a map containing more details about the container (JCC node).
+
+          The API response provides detailed data for each JCC node (in down or running state) as indicated below:
+            (Example cc_info entry)
+
+          Container details are displayed as a series of key-value attribute pairs. This section provides information related to the attributes displayed in the container details response.
+
+
+          cc_info > Customer Info Maps (info_map)
+
+          Expanding the info_map section of the output displays the following details:
+            ("info_map" field in cc_info)
+
+
+          cc_info > Container Stats (stats)
+
+          Expanding the stats section of the output displays the following details:
+            ("stats" field in cc_info)
+
 
       </sectiondiv>
+      -->
     </section>
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

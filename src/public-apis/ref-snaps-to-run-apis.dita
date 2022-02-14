@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="ref-snaps-to-run-apis">
+
+  <title>WIP: Reference: REST Snaps That Run APIs</title>
+
+  <shortdesc>REST Snaps that can run APIs</shortdesc>
+
+  <refbody>
+
+    <section>
+      <title></title>
+
+      <p>SnapLogic provides Snaps that execute some APIs.</p>
+
+      <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438445/REST+Snap+Pack">REST Snap Pack</xref></p>
+
+      <table outputclass="flddesc">
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+          <thead>
+            <row>
+              <entry colname="col-name" valign="top">REST Snap</entry>
+              <entry colname="col-desc" valign="top">API</entry>
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry></entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry></entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </refbody>
+
+</reference>
+
+<!--
+From the old topic. Unverified and no links to which REST Snaps (which seem to be only for Salesforce).
+
+  Using REST Snaps to Execute APIs
+
+  You can execute the following APIs using pipelines:
+    User API
+      Create User
+      Retrieve Members list for an Organization
+      Retrieve Users by email
+      Update a User
+      Delete a User
+
+    Group API
+      Create a Group
+      Retrieve Groups by Organization
+      Retrieve Group by Name
+      Update Members List
+      Add/Remove a User
+      Delete Group
+
+-->

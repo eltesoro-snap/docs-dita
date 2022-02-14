@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="ref-activity-metadata">
+
+  <title>Reference: Activity Metadata</title>
+
+  <shortdesc>Information about an activity.</shortdesc>
+
+  <refbody>
+
+    <section>
+      <p>You can get information about activities that occur in your Snaplex through the public API <xref href="get-activities-org.dita"><codeph>GET /activities/{org}</codeph></xref>.</p>
+
+      <p>The response has an <codeph>entries</codeph> component, which includes several of the following information:</p>
+
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col-key"  colwidth="25%"/>
+          <colspec colname="col-type" colwidth="15%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+          <tbody>
+
+            <!-- "_id": "6206fc00ae6ff2c4ca3ef74e", -->
+            <row id="row-_id" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security">
+              <entry><codeph>_id</codeph></entry>
+              <entry>string</entry>
+              <entry>The ID of the activity. ???</entry>
+            </row>
+
+            <!-- "asset_label": "MyProxy", -->
+            <row id="row-asset_label" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>asset_label</codeph></entry>
+              <entry>string</entry>
+              <entry>The label or name of the asset.</entry>
+            </row>
+
+            <!-- "asset_path": "/docteamorg/apim/MyProxy", -->
+            <row id="row-asset_path" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>asset_path</codeph></entry>
+              <entry>string</entry>
+              <entry>The path to the affected asset.
+                <p><ph conkeyref="k-misc/ph-format"/> <codeph>/{org}/{project_space}/{project_name}</codeph></p>
+              </entry>
+            </row>
+
+            <!-- "asset_type": "Proxy", -->
+            <row id="row-asset_type" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>asset_type</codeph></entry>
+              <entry>string</entry>
+              <entry>The type of the asset affected by the activity's action.
+                <p><ph conkeyref="k-misc/ph-possible"/>
+                  <ul>
+                    <li><codeph>API</codeph></li>
+                    <li><codeph>Dir</codeph></li>
+                    <li><codeph>Plex</codeph></li>
+                    <li><codeph>Proxy</codeph></li>
+                    <li><codeph>???</codeph></li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+
+            <!-- "by_whom": "...@snaplogic.com", -->
+            <row id="row-by_whom" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security">
+              <entry><codeph>by_whom</codeph></entry>
+              <entry>string</entry>
+              <entry>The entity that performed the activity.</entry>
+            </row>
+
+            <!-- "create_time": "2022-02-12T00:14:56.014000+00:00", -->
+            <row id="row-create_time" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security">
+              <entry><codeph>create_time</codeph></entry>
+              <entry>string</entry>
+              <entry>The time when the activity's action was performed.
+                <ph conkeyref="k-misc/ph-format-utc"/>
+              </entry>
+            </row>
+
+            <!-- "display_type": "Proxy", -->
+            <row id="row-display_type" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>display_type</codeph></entry>
+              <entry>string</entry>
+              <entry>The type of the information, which indicates how it should be displayed. ???
+                <p><ph conkeyref="k-misc/ph-possible"/>
+                  <ul>
+                    <li><codeph>Proxy</codeph></li>
+                    <li><codeph>???</codeph></li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+
+            <!-- "event_type": "asset_create", -->
+            <row id="row-event_type" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security">
+              <entry><codeph>event_type</codeph></entry>
+              <entry>string</entry>
+              <entry>The type of event or activity that occurred.
+                <p><ph conkeyref="k-misc/ph-possible"/>
+                  <ul>
+                    <li>Session events:
+                      <ul>
+                        <li><codeph>session_start</codeph></li>  <!-- ev-session -->
+                      </ul>
+                    </li>
+                    <li>Asset events:  <!-- ev-asset -->
+                      <ul>
+                        <li><codeph>asset_create</codeph></li>
+                        <li><codeph>asset_delete</codeph></li>
+                        <li><codeph>asset_rename</codeph></li>
+                        <li><codeph>asset_update</codeph></li>
+                      </ul>
+                    </li>
+                    <li>Policy events:  <!-- ev-policy -->
+                      <ul>
+                        <li><codeph>policy_create</codeph></li>
+                        <li><codeph>policy_delete</codeph></li>
+                      </ul>
+                    </li>
+                    <li>Security events:  <!-- ev-security -->
+                      <ul>
+                        <li><codeph>acl_add</codeph></li>
+                      </ul>
+                    </li>
+                    <li>Snaplex events:  <!-- ev-plex -->
+                      <ul>
+                        <li><codeph>plex_node_add</codeph></li>
+                      </ul>
+                    </li>
+                    <li>User and Group events:  <!-- ev-usergrp -->
+                      <ul>
+                        <li><codeph>approve_devportal_user</codeph></li>
+                        <li><codeph>group_create</codeph></li>
+                        <li><codeph>org_add_user</codeph></li>
+                        <li><codeph>password_reset</codeph></li>
+                        <li><codeph>user_create</codeph></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+
+            <!-- "group_name": "members_devportal", -->
+            <row id="row-group_name" outputclass="ev-usergrp">
+              <entry><codeph>group_name</codeph></entry>
+              <entry>string</entry>
+              <entry>The name of the group to manage.</entry>
+            </row>
+
+            <!-- "ip_address": "192.168.1.1", -->
+            <row id="row-ip_address" outputclass="ev-session ev-plex">
+              <entry><codeph>ip_address</codeph></entry>
+              <entry>string</entry>
+              <entry>
+                <p>In Session events: The IP address of the user that started the session. ???</p>
+                <p>In Snaplex events: The IP address of the Snaplex. ???</p>
+              </entry>
+            </row>
+
+            <!-- "new_name": "...", -->
+            <row id="row-new_name" outputclass="ev-asset">
+              <entry><codeph>new_name</codeph></entry>
+              <entry>string</entry>
+              <entry>If <codeph>event_type</codeph> is <codeph>asset_rename</codeph>, the new name of the asset.</entry>
+            </row>
+
+            <!-- "org_label": "docteamorg", -->
+            <row id="row-org_label" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security">
+              <entry><codeph>org_label</codeph></entry>
+              <entry>string</entry>
+              <entry>The label or name of the Org where the activity occurred.</entry>
+            </row>
+
+            <!-- "parent_path": "/docteamorg/apim", -->
+            <row id="row-parent_path" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>parent_path</codeph></entry>
+              <entry>string</entry>
+              <entry>The path to the parent of the activity.
+                <p><ph conkeyref="k-misc/ph-format"/> <codeph>/{org}/{project_space}</codeph></p>
+              </entry>
+            </row>
+
+            <!-- "parent_type": "apim", -->
+            <row id="row-parent_type" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>parent_type</codeph></entry>
+              <entry>string</entry>
+              <entry>The type of the parent activity.
+                <ph conkeyref="k-misc/ph-possible"/>
+                <ul>
+                  <li><codeph>apim</codeph></li>
+                  <li><codeph>Project</codeph></li>
+                  <li><codeph>???</codeph></li>
+                </ul>
+              </entry>
+            </row>
+
+            <!-- "partition_label": "MyProxy" -->
+            <row id="row-partition_label" outputclass="ev-asset ev-policy ev-security">
+              <entry><codeph>partition_label</codeph></entry>
+              <entry>string</entry>
+              <entry>The label or name of ???</entry>
+            </row>
+
+            <!--
+            "perm": {
+              "perms": [
+                "R",
+                "W",
+                "X"
+              ],
+              "subject_type": "USER",
+              "inherit": true,
+              "subject": "johndoe@example.com"
+            },
+            -->
+            <row id="row-perm-perms" outputclass="ev-security">
+              <entry><codeph>perm</codeph> » <codeph>perms</codeph></entry>
+              <entry>array</entry>
+              <entry conkeyref="k-api/entry-permissions-desc"/>
+            </row>
+            <row id="row-perm-subject_type" outputclass="ev-security">
+              <entry><codeph>perm</codeph> » <codeph>subject_type</codeph></entry>
+              <entry>string</entry>
+              <entry>The type of the <codeph>subject</codeph>.
+                <p><ph conkeyref="k-misc/ph-possible"/>
+                  <ul>
+                    <li><codeph>USER</codeph></li>
+                    <li><codeph>???</codeph></li>
+                  </ul>
+                </p>
+              </entry>
+            </row>
+            <row id="row-perm-inherit" outputclass="ev-security">
+              <entry><codeph>perm</codeph> » <codeph>inherit</codeph></entry>
+              <entry>Boolean</entry>
+              <entry>If <codeph>true</codeph>, ???</entry>
+            </row>
+
+            <!-- "perms_entry": "Full Access", -->
+            <row id="row-perms_entry" outputclass="ev-security">
+              <entry><codeph>perms_entry</codeph></entry>
+              <entry>string</entry>
+              <entry>???</entry>
+            </row>
+
+            <!-- "perms_subject": "johndoe@example.com", -->
+            <!-- "subject": "johndoe@example.com" -->
+            <row id="row-perms_subject" outputclass="ev-security">
+              <entry>
+                <p><codeph>perm</codeph> » <codeph>subject</codeph></p>
+                <p><codeph>perms_subject</codeph></p>
+              </entry>
+              <entry>string</entry>
+              <entry>The user or asset to be assigned the permissions. ???</entry>
+            </row>
+
+
+            <!-- "project_label": "John Doe", -->
+            <row id="row-project_label" outputclass="ev-asset ev-plex ev-policy ev-security">
+              <entry><codeph>project_label</codeph></entry>
+              <entry>string</entry>
+              <entry>The label or name of the Project where the activity occurred.</entry>
+            </row>
+
+            <!-- "snaplogic_admin_update": false, -->
+            <row id="row-snaplogic_admin_update" outputclass="ev-session ev-usergrp">
+              <entry><codeph>snaplogic_admin_update</codeph></entry>
+              <entry>Boolean</entry>
+              <entry>If <codeph>true</codeph>, ???</entry>
+            </row>
+
+            <!-- "template": "%(by_whom)s created the %(display_type)s %(asset_label)s under %(parent_type)s %(parent_path)s in organization %(org_label)s", -->
+            <row id="row-template" outputclass="ev-session ev-asset ev-plex ev-usergrp ev-policy ev-security ev-security">
+              <entry><codeph>template</codeph></entry>
+              <entry>string</entry>
+              <entry>The template for the log message that describes the activity. ???</entry>
+            </row>
+
+            <!-- "user_id": "...@snaplogic.com", -->
+            <row id="row-user_id" outputclass="ev-session ev-usergrp">
+              <entry><codeph>user_id</codeph></entry>
+              <entry>string</entry>
+              <entry>
+                <p>Session events: The same value as <codeph>by_whom</codeph>.</p>
+                <p>User events: The username or email address associated with the user account being managed.</p>
+                <p>???</p>
+              </entry>
+            </row>
+
+
+            <!--
+            <row id="row-" outputclass="">
+              <entry><codeph></codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+            -->
+
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </refbody>
+
+</reference>

@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/api-stats/{org}</ph>?{query_parameters}
@@ -56,7 +61,7 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>date_time</codeph></entry>
@@ -83,8 +88,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -97,11 +102,11 @@
         <codeblock outputclass="normalize-space lang-json">
           {
             "response_map": {
-              "daily_limit": ...,
               "organization": "...",
-              "concurrent_call_in_progress": ...,
+              "daily_limit": ...,
+              "daily_call_used": ...,
               "concurrent_limit": ...,
-              "daily_call_used": ...
+              "concurrent_call_in_progress": ...
             },
             "http_status_code": 200
           }
@@ -112,33 +117,13 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row id="row-response-task-run-daily-limit">
-                <entry><codeph>daily_limit</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
-              <row id="row-response-task-run-organization">
-                <entry><codeph>organization</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-              <row id="row-response-task-run-concurrent-call-in-progress">
-                <entry><codeph>concurrent_call_in_progress</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
-              <row id="row-response-task-run-concurrent-limit">
-                <entry><codeph>concurrent_limit</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
-              <row id="row-response-task-run-daily-call-used">
-                <entry><codeph>daily_call_used</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
+              <row conkeyref="k-api/row-response-organization"><entry/></row>
+              <row conkeyref="k-api/row-response-task-run-daily-limit"><entry/></row>
+              <row conkeyref="k-api/row-response-task-run-daily-call-used"><entry/></row>
+              <row conkeyref="k-api/row-response-task-run-concurrent-limit"><entry/></row>
+              <row conkeyref="k-api/row-response-task-run-concurrent-call-in-progress"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -148,8 +133,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

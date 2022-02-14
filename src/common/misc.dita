@@ -13,6 +13,7 @@
       <ph id="ph-reqd"><b>Required.</b></ph>
       <ph id="ph-valid">Valid values:</ph>
       <ph id="ph-possible">Possible values:</ph>
+      <ph id="ph-possible-keys">Possible keys:</ph>
       <ph id="ph-default">Default:</ph>
       <ph id="ph-format">Format:</ph>
       <ph id="ph-example">Example:</ph>
@@ -25,6 +26,59 @@
 
       <!-- <ph conkeyref="k-misc/ph-format-utc"/> -->
       <ph id="ph-format-utc"><ph conref="#./ph-format"/> <xref scope="external" format="html" href="https://www.w3.org/TR/NOTE-datetime">UTC</xref></ph>
+
+    </section>
+
+
+    <section>
+      <title>Table Heads</title>
+
+      <table>
+
+        <tgroup cols="2">
+          <colspec colname="col-name" colwidth="25%"/>
+          <colspec colname="col-desc" colwidth="75%"/>
+
+          <!-- <thead conkeyref="k-misc/thead-field-desc"><row><entry/></row></thead> -->
+          <thead id="thead-field-desc">
+            <row>
+              <entry colname="col-name" valign="top">Field</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry><uicontrol></uicontrol></entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="3">
+          <colspec colname="col-key"  colwidth="25%"/>
+          <colspec colname="col-type" colwidth="15%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+
+          <!-- <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead> -->
+          <thead id="thead-key-type-desc">
+            <row>
+              <entry colname="col-key"  valign="top">Key</entry>
+              <entry colname="col-type" valign="top">Type</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry><uicontrol></uicontrol></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+      </table>
 
     </section>
 

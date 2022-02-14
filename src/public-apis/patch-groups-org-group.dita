@@ -13,6 +13,8 @@
       <title>Overview</title>
 
       <p>This API <ph id="ph-shortdesc">adds or removes users from the specified group.</ph></p>
+
+      <note type="tip">You can add an existing user to an Org by adding the user to the <codeph>members</codeph> group of the Org.</note>
     </section>
 
 
@@ -25,8 +27,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">PATCH</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/groups/{org}/{groupname}</ph>
@@ -62,6 +69,8 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Body</p>
 
+        <note type="important">Only one of the following parameters can be used in each API call.</note>
+
         <codeblock id="request-body" outputclass="normalize-space lang-json">
           {
             "add_user" : "...",
@@ -69,24 +78,22 @@
           }
         </codeblock>
 
-        <p>where:</p>
-
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>add_user</codeph></entry>
                 <entry>string</entry>
-                <entry></entry>
+                <entry>The email address of the user to add to the group.</entry>
               </row>
               <row>
                 <entry><codeph>remove_user</codeph></entry>
                 <entry>string</entry>
-                <entry></entry>
+                <entry>The email address of the user to remove from the group.</entry>
               </row>
             </tbody>
           </tgroup>
@@ -96,8 +103,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -111,8 +118,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

@@ -14,7 +14,6 @@
 
       <p>This API <ph id="ph-shortdesc">retrieves information about Task runs that match the specified filters.</ph></p>
 
-      <note type="note">If a timespan is not set, this API returns information about Task runs within the last hour.</note>
     </section>
 
 
@@ -27,8 +26,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/{org}</ph>?{query_parameters}
@@ -53,12 +57,14 @@
       <sectiondiv>
         <p outputclass="sectiondivtitle">Query Parameters</p>
 
+        <note type="note">If a timespan is not set, this API returns information about Task runs within the last hour.</note>
+
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
                 <entry><codeph>plex_label</codeph></entry>
@@ -167,8 +173,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -195,9 +201,13 @@
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-response-entries-task-run"><entry/></row>
+              <row>
+                <entry><codeph>entries</codeph></entry>
+                <entry>array</entry>
+                <entry><ph conkeyref="k-api/ph-response-array-task-metadata"/></entry>
+              </row>
               <row conkeyref="k-api/row-response-total"><entry/></row>
               <row conkeyref="k-api/row-response-limit"><entry/></row>
               <row conkeyref="k-api/row-response-offset"><entry/></row>
@@ -210,8 +220,13 @@
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

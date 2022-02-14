@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> determines the latest available version of the Snaplex package. ???</ph></p>
+      <p>This API <ph id="ph-shortdesc"> determines the latest active version of the Snaplex package.</ph></p>
     </section>
 
 
@@ -25,8 +25,13 @@
     </section>
 
 
-    <section>
-      <title>Request</title>
+    <section outputclass="tabs">
+      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+    </section>
+
+
+    <section id="section-api-request" outputclass="api-request tabcontent">
+      <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
         <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/version/latest</ph>
@@ -64,8 +69,8 @@
     </section>
 
 
-    <section>
-      <title>Response</title>
+    <section id="section-api-response" outputclass="api-response tabcontent">
+      <!-- <title>Response</title> -->
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
@@ -78,34 +83,44 @@
         <codeblock outputclass="normalize-space lang-json">
           {
             "response_map": {
-              "comment": "4.28 RC (Recommended)",
-              "status": "active",
-              "version": "4.28_rc-11033"
+                "version": "...",
+                "comment": "...",
+                "status": "..."
             },
             "http_status_code": 200
           }
         </codeblock>
 
-        <!--
         <table>
           <tgroup cols="3">
             <colspec colname="col-key"  colwidth="25%"/>
             <colspec colname="col-type" colwidth="15%"/>
             <colspec colname="col-desc" colwidth="60%"/>
-            <thead><row conkeyref="k-api/row-thead-key-type-desc"><entry/></row></thead>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
+              <row>
+                <entry><codeph>version</codeph></entry>
+                <entry>string</entry>
+                <entry>The latest active version of the Snaplex.</entry>
+              </row>
+              <row conkeyref="k-api/row-response-snaplex-version-comment"><entry/></row>
+              <row conkeyref="k-api/row-response-snaplex-version-status"><entry/></row>
             </tbody>
           </tgroup>
         </table>
-        -->
 
       </sectiondiv>
     </section>
 
 
     <!--
-    <section>
-      <title>Example - </title>
+    <section id="section-api-notes" outputclass="api-notes tabcontent">
+      <!- - <title>Notes</title> - ->
+    </section>
+
+
+    <section id="section-api-examples" outputclass="api-examples tabcontent">
+      <!- - <title>Example - </title> - ->
     </section>
     -->
 

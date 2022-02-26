@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apis-snaplex">
+
+  <title>Snaplex APIs</title>
+
+  <conbody>
+
+    <section>
+      <p>Snaplex APIs allow you to do the following:
+        <ul>
+          <li><term>Node Management</term>. Configure or manage a JCC node.</li>
+          <li><term>Monitoring</term>. Retrieve information about a Snaplex.</li>
+          <li><term>Version Management</term>. Retrieve information about installed versions or upgrade to a specific version.</li>
+        </ul>
+      </p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Node Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-method"/>
+                  <ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-restart-plexpath-hostname.dita#post-snaplex-restart-plexpath-hostname/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-method"/>
+                  <ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-maintenance-plexpath-hostname.dita#post-snaplex-maintenance-plexpath-hostname/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-method"/>
+                  <ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-config-plexpath.dita#get-snaplex-config-plexpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Monitoring APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-org.dita#get-snaplex-org/ph-method"/>
+                  <ph conref="get-snaplex-org.dita#get-snaplex-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-org.dita#get-snaplex-org/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Version Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-version.dita#get-snaplex-version/ph-method"/>
+                  <ph conref="get-snaplex-version.dita#get-snaplex-version/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-version.dita#get-snaplex-version/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-method"/>
+                  <ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-snaplex-version-latest.dita#get-snaplex-version-latest/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-method"/>
+                  <ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-version-plexpath.dita#post-snaplex-version-plexpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-method"/>
+                  <ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-snaplex-version-latest-plexpath.dita#post-snaplex-version-latest-plexpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </conbody>
+
+</concept>

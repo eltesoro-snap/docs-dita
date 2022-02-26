@@ -6,39 +6,21 @@
 
   <topicref href="public-apis.dita">
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Activity APIs</navtitle></topicmeta>
+    <topicref href="apis-activity.dita" collection-type="family">
       <topicref href="get-activities-org.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Asset ACL APIs</navtitle></topicmeta>
+    <topicref href="apis-asset.dita" collection-type="family">
       <topicref href="post-assetapi-acl-projpath.dita"/>
       <topicref href="get-assetapi-acl-projpath.dita"/>
       <topicref href="delete-assetapi-acl-projpath.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Project APIs</navtitle></topicmeta>
-      <topicref href="post-project-projpath.dita"/>
-      <topicref href="put-project-projpath.dita"/>
-    </topichead>
-
-    <topichead collection-type="family">
-      <topicmeta><navtitle>GitHub APIs</navtitle></topicmeta>
-      <topicref href="post-project-checkout-projpath.dita"/>
-      <topicref href="post-project-pull-projpath.dita"/>
-      <topicref href="post-ghwebhook.dita"/>
-      <topicref href="get-repo-status-projpath.dita"/>
-    </topichead>
-
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Log APIs</navtitle></topicmeta>
+    <topicref href="apis-log.dita" collection-type="family">
       <topicref href="get-log-org.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Pipeline Monitoring APIs</navtitle></topicmeta>
+    <topicref href="apis-pipeline.dita" collection-type="family">
       <topicref href="get-runtime-org.dita"/>
       <topicref href="get-runtime-org-ruuid.dita"/>
       <topicref href="get-runtime-apistats-org.dita"/>
@@ -46,48 +28,48 @@
       <topicref href="get-runtime-apistats-org-concurrent.dita"/>
       <topicref href="post-runtime-start-org-ruuid.dita"/>
       <topicref href="post-runtime-stop-org-ruuid.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Project Migration APIs</navtitle></topicmeta>
+    <topicref href="apis-project.dita" collection-type="family">
+      <topicref href="post-project-projpath.dita"/>
+      <topicref href="put-project-projpath.dita"/>
+
+      <topicref href="post-project-checkout-projpath.dita"/>
+      <topicref href="post-project-pull-projpath.dita"/>
+      <!-- <topicref href="post-ghwebhook.dita"/> -->
+      <topicref href="get-repo-status-projpath.dita"/>
+
       <topicref href="post-project-migrate-projpath.dita"/>
       <topicref href="get-migrate-status-token.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Snaplex Management APIs</navtitle></topicmeta>
+    <topicref href="apis-snaplex.dita" collection-type="family">
       <!-- <topicref href="post-snaplex-restart-plexpath.dita"/> -->
       <topicref href="post-snaplex-restart-plexpath-hostname.dita"/>
       <topicref href="post-snaplex-maintenance-plexpath-hostname.dita"/>
       <topicref href="get-snaplex-config-plexpath.dita"/>
-    </topichead>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Snaplex Monitoring APIs</navtitle></topicmeta>
       <topicref href="get-snaplex-org.dita"/>
-    </topichead>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Snaplex Version APIs</navtitle></topicmeta>
       <topicref href="post-snaplex-version-plexpath.dita"/>
       <topicref href="post-snaplex-version-latest-plexpath.dita"/>
       <topicref href="get-snaplex-version.dita"/>
       <topicref href="get-snaplex-version-latest.dita"/>
-    </topichead>
+    </topicref>
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>User and Group Management APIs</navtitle></topicmeta>
+    <topicref href="apis-user-and-group.dita" collection-type="family">
       <topicref href="post-users.dita"/>
       <topicref href="get-users-email.dita"/>
       <topicref href="put-users-email.dita"/>
       <topicref href="delete-users-email.dita"/>
+
       <topicref href="post-groups.dita"/>
       <topicref href="get-groups-org.dita"/>
       <topicref href="get-groups-org-group.dita"/>
       <topicref href="patch-groups-org-group.dita"/>
       <topicref href="put-groups-org-group.dita"/>
       <topicref href="delete-groups-org-group.dita"/>
-    </topichead>
+    </topicref>
 
     <topicref href="api-perms-vs-manager-perms.dita"/>
     <topicref href="ref-activity-metadata.dita"/>

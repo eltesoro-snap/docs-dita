@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apis-user-and-group">
+
+  <title>User and Group APIs</title>
+
+  <conbody>
+
+    <section>
+      <p>User and Group APIs allow you to manage users and groups in your Org.</p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">User Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-users.dita#post-users/ph-method"/>
+                  <ph conref="post-users.dita#post-users/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-users.dita#post-users/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-users-email.dita#get-users-email/ph-method"/>
+                  <ph conref="get-users-email.dita#get-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-users-email.dita#get-users-email/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="put-users-email.dita#put-users-email/ph-method"/>
+                  <ph conref="put-users-email.dita#put-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="put-users-email.dita#put-users-email/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="delete-users-email.dita#delete-users-email/ph-method"/>
+                  <ph conref="delete-users-email.dita#delete-users-email/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="delete-users-email.dita#delete-users-email/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Group Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-groups.dita#post-groups/ph-method"/>
+                  <ph conref="post-groups.dita#post-groups/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-groups.dita#post-groups/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-groups-org.dita#get-groups-org/ph-method"/>
+                  <ph conref="get-groups-org.dita#get-groups-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-groups-org.dita#get-groups-org/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-groups-org-group.dita#get-groups-org-group/ph-method"/>
+                  <ph conref="get-groups-org-group.dita#get-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-groups-org-group.dita#get-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-method"/>
+                  <ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="patch-groups-org-group.dita#patch-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="put-groups-org-group.dita#put-groups-org-group/ph-method"/>
+                  <ph conref="put-groups-org-group.dita#put-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="put-groups-org-group.dita#put-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-method"/>
+                  <ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="delete-groups-org-group.dita#delete-groups-org-group/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </conbody>
+
+</concept>

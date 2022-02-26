@@ -12,7 +12,7 @@
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">requests putting the specified JCC node into maintenance mode.</ph></p>
+      <p>This API <ph id="ph-shortdesc">requests that the specified JCC node be switched to maintenance mode.</ph></p>
     </section>
 
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apis-log">
+
+  <title>Log APIs</title>
+
+  <conbody>
+
+    <section>
+      <p>Log APIs allow you to retrieve logged information.</p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Log APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-log-org.dita#get-log-org/ph-method"/>
+                  <ph conref="get-log-org.dita#get-log-org/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-log-org.dita#get-log-org/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </conbody>
+
+</concept>

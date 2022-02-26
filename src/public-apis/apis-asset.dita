@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apis-asset">
+
+  <title>Asset APIs</title>
+
+  <conbody>
+
+    <section>
+      <p>Asset APIs allow you to do the following:
+        <ul>
+          <li><term>ACL Management</term>. Manage the security permissions to assets in the project.</li>
+        </ul>
+      </p>
+
+      <table>
+        <tgroup cols="2">
+          <colspec colname="col-key" colwidth="40%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">ACL Management APIs</entry></row>
+          </thead>
+          <tbody>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="post-assetapi-acl-projpath.dita#post-assetapi-acl-projpath/ph-method"/>
+                  <ph conref="post-assetapi-acl-projpath.dita#post-assetapi-acl-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="post-assetapi-acl-projpath.dita#post-assetapi-acl-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="delete-assetapi-acl-projpath.dita#delete-assetapi-acl-projpath/ph-method"/>
+                  <ph conref="delete-assetapi-acl-projpath.dita#delete-assetapi-acl-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="delete-assetapi-acl-projpath.dita#delete-assetapi-acl-projpath/ph-shortdesc"/></entry>
+            </row>
+            <row>
+              <entry>
+                <codeph>
+                  <ph conref="get-assetapi-acl-projpath.dita#get-assetapi-acl-projpath/ph-method"/>
+                  <ph conref="get-assetapi-acl-projpath.dita#get-assetapi-acl-projpath/ph-sig"/>
+                </codeph>
+              </entry>
+              <entry outputclass="casesent"><ph conref="get-assetapi-acl-projpath.dita#get-assetapi-acl-projpath/ph-shortdesc"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+    </section>
+
+  </conbody>
+
+</concept>

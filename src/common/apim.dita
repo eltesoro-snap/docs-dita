@@ -13,7 +13,7 @@
       <ul id="ul-label-rules">
         <li>Must be unique.</li>
         <li>Must begin with alphanumeric characters A-Z, a-z, or 0-9.</li>
-        <li>Cannot contain the reserved keywords <codeph>apim</codeph> and <codeph>shared</codeph>.</li>
+        <li>Cannot contain the reserved keyword <codeph>shared</codeph>.</li>
         <li>Cannot contain |, &lt;, &gt;, [, ], {, }, #, ?, /, and \.</li>
         <li>Must be no more than 256 characters. If the name includes double-byte characters, the maximum length is shorter.</li>
       </ul>

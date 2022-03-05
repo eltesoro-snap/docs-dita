@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="patch-groups-org-group">
 
-  <title>PATCH /groups/{org}/{groupname}</title>
-  <titlealts><navtitle>PATCH /groups/{org}/{groupname}</navtitle></titlealts>
+  <title>Add or Remove Users from a Group</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">PATCH /groups/{org}/{groupname}</p>
+    </section>
 
     <section>
       <title>Overview</title>
@@ -73,8 +76,13 @@
 
         <codeblock id="request-body" outputclass="normalize-space lang-json">
           {
-            "add_user" : "...",
-            "remove_user" : "...",
+            "add_user" : "..."
+          }
+        </codeblock>
+
+        <codeblock id="request-body" outputclass="normalize-space lang-json">
+          {
+            "remove_user" : "..."
           }
         </codeblock>
 

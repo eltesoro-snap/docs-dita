@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-groups-org">
 
-  <title>GET /groups/{org}</title>
-  <titlealts><navtitle>GET /groups/{org}</navtitle></titlealts>
+  <title>Retrieve the List of Groups in an Org</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /groups/{org}</p>
+    </section>
 
     <section>
       <title>Overview</title>
@@ -96,8 +99,8 @@
             <tbody>
               <row>
                 <entry><codeph>groups</codeph></entry>
-                <entry>array of strings</entry>
-                <entry>The names of the groups in the Org.</entry>
+                <entry>array</entry>
+                <entry>An array of strings containing the names of the groups in the Org.</entry>
               </row>
             </tbody>
           </tgroup>

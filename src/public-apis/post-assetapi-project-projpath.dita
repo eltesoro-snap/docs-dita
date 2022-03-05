@@ -1,21 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="post-project-projpath">
+<concept xml:lang="en-US" id="post-assetapi-project-projpath">
 
-  <title>POST /project/{project_or_space_path}</title>
-  <titlealts><navtitle>POST /project/{project_or_space_path}</navtitle></titlealts>
+  <title>Create New Project or Project Space</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /assetapi/project/{project_or_space_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>
 
       <p>This API <ph id="ph-shortdesc"> creates a new project or project space at the specified path with the specified permissions.</ph></p>
 
-      <p>The creator of the project or project space is automatically assigned admin privileges.
-        To assign admin privileges to other users, use one of the following APIs to add them to the <codeph>admins</codeph> group:
+      <p>To assign admin privileges to other users, use one of the following APIs to add them to the <codeph>admins</codeph> group:
         <ul>
           <li><codeph>PATCH /groups/{org}/{groupname}</codeph></li>
           <li><codeph>PUT /groups/{org}/{groupname}</codeph></li>
@@ -42,7 +44,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/{project_or_space_path}</ph>
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/project/{project_or_space_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -141,6 +143,8 @@
 <!--
 Source: Tectonic\sldb\src\main\python\sldb\services\public\asset_handler.py
 Last refreshed: 20220125
+        super(AssetHandlerPublic, self).__init__('assetapi', '1', factory, category='public', use_envelope=False)
+        ...
         self.add_route('project/<path:path>', self.create_project, methods=[http_lib.HTTP_POST],
               arguments=[
                     Argument(name='path', arg_from=Argument.URL),
@@ -148,5 +152,5 @@ Last refreshed: 20220125
                     Argument(name='caller', arg_from=Argument.USER_ID),
                 ])
 
-Jiras: PLAT-8626
+Jiras: PLAT-8626, PSWAT-443
 -->

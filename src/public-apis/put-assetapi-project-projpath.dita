@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="put-project-projpath">
+<concept xml:lang="en-US" id="put-assetapi-project-projpath">
 
-  <title>PUT /project/{project_or_space_path}</title>
-  <titlealts><navtitle>PUT /project/{project_or_space_path}</navtitle></titlealts>
+  <title>Rename a Project or Project Space</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">PUT /assetapi/project/{project_or_space_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>
@@ -34,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">PUT</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/project/{project_or_space_path}</ph>
+        <ph id="ph-method">PUT</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/project/{project_or_space_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -126,6 +129,8 @@
 <!--
 Source: Tectonic\sldb\src\main\python\sldb\services\public\asset_handler.py
 Last refreshed: 20220125
+        super(AssetHandlerPublic, self).__init__('assetapi', '1', factory, category='public', use_envelope=False)
+        ...
         self.add_route('project/<path:path>', self.update_project, methods=[http_lib.HTTP_PUT],
                       arguments=[
                             Argument(name='path', arg_from=Argument.URL, default='/'),
@@ -133,5 +138,5 @@ Last refreshed: 20220125
                             Argument(name='caller', arg_from=Argument.USER_ID),
                       ])
 
-Jiras: PLAT-8626
+Jiras: PLAT-8626, PSWAT-443
 -->

@@ -9,41 +9,12 @@
     <section>
       <p>Project APIs allow you to do the following:
         <ul>
-          <li><term>Project Management</term>. Manage a project or project space.</li>
           <li><term>GitHub Operations</term>. Perform GitHub operations on the repository associated with your project.</li>
           <li><term>Project Migration</term>. Migrate a project from one Org to another and track that migration.</li>
         </ul>
       </p>
 
       <table>
-        <tgroup cols="2">
-          <colspec colname="col-key" colwidth="40%"/>
-          <colspec colname="col-desc" colwidth="60%"/>
-          <thead>
-            <row><entry namest="col-key" nameend="col-desc" valign="top">Project Management APIs</entry></row>
-          </thead>
-          <tbody>
-            <row>
-              <entry>
-                <codeph>
-                  <ph conref="post-project-projpath.dita#post-project-projpath/ph-method"/>
-                  <ph conref="post-project-projpath.dita#post-project-projpath/ph-sig"/>
-                </codeph>
-              </entry>
-              <entry outputclass="casesent"><ph conref="post-project-projpath.dita#post-project-projpath/ph-shortdesc"/></entry>
-            </row>
-            <row>
-              <entry>
-                <codeph>
-                  <ph conref="put-project-projpath.dita#put-project-projpath/ph-method"/>
-                  <ph conref="put-project-projpath.dita#put-project-projpath/ph-sig"/>
-                </codeph>
-              </entry>
-              <entry outputclass="casesent"><ph conref="put-project-projpath.dita#put-project-projpath/ph-shortdesc"/></entry>
-            </row>
-          </tbody>
-        </tgroup>
-
         <tgroup cols="2">
           <colspec colname="col-key" colwidth="40%"/>
           <colspec colname="col-desc" colwidth="60%"/>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-runtime-apistats-org">
 
-  <title>GET /runtime/api-stats/{org}</title>
-  <titlealts><navtitle>GET /runtime/api-stats/{org}</navtitle></titlealts>
+  <title>Retrieve Concurrent and Daily Task Metrics</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /runtime/api-stats/{org}</p>
+    </section>
 
     <section>
       <title>Overview</title>

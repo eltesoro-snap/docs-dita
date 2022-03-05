@@ -110,6 +110,10 @@ pre {
   line-height: 1.5;
 }
 
+.shortsyntax {
+  font-size: 150%;
+}
+
 
 /* ==============================
    Header

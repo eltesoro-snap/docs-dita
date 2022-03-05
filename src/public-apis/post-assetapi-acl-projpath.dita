@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-assetapi-acl-projpath">
 
-  <title>POST /assetapi/acl/{project_path}</title>
-  <titlealts><navtitle>POST /assetapi/acl/{project_path}</navtitle></titlealts>
+  <title>Grant a User or Group Access to a Project</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /assetapi/acl/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

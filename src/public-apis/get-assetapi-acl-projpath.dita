@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-assetapi-acl-projpath">
 
-  <title>GET /assetapi/acl/{project_path}</title>
-  <titlealts><navtitle>GET /assetapi/acl/{project_path}</navtitle></titlealts>
+  <title>Retrieve Privileges of Current User</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /assetapi/acl/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

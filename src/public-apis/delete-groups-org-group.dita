@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="delete-groups-org-group">
 
-  <title>DELETE /groups/{org}/{groupname}</title>
-  <titlealts><navtitle>DELETE /groups/{org}/{groupname}</navtitle></titlealts>
+  <title>Delete a Group</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">DELETE /groups/{org}/{groupname}</p>
+    </section>
 
     <section>
       <title>Overview</title>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-runtime-start-org-ruuid">
 
-  <title>POST /runtime/start/{org}/{ruuid}</title>
-  <titlealts><navtitle>POST /runtime/start/{org}/{ruuid}</navtitle></titlealts>
+  <title>Resume a Resumable Task</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /runtime/start/{org}/{ruuid}</p>
+    </section>
 
     <section>
       <title>Overview</title>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-users-email">
 
-  <title>GET /users/{email}</title>
-  <titlealts><navtitle>GET /users/{email}</navtitle></titlealts>
+  <title>Retrieve Info About a User</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /users/{email}</p>
+    </section>
 
     <section>
       <title>Overview</title>
@@ -140,8 +143,8 @@
               </row>
               <row>
                 <entry><codeph>organizations</codeph></entry>
-                <entry>array of objects</entry>
-                <entry>The list of Orgs that the user belongs to.
+                <entry>array</entry>
+                <entry>An array of objects containing information about the Orgs that the user belongs to.
                   Each object contains <codeph>name</codeph> and <codeph>id</codeph> of the Org and a Boolean (<codeph>administrator</codeph>) that indicates whether the user is assigned the administrator role in the Org.
                 </entry>
               </row>

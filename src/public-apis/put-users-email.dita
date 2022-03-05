@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="put-users-email">
 
-  <title>PUT /users/{email}</title>
-  <titlealts><navtitle>PUT /users/{email}</navtitle></titlealts>
+  <title>Update a User</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">PUT /users/{email}</p>
+    </section>
 
     <section>
       <title>Overview</title>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="delete-assetapi-acl-projpath">
 
-  <title>DELETE /assetapi/acl/{project_path}</title>
-  <titlealts><navtitle>DELETE /assetapi/acl/{project_path}</navtitle></titlealts>
+  <title>Revoke All Project Access from a User or Group</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">DELETE /assetapi/acl/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

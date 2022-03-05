@@ -2,17 +2,20 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-runtime-apistats-org-concurrent">
 
-  <title>GET /runtime/api-stats/{org}/concurrent</title>
-  <titlealts><navtitle>GET /runtime/api-stats/{org}/concurrent</navtitle></titlealts>
+  <title>Retrieve Concurrent Task Metrics</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
 
     <section>
+      <p outputclass="shortsyntax">GET /runtime/api-stats/{org}/concurrent</p>
+    </section>
+
+    <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc">retrieves the concurrent metrics of Tasks running at the specified time.</ph></p>
+      <p>This API <ph id="ph-shortdesc">retrieves the metrics of Tasks running concurrently at the specified time.</ph></p>
     </section>
 
 

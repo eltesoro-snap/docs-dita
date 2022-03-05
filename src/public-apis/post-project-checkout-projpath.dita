@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-project-checkout-projpath">
 
-  <title>POST /project/checkout/{project_path}</title>
-  <titlealts><navtitle>POST /project/checkout/{project_path}</navtitle></titlealts>
+  <title>Check Out Project Files from GitHub</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /project/checkout/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

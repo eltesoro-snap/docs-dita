@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-snaplex-config-plexpath">
 
-  <title>GET /snaplex/config/{plex_path}</title>
-  <titlealts><navtitle>GET /snaplex/config/{plex_path}</navtitle></titlealts>
+  <title>Retrieve Config Info for a Groundplex</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /snaplex/config/{plex_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

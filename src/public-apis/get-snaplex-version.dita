@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-snaplex-version">
 
-  <title>GET /snaplex/version</title>
-  <titlealts><navtitle>GET /snaplex/version</navtitle></titlealts>
+  <title>Get All Versions of the Snaplex Package</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /snaplex/version</p>
+    </section>
 
     <section>
       <title>Overview</title>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-project-migrate-projpath">
 
-  <title>POST /project/migrate/{project_path}</title>
-  <titlealts><navtitle>POST /project/migrate/{project_path}</navtitle></titlealts>
+  <title>Migrate a Project to Another Org</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /project/migrate/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>
@@ -71,8 +74,8 @@
           {
             "dest_path" : "...",
             "asset_types" : [ ... ],
-            "async" : true,
-            "duplicate_check" : true
+            "async" : ...,
+            "duplicate_check" : ...
           }
         </codeblock>
 
@@ -90,8 +93,8 @@
               </row>
               <row>
                 <entry><codeph>asset_types</codeph></entry>
-                <entry>array of strings</entry>
-                <entry>The types of assets to migrate.
+                <entry>array</entry>
+                <entry>Strings containing the types of assets to migrate.
                   <p><ph conkeyref="k-misc/ph-valid"/>
                     <ul>
                       <li><codeph>File</codeph></li>

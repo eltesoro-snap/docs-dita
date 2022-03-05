@@ -243,7 +243,7 @@
               <row id="row-pathparam-migration-status-token">
                 <entry><codeph>status-token</codeph></entry>
                 <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-migration-status-token"/>
-                  <p>To determine the status token, ???</p>
+                  <!-- <p>To determine the status token, ???</p> -->
                 </entry>
               </row>
 
@@ -336,7 +336,7 @@
                 <entry>integer</entry>
                 <entry><ph conkeyref="k-api/ph-desc-limit"/>
                   <ph conkeyref="k-api/ph-limit-offset-pagination"/>
-                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1,000 ???</p>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1,000 <!-- ??? --></p>
                   <p><ph conkeyref="k-misc/ph-default"/> 10
                     <!-- Source: https://github.com/SnapLogic/Tectonic/blob/67026f401f7ea99ad8e52f0571130beee7ba9021/slserver/src/main/python/slserver/services/pipeline/runtime_handler.py#L1575 -->
                   </p>
@@ -500,6 +500,7 @@
               <!-- <row conkeyref="k-api/row-request-groupname"><entry/></row> -->
               <row id="row-request-groupname">
                 <entry><codeph>name</codeph></entry>
+                <entry>string</entry>
                 <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
               </row>
 
@@ -543,7 +544,7 @@
                 <entry><codeph>allow_password_login</codeph></entry>
                 <entry>Boolean</entry>
                 <entry>If <codeph>true</codeph>, the user is allowed to log in with a password.
-                  Otherwise, ???.
+                  <!-- Otherwise, ???. -->
                 </entry>
               </row>
 
@@ -551,14 +552,14 @@
               <row id="row-request-user-revoke-old-password">
                 <entry><codeph>revoke_old_password</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the user's password is invalidated. ???</entry>
+                <entry>If <codeph>true</codeph>, the user's password is invalidated. <!-- ??? --></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-utility"><entry/></row> -->
               <row id="row-request-user-utility">
                 <entry><codeph>utility</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the account is tagged as a service account, not a user account, for use with automated processes. ???</entry>
+                <entry>If <codeph>true</codeph>, the account is tagged as a service account, not a user account, for use with automated processes. <!-- ??? --></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-ui-access"><entry/></row> -->
@@ -586,14 +587,14 @@
               <row id="row-request-user-certificate">
                 <entry><codeph>certificate</codeph></entry>
                 <entry>string</entry>
-                <entry>???</entry>
+                <entry><!-- ??? --></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-user-file-handle"><entry/></row> -->
               <row id="row-request-user-file-handle">
                 <entry><codeph>file_handle</codeph></entry>
                 <entry>string</entry>
-                <entry>???</entry>
+                <entry><!-- ??? --></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-request-created-by"><entry/></row> -->
@@ -732,7 +733,7 @@
                       <li>Started</li>
                       <li>Prepared</li>
                       <li>NoUpdate</li>
-                      <li>???</li>
+                      <!-- <li>???</li> -->
                     </ul>
                   </p>
 
@@ -819,7 +820,7 @@
               <row id="row-response-task-run-top-tasks">
                 <entry><codeph>top_tasks</codeph></entry>
                 <entry>array</entry>
-                <entry>An array of objects containing metadata about ???</entry>
+                <entry>An array of objects containing metadata.<!--  about ??? --></entry>
               </row>
 
               <!-- <row conkeyref="k-api/row-response-task-run-daily-call-available"><entry/></row> -->

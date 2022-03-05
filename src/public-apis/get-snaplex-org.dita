@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-snaplex-org">
 
-  <title>GET /snaplex/{org}</title>
-  <titlealts><navtitle>GET /snaplex/{org}</navtitle></titlealts>
+  <title>Retrieve Info About Nodes</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /snaplex/{org}</p>
+    </section>
 
     <section>
       <title>Overview</title>

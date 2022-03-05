@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="tryapi-cors-settings">
+
+  <title>Setting Up a CORS Restriction Policy for Try It Out</title>
+  <titlealts><navtitle>Setting Up a CORS Restriction for Try It Out</navtitle></titlealts>
+
+  <shortdesc>CORS Restriction Policy settings for the Try It Out feature for APIs.</shortdesc>
+
+  <taskbody>
+
+    <section>
+      <title>Overview</title>
+      <p>To enable the <uicontrol>Try it out</uicontrol> button for your API in the Developer Portal catalog, the API must include a CORS Restriction policy.</p>
+    </section>
+
+    <prereq>
+      <ul>
+        <li>An existing API defined in the <uicontrol>API Manager</uicontrol></li>
+      </ul>
+    </prereq>
+
+    <steps>
+      <step><cmd>In the <uicontrol>API Manager</uicontrol>, go to the <uicontrol>API Details</uicontrol> tab of the target API and add a CORS Restriction Policy.</cmd>
+        <info><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/API+Policy+Manager#Applying-Policies-in-the-API-Manager-console%5BinlineExtension%5D">Learn how to add a policy to your API.</xref></info>
+      </step>
+
+      <step><cmd>Configure the CORS Restriction Policy.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-tryitout-cors-settings.png" placement="break" align="left" outputclass="img-medium"><alt>Add Policy dialog</alt></image></div>
+        </info>
+        <substeps>
+          <substep><cmd>Add an <uicontrol>Access Control Allow Origins</uicontrol> entry. Set the value to the URL to your pod.</cmd>
+            <info>Example: <codeph>https://elastic.snaplogic.com</codeph></info>
+          </substep>
+          <substep><cmd>Add three <uicontrol>Access Control Request Headers</uicontrol> entries.</cmd>
+            <info>Set the values to the following:
+              <ul>
+                <li><codeph>Accept</codeph></li>
+                <li><codeph>Authorization</codeph></li>
+                <li><codeph>Content-Type</codeph></li>
+              </ul>
+            </info>
+          </substep>
+          <substep><cmd>Select <uicontrol>Access Control Allow Credentials</uicontrol>.</cmd></substep>
+        </substeps>
+      </step>
+
+      <step><cmd>Click <uicontrol>Validate &amp; Save</uicontrol>.</cmd></step>
+    </steps>
+
+  </taskbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1246989523/Cross+Origin+Resource+Sharing+CORS+Restriction">
+      <linktext>CORS Restriction Policy</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1978731409#enable-try-it-out">
+      <linktext>Enabling "Try It Out" for your API</linktext>
+    </link>
+  </related-links>
+
+</task>

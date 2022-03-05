@@ -14,4 +14,9 @@
     </topicref>
   </topichead>
 
+  <topichead collection-type="family">
+    <topicmeta><navtitle>API Manager</navtitle></topicmeta>
+    <topicref href="tryapi-cors-settings.dita"/>
+  </topichead>
+
 </map>

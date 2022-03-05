@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-runtime-org-ruuid">
 
-  <title>GET /runtime/{org}/{ruuid}</title>
-  <titlealts><navtitle>GET /runtime/{org}/{ruuid}</navtitle></titlealts>
+  <title>Retrieve Info About a Task</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /runtime/{org}/{ruuid}</p>
+    </section>
 
     <section>
       <title>Overview</title>

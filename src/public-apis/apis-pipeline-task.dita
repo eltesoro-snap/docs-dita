@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="apis-pipeline">
+<concept xml:lang="en-US" id="apis-pipeline-task">
 
-  <title>Pipeline APIs</title>
+  <title>Pipeline and Task APIs</title>
 
   <conbody>
 
     <section>
-      <p>Pipeline APIs allow you to retrieve information about Task runs and to start or stop a specific Task run.</p>
+      <p>Pipeline and Task APIs allow you to retrieve information about Task runs and to start or stop a specific Task run.</p>
 
       <table>
         <tgroup cols="2">
           <colspec colname="col-key" colwidth="40%"/>
           <colspec colname="col-desc" colwidth="60%"/>
           <thead>
-            <row><entry namest="col-key" nameend="col-desc" valign="top">Pipeline Monitoring APIs</entry></row>
+            <row><entry namest="col-key" nameend="col-desc" valign="top">Pipeline and Task Monitoring APIs</entry></row>
           </thead>
           <tbody>
             <row>

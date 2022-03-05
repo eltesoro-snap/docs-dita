@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-ghwebhook">
 
-  <title>POST /ghwebhook</title>
-  <titlealts><navtitle>POST /ghwebhook</navtitle></titlealts>
+  <title>Create a GitHub Webhook</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /ghwebhook</p>
+    </section>
 
     <section>
       <title>Overview</title>

@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-snaplex-version-plexpath">
 
-  <title>POST /snaplex/version/{plex_path}</title>
-  <titlealts><navtitle>POST /snaplex/version/{plex_path}</navtitle></titlealts>
+  <title>Update the Snaplex to a Specific Version</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /snaplex/version/{plex_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

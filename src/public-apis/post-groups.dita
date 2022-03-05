@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-groups">
 
-  <title>POST /groups</title>
-  <titlealts><navtitle>POST /groups</navtitle></titlealts>
+  <title>Create a Group</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /groups</p>
+    </section>
 
     <section>
       <title>Overview</title>

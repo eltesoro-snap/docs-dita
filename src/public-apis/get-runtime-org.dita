@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-runtime-org">
 
-  <title>GET /runtime/{org}</title>
-  <titlealts><navtitle>GET /runtime/{org}</navtitle></titlealts>
+  <title>Retrieve Info About Tasks Matching a Filter</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /runtime/{org}</p>
+    </section>
 
     <section>
       <title>Overview</title>

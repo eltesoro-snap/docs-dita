@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-snaplex-restart-plexpath-hostname">
 
-  <title>POST /snaplex/restart/{plex_path}/{hostname}</title>
-  <titlealts><navtitle>POST /snaplex/restart/{plex_path}/{hostname}</navtitle></titlealts>
+  <title>Request a Restart of a Node</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">POST /snaplex/restart/{plex_path}/{hostname}</p>
+    </section>
 
     <section>
       <title>Overview</title>

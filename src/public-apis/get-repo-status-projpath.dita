@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-repo-status-projpath">
 
-  <title>GET /repo-status/{project_path}</title>
-  <titlealts><navtitle>GET /repo-status/{project_path}</navtitle></titlealts>
+  <title>Retrieve the Status of the GitHub Repository</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /repo-status/{project_path}</p>
+    </section>
 
     <section>
       <title>Overview</title>

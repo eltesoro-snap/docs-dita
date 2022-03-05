@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="put-groups-org-group">
 
-  <title>PUT /groups/{org}/{groupname}</title>
-  <titlealts><navtitle>PUT /groups/{org}/{groupname}</navtitle></titlealts>
+  <title>Replace the Member List of a Group</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">PUT /groups/{org}/{groupname}</p>
+    </section>
 
     <section>
       <title>Overview</title>

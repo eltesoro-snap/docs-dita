@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="delete-users-email">
 
-  <title>DELETE /users/{email}</title>
-  <titlealts><navtitle>DELETE /users/{email}</navtitle></titlealts>
+  <title>Delete a User</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">DELETE /users/{email}</p>
+    </section>
 
     <section>
       <title>Overview</title>

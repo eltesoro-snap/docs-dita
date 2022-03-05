@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-activities-org">
 
-  <title>GET /activities/{org}</title>
-  <titlealts><navtitle>GET /activities/{org}</navtitle></titlealts>
+  <title>Retrieve Activities in Org</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /activities/{org}</p>
+    </section>
 
     <section>
       <title>Overview</title>

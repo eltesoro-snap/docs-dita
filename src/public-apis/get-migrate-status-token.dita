@@ -2,12 +2,15 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="get-migrate-status-token">
 
-  <title>GET /migrate/{status_token}</title>
-  <titlealts><navtitle>GET /migrate/{status_token}</navtitle></titlealts>
+  <title>Retrieve the Status of a Migration</title>
 
-  <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc>
+  <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
+
+    <section>
+      <p outputclass="shortsyntax">GET /migrate/{status_token}</p>
+    </section>
 
     <section>
       <title>Overview</title>

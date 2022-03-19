@@ -2,20 +2,20 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="post-assetapi-acl-projpath">
 
-  <title>Grant a User or Group Access to a Project</title>
+  <title>Grant a User or Group Access to a Project or Project Space</title>
 
   <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
 
     <section>
-      <p outputclass="shortsyntax">POST /assetapi/acl/{project_path}</p>
+      <p outputclass="shortsyntax">POST /assetapi/acl/{project_or_space_path}</p>
     </section>
 
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> grants a user or group access to the specified project.</ph></p>
+      <p>This API <ph id="ph-shortdesc"> grants a user or group access to the specified project or project space.</ph></p>
     </section>
 
 
@@ -37,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_path}</ph>
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_or_space_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -50,7 +50,7 @@
             <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
             <tbody>
               <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-projpath"><entry/></row>
+              <row conkeyref="k-api/row-pathparam-projorspacepath"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -74,7 +74,7 @@
             "grant_type" : "...",
             "grantee" : "...",
             "permission_list" : [ ... ],
-            "inherit" : true
+            "inherit" : ...
           }
         </codeblock>
 

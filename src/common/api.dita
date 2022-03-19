@@ -139,6 +139,11 @@
 
         <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-api/ph-projspace-format"/></p> -->
         <ph id="ph-projspace-format"><codeph>/{org}/{project_space}</codeph></ph>
+
+        <!-- <note conkeyref="k-misc/note-case-sensitive-path"/> -->
+        <note type="important" id="note-case-sensitive-path">The path comparison is case-sensitive.</note>
+
+
       </sectiondiv>
 
 
@@ -179,6 +184,7 @@
                 <entry><codeph>project_path</codeph></entry>
                 <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic project.
                   <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-projpath-format"/></p>
+                  <note conref="#./note-case-sensitive-path"/>
                 </entry>
               </row>
 
@@ -192,6 +198,7 @@
                       <li>Project space: <ph conkeyref="k-api/ph-projspace-format"/></li>
                     </ul>
                   </p>
+                  <note conref="#./note-case-sensitive-path"/>
                 </entry>
               </row>
 
@@ -474,7 +481,7 @@
               <row id="row-request-inherit">
                 <entry><codeph>inherit</codeph></entry>
                 <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the permissions apply to all assets under the specified project path.</entry>
+                <entry>If <codeph>true</codeph>, the permissions also apply to all assets under the specified project or project space.</entry>
               </row>
 
             </tbody>
@@ -844,6 +851,13 @@
                 <entry>The status of the Snaplex version.
                   <p conref="#./p-response-possible-snaplex-version-status"/>
                 </entry>
+              </row>
+
+              <!-- <row conkeyref="k-api/row-response-perm-inherit"><entry/></row> -->
+              <row id="row-response-perm-inherit">
+                <entry><codeph>inherit</codeph></entry>
+                <entry>Boolean</entry>
+                <entry><ph id="ph-response-inherit-desc">If <codeph>true</codeph>, the permissions assigned to the project or project space also apply to all assets under it.</ph></entry>
               </row>
 
 

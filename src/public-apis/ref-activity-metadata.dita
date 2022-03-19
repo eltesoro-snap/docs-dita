@@ -234,7 +234,7 @@
             <row id="row-perm-inherit" outputclass="ev-security">
               <entry><codeph>perm</codeph> » <codeph>inherit</codeph></entry>
               <entry>Boolean</entry>
-              <entry>If <codeph>true</codeph>, ???</entry>
+              <entry><ph conkeyref="k-api/ph-response-inherit-desc"/></entry>
             </row>
 
             <!-- "perms_entry": "Full Access", -->

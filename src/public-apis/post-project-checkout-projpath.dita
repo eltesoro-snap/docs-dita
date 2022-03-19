@@ -79,7 +79,10 @@
         <p outputclass="sectiondivtitle">Request Body</p>
 
         <codeblock id="request-body" outputclass="normalize-space lang-json">
-          { "ref" : "<varname>git_repository</varname>/<varname>branch_name</varname>" }
+          {
+            "repo" : "<varname>git_repository</varname>",
+            "ref" : "<varname>branch_name</varname>"
+          }
         </codeblock>
 
         <table>
@@ -90,10 +93,17 @@
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
               <row>
+                <entry><codeph>repo</codeph></entry>
+                <entry>string</entry>
+                <entry>The Git repository to check out. If not specified, the repository that was previously associated with the project is used.
+                  <p><ph conkeyref="k-misc/ph-default"/> None</p>
+                </entry>
+              </row>
+              <row>
                 <entry><codeph>ref</codeph></entry>
                 <entry>string</entry>
                 <entry><ph conkeyref="k-misc/ph-reqd"/> The Git branch to check out.
-                  <p><ph conkeyref="k-misc/ph-format"/> <codeph>git_repository/branch_name</codeph></p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>heads/main</codeph></p>
                 </entry>
               </row>
             </tbody>
@@ -146,14 +156,15 @@
 
 <!--
 Source: Tectonic\slserver\src\main\python\slserver\services\public\project_handler.py
-Last refreshed: 20211201
+Last refreshed: 20220318
         self.add_route('/checkout/<path:project_path>', self.checkout_project,
                        methods=[slcommon.snap_http_lib.HTTP_POST],
                        arguments=[
                            Argument('user_id', Argument.USER_ID),
                            Argument('project_path', Argument.URL),
+                           Argument('repo', Argument.BODY, default=None),
                            Argument('ref', Argument.BODY),
                        ])
 
-Jiras: PLAT-8417
+Jiras: PLAT-8417,PLAT-8904
 -->

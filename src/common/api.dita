@@ -375,7 +375,7 @@
 
         <!-- <div conkeyref="k-api/div-auth"/> -->
         <div id="div-auth">
-          <p>Specify <term>Basic Auth</term> for authorization.</p>
+          <p>Specify <codeph>Basic</codeph> for authorization.</p>
 
           <codeblock id="request-hdr" outputclass="normalize-space">
             Authorization: Basic {your_encoded_security_credentials}
@@ -384,7 +384,7 @@
 
         <!-- <div conkeyref="k-api/div-auth-contenttype"/> -->
         <div id="div-auth-contenttype">
-          <p>Specify <term>Basic Auth</term> for authorization and <term>JSON</term> for content type.</p>
+          <p>Specify <codeph>Basic</codeph> for authorization and <codeph>application/json</codeph> for content type.</p>
 
           <codeblock id="request-hdr" outputclass="normalize-space">
             Authorization: Basic {your_encoded_security_credentials}

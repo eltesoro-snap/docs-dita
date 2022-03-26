@@ -81,7 +81,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth"/>
+        <div conkeyref="k-api/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>

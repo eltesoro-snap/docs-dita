@@ -22,7 +22,6 @@
       <note type="note">
         <ul>
           <li><ph conkeyref="k-api/ph-proj-exists"/></li>
-          <li><ph conkeyref="k-api/ph-use-slmgr-for-initial-checkout"/></li>
         </ul>
       </note>
     </section>

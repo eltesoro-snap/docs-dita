@@ -18,6 +18,10 @@
         <li>Must be no more than 256 characters. If the name includes double-byte characters, the maximum length is shorter.</li>
       </ul>
 
+      <!-- <ph conkeyref="k-apim/ph-oas-versions"/> -->
+      <ph id="ph-oas-versions">Open API Specification (OAS) 2.0</ph> <!-- and 3.0 -->
+      <ph id="ph-oas-versions-short">OAS 2.0</ph> <!-- and 3.0 -->
+      <ph id="ph-oas-versions-create-api">Create API from <ph conref="#./ph-oas-versions-short"/></ph>
     </section>
 
 

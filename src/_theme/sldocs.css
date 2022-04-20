@@ -43,6 +43,7 @@
   --shortdesc-textcolor: #959595;
   --body-font-size: 14px;
   --rellinks-bgcolor: #F9F9F9;
+  --page-bgcolor: white;
 
   /* blocks */
   --tablehdr-bgcolor: #EEEEEE;
@@ -57,6 +58,15 @@
 
   /* callouts */
   --callout-bgcolor: #7C69DD;
+
+  /* chevron chains - pointing right */
+  --chevron-bgcolor: #6EA5DA;  /* #5B9BD5; */
+  --chevron-textcolor: #FFFFFF;
+  --chevron-point-width: 30px;
+  --chevron-point-width-neg: -30px;  /* calc( var(--chevron-point-width) * -1 ); */
+  --chevron-width: 90px;
+  --chevron-height: 80px;
+  --chevron-height-half: calc( var(--chevron-height) / 2 );
 }
 
 
@@ -619,6 +629,59 @@ ul.cards { list-style-type: none; }
 
 .glossdef {
   padding-left: 20px;
+}
+
+
+/* ==============================
+   Misc
+   ============================== */
+
+.chevronchain-lg {
+  display: block;
+  width: 100%;
+  height: calc( var(--chevron-height) + 10px );
+}
+.chevronchain-lg > li {
+  display: flex;  /* inline-block; */
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  list-style-type: none;
+  float: left;
+  padding: 0 20px;
+  margin-right: calc(var(--chevron-point-width) + 15px);
+  margin-bottom: calc(var(--chevron-point-width) + 2px);
+  position: relative;
+  width: var(--chevron-width);
+  height: var(--chevron-height);
+  background: var(--chevron-bgcolor);
+  color: var(--chevron-textcolor);
+  font-weight: bold;
+  text-align: center;
+  line-height: 120%;
+}
+.chevronchain-lg > li:before {
+  content: "";
+  position: absolute;
+  left: var(--chevron-point-width-neg);
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: var(--chevron-point-width) solid transparent;
+  border-top: var(--chevron-height-half) solid var(--chevron-bgcolor);
+  border-bottom: var(--chevron-height-half) solid var(--chevron-bgcolor);
+}
+.chevronchain-lg > li:after {
+  content: "";
+  position: absolute;
+  right: var(--chevron-point-width-neg);
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: var(--chevron-point-width) solid var(--chevron-bgcolor);
+  border-top: var(--chevron-height-half) solid transparent;
+  border-bottom: var(--chevron-height-half) solid transparent;
+}
+.chevronchain-lg > li > * {
 }
 
 

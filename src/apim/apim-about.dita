@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apim-about">
+
+  <title>WIP | SnapLogic API Management</title>
+
+  <shortdesc>A suite of features that allow you to create and publish APIs from your own specifications or from your SnapLogic Pipelines and Assets.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>
+        You can create APIs from your own specifications or from your SnapLogic Pipelines and Assets.
+        To make your APIs available to users outside SnapLogic, you can publish those APIs in a Developer Portal that is customized with your own branding.
+        You can also create proxies to allow you to integrate with third-party APIs.
+      </p>
+    </section>
+
+
+    <section>
+      <title>Key Features and Components</title>
+
+      <p>SnapLogic provides API Management features and components to help you develop APIs, manage their lifecycles, and monitor their performance.</p>
+
+      <p>Features include:</p>
+      <ul>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1978731409/#CreatinganAPIintheAPIManager-CreatingtheAPIusingDesignFirst">Support for Design First</xref>.
+          API Management supports the creation of APIs from <ph conkeyref="k-apim/ph-oas-versions"/>.
+          You can design an API based on your specification, then upload a file or reference a URL containing your specification.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2214690857/">API Lifecycle Management</xref>.
+          You can manage the entire lifecycle of an API or API version from creation to publication to deprecation to retirement.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1987183795/">Multiple API Versions</xref>.
+          You can modify the initial specification of your API, then create and publish a new version from the modified specification.
+        </li>
+      </ul>
+
+      <p>Components include:</p>
+      <ul>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1978731409/">API Manager</xref>.
+          The console where you manage your APIs.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2424111978/">Portal Manager</xref>.
+          The console where you set up and manage your custom <uicontrol>Developer Portal</uicontrol>.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2426273854/">Developer Portal</xref>.
+          The custom site where you publish your APIs for consumption.
+          In this site, API consumers can search and browse through your API Catalog and try out your APIs.
+          Each API provides basic documentation and its specification.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2425096912/">Subscription Manager</xref>.
+          The console where you can approve and manage subscriptions to published APIs.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/">API Policies</xref>.
+          A suite of security policies that handle authorization, authentication, and traffic control to manage access to your APIs.
+          You can apply these policies at various levels, such as the Org, the API, the API version, the <codeph>shared</codeph> folder of the Project Space, and Project folders.
+          Org Administrators can define permissions at very level of the hierarchy; API developers can set permissions on their own API versions.
+        </li>
+        <li>
+          <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1201504326/">API Dashboard</xref>.
+          The <uicontrol>API</uicontrol> tab in <uicontrol>Dashboard</uicontrol> where you can view the usage and traffic metrics of your APIs.
+          You can track the popularity of an API or analyze target and response errors to understand how to enhance the API consumer experience.
+        </li>
+      </ul>
+    </section>
+
+
+    <section>
+      <title>The API Lifecycle in SnapLogic API Management</title>
+
+      <div outputclass="modalimg"><image href="../img/apim-lifecycle.png" placement="break" align="left" outputclass="img-medium"><alt>An illustration of the API lifecycle</alt></image></div>
+
+    </section>
+
+
+    <section>
+      <title>Prerequisites</title>
+
+      <ul>
+        <li>Cloudplexes need a Cloudplex FeedMaster node and a load balancer.
+          <ul>
+            <li>Contact <ph conkeyref="k-urls/ph-support"/> to provision the Cloudplex FeedMaster node and the load balancer as needed.</li>
+            <li>
+              When the load balancer becomes available, your Org admin must update the <uicontrol>Load Balancer</uicontrol> URL in the Snaplex Settings.
+              Learn how: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/edit-v2/1402142725#">Updating a Snaplex</xref>
+            </li>
+            <li>You must use the load balancer URL in your Triggered and Ultra Task endpoints.</li>
+          </ul>
+        </li>
+        <li>The <uicontrol>API Management</uicontrol> feature must be enabled for your Org. Contact <ph conkeyref="k-urls/ph-support"/> to subscribe to this feature.</li>
+        <li>Your API specifications must be based on <ph conkeyref="k-apim/ph-oas-versions"/>.</li>
+        <li>You must have a good understanding of the SnapLogic <uicontrol>Manager</uicontrol> and the SnapLogic expression language.</li>
+      </ul>
+    </section>
+
+
+    <!--
+    <section>
+      <title>API Management Architecture</title>
+    </section>
+    -->
+
+
+    <section>
+      <title>The Design-First Workflow</title>
+
+      <ul outputclass="chevronchain-lg">
+        <li><ph conkeyref="k-apim/ph-oas-versions-create-api"/></li>
+        <li>Modify Pipelines</li>
+        <li>Set Permissions</li>
+        <li>Apply API Policies</li>
+        <li>Test and Create Versions</li>
+      </ul>
+      <p>
+        You can create a new API in the <codeph>/apim</codeph> space of the <uicontrol>API Manager</uicontrol> and import or reference an API specification that defines the API.
+        The new API comprises a Pipeline that is the scaffolding for the API and the Task used to call it.
+        You can then create versions, add API policies, and modify the underlying SnapLogic assets to build the business logic for your API.
+        Learn how: Creating the API using Design First
+      </p>
+    </section>
+
+
+    <section>
+      <title>The Pipeline-First Workflow</title>
+
+      <ul outputclass="chevronchain-lg">
+        <li>Create Projects</li>
+        <li>Build Pipelines</li>
+        <li>Create Tasks</li>
+        <li>Create API in the API Manager Console</li>
+      </ul>
+      <p>
+        You can also create an API in the API Manager by referencing existing Projects in Manager.
+        This allows you to design, build, and test your Pipeline first, thereby taking advantage of your existing SnapLogic infrastructure.
+        As you build Pipelines and create Triggered Tasks from them, you vet them for production individually and concurrently.
+        When your Pipeline and Tasks are production-ready, you can create APIs in the API Manager. 
+        Learn more: Creating the API from Existing Project Assets
+      </p>
+    </section>
+
+
+    <section>
+      <title>Limitations</title>
+
+      <ul>
+        <li>Only one instance of an API policy type is applicable at each level in the hierarchy.</li>
+        <li>
+          When you open a Task in an API version, you cannot change it to Scheduled (not visible).
+          Also, the Task dialog window displays the Snaplex, but it cannot be modified.
+        </li>
+        <li>In <uicontrol>Designer</uicontrol>, when you open a Pipeline in an API version, the Snaplex selector in the <uicontrol>Edit Pipeline</uicontrol> dialog window only shows the Snaplex instances from the global <codeph>shared</codeph> folder.</li>
+        <li>In <uicontrol>Designer</uicontrol>, if you open the Snap dialog window from a Pipeline in the API Management - <codeph>/apim</codeph> space, the asset or account selectors display only the assets from the global <codeph>shared</codeph> folder, in addition to those in the current version.</li>
+        <li>
+          You can change the Snaplex for an unpublished API version.
+          To do so, go to <uicontrol>API Manager</uicontrol>, choose the API, go to the <uicontrol>Versions</uicontrol> tab, choose the version, click <uicontrol>Edit Details</uicontrol>, and choose from the <uicontrol>Server</uicontrol> dropdown.
+          Note: This field is disabled if the API version is published or if the Snaplex is down.
+        </li>
+      </ul>
+
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1437955">
+      <linktext>Ultra Task Pipelines</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1438189">
+      <linktext>Triggered Tasks</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439307">
+      <linktext>Projects</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439040">
+      <linktext>Project Spaces</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/x/BvIV">
+      <linktext>Access Control for Triggered and Ultra Tasks</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/x/sPYV">
+      <linktext>Tasks Page</linktext>
+    </link>
+  </related-links>
+
+</concept>

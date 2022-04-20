@@ -2,21 +2,52 @@
 <!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
 <map xml:lang="en-US" id="apim">
 
-  <title>API Manager</title>
+  <title>SnapLogic API Management</title>
 
-  <topichead collection-type="family">
-    <topicmeta><navtitle>Proxies</navtitle></topicmeta>
-    <topicref href="proxies.dita">
-      <topicref href="proxy-details.dita"/>
-      <topicref href="proxy-endpoints.dita"/>
-      <topicref href="proxy-endpoint-details.dita"/>
-      <topicref href="proxy-security-policies.dita"/>
-    </topicref>
-  </topichead>
+  <topicref href="apim-about.dita" collection-type="family">
 
-  <topichead collection-type="family">
-    <topicmeta><navtitle>API Manager</navtitle></topicmeta>
-    <topicref href="tryapi-cors-settings.dita"/>
-  </topichead>
+    <!--
+    <topichead collection-type="family">
+      <topicmeta><navtitle>APIs</navtitle></topicmeta>
+      <topicref href="api-create-design-first.dita"/>
+      <topicref href="api-create-existing-assets.dita"/>
+      <topicref href="api-create-empty.dita"/>
+      <topicref href="api-enable-try-it-out.dita"/>
+      <topicref href="api-edit.dita"/>
+      <topicref href="api-policy-add.dita"/>
+      <topicref href="api-policy-view.dita"/>
+      <topicref href="api-policy-edit.dita"/>
+      <topicref href="api-delete.dita"/>
+      <topicref href="api-sample-spec.dita"/>
+      <topicref href="apiversion-create-design-first.dita"/>
+      <topicref href="apiversion-create-existing-assets.dita"/>
+      <topicref href="apiversion-create-empty.dita"/>
+      <topicref href="apiversion-edit.dita"/>
+      <topicref href="apiversion-delete.dita"/>
+      <topicref href="apiversionasset-create.dita"/>
+      <topicref href="apiversionasset-delete.dita"/>
+    </topichead>
+    -->
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Proxies</navtitle></topicmeta>
+      <topicref href="proxies.dita">
+        <topicref href="proxy-details.dita"/>
+        <topicref href="proxy-endpoints.dita"/>
+        <topicref href="proxy-endpoint-details.dita"/>
+        <topicref href="proxy-security-policies.dita"/>
+      </topicref>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Security Policies</navtitle></topicmeta>
+    </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>API Manager</navtitle></topicmeta>
+      <topicref href="tryapi-cors-settings.dita"/>
+    </topichead>
+
+  </topicref>
 
 </map>

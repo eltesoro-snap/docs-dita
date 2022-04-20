@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="apis">
+
+  <title></title>
+
+  <shortdesc></shortdesc>
+
+  <conbody>
+
+    <section>
+      <title></title>
+      <p></p>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+
+</concept>

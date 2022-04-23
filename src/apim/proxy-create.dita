@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="proxy-create">
+
+  <title>Create a Proxy</title>
+  <titlealts><navtitle>Create Proxy</navtitle></titlealts>
+
+  <taskbody>
+
+    <prereq>
+      <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul>
+    </prereq>
+
+    <steps>
+      <step conkeyref="k-apim/step-go-to-apis-proxies-tab"><cmd/></step>
+      <step conkeyref="k-apim/step-new-proxy"><cmd/></step>
+
+      <step><cmd>Configure the new proxy.</cmd>
+        <info>
+          <image href="../img/apim-apisproxies-create-proxy.png" placement="break" align="left"><alt>Create Proxy dialog</alt></image>
+          <table outputclass="flddesc">
+            <tgroup cols="2">
+              <colspec colname="col-name" colwidth="25%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead>
+                <row>
+                  <entry colname="col-name" valign="top">Field</entry>
+                  <entry colname="col-desc" valign="top">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry><uicontrol>Proxy Name</uicontrol></entry>
+                  <entry>The name for your proxy.
+                    <p conkeyref="k-apim/p-name-reqs"/>
+                    <p>The proxy name is appended to the <uicontrol>Hostname</uicontrol>.</p>
+                    <!-- <li>Searching for a proxy by name is case-insensitive.</li> -->
+                  </entry>
+                </row>
+                <row>
+                  <entry><uicontrol>Proxy Description</uicontrol></entry>
+                  <entry>(Optional) Information about the proxy.</entry>
+                </row>
+                <row>
+                  <entry><uicontrol>Hostname</uicontrol></entry>
+                  <entry>The prefix <codeph>/gateway/</codeph> is concatenated with the <uicontrol>Proxy Name</uicontrol>.
+                  </entry>
+                </row>
+                <row>
+                  <entry><uicontrol>Tags</uicontrol></entry>
+                  <entry>(Optional) Tags you can use to organize your proxies.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
+    </steps>
+
+  </taskbody>
+
+</task>

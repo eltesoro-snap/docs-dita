@@ -17,6 +17,8 @@
       <ph id="ph-default">Default:</ph>
       <ph id="ph-format">Format:</ph>
       <ph id="ph-example">Example:</ph>
+      <ph id="ph-readonly">(Read-only)</ph>
+      <ph id="ph-learnmore">Learn more:</ph>
 
     </section>
 
@@ -55,6 +57,7 @@
           </tbody>
         </tgroup>
 
+
         <tgroup cols="3">
           <colspec colname="col-key"  colwidth="25%"/>
           <colspec colname="col-type" colwidth="15%"/>
@@ -73,6 +76,33 @@
             <row>
               <entry><uicontrol></uicontrol></entry>
               <entry></entry>
+              <entry></entry>
+            </row>
+          </tbody>
+        </tgroup>
+
+
+        <tgroup cols="3">
+          <colspec colname="col-set"  colwidth="20%"/>
+          <colspec colname="col-name" colwidth="20%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+
+          <!-- <thead conkeyref="k-misc/thead-set-field-desc"><row><entry/></row></thead> -->
+          <thead id="thead-set-field-desc">
+            <row>
+              <entry namest="col-set" nameend="col-name" align="center" valign="top">Field</entry>
+              <entry colname="col-desc" valign="top">Description</entry>
+            </row>
+          </thead>
+
+          <tbody>
+            <row>
+              <entry morerows="1"><uicontrol>Field Set Name</uicontrol></entry>
+              <entry><uicontrol></uicontrol></entry>
+              <entry></entry>
+            </row>
+            <row>
+              <entry><uicontrol></uicontrol></entry>
               <entry></entry>
             </row>
           </tbody>

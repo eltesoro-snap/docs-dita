@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="portalmgr-settings">
+
+  <title>Configure Portal Manager Settings</title>
+  <titlealts><navtitle>Portal Manager Settings</navtitle></titlealts>
+
+  <taskbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>
+        Each Org can have a <uicontrol>Developer Portal</uicontrol> site where you can publish your APIs to make them available to consumers outside the SnapLogic ecosystem.
+        To match your organization’s brand, you can customize the appearance of your Developer Portal landing page and modify the suffix of the Developer Portal URL.
+      </p>
+
+      <note type="note">
+        Because the <uicontrol>Developer Portal</uicontrol> is designed to be accessed by anyone who has the URL, all Developer Portal users must have at least read-only access to your published APIs.
+        SnapLogic strongly recommends that you set up API policies if you prefer to restrict access to individual APIs.
+      </note>
+    </section>
+
+    <prereq>
+      <ul>
+        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+      </ul>
+    </prereq>
+
+    <steps>
+      <step>
+        <cmd>In SnapLogic <uicontrol>Manager</uicontrol>, go to
+          <menucascade>
+            <uicontrol>API Management</uicontrol>
+            <uicontrol>Portal Manager</uicontrol>
+            <uicontrol>Settings</uicontrol>
+          </menucascade>.
+        </cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-portalmgr-settings.png" placement="break" align="left" outputclass="img-medium"><alt>Portal Manager settings page</alt></image></div>
+        </info>
+      </step>
+      <step>
+        <cmd>Fill in the required fields.</cmd>
+        <info>
+          <table outputclass="flddesc">
+            <tgroup cols="2">
+              <colspec colname="col-name" colwidth="25%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead>
+                <row>
+                  <entry colname="col-name" valign="top">Setting</entry>
+                  <entry colname="col-desc" valign="top">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry>Portal URL Suffix</entry>
+                  <entry>The suffix for your <uicontrol>Developer Portal</uicontrol> URL.
+                    <p>What you enter in this field is automatically appended to <uicontrol>Portal URL</uicontrol>.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Portal URL</entry>
+                  <entry><ph conkeyref="k-misc/ph-readonly"/> The full URL to your <uicontrol>Developer Portal</uicontrol>.
+                    <p>To copy your <uicontrol>Developer Portal</uicontrol> URL to your clipboard, click the copy icon (<image conkeyref="k-icons/image-copy-icon"/>) next to the <uicontrol>Portal URL</uicontrol> value.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Icon</entry>
+                  <entry>The thumbnail image for your <uicontrol>Developer Portal</uicontrol>.
+                    <p>The image must be JPG, PNG, or SVG with a maximum image size of 256px x 256px and a maximum file size of 10MB.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Banner Image</entry>
+                  <entry>The background image for the landing page of your <uicontrol>Developer Portal</uicontrol>.
+                    <p>The image must be JPG, PNG, or SVG with a maximum image size of 2000px x 1200px and a maximum file size of 10MB.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Portal Title</entry>
+                  <entry>The title of your <uicontrol>Developer Portal</uicontrol>. This appears at the top banner of all pages of your <uicontrol>Developer Portal</uicontrol>.
+                    <p>Must be no more than 50 characters.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Banner Image Text</entry>
+                  <entry>The title displayed over your banner image in the landing page.
+                    <p>Must be no more than 120 characters.</p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Banner Text Alignment</entry>
+                  <entry>The position of the <uicontrol>Banner Image Text</uicontrol> on the landing page: <uicontrol>Left</uicontrol>, <uicontrol>Center</uicontrol>, or <uicontrol>Right</uicontrol>.</entry>
+                </row>
+                <row>
+                  <entry>Terms of Service URL</entry>
+                  <entry>The URL where API consumers can read the terms of service for using your <uicontrol>Developer Portal</uicontrol> and your APIs.</entry>
+                </row>
+                <row>
+                  <entry>Company Website URL</entry>
+                  <entry>Your organization’s website.</entry>
+                </row>
+                <row>
+                  <entry>Contact Us - Email Address</entry>
+                  <entry>The email address where your API consumers can contact you.</entry>
+                </row>
+                <row>
+                  <entry>Manage Categories</entry>
+                  <entry>Categories to classify published APIs in the Developer Portal.
+                    <note type="important">Category names must be unique within the Org.</note>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Documentation – OpenAPI Viewer</entry>
+                  <entry><ph conkeyref="k-misc/ph-readonly"/> The type of API documentation used for each API published in the <uicontrol>Developer Portal</uicontrol>.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
+      <step><cmd>Click <uicontrol>Save</uicontrol>. You can modify these settings at any time.</cmd></step>
+      <step><cmd>Validate your settings by clicking the external site icon (<image conkeyref="k-icons/image-launch-icon"/>) to launch your <uicontrol>Developer Portal</uicontrol>.</cmd></step>
+    </steps>
+
+  </taskbody>
+
+</task>

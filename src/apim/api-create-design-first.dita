@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="api-create-design-first">
+
+  <title>Create an API Using the Design First Approach</title>
+  <titlealts><navtitle>Create API Using Design First</navtitle></titlealts>
+
+  <taskbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p conkeyref="k-apim/p-create-api-4ways"/>
+      <p>This topic shows how to create an API using the Design First approach by providing an Open API Specification (OAS) 2.0 or 3.0 file.</p>
+    </section>
+
+    <prereq>
+      <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul>
+    </prereq>
+
+    <steps>
+      <step conkeyref="k-apim/step-go-to-apis-proxies-tab"><cmd/></step>
+      <step conkeyref="k-apim/step-new-api"><cmd/></step>
+
+      <step><cmd>In <uicontrol>Create New API</uicontrol>, choose the source of the OAS file.</cmd>
+        <choices>
+          <choice><uicontrol>Upload File</uicontrol>.
+            You must click <uicontrol>Choose File</uicontrol> to specify the location of the specification file to upload.
+            <div outputclass="modalimg"><image href="../img/apim-api-create-oas-upload.png" placement="break" align="left"><alt>Upload File option</alt></image></div>
+          </choice>
+          <choice><uicontrol>Enter URL</uicontrol>.
+            You must enter a valid URL pointing to the location of the specification file.
+            <div outputclass="modalimg"><image href="../img/apim-api-create-oas-url.png" placement="break" align="left"><alt>Enter URL option</alt></image></div>
+          </choice>
+        </choices>
+      </step>
+
+      <step conkeyref="k-apim/step-create-api-options-import-config"><cmd/></step>
+      <step><cmd>Click <uicontrol>Import and Continue</uicontrol>.</cmd></step>
+
+      <step conkeyref="k-apim/step-create-api-details"><cmd/></step>
+      <step><cmd>Click <uicontrol>Create</uicontrol>.</cmd></step>
+
+    </steps>
+
+  </taskbody>
+
+</task>

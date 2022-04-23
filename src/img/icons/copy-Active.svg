@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #7f7f7f;
+      }
+    </style>
+  </defs>
+  <title>copy_4-Active</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g>
+        <rect class="cls-1" x="11" y="8" width="10" height="2"/>
+        <rect class="cls-1" x="11" y="12" width="10" height="2"/>
+        <rect class="cls-1" x="11" y="16" width="7" height="2"/>
+        <path class="cls-1" d="M16,4V0H0V20H8v4H24V4ZM2,18V2H14V4H3V6H8V8H3v2H8v2H3v2H8v4Zm20,4H10V6H22Z"/>
+      </g>
+    </g>
+  </g>
+</svg>

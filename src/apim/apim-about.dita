@@ -2,7 +2,7 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="apim-about">
 
-  <title>WIP | SnapLogic API Management</title>
+  <title>SnapLogic API Management</title>
 
   <shortdesc>A suite of features that allow you to create and publish APIs from your own specifications or from your SnapLogic Pipelines and Assets.</shortdesc>
 
@@ -16,6 +16,7 @@
         To make your APIs available to users outside SnapLogic, you can publish those APIs in a Developer Portal that is customized with your own branding.
         You can also create proxies to allow you to integrate with third-party APIs.
       </p>
+
     </section>
 
 
@@ -77,14 +78,6 @@
 
 
     <section>
-      <title>The API Lifecycle in SnapLogic API Management</title>
-
-      <div outputclass="modalimg"><image href="../img/apim-lifecycle.png" placement="break" align="left" outputclass="img-medium"><alt>An illustration of the API lifecycle</alt></image></div>
-
-    </section>
-
-
-    <section>
       <title>Prerequisites</title>
 
       <ul>
@@ -115,13 +108,15 @@
     <section>
       <title>The Design-First Workflow</title>
 
-      <ul outputclass="chevronchain-lg">
-        <li><ph conkeyref="k-apim/ph-oas-versions-create-api"/></li>
-        <li>Modify Pipelines</li>
-        <li>Set Permissions</li>
-        <li>Apply API Policies</li>
-        <li>Test and Create Versions</li>
-      </ul>
+      <div>
+        <ul outputclass="chevronchain-lg">
+          <li><ph conkeyref="k-apim/ph-oas-versions-create-api"/></li>
+          <li>Modify Pipelines</li>
+          <li>Set Permissions</li>
+          <li>Apply API Policies</li>
+          <li>Test and Create Versions</li>
+        </ul>
+      </div>
       <p>
         You can create a new API in the <codeph>/apim</codeph> space of the <uicontrol>API Manager</uicontrol> and import or reference an API specification that defines the API.
         The new API comprises a Pipeline that is the scaffolding for the API and the Task used to call it.
@@ -134,12 +129,14 @@
     <section>
       <title>The Pipeline-First Workflow</title>
 
-      <ul outputclass="chevronchain-lg">
-        <li>Create Projects</li>
-        <li>Build Pipelines</li>
-        <li>Create Tasks</li>
-        <li>Create API in the API Manager Console</li>
-      </ul>
+      <div>
+        <ul outputclass="chevronchain-lg">
+          <li>Create Projects</li>
+          <li>Build Pipelines</li>
+          <li>Create Tasks</li>
+          <li>Create API in the API Manager Console</li>
+        </ul>
+      </div>
       <p>
         You can also create an API in the API Manager by referencing existing Projects in Manager.
         This allows you to design, build, and test your Pipeline first, thereby taking advantage of your existing SnapLogic infrastructure.

@@ -3,6 +3,7 @@
 <concept xml:lang="en-US" id="post-assetapi-acl-projpath">
 
   <title>Grant a User or Group Access to a Project or Project Space</title>
+  <titlealts><navtitle>Grant Access to a Project or Space</navtitle></titlealts>
 
   <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 

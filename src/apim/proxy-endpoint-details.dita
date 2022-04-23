@@ -12,7 +12,7 @@
       <title>Viewing the Proxy Endpoint Settings</title>
 
       <p>To view the settings of a proxy endpoint,
-        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoints-list-checkbox.png" placement="break" align="left" outputclass="img-medium"><alt>The Proxy Endpoints tab of the API Manager</alt></image></div>
+        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoints-list-checkbox.png" placement="break" align="left"><alt>The Proxy Endpoints tab of the API Manager</alt></image></div>
         <ol>
           <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/>
             <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
@@ -22,7 +22,7 @@
       </p>
 
       <p>The <uicontrol>Proxy Endpoint Details</uicontrol> tab displays the details of the selected proxy.
-        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-details.png" placement="break" align="left" outputclass="img-medium"><alt>Proxy endpoint settings</alt></image></div>
+        <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-details.png" placement="break" align="left"><alt>Proxy endpoint settings</alt></image></div>
       </p>
     </section>
 
@@ -32,7 +32,7 @@
 
       <p>To edit the <uicontrol>URL</uicontrol> and <uicontrol>HTTP Method(s)</uicontrol> of the endpoint, click <uicontrol>Edit Details</uicontrol>.</p>
 
-      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-edit.png" placement="break" align="left" outputclass="img-medium"><alt>Edit Detail dialog for an endpoint</alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-edit.png" placement="break" align="left"><alt>Edit Detail dialog for an endpoint</alt></image></div>
 
       <note type="note"><ph conkeyref="k-apim/ph-only-url-methods"/></note>
     </section>

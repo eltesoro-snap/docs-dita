@@ -2,9 +2,9 @@
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
 <concept xml:lang="en-US" id="proxies">
 
-  <title>Proxies for APIs</title>
+  <title>Proxies</title>
 
-  <shortdesc>Managing proxies for your APIs and third-party APIs.</shortdesc>
+  <shortdesc>About proxies for your APIs and third-party APIs.</shortdesc>
 
   <conbody>
 
@@ -44,59 +44,7 @@
         <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
       </div>
 
-      <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left" outputclass="img-medium"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>
-    </section>
-
-
-    <section id="section-create-proxy">
-      <title>Creating a Proxy</title>
-
-      <div>
-        To create a proxy,
-        <ol>
-          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
-          <li>Click the plus icon (<image conkeyref="k-icons/image-add-icon"/>).</li>
-          <li>Select <uicontrol>New Proxy</uicontrol> from the dropdown.</li>
-          <li>Configure the new proxy.
-            <image href="../img/apim-apisproxies-create-proxy.png" placement="break" align="left" outputclass="img-medium"><alt>Create Proxy dialog</alt></image>
-            <table outputclass="flddesc">
-              <tgroup cols="2">
-                <colspec colname="col-name" colwidth="25%"/>
-                <colspec colname="col-desc" colwidth="75%"/>
-                <thead>
-                  <row>
-                    <entry colname="col-name" valign="top">Field</entry>
-                    <entry colname="col-desc" valign="top">Description</entry>
-                  </row>
-                </thead>
-                <tbody>
-                  <row>
-                    <entry><uicontrol>Proxy Name</uicontrol></entry>
-                    <entry>The name for your proxy.
-                      <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
-                      <p>The proxy name is appended to the <uicontrol>Hostname</uicontrol>.</p>
-                      <!-- <li>Searching for a proxy by name is case-insensitive.</li> -->
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><uicontrol>Proxy Description</uicontrol></entry>
-                    <entry>(Optional) Information about the proxy.</entry>
-                  </row>
-                  <row>
-                    <entry><uicontrol>Hostname</uicontrol></entry>
-                    <entry>The prefix <codeph>/gateway/</codeph> is concatenated with the <uicontrol>Proxy Name</uicontrol>.
-                    </entry>
-                  </row>
-                  <row>
-                    <entry><uicontrol>Tags</uicontrol></entry>
-                    <entry>(Optional) Tags you can use to organize your proxies.</entry>
-                  </row>
-                </tbody>
-              </tgroup>
-            </table>
-          </li>
-        </ol>
-      </div>
+      <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>
     </section>
 
 

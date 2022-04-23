@@ -22,12 +22,28 @@
       <title>Generic UI icons</title>
 
       <!-- <image conkeyref="k-icons/image-add-icon"/> -->
+      <!-- <ph conkeyref="k-icons/ph-icon-add"/> -->
       <!-- GitHub path: /ClientApps/client/app/src/img/common/add.svg -->
-      <image id="image-add-icon" href="../img/icons/add.svg" placement="inline" outputclass="inline-icon"><alt>plus symbol</alt></image>
+      <image id="image-add-icon" href="../img/icons/add.svg" placement="inline" outputclass="inline-icon"/>
+      <ph id="ph-icon-add">the add icon ( <image conref="#./image-add-icon"/> )</ph>
+
+      <!-- <image conkeyref="k-icons/image-copy-icon"/> -->
+      <!-- <ph conkeyref="k-icons/ph-icon-copy"/> -->
+      <!-- GitHub path: /ClientApps/client/app/src/img/common/copy-Active.svg -->
+      <image id="image-copy-icon" href="../img/icons/copy-Active.svg" placement="inline" outputclass="inline-icon"/>
+      <ph id="ph-icon-copy">the copy icon ( <image conref="#./image-copy-icon"/> )</ph>
 
       <!-- <image conkeyref="k-icons/image-delete-icon"/> -->
+      <!-- <ph conkeyref="k-icons/ph-icon-delete"/> -->
       <!-- GitHub path: /ClientApps/client/app/src/img/common/delete.svg -->
-      <image id="image-delete-icon" href="../img/icons/delete.svg" placement="inline" outputclass="inline-icon"><alt>trash icon</alt></image>
+      <image id="image-delete-icon" href="../img/icons/delete.svg" placement="inline" outputclass="inline-icon"/>
+      <ph id="ph-icon-delete">the delete icon ( <image conref="#./image-delete-icon"/> )</ph>
+
+      <!-- <image conkeyref="k-icons/image-launch-icon"/> -->
+      <!-- <ph conkeyref="k-icons/ph-icon-launch"/> -->
+      <!-- GitHub path: /ClientApps\client\prod\img\common\icon\openOther-Active.svg -->
+      <image id="image-launch-icon" href="../img/icons/openOther-Active.svg" placement="inline" outputclass="inline-icon"/>
+      <ph id="ph-icon-launch">the launch icon ( <image conref="#./image-launch-icon"/> )</ph>
 
     </section>
 

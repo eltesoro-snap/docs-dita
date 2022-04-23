@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="api-lifecycle">
+
+  <title>The API and Proxy Lifecycle</title>
+
+  <shortdesc>An overview of the lifecycle of APIs and Proxies that you create and publish in SnapLogic's API Management.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <div outputclass="modalimg"><image href="../img/apim-lifecycle.png" placement="break" align="left"><alt>An illustration of the API lifecycle</alt></image></div>
+
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col-api"   colwidth="30%"/>
+          <colspec colname="col-proxy" colwidth="30%"/>
+          <colspec colname="col-role"  colwidth="20%"/>
+          <colspec colname="col-where" colwidth="20%"/>
+          <thead>
+            <row>
+              <entry namest="col-api" nameend="col-proxy" align="center">Lifecycle stage</entry>
+              <!-- <entry/> -->
+              <entry colname="col-role"  morerows="1" valign="middle">Role</entry>
+              <entry colname="col-where" morerows="1" valign="middle">SnapLogic APIM component</entry>
+            </row>
+            <row>
+              <entry colname="col-stage" valign="top">API</entry>
+              <entry colname="col-stage" valign="top">Proxy</entry>
+              <!-- <entry/> -->
+              <!-- <entry/> -->
+            </row>
+          </thead>
+          <tbody>
+            <row>
+              <entry namest="col-api" nameend="col-proxy">Strategy / Design</entry>
+              <!-- <entry/> -->
+              <entry>API developer</entry>
+              <entry>external</entry>
+            </row>
+            <row>
+              <entry>Create APIs and API Versions</entry>
+              <entry>Create Proxies and Endpoints</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-api-mgr"/></entry>
+            </row>
+            <row>
+              <entry>Secure</entry>
+              <entry></entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-api-policies"/></entry>
+            </row>
+            <row>
+              <entry>Publish</entry>
+              <entry>Publish</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+            <row>
+              <entry>Manage</entry>
+              <entry>Manage</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+            <row>
+              <entry namest="col-api" nameend="col-proxy">Tracking / Billing</entry>
+              <!-- <entry/> -->
+              <entry>API developer / Org Administrator</entry>
+              <entry>external</entry>
+            </row>
+            <row>
+              <entry>Monitor / Optimize</entry>
+              <entry>Monitor / Optimize</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-api-dashboard"/></entry>
+            </row>
+            <row>
+              <entry>Subscribe</entry>
+              <entry>Subscribe</entry>
+              <entry>API consumer</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+            <row>
+              <entry namest="col-api" nameend="col-proxy">Manage Subscriptions</entry>
+              <!-- <entry/> -->
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-subscription-mgr"/></entry>
+            </row>
+            <row>
+              <entry>Consume</entry>
+              <entry>Consume</entry>
+              <entry>API consumer</entry>
+              <entry>external</entry>
+            </row>
+            <row>
+              <entry>Discover</entry>
+              <entry>Discover</entry>
+              <entry>API consumer</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+            <row>
+              <entry>Deprecate</entry>
+              <entry>Deprecate</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+            <row>
+              <entry>Retire</entry>
+              <entry>Retire</entry>
+              <entry>Org Administrator</entry>
+              <entry><xref conkeyref="k-apim/xref-topic-dev-portal"/></entry>
+            </row>
+          </tbody>
+        </tgroup>
+      </table>
+
+    </section>
+
+  </conbody>
+
+</concept>

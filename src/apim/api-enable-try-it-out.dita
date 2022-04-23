@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="api-enable-try-it-out">
+
+  <title>Enable "Try It Out" for your API</title>
+
+  <taskbody>
+
+    <prereq>
+      <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul>
+    </prereq>
+
+    <steps>
+
+      <step><cmd>Add a CORS Restriction policy.</cmd>
+        <info>
+          <p>You can add the CORS Restriction policy for:
+            <ul>
+              <li>All APIs in your Developer Portal.
+                <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2215018531">Learn how to enable <uicontrol>Try It Out</uicontrol> in the Developer Portal settings.</xref>
+              </li>
+              <li>A specific API.
+                <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2486993241">Learn how to add and configure the CORS Restriction policy for a specific API.</xref>
+              </li>
+            </ul>
+          </p>
+          <note type="note">If the CORS Restriction policy is set up for the entire Developer Portal and for the specific API, the policy for the specific API has precedence over the policy for the entire Developer Portal.</note>
+        </info>
+      </step>
+
+      <step><cmd><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2214690857#Publishing-an-API-version-to-the-Developer-Portal">Publish your API.</xref></cmd></step>
+
+      <step><cmd><xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2214985769#%5BinlineExtension%5DView-and-Try-Out-an-API">Test the <uicontrol>Try it out</uicontrol> button for your API.</xref></cmd></step>
+
+    </steps>
+
+  </taskbody>
+
+</task>

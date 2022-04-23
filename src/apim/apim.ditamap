@@ -6,13 +6,14 @@
 
   <topicref href="apim-about.dita" collection-type="family">
 
-    <!--
     <topichead collection-type="family">
       <topicmeta><navtitle>APIs</navtitle></topicmeta>
+      <topicref href="api-lifecycle.dita"/>
       <topicref href="api-create-design-first.dita"/>
-      <topicref href="api-create-existing-assets.dita"/>
+      <topicref href="api-create-existing-project.dita"/>
       <topicref href="api-create-empty.dita"/>
       <topicref href="api-enable-try-it-out.dita"/>
+      <!--
       <topicref href="api-edit.dita"/>
       <topicref href="api-policy-add.dita"/>
       <topicref href="api-policy-view.dita"/>
@@ -26,18 +27,16 @@
       <topicref href="apiversion-delete.dita"/>
       <topicref href="apiversionasset-create.dita"/>
       <topicref href="apiversionasset-delete.dita"/>
+      -->
     </topichead>
-    -->
 
-    <topichead collection-type="family">
-      <topicmeta><navtitle>Proxies</navtitle></topicmeta>
-      <topicref href="proxies.dita">
-        <topicref href="proxy-details.dita"/>
-        <topicref href="proxy-endpoints.dita"/>
-        <topicref href="proxy-endpoint-details.dita"/>
-        <topicref href="proxy-security-policies.dita"/>
-      </topicref>
-    </topichead>
+    <topicref href="proxies.dita" collection-type="family">
+      <topicref href="proxy-create.dita"/>
+      <topicref href="proxy-details.dita"/>
+      <topicref href="proxy-endpoints.dita"/>
+      <topicref href="proxy-endpoint-details.dita"/>
+      <topicref href="proxy-security-policies.dita"/>
+    </topicref>
 
     <topichead collection-type="family">
       <topicmeta><navtitle>Security Policies</navtitle></topicmeta>
@@ -47,6 +46,12 @@
       <topicmeta><navtitle>API Manager</navtitle></topicmeta>
       <topicref href="tryapi-cors-settings.dita"/>
     </topichead>
+
+    <topichead collection-type="family">
+      <topicmeta><navtitle>Portal Manager</navtitle></topicmeta>
+      <topicref href="portalmgr-settings.dita"/>
+    </topichead>
+
 
   </topicref>
 

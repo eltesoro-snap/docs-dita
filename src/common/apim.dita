@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="apim">
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="apim">
 
   <title>Conrefs: API Manager</title>
 
-  <conbody>
+  <taskbody>
 
     <section>
-      <title>Requirements</title>
+      <title>APIM Links</title>
 
-      <!-- <ul conkeyref="k-apim/ul-label-rules"><li/></ul> -->
-      <ul id="ul-label-rules">
-        <li>Must be unique.</li>
-        <li>Must begin with alphanumeric characters A-Z, a-z, or 0-9.</li>
-        <li>Cannot contain the reserved keyword <codeph>shared</codeph>.</li>
-        <li>Cannot contain |, &lt;, &gt;, [, ], {, }, #, ?, /, and \.</li>
-        <li>Must be no more than 256 characters. If the name includes double-byte characters, the maximum length is shorter.</li>
-      </ul>
+      <!-- <xref conkeyref="k-apim/xref-topic-api-mgr"/> -->
+      <xref id="xref-topic-api-mgr" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1978731409/">API Manager</xref>
 
-      <!-- <ph conkeyref="k-apim/ph-oas-versions"/> -->
-      <ph id="ph-oas-versions">Open API Specification (OAS) 2.0</ph> <!-- and 3.0 -->
-      <ph id="ph-oas-versions-short">OAS 2.0</ph> <!-- and 3.0 -->
-      <ph id="ph-oas-versions-create-api">Create API from <ph conref="#./ph-oas-versions-short"/></ph>
+      <!-- <xref conkeyref="k-apim/xref-topic-portal-mgr"/> -->
+      <xref id="xref-topic-portal-mgr" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2424111978/">Portal Manager</xref>
+
+      <!-- <xref conkeyref="k-apim/xref-topic-dev-portal"/> -->
+      <xref id="xref-topic-dev-portal" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2426273854/">Developer Portal</xref>
+
+      <!-- <xref conkeyref="k-apim/xref-topic-subscription-mgr"/> -->
+      <xref id="xref-topic-subscription-mgr" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2425096912/">Subscription Manager</xref>
+
+      <!-- <xref conkeyref="k-apim/xref-topic-api-policies"/> -->
+      <xref id="xref-topic-api-policies" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1068859547/">API Policies</xref>
+
+      <!-- <xref conkeyref="k-apim/xref-topic-api-dashboard"/> -->
+      <xref id="xref-topic-api-dashboard" scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1201504326/">API Dashboard</xref>
+
     </section>
 
 
     <section>
-      <title>Navigation</title>
+      <title>APIs</title>
 
-      <!-- <ph conkeyref="k-apim/ph-go-to-api-manager"/> -->
-      <ph id="ph-go-to-api-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>API Manager</uicontrol></menucascade>.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-go-to-portal-manager"/> -->
-      <ph id="ph-go-to-portal-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>Portal Manager</uicontrol></menucascade>.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-go-to-subscription-manager"/> -->
-      <ph id="ph-go-to-subscription-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to <menucascade><uicontrol>API Management</uicontrol> <uicontrol>Subscription Manager</uicontrol></menucascade>.</ph>
+      <!-- <p conkeyref="k-apim/p-create-api-4ways"/> -->
+      <p id="p-create-api-4ways">You can create an API using one of four ways:
+        <ul>
+          <li>By uploading an Open API Specification file (Design First)</li>
+          <li>By entering a URL that points to an Open API Specification file (Design First)</li>
+          <li>By creating an API from an existing project</li>
+          <li>By starting with an empty API</li>
+        </ul>
+      </p>
 
     </section>
 
 
     <section>
       <title>Proxies</title>
-
-      <!-- <ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/> -->
-      <ph id="ph-go-to-apis-proxies-tab">In the API Manager, go to the <uicontrol>APIs &amp; Proxies</uicontrol> tab.</ph>
 
       <!-- <ph conkeyref="k-apim/ph-filter-for-proxies"/> -->
       <ph id="ph-filter-for-proxies">Set <uicontrol>Filter by Type</uicontrol> to <uicontrol>Proxy</uicontrol> and click <uicontrol>Search</uicontrol>.</ph>
@@ -83,6 +86,31 @@
         <li>Go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</li>
       </ol>
 
+    </section>
+
+
+    <section>
+      <title>Misc</title>
+
+      <!-- <ul conkeyref="k-apim/ul-label-rules"><li/></ul> -->
+      <ul id="ul-label-rules">
+        <li>Must be unique.</li>
+        <li>Must begin with alphanumeric characters A-Z, a-z, or 0-9.</li>
+        <li>Cannot contain the reserved keyword <codeph>shared</codeph>.</li>
+        <li>Cannot contain |, &lt;, &gt;, [, ], {, }, #, ?, /, and \.</li>
+        <li>Must be no more than 256 characters. If the name includes double-byte characters, the maximum length is shorter.</li>
+      </ul>
+
+      <!-- <p conkeyref="k-apim/p-name-reqs"/> -->
+      <p id="p-name-reqs">The name must meet the following requirements:
+        <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
+      </p>
+
+
+      <!-- <ph conkeyref="k-apim/ph-oas-versions"/> -->
+      <ph id="ph-oas-versions">Open API Specification (OAS) 2.0</ph> <!-- and 3.0 -->
+      <ph id="ph-oas-versions-short">OAS 2.0</ph> <!-- and 3.0 -->
+      <ph id="ph-oas-versions-create-api">Create API from <ph conref="#./ph-oas-versions-short"/></ph>
 
     </section>
 
@@ -93,8 +121,229 @@
       <!-- <ph conkeyref="k-apim/ph-FOO"/> -->
       <ph id="ph-FOO">BAR</ph>
 
+      <!-- <xref conkeyref="k-apim/xref-"/> -->
+      <xref id="xref-" scope="external" format="html" href=""></xref>
+
     </section>
 
-  </conbody>
 
-</concept>
+    <prereq>
+
+      <ul>
+
+        <!-- <li conkeyref="k-apim/li-prereq-org-apimgmt-feature"/> -->
+        <li id="li-prereq-org-apimgmt-feature">Your Org must have a subscription to the API Management feature; otherwise, the API Management UI is not enabled.</li>
+
+        <!-- <li conkeyref="k-apim/li-prereq-write-perms-api-create"/> -->
+        <li id="li-prereq-write-perms-api-create">You must have Write permissions to create an API.</li>
+
+        <!-- <li conkeyref="k-apim/li-prereq-snaplex-config"/> -->
+        <li id="li-prereq-snaplex-config">Snaplexes:
+          <ul>
+            <li>Cloudplexes must have a load balancer.</li>
+            <li>Groundplexes must have at least one node.</li>
+          </ul>
+        </li>
+
+        <!-- <li conkeyref="k-apim/li-"/> -->
+        <li id="li-"></li>
+
+      </ul>
+
+      <!-- <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul> -->
+      <ul id="ul-prereq-create-api">
+        <li conkeyref="k-apim/li-prereq-org-apimgmt-feature"/>
+        <li conkeyref="k-apim/li-prereq-write-perms-api-create"/>
+        <li conkeyref="k-apim/li-prereq-snaplex-config"/>
+      </ul>
+
+    </prereq>
+
+
+    <context/>
+
+
+    <steps>
+
+      <!-- - - - - - NAVIGATION – API MANAGER - - - - - -->
+      <stepsection>
+
+        <!-- <ph conkeyref="k-apim/ph-go-to-api-manager"/> -->
+        <ph id="ph-go-to-api-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to
+          <menucascade>
+            <uicontrol>API Management</uicontrol>
+            <uicontrol>API Manager</uicontrol>
+          </menucascade>.
+        </ph>
+
+      </stepsection>
+
+      <!-- <step conkeyref="k-apim/step-go-to-apis-proxies-tab"><cmd/></step> -->
+      <!-- <ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/> -->
+      <step id="step-go-to-apis-proxies-tab">
+        <cmd>
+          <ph id="ph-go-to-apis-proxies-tab">In SnapLogic <uicontrol>Manager</uicontrol>, go to
+            <menucascade>
+              <uicontrol>API Management</uicontrol>
+              <uicontrol>API Manager</uicontrol>
+              <uicontrol>APIs &amp; Proxies</uicontrol>
+            </menucascade>.
+          </ph>
+        </cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left"><alt>APIs and Proxies tab in the API Manager</alt></image></div>
+        </info>
+      </step>
+
+      <!-- <step conkeyref="k-apim/step-new-api"><cmd/></step> -->
+      <!-- <ph conkeyref="k-apim/ph-new-api"/> -->
+      <step id="step-new-api">
+        <cmd><ph id="ph-new-api">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New API</uicontrol>.</ph></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
+        </info>
+      </step>
+
+      <!-- <step conkeyref="k-apim/step-new-proxy"><cmd/></step> -->
+      <!-- <ph conkeyref="k-apim/ph-new-proxy"/> -->
+      <step id="step-new-proxy">
+        <cmd><ph id="ph-new-proxy">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New Proxy</uicontrol>.</ph></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
+        </info>
+      </step>
+
+
+
+      <!-- - - - - - NAVIGATION – PORTAL MANAGER - - - - - -->
+      <stepsection>
+
+        <!-- <ph conkeyref="k-apim/ph-go-to-portal-manager"/> -->
+        <ph id="ph-go-to-portal-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to
+          <menucascade>
+            <uicontrol>API Management</uicontrol>
+            <uicontrol>Portal Manager</uicontrol>
+          </menucascade>.
+        </ph>
+
+      </stepsection>
+      <step><cmd/></step>
+
+
+      <!-- - - - - - NAVIGATION – SUBSCRIPTION MANAGER - - - - - -->
+      <stepsection>
+
+        <!-- <ph conkeyref="k-apim/ph-go-to-subscription-manager"/> -->
+        <ph id="ph-go-to-subscription-manager">In SnapLogic <uicontrol>Manager</uicontrol>, go to
+          <menucascade>
+            <uicontrol>API Management</uicontrol>
+            <uicontrol>Subscription Manager</uicontrol>
+          </menucascade>.
+        </ph>
+
+      </stepsection>
+      <step><cmd/></step>
+
+
+      <!-- - - - - - APIs - - - - - -->
+
+      <stepsection>
+
+        <!-- <p conkeyref="k-apim/p-name-reqs"/> -->
+        <p id="p-name-reqs">The name must meet the following requirements:
+          <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
+        </p>
+
+      </stepsection>
+
+      <!-- <step conkeyref="k-apim/step-create-api-options-import-config"><cmd/></step> -->
+      <step id="step-create-api-options-import-config"><cmd>In <uicontrol>Create New API - Options</uicontrol>, select your <uicontrol>API Import Configurations</uicontrol>.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-api-create-options.png" placement="break" align="left"><alt>Create New API - Options dialog</alt></image></div>
+          <table outputclass="flddesc">
+            <tgroup cols="2">
+              <colspec colname="col-name" colwidth="25%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead conkeyref="k-misc/thead-field-desc"><row><entry/></row></thead>
+              <tbody>
+                <row>
+                  <entry>Create Specification</entry>
+                  <entry>If selected, the imported specification is included as a File Asset in the API.</entry>
+                </row>
+                <row>
+                  <entry>Create Endpoints from Path</entry>
+                  <entry>If selected, endpoints for the new API are created based on its path.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
+
+      <!-- <step conkeyref="k-apim/step-create-api-details"><cmd/></step> -->
+      <step id="step-create-api-details"><cmd>In <uicontrol>Create New API - Details</uicontrol>, fill in the details for the new API.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-api-create-details.png" placement="break" align="left"><alt>Create New API - Details dialog</alt></image></div>
+          <table outputclass="setflddesc">
+            <tgroup cols="3">
+              <colspec colname="col-set"  colwidth="20%"/>
+              <colspec colname="col-name" colwidth="20%"/>
+              <colspec colname="col-desc" colwidth="60%"/>
+              <thead conkeyref="k-misc/thead-set-field-desc"><row><entry/></row></thead>
+              <tbody>
+                <row>
+                  <entry morerows="3">General Info</entry>
+                  <entry>Name (Title)</entry>
+                  <entry>The name of the new API.
+                    <p conref="#./p-name-reqs"/>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Description</entry>
+                  <entry>A description of the new API.</entry>
+                </row>
+                <row>
+                  <entry>Version</entry>
+                  <entry>The version number for the first version of the API.
+                    <p><ph conkeyref="k-misc/ph-default"/> <codeph outputclass="varvalue">1.0</codeph></p>
+                    <p><ph conkeyref="k-misc/ph-learnmore"/> <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1987183767/Managing+Versions+of+Your+APIs">Managing Versions of Your APIs</xref></p>
+                  </entry>
+                </row>
+                <row>
+                  <entry>Tags</entry>
+                  <entry>Tags to associate with the new API.
+                    You can create the tags as required.
+                  </entry>
+                </row>
+                <row>
+                  <entry>Endpoint Configuration</entry>
+                  <entry>Path to Endpoint</entry>
+                  <entry><ph conkeyref="k-misc/ph-readonly"/> The base path for the endpoint.</entry>
+                </row>
+                <row>
+                  <entry>Server Configuration</entry>
+                  <entry>Snaplex</entry>
+                  <entry>The Snaplex to associate with the new API.</entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </info>
+      </step>
+
+
+    </steps>
+
+
+  </taskbody>
+
+  <related-links>
+    <link scope="external" format="html" href="http://www.example.org">
+      <linktext>Example 1</linktext>
+    </link>
+    <link scope="external" format="html" href="http://www.example.com">
+      <linktext>Example 2</linktext>
+    </link>
+  </related-links>
+
+</task>

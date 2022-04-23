@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="api-create-empty">
+
+  <title>Create an Empty API</title>
+  <titlealts><navtitle>Create Empty API</navtitle></titlealts>
+
+  <taskbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p conkeyref="k-apim/p-create-api-4ways"/>
+      <p>This topic shows how to create an empty API that you can fill in later.</p>
+    </section>
+
+    <prereq>
+      <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul>
+    </prereq>
+
+    <steps>
+      <step conkeyref="k-apim/step-go-to-apis-proxies-tab"><cmd/></step>
+      <step conkeyref="k-apim/step-new-api"><cmd/></step>
+
+      <step><cmd>In <uicontrol>Create New API</uicontrol>, choose <uicontrol>Create Empty API</uicontrol>.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-api-create-empty.png" placement="break" align="left"><alt>Create New API dialog</alt></image></div>
+        </info>
+      </step>
+      <step><cmd>Click <uicontrol>Create</uicontrol>.</cmd></step>
+
+      <step conkeyref="k-apim/step-create-api-details"><cmd/></step>
+      <step><cmd>Click <uicontrol>Create</uicontrol>.</cmd></step>
+
+    </steps>
+
+  </taskbody>
+
+</task>

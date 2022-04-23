@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="portalmgr-about">
+
+  <title>Portal Manager</title>
+
+  <shortdesc>The console where you set up and manage your custom <uicontrol>Developer Portal</uicontrol>.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>You can make your APIs accessible to users outside the SnapLogic ecosystem.</p>
+
+      <p>The following API Management components are available to Org administrator:
+        <ul>
+          <li><uicontrol>Portal Manager</uicontrol>. The administrative console where Org administrators can manage the lifecycle of APIs.
+            Org administrators also use the Portal Manager to create and customize the Developer Portal where APIs are published.
+          </li>
+          <li><uicontrol>Developer Portal</uicontrol>. The customizable public-facing page that showcase your APIs to the public.</li>
+        </ul>
+      </p>
+
+      <note type="important">Only Org Admins can publish, unpublish, deprecate, or retire APIs.</note>
+    </section>
+
+  </conbody>
+
+  <related-links>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2426273854/Developer+Portal">
+      <linktext>Developer Portal</linktext>
+    </link>
+    <link scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2425096912/Subscription+Manager">
+      <linktext>Subscription Manager</linktext>
+    </link>
+  </related-links>
+
+</concept>

@@ -21,6 +21,7 @@
   --hover-textcolor: #000000;
   --bordercolor: #DDDDDD;
   --borderline: 1px solid var(--bordercolor);
+  --border4img: 1px solid #000000;
 
   /* header */
   --hdr-bgcolor: #FFFFFE;
@@ -349,38 +350,45 @@ nav.related-links {
    Images
    ============================== */
 
+img.inline-icon {
+  margin:  0 !important;
+  padding: 0 !important;
+  border:  0 !important;
+  width: var(--body-font-size);
+}
+img.inline-icon:hover {
+  transform: none !important;
+}
+
+img.noborder {
+  border: 0 !important;
+}
+
+img {
+  border: var(--border4img);
+}
+
 section img,
 .step img {
   max-width: 50%;
-  margin-left: 20px;
+  margin-left: 10px;
   transition: transform .5s;
 }
-/*
 section img:hover,
 .step img:hover {
   transform: scale(150%) translate(25%);
   z-index: 9;
 }
-*/
 
+/*
 section .img75pc {
   max-width: 75%;
 }
-
-section .img75pc:hover,
-.inline-icon:hover {
-  transform: none;
-}
-
+img-medium,
 .img900px {
   max-width: 900px;
 }
-
-.inline-icon {
-  margin: 0;
-  padding: 0;
-  width: var(--body-font-size);
-}
+*/
 
 
 /* ==============================
@@ -428,8 +436,13 @@ td {
   vertical-align: top;
 }
 
+.setflddesc .row .entry:first-child,
+.setflddesc .row .entry:nth-child(2),
 .flddesc .row .entry:first-child {
   font-weight: bold;
+}
+.setflddesc .row .entry:nth-last-child(1) {
+  font-weight: normal;
 }
 
 .num1stcol .row .entry:first-child {

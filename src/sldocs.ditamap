@@ -42,7 +42,6 @@
 
   <topichead collection-type="family">
     <topicmeta><navtitle>SnapLogic Manager</navtitle></topicmeta>
-    <mapref href="apim/apim.ditamap"/>
     <mapref href="manager/manager.ditamap"/>
   </topichead>
 
@@ -60,9 +59,7 @@
     <topicmeta><navtitle>Administration and Configuration</navtitle></topicmeta>
   </topichead>
 
-  <topichead collection-type="family">
-    <topicmeta><navtitle>SnapLogic API Management</navtitle></topicmeta>
-  </topichead>
+  <mapref href="apim/apim.ditamap"/>
 
   <mapref href="public-apis/public-apis.ditamap"/>
 

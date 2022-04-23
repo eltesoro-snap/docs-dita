@@ -105,7 +105,7 @@
 
       <p>To view the hierarchy of the applied policies, click <uicontrol>View Applied Policies</uicontrol> and go to the <uicontrol>Hierarchy</uicontrol> tab.</p>
 
-      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-policies-hierarchy.png" placement="break" align="left" outputclass="img-medium"><alt>Hierarchy tab in the Related Policies dialog of an endpoint</alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-policies-hierarchy.png" placement="break" align="left"><alt>Hierarchy tab in the Related Policies dialog of an endpoint</alt></image></div>
     </section>
 
   </conbody>

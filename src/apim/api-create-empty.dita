@@ -27,7 +27,7 @@
           <div outputclass="modalimg"><image href="../img/apim-api-create-empty.png" placement="break" align="left"><alt>Create New API dialog</alt></image></div>
         </info>
       </step>
-      <step><cmd>Click <uicontrol>Create</uicontrol>.</cmd></step>
+      <step><cmd>Click <uicontrol>Continue</uicontrol>.</cmd></step>
 
       <step conkeyref="k-apim/step-create-api-details"><cmd/></step>
       <step><cmd>Click <uicontrol>Create</uicontrol>.</cmd></step>

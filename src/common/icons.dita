@@ -49,6 +49,21 @@
 
 
     <section>
+      <title>APIM icons</title>
+
+      <!-- <image conkeyref="k-icons/image-reorder-icon"/> -->
+      <!-- <ph conkeyref="k-icons/ph-icon-reorder"/> -->
+      <!-- GitHub path: /ClientApps\client\prod\img\common\icon\???.svg -->
+      <!--
+      <image id="image-reorder-icon" href="../img/icons/???.svg" placement="inline" outputclass="inline-icon"/>
+      <ph id="ph-icon-reorder">the reorder icon ( <image conref="#./image-reorder-icon"/> )</ph>
+      -->
+      <ph id="ph-icon-reorder">the reorder icon</ph>
+
+    </section>
+
+
+    <section>
       <title>SnapLogic Studio icons</title>
 
       <!-- <image conkeyref="k-icons/image-studio-logo"/> -->

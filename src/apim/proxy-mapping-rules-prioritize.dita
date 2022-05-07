@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="proxy-mapping-rules-prioritize">
+
+  <title>Prioritize the Proxy Endpoint Mapping Rules</title>
+  <titlealts><navtitle>Prioritize Proxy Mapping Rules</navtitle></titlealts>
+
+  <taskbody>
+
+    <steps>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoint-mapping-tab"/></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-with-rules.png" placement="break" align="left"><alt>Mapping tab of the Proxy endpoint with rules</alt></image></div>
+        </info>
+      </step>
+      <step><cmd>Click <ph conkeyref="k-icons/ph-icon-reorder"/>.</cmd></step>
+      <step><cmd>In <uicontrol>Reorder Mapping Rules</uicontrol>, drag and drop the rules into the priority order that you want.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-reorder.png" placement="break" align="left"><alt>Reorder Mapping Rules dialog</alt></image></div>
+        </info>
+      </step>
+      <step><cmd>Click <uicontrol>Save</uicontrol>.</cmd></step>
+    </steps>
+
+  </taskbody>
+
+</task>

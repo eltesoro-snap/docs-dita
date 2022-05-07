@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="proxy-mapping-rules">
+
+  <title>Proxy Endpoint Mapping Rules</title>
+  <titlealts><navtitle>Proxy Endpoint Mapping Rules</navtitle></titlealts>
+
+  <shortdesc>Proxy endpoint rules determine which endpoint URL is used, depending on the conditions.</shortdesc>
+
+  <conbody>
+
+    <section>
+      <title>Overview</title>
+
+      <p>A Proxy can have multiple endpoints; an endpoint can have multiple URLs.
+        You can create rules that choose which URL to redirect the request to, depending on the conditions.
+      </p>
+
+      <ul>
+        <li>A condition can be based on an expression, the existence of a key-value pair in the request header, the HTTP method, the URL path, or the existence of a key-value pair in the query parameters.</li>
+        <li>You can specify the authentication method and credentials to use at the target URL.</li>
+      </ul>
+
+    </section>
+
+  </conbody>
+
+</concept>

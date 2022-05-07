@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA General Task//EN" "generalTask.dtd">
+<task xml:lang="en-US" id="proxy-mapping-rules-create">
+
+  <title>Create a Proxy Endpoint Mapping Rule</title>
+  <titlealts><navtitle>Create Proxy Mapping Rule</navtitle></titlealts>
+
+  <taskbody>
+
+    <steps>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></cmd></step>
+      <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoint-mapping-tab"/></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-empty.png" placement="break" align="left"><alt>Mapping tab of the Proxy endpoint with no rules</alt></image></div>
+        </info>
+      </step>
+      <step><cmd>Click <ph conkeyref="k-icons/ph-icon-add"/>.</cmd></step>
+      <step><cmd>In <uicontrol>Create Proxy Mapping Rule</uicontrol>, fill in the rule settings.</cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-rule-create.png" placement="break" align="left"><alt>Create Proxy Mapping Rule dialog</alt></image></div>
+          <div conkeyref="k-apim/div-table-proxy-rules-settings"/>
+        </info>
+      </step>
+      <step><cmd>Click <uicontrol>Create and Add Another</uicontrol> or <uicontrol>Create</uicontrol>.</cmd></step>
+    </steps>
+
+    <postreq>
+      <note type="tip"><ph conkeyref="k-apim/ph-change-proxy-rule-priorities"/>S</note>
+    </postreq>
+
+  </taskbody>
+
+</task>

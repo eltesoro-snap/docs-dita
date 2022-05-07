@@ -38,7 +38,11 @@
       <title>Viewing the List of Endpoints</title>
 
       <div>To view the list of endpoints for a proxy,
-        <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
+          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+        </ol>
       </div>
 
       <div outputclass="modalimg"><image href="../img/apim-proxy-endpoints-list-checkbox.png" placement="break" align="left"><alt>The Proxy Endpoints tab of the proxy in the API Manager</alt></image></div>
@@ -50,7 +54,7 @@
 
       <div>To create an endpoint,
         <ol>
-          <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+          <li>Go to the list of endpoints for the Proxy.</li>
           <li>Click the plus icon (<image conkeyref="k-icons/image-add-icon"/>).</li>
           <li>Configure the new endpoint.
             <image href="../img/apim-proxy-endpoint-add.png" placement="break" align="left"><alt>Create Proxy Endpoint dialog</alt></image>
@@ -104,8 +108,10 @@
 
       <div>To edit an endpoint,
         <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
           <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
-          <li><ph conkeyref="k-apim/ph-click-endpoint-name"/>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/>
             <div outputclass="modalimg"><image href="../img/apim-proxy-endpoint-details.png" placement="break" align="left"><alt>Details about the endpoint</alt></image></div>
             <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/2453078030/Proxy+Endpoint+Details">Proxy Endpoint Details</xref></p>
           </li>
@@ -123,6 +129,8 @@
 
       <div>To delete an endpoint,
         <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
           <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
           <li>Check the box for the endpoint to delete.</li>
           <li>Click the trash icon (<image conkeyref="k-icons/image-delete-icon"/>).</li>

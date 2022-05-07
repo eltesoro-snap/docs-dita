@@ -28,18 +28,16 @@
       <ul>
         <li>To go to the proxy details page,
           <ol>
-            <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/>
-              <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
-            </li>
-            <li><ph conkeyref="k-apim/ph-click-proxy-name"/></li>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
           </ol>
         </li>
         <li>To go to the endpoint details page,
           <ol>
-            <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/>
-              <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol>
-            </li>
-            <li><ph conkeyref="k-apim/ph-click-endpoint-name"/></li>
+            <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+            <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
+            <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+            <li><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></li>
           </ol>
         </li>
       </ul>
@@ -79,11 +77,19 @@
           </tbody>
         </tgroup>
       </table>
+
+      <p>From this dialog, you can:
+        <ul>
+          <li><xref href="#./section-add-policy">Add a Policy</xref></li>
+          <li><xref href="#./section-edit-policy">Edit a Policy</xref></li>
+          <li><xref href="#./section-view-hierarchy-policies">View the Hierarchy of Policies</xref></li>
+        </ul>
+      </p>
     </section>
 
 
-    <section>
-      <title>Adding a Policy</title>
+    <section id="section-add-policy">
+      <title>Add a Policy</title>
 
       <p>To add and apply security policies to your proxy or endpoint, click the plus icon (<image conkeyref="k-icons/image-add-icon"/>) and choose a policy type.</p>
 
@@ -91,8 +97,8 @@
     </section>
 
 
-    <section>
-      <title>Editing a Policy</title>
+    <section id="section-edit-policy">
+      <title>Edit a Policy</title>
 
       <p>To edit a policy, click its name on the list.</p>
 
@@ -100,8 +106,8 @@
     </section>
 
 
-    <section>
-      <title>Viewing the Hierarchy of Policies</title>
+    <section id="section-view-hierarchy-policies">
+      <title>View the Hierarchy of Policies</title>
 
       <p>To view the hierarchy of the applied policies, click <uicontrol>View Applied Policies</uicontrol> and go to the <uicontrol>Hierarchy</uicontrol> tab.</p>
 

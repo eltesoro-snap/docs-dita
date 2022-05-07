@@ -101,7 +101,7 @@
                       <li><codeph>Job</codeph></li>
                       <li><codeph>Account</codeph></li>
                       <li><codeph>Pipeline</codeph></li>
-                      <!-- <li>???</li> -->
+                      <li><codeph>Policy</codeph></li>
                     </ul>
                   </p>
                 </entry>
@@ -250,5 +250,5 @@ Last refreshed: 20220419
                            Argument('duplicate_check', Argument.BODY, Argument.BOOL)
                        ])
 
-Jiras: PLAT-8417
+Jiras: PLAT-8417, APIM-209
 -->

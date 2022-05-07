@@ -41,7 +41,9 @@
 
       <div>
         To view the list of proxies,
-        <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
+        <ol>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+        </ol>
       </div>
 
       <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>

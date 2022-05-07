@@ -6,9 +6,10 @@
 
   <topicref href="apim-about.dita" collection-type="family">
 
+    <topicref href="api-lifecycle.dita"/>
+
     <topichead collection-type="family">
       <topicmeta><navtitle>APIs</navtitle></topicmeta>
-      <topicref href="api-lifecycle.dita"/>
       <topicref href="api-create-design-first.dita"/>
       <topicref href="api-create-existing-project.dita"/>
       <topicref href="api-create-empty.dita"/>
@@ -35,6 +36,13 @@
       <topicref href="proxy-details.dita"/>
       <topicref href="proxy-endpoints.dita"/>
       <topicref href="proxy-endpoint-details.dita"/>
+      <topicref href="proxy-mapping-rules.dita">
+        <topicref href="proxy-mapping-rules-view-list.dita"/>
+        <topicref href="proxy-mapping-rules-create.dita"/>
+        <topicref href="proxy-mapping-rules-edit.dita"/>
+        <topicref href="proxy-mapping-rules-delete.dita"/>
+        <topicref href="proxy-mapping-rules-prioritize.dita"/>
+      </topicref>
       <topicref href="proxy-security-policies.dita"/>
     </topicref>
 

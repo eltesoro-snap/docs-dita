@@ -31,65 +31,6 @@
 
 
     <section>
-      <title>APIs</title>
-
-      <!-- <p conkeyref="k-apim/p-create-api-4ways"/> -->
-      <p id="p-create-api-4ways">You can create an API using one of four ways:
-        <ul>
-          <li>By uploading an Open API Specification file (Design First)</li>
-          <li>By entering a URL that points to an Open API Specification file (Design First)</li>
-          <li>By creating an API from an existing project</li>
-          <li>By starting with an empty API</li>
-        </ul>
-      </p>
-
-    </section>
-
-
-    <section>
-      <title>Proxies</title>
-
-      <!-- <ph conkeyref="k-apim/ph-filter-for-proxies"/> -->
-      <ph id="ph-filter-for-proxies">Set <uicontrol>Filter by Type</uicontrol> to <uicontrol>Proxy</uicontrol> and click <uicontrol>Search</uicontrol>.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-click-proxy-name"/> -->
-      <ph id="ph-click-proxy-name">Click the proxy's name in the list.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-click-endpoint-name"/> -->
-      <ph id="ph-click-endpoint-name">Click the endpoint's name in the list.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-click-edit-details"/> -->
-      <ph id="ph-click-edit-details">To edit the proxy details, click the <uicontrol>Edit Details</uicontrol> button.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/> -->
-      <ph id="ph-go-to-proxy-endpoints-tab">In the API Manager, open a proxy for editing, then go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-only-description-tags"/> -->
-      <ph id="ph-only-description-tags">You can update only the <uicontrol>Description</uicontrol> and <uicontrol>Tags</uicontrol> of the proxy.</ph>
-
-      <!-- <ph conkeyref="k-apim/ph-only-url-methods"/> -->
-      <ph id="ph-only-url-methods">You can update only the <uicontrol>URL</uicontrol> and <uicontrol>HTTP Method(s)</uicontrol> of the endpoint.</ph>
-
-      <!-- <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol> -->
-      <ol id="ol-go-to-list-proxies">
-        <li><ph conref="#./ph-go-to-api-manager"/></li>
-        <li><ph conref="#./ph-go-to-apis-proxies-tab"/></li>
-        <li><ph conref="#./ph-filter-for-proxies"/></li>
-      </ol>
-
-      <!-- <ol conkeyref="k-apim/ol-go-to-list-endpoints"><li/></ol> -->
-      <ol id="ol-go-to-list-endpoints">
-        <li><ph conref="#./ph-go-to-api-manager"/></li>
-        <li><ph conref="#./ph-go-to-apis-proxies-tab"/></li>
-        <li><ph conref="#./ph-filter-for-proxies"/></li>
-        <li><ph conref="#./ph-click-proxy-name"/></li>
-        <li>Go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</li>
-      </ol>
-
-    </section>
-
-
-    <section>
       <title>Misc</title>
 
       <!-- <ul conkeyref="k-apim/ul-label-rules"><li/></ul> -->
@@ -132,29 +73,50 @@
       <ul>
 
         <!-- <li conkeyref="k-apim/li-prereq-org-apimgmt-feature"/> -->
-        <li id="li-prereq-org-apimgmt-feature">Your Org must have a subscription to the API Management feature; otherwise, the API Management UI is not enabled.</li>
+        <li id="li-prereq-org-apimgmt-feature">Your Org must be subscribed to the <uicontrol>API Management</uicontrol> feature.
+          Contact <ph conkeyref="k-urls/ph-support"/> to subscribe to this feature.
+        </li>
 
         <!-- <li conkeyref="k-apim/li-prereq-write-perms-api-create"/> -->
         <li id="li-prereq-write-perms-api-create">You must have Write permissions to create an API.</li>
 
         <!-- <li conkeyref="k-apim/li-prereq-snaplex-config"/> -->
-        <li id="li-prereq-snaplex-config">Snaplexes:
+        <li id="li-prereq-snaplex-config">Snaplex requirements:
           <ul>
-            <li>Cloudplexes must have a load balancer.</li>
             <li>Groundplexes must have at least one node.</li>
+            <li>Cloudplexes must have a Cloudplex FeedMaster node and a load balancer.
+              <ol>
+                <li>Contact <ph conkeyref="k-urls/ph-support"/> to provision the Cloudplex FeedMaster node and the load balancer as needed.</li>
+                <li>
+                  When the load balancer becomes available, your Org admin must update the <uicontrol>Load Balancer</uicontrol> URL in the Snaplex Settings.
+                  Learn how: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/edit-v2/1402142725#">Updating a Snaplex</xref>
+                </li>
+                <li>You must use the load balancer URL in your Triggered and Ultra Task endpoints.</li>
+              </ol>
+            </li>
           </ul>
         </li>
+
+        <!-- <li conkeyref="k-apim/li-prereq-oas-version"/> -->
+        <li id="li-prereq-oas-version">Your API specifications must be based on <ph conkeyref="k-apim/ph-oas-versions"/>.</li>
+
 
         <!-- <li conkeyref="k-apim/li-"/> -->
         <li id="li-"></li>
 
       </ul>
 
+      <!-- <ul conkeyref="k-apim/ul-prereq-apim-general"><li/></ul> -->
+      <ul id="ul-prereq-apim-general">
+        <li conkeyref="k-apim/li-prereq-org-apimgmt-feature"/>
+        <li conkeyref="k-apim/li-prereq-snaplex-config"/>
+      </ul>
+
+
       <!-- <ul conkeyref="k-apim/ul-prereq-create-api"><li/></ul> -->
       <ul id="ul-prereq-create-api">
-        <li conkeyref="k-apim/li-prereq-org-apimgmt-feature"/>
+        <li conkeyref="k-apim/li-prereq-oas-version"/>
         <li conkeyref="k-apim/li-prereq-write-perms-api-create"/>
-        <li conkeyref="k-apim/li-prereq-snaplex-config"/>
       </ul>
 
     </prereq>
@@ -165,7 +127,7 @@
 
     <steps>
 
-      <!-- - - - - - NAVIGATION – API MANAGER - - - - - -->
+      <!-- - - - - - API MANAGER — NAVIGATION - - - - - -->
       <stepsection>
 
         <!-- <ph conkeyref="k-apim/ph-go-to-api-manager"/> -->
@@ -195,27 +157,8 @@
         </info>
       </step>
 
-      <!-- <step conkeyref="k-apim/step-new-api"><cmd/></step> -->
-      <!-- <ph conkeyref="k-apim/ph-new-api"/> -->
-      <step id="step-new-api">
-        <cmd><ph id="ph-new-api">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New API</uicontrol>.</ph></cmd>
-        <info>
-          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
-        </info>
-      </step>
 
-      <!-- <step conkeyref="k-apim/step-new-proxy"><cmd/></step> -->
-      <!-- <ph conkeyref="k-apim/ph-new-proxy"/> -->
-      <step id="step-new-proxy">
-        <cmd><ph id="ph-new-proxy">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New Proxy</uicontrol>.</ph></cmd>
-        <info>
-          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
-        </info>
-      </step>
-
-
-
-      <!-- - - - - - NAVIGATION – PORTAL MANAGER - - - - - -->
+      <!-- - - - - - PORTAL MANAGER — NAVIGATION - - - - - -->
       <stepsection>
 
         <!-- <ph conkeyref="k-apim/ph-go-to-portal-manager"/> -->
@@ -230,7 +173,7 @@
       <step><cmd/></step>
 
 
-      <!-- - - - - - NAVIGATION – SUBSCRIPTION MANAGER - - - - - -->
+      <!-- - - - - - SUBSCRIPTION MANAGER — NAVIGATION - - - - - -->
       <stepsection>
 
         <!-- <ph conkeyref="k-apim/ph-go-to-subscription-manager"/> -->
@@ -249,12 +192,31 @@
 
       <stepsection>
 
+        <!-- <p conkeyref="k-apim/p-create-api-4ways"/> -->
+        <p id="p-create-api-4ways">You can create an API using one of four ways:
+          <ul>
+            <li>By uploading an Open API Specification file (Design First)</li>
+            <li>By entering a URL that points to an Open API Specification file (Design First)</li>
+            <li>By creating an API from an existing project</li>
+            <li>By starting with an empty API</li>
+          </ul>
+        </p>
+
         <!-- <p conkeyref="k-apim/p-name-reqs"/> -->
         <p id="p-name-reqs">The name must meet the following requirements:
           <ul conkeyref="k-apim/ul-label-rules"><li/></ul>
         </p>
 
       </stepsection>
+
+      <!-- <step conkeyref="k-apim/step-new-api"><cmd/></step> -->
+      <!-- <ph conkeyref="k-apim/ph-new-api"/> -->
+      <step id="step-new-api">
+        <cmd><ph id="ph-new-api">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New API</uicontrol>.</ph></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
+        </info>
+      </step>
 
       <!-- <step conkeyref="k-apim/step-create-api-options-import-config"><cmd/></step> -->
       <step id="step-create-api-options-import-config"><cmd>In <uicontrol>Create New API - Options</uicontrol>, select your <uicontrol>API Import Configurations</uicontrol>.</cmd>
@@ -330,6 +292,207 @@
           </table>
         </info>
       </step>
+
+
+      <!-- - - - - - Proxies - - - - - -->
+
+      <stepsection>
+
+        <!-- A. <ph conkeyref="k-apim/ph-filter-for-proxies"/> -->
+        <ph id="ph-filter-for-proxies">Set <uicontrol>Filter by Type</uicontrol> to <uicontrol>Proxy</uicontrol>.</ph>
+
+        <!-- B. <ph conkeyref="k-apim/ph-click-proxy-name"/> -->
+        <ph id="ph-click-proxy-name">Click the proxy's name in the list.</ph>
+
+        <!-- A+B. <ph conkeyref="k-apim/ph-search-for-and-view-proxy"/> -->
+        <ph id="ph-search-for-and-view-proxy">Search for the proxy and click the proxy's name.</ph>
+
+      </stepsection>
+      <!-- Sequence -->
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></cmd></step>
+      <!--
+        <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+        <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
+      -->
+
+
+      <stepsection>
+
+        <!-- C. <ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/> -->
+        <ph id="ph-go-to-proxy-endpoints-tab">Go to the <uicontrol>Proxy Endpoints</uicontrol> tab.</ph>
+
+        <!-- D. <ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/> -->
+        <ph id="ph-search-for-and-view-endpoint">Search for the endpoint and click the endpoint's name.</ph>
+
+      </stepsection>
+      <!-- Sequence -->
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></cmd></step>
+      <!--
+        <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+        <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
+        <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+        <li><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></li>
+      -->
+
+
+      <stepsection>
+
+        <!-- E. <ph conkeyref="k-apim/ph-go-to-proxy-endpoint-mapping-tab"/> -->
+        <ph id="ph-go-to-proxy-endpoint-mapping-tab">Go to the <uicontrol>Mapping</uicontrol> tab.</ph>
+
+      </stepsection>
+      <!-- Sequence -->
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></cmd></step>
+        <step><cmd><ph conkeyref="k-apim/ph-go-to-proxy-endpoint-mapping-tab"/></cmd></step>
+      <!--
+        <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+        <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
+        <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoints-tab"/></li>
+        <li><ph conkeyref="k-apim/ph-search-for-and-view-endpoint"/></li>
+        <li><ph conkeyref="k-apim/ph-go-to-proxy-endpoint-mapping-tab"/></li>
+      -->
+
+
+      <stepsection>
+
+        <!-- <ph conkeyref="k-apim/ph-click-edit-details"/> -->
+        <ph id="ph-click-edit-details">To edit the proxy details, click the <uicontrol>Edit Details</uicontrol> button.</ph>
+
+        <!-- <ph conkeyref="k-apim/ph-only-description-tags"/> -->
+        <ph id="ph-only-description-tags">You can update only the <uicontrol>Description</uicontrol> and <uicontrol>Tags</uicontrol> of the proxy.</ph>
+
+        <!-- <ph conkeyref="k-apim/ph-only-url-methods"/> -->
+        <ph id="ph-only-url-methods">You can update only the <uicontrol>URL</uicontrol> and <uicontrol>HTTP Method(s)</uicontrol> of the endpoint.</ph>
+
+      </stepsection>
+      <step><cmd/></step>
+
+
+      <stepsection>
+
+        <!-- <ph conkeyref="k-apim/ph-change-proxy-rule-priorities"/> -->
+        <ph id="ph-change-proxy-rule-priorities">You can <xref href="../apim/proxy-mapping-rules-prioritize.dita">change the priorities of the rules in the list.</xref></ph>
+
+        <!-- <div conkeyref="k-apim/div-table-proxy-rules-settings"/> -->
+        <div id="div-table-proxy-rules-settings">
+          <table outputclass="flddesc">
+            <tgroup cols="2">
+              <colspec colname="col-name" colwidth="25%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead>
+                <row>
+                  <entry colname="col-name" valign="top">Field</entry>
+                  <entry colname="col-desc" valign="top">Description</entry>
+                </row>
+              </thead>
+              <tbody>
+                <row>
+                  <entry><uicontrol>Rule Name</uicontrol></entry>
+                  <entry>A name that is unique among the rules of the endpoint.</entry>
+                </row>
+                <row><entry><uicontrol>Target URL</uicontrol></entry>
+                  <entry>The URL to which the request is redirected if the condition is met.
+                    This can be the URL to the third-party API that the Proxy refers to.
+                  </entry>
+                </row>
+                <row>
+                  <entry><uicontrol>Condition</uicontrol></entry>
+                  <entry>The condition that must be met for this rule to apply.
+
+                    <!-- <p conkeyref="k-apim/p-proxy-mapping-condition"/> -->
+                    <p id="p-proxy-mapping-condition">The condition can be:
+                      <ul>
+                        <li><uicontrol>Expression</uicontrol>.
+                          The <uicontrol>Target URL</uicontrol> is used if the specified expression resolves to <codeph>true</codeph>.
+                        </li>
+                        <li><uicontrol>Header</uicontrol>.
+                          The <uicontrol>Target URL</uicontrol> is used if the specified key-value pair appears in the header of the request.
+                        </li>
+                        <li><uicontrol>HTTP Method</uicontrol>.
+                          The <uicontrol>Target URL</uicontrol> is used if the HTTP method of the request is one of the specified values.
+                        </li>
+                        <li><uicontrol>Path</uicontrol>.
+                          The <uicontrol>Target URL</uicontrol> is used if the specified path matches the tail of the URL leading to the Proxy endpoint.
+                          <p>For example, if <uicontrol>Value</uicontrol> is set to <codeph>any/path/you/want</codeph> then the API consumer must send their request to <codeph>https://elastic.snaplogic.com/myproxy/myendpoint/any/path/you/want</codeph> to trigger this rule.</p>
+                          <p>The comparison is a case-sensitive exact match.</p>
+                        </li>
+                        <li><uicontrol>Query Parameter</uicontrol>.
+                          The <uicontrol>Target URL</uicontrol> is used if the specified key-value pair appears in the query string of the request.
+                        </li>
+                      </ul>
+                    </p>
+
+                  </entry>
+                </row>
+                <row>
+                  <entry><uicontrol>Authentication</uicontrol></entry>
+                  <entry>The authentication scheme required to use the API at the <uicontrol>Target URL</uicontrol>.
+
+                    <!-- <p conkeyref="k-apim/p-proxy-mapping-authentication"/> -->
+                    <p id="p-proxy-mapping-authentication">The authentication scheme can be:
+                      <ul>
+                        <li><uicontrol>Basic Auth</uicontrol>.
+                          Enter the <uicontrol>User Name</uicontrol> and <uicontrol>Password</uicontrol> of the Basic Authentication account to access the API in the <uicontrol>Target URL</uicontrol>.
+                          <p>For example, if the <uicontrol>Target URL</uicontrol> points to Google Sheets, enter the credentials of the Google account to use.</p>
+                        </li>
+                        <li><uicontrol>Key-Based</uicontrol>. Enter the <uicontrol>Key</uicontrol> required to access the API in the <uicontrol>Target URL</uicontrol> and indicate where the <uicontrol>Key</uicontrol> is expected:
+                          <ul>
+                            <li><uicontrol>Custom Authorization Header</uicontrol>. The request must include the key in the specified authorization header.</li>
+                            <li><uicontrol>Custom Header</uicontrol>. The request must include the key in the specified custom header.</li>
+                            <li><uicontrol>Query Parameter</uicontrol>. The request must include the key in the specified query parameter.</li>
+                          </ul>
+                        </li>
+                        <li><uicontrol>None</uicontrol>. No authentication is required.</li>
+                      </ul>
+                    </p>
+
+                  </entry>
+                </row>
+              </tbody>
+            </tgroup>
+          </table>
+        </div>
+      </stepsection>
+      <step><cmd/></step>
+
+
+      <!--
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-empty.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-with-rules.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-list-reorder.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-dropdown.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-expression.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-header.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-http-method.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-path.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-condition-query-param.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-authentication-dropdown.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-authentication-basic.png" placement="break" align="left"><alt></alt></image></div>
+      <div outputclass="modalimg"><image href="../img/apim-proxy-mapping-authentication-key-based.png" placement="break" align="left"><alt></alt></image></div>
+      -->
+
+
+      <!-- <step conkeyref="k-apim/step-new-proxy"><cmd/></step> -->
+      <!-- <ph conkeyref="k-apim/ph-new-proxy"/> -->
+      <step id="step-new-proxy">
+        <cmd><ph id="ph-new-proxy">Click <ph conkeyref="k-icons/ph-icon-add"/> and choose <uicontrol>New Proxy</uicontrol>.</ph></cmd>
+        <info>
+          <div outputclass="modalimg"><image href="../img/apim-apisproxies-list-dropdown.png" placement="break" align="left"><alt>New API or New Proxy dropdown</alt></image></div>
+        </info>
+      </step>
+
+
+      <stepsection>
+      </stepsection>
+      <step><cmd/></step>
+
 
 
     </steps>

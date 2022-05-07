@@ -13,8 +13,19 @@
 
       <p>
         You can create APIs from your own specifications or from your SnapLogic Pipelines and Assets.
-        To make your APIs available to users outside SnapLogic, you can publish those APIs in a Developer Portal that is customized with your own branding.
+        To make your APIs available to users outside SnapLogic, you can publish those APIs in a <uicontrol>Developer Portal</uicontrol> that is customized with your own branding.
         You can also create proxies to allow you to integrate with third-party APIs.
+      </p>
+
+      <p>
+        Your API serves as a container for SnapLogic Assets:
+        <ul>
+          <li><term>Pipelines</term>. A representation of the API specification and its child Pipelines, if any. Provides the scaffolding of the API’s implementation in the SnapLogic platform.</li>
+          <li><term>Tasks</term>. The URI endpoints that are used to trigger Pipeline execution.</li>
+          <li><term>Files</term>. The specification file and other files that are associated with the API.</li>
+          <li><term>Accounts</term>. Accounts that are used by Pipelines in the API.</li>
+          <li><term>Snap Packs</term>. Snap Packs that are used by the Pipelines in the API</li>
+        </ul>
       </p>
 
     </section>
@@ -79,22 +90,7 @@
 
     <section>
       <title>Prerequisites</title>
-
-      <ul>
-        <li>Cloudplexes need a Cloudplex FeedMaster node and a load balancer.
-          <ul>
-            <li>Contact <ph conkeyref="k-urls/ph-support"/> to provision the Cloudplex FeedMaster node and the load balancer as needed.</li>
-            <li>
-              When the load balancer becomes available, your Org admin must update the <uicontrol>Load Balancer</uicontrol> URL in the Snaplex Settings.
-              Learn how: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/edit-v2/1402142725#">Updating a Snaplex</xref>
-            </li>
-            <li>You must use the load balancer URL in your Triggered and Ultra Task endpoints.</li>
-          </ul>
-        </li>
-        <li>The <uicontrol>API Management</uicontrol> feature must be enabled for your Org. Contact <ph conkeyref="k-urls/ph-support"/> to subscribe to this feature.</li>
-        <li>Your API specifications must be based on <ph conkeyref="k-apim/ph-oas-versions"/>.</li>
-        <li>You must have a good understanding of the SnapLogic <uicontrol>Manager</uicontrol> and the SnapLogic expression language.</li>
-      </ul>
+      <ul conkeyref="k-apim/ul-prereq-apim-general"><li/></ul>
     </section>
 
 

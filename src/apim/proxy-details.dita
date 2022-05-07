@@ -14,10 +14,8 @@
       <p>To view the settings of a proxy,
         <div outputclass="modalimg"><image href="../img/apim-apisproxies-list.png" placement="break" align="left"><alt>The APIs and Proxies tab of the API Manager</alt></image></div>
         <ol>
-          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/>
-            <ol conkeyref="k-apim/ol-go-to-list-proxies"><li/></ol>
-          </li>
-          <li><ph conkeyref="k-apim/ph-click-proxy-name"/></li>
+          <li><ph conkeyref="k-apim/ph-go-to-apis-proxies-tab"/></li>
+          <li><ph conkeyref="k-apim/ph-search-for-and-view-proxy"/></li>
         </ol>
       </p>
 

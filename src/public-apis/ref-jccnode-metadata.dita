@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference xml:lang="en-US" id="ref-jccnode-metadata">
+
+  <title>Reference: JCC Node Metadata</title>
+
+  <shortdesc>Information about a JCC node</shortdesc>
+
+  <refbody>
+
+    <section>
+      <p>You can get information about a JCC node through the public API <xref href="get-snaplex-org.dita"><codeph>GET /snaplex/{org}</codeph></xref>.</p>
+
+      <p>The response includes several of the following information:</p>
+
+      <table>
+        <tgroup cols="3">
+          <colspec colname="col-key"  colwidth="25%"/>
+          <colspec colname="col-type" colwidth="15%"/>
+          <colspec colname="col-desc" colwidth="60%"/>
+          <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+          <tbody>
+
+            <!-- "runtime_path_id": "myOrg/rt/cloud/dev", -->
+            <row>
+              <entry><codeph>runtime_path_id</codeph></entry>
+              <entry>string</entry>
+              <entry></entry>
+            </row>
+
+            <row conkeyref="k-papi/row-response-jccnode-container_type"><entry/></row>
+
+            <!-- "label": "Cloud", -->
+            <row>
+              <entry><codeph>label</codeph></entry>
+              <entry>string</entry>
+              <entry></entry>
+            </row>
+
+            <row>
+              <entry><codeph>down</codeph></entry>
+              <entry>array</entry>
+              <entry>JCC nodes that are not processing requests​.
+                <p id="p-each-item-jccnode-details">Each item in the list is an object containing details about the JCC node.</p>
+                <!-- From the old docs: For example, a message is returned under alerts if your Snaplex version is deprecated and needs to be updated. -->
+              </entry>
+            </row>
+
+            <row>
+              <entry><codeph>running</codeph></entry>
+              <entry>array</entry>
+              <entry>JCC nodes that are processing requests.
+                <p conref="#./p-each-item-jccnode-details"/>
+              </entry>
+            </row>
+
+            <row conkeyref="k-papi/row-response-runtime-snode-id"><entry/></row>
+
+            <!-- "path": "/myOrg/shared/Cloud", -->
+            <row>
+              <entry><codeph>path</codeph></entry>
+              <entry>string</entry>
+              <entry></entry>
+            </row>
+
+            <!-- "leader": null -->
+            <row>
+              <entry><codeph>leader</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+
+            <!--
+            <row>
+              <entry><codeph></codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+            -->
+
+          </tbody>
+        </tgroup>
+      </table>
+
+
+    </section>
+
+  </refbody>
+
+</reference>

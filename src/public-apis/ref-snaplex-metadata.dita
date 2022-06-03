@@ -21,6 +21,257 @@
           <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
           <tbody>
 
+            <!-- "plexfs_retention_time": 14, -->
+            <row>
+              <entry><codeph>plexfs_retention_time</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "perms": [ -->
+            <row>
+              <entry><codeph>perms</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "class_fqid": "com-snaplogic-snaplex_3", -->
+            <row>
+              <entry><codeph>class_fqid</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "plexfs_min_free": 25, -->
+            <row>
+              <entry><codeph>plexfs_min_free</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "org_snode_id": "61d73c77742ab1bbfc4dbc82", -->
+            <row>
+              <entry><codeph>org_snode_id</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "feed_master_load_balancer": "https://mylb.snaplogic.com", -->
+            <row>
+              <entry><codeph>feed_master_load_balancer</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "max_slots": 2000, -->
+            <row>
+              <entry><codeph>max_slots</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "path": "/myOrg/shared/Cloud", -->
+            <row>
+              <entry><codeph>path</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "owner": "me@snaplogic.com", -->
+            <row>
+              <entry><codeph>owner</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "restart_request_time": "", -->
+            <row>
+              <entry><codeph>restart_request_time</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "jcc_load_balancer": "", -->
+            <row>
+              <entry><codeph>jcc_load_balancer</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "dynamic_settings": { -->
+            <row>
+              <entry><codeph>dynamic_settings</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "disabled_notification": null, -->
+            <row>
+              <entry><codeph>disabled_notification</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "reserved_slots": 15, -->
+            <row>
+              <entry><codeph>reserved_slots</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "notification": { -->
+            <row>
+              <entry><codeph>notification</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <row conkeyref="k-papi/row-response-jccnode-container_type"><entry/></row>
+
+            <!-- "label": "Cloud", -->
+            <row>
+              <entry><codeph>label</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "class_version": 3, -->
+            <row>
+              <entry><codeph>class_version</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "restart_max_waiting_time": 15, -->
+            <row>
+              <entry><codeph>restart_max_waiting_time</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "location": "cloud", -->
+            <row>
+              <entry><codeph>location</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "time_leased": null, -->
+            <row>
+              <entry><codeph>time_leased</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "node_settings": { -->
+            <row>
+              <entry><codeph>node_settings</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "runtime_path_id": "myOrg/rt/cloud/dev", -->
+            <row>
+              <entry><codeph>runtime_path_id</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "min_jcc": 1, -->
+            <row>
+              <entry><codeph>min_jcc</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "queue_size": 50, -->
+            <row>
+              <entry><codeph>queue_size</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "lease_info": {}, -->
+            <row>
+              <entry><codeph>lease_info</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "org": "/myOrg", -->
+            <row>
+              <entry><codeph>org</codeph></entry>
+              <entry>string</entry>
+              <entry>The path to the SnapLogic Org.</entry>
+            </row>
+
+            <!-- "restart_request_user": "", -->
+            <row>
+              <entry><codeph>restart_request_user</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "environment": "dev", -->
+            <row>
+              <entry><codeph>environment</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "node_settings_fp": "0ea47087d1ccf37da986c254f04d31fa2f469169d6699214832a591df54d5098", -->
+            <row>
+              <entry><codeph>node_settings_fp</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "max_mem": 85, -->
+            <row>
+              <entry><codeph>max_mem</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "class_id": "com-snaplogic-snaplex", -->
+            <row>
+              <entry><codeph>class_id</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "instance_id": "61d73c8e72dd306e18ef1891", -->
+            <row>
+              <entry><codeph>instance_id</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "pkg_version": "main-12117", -->
+            <row>
+              <entry><codeph>pkg_version</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "load_avg_duration": 1, -->
+            <row>
+              <entry><codeph>load_avg_duration</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+            <!-- "snode_id": "61d73c8e72dd306e18ef1892" -->
+            <row>
+              <entry><codeph>snode_id</codeph></entry>
+              <entry></entry>
+              <entry></entry>
+            </row>
+
+
+
+
+
             <!-- (From the old topic)
 active_thread	The total thread count of the VM.
 
@@ -126,7 +377,7 @@ The number of timed out requests.
 
 
             <!--
-            <row id="row-" outputclass="">
+            <row>
               <entry><codeph></codeph></entry>
               <entry></entry>
               <entry></entry>

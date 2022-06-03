@@ -24,13 +24,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-read-access"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -38,7 +38,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/{org}</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -48,10 +48,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -69,96 +69,18 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row>
-                <entry><codeph>plex_label</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs for the specified Snaplex.</entry>
-              </row>
-              <row>
-                <entry><codeph>cc_label</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs for the specified CC label (JCC node’s hostname).</entry>
-              </row>
-              <row>
-                <entry><codeph>pipe_name</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs for the specified Pipeline.</entry>
-              </row>
-              <row>
-                <entry><codeph>user_id</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs triggered by the specified user.</entry>
-              </row>
-              <row>
-                <entry><codeph>state</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs in the specified state.
-                  <p><ph conkeyref="k-misc/ph-valid"/>
-                    <ul>
-                      <li><codeph>Queued</codeph> – Task is queued for processing; all Tasks start in this state.</li>
-                      <li><codeph>NoUpdate</codeph> – Intermediate state at startup.</li>
-                      <li><codeph>Prepared</codeph> – Task has been prepared.</li>
-                      <li><codeph>Started</codeph> – Task has started running.</li>
-                      <li><codeph>Completed</codeph> – Task has completed successfully.</li>
-                      <li><codeph>Failing</codeph> – Task encountered an error and is waiting for Snaps to complete execution before moving to the Failed state.</li>
-                      <li><codeph>Failed</codeph> – Task failed.</li>
-                      <li><codeph>Stopped</codeph> – Task was stopped either by the user or by the system, as indicated by the "stopper" key.</li>
-                      <li><codeph>Stopping</codeph> – Task is stopping.</li>
-                      <li><codeph>Suspending</codeph> – Resumable Task encountered an error and is storing its state.</li>
-                      <li><codeph>Suspended</codeph> – Resumable Task encountered an error and is suspended.</li>
-                      <li><codeph>Resuming</codeph> – Resumable Task is loading its state and will resume execution where it left off.</li>
-                    </ul>
-                  </p>
-                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>Started</codeph></p>
-                </entry>
-              </row>
-              <row>
-                <entry><codeph>invoker</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs that were invoked in the specified way.
-                  <p><ph conkeyref="k-misc/ph-valid"/>
-                    <ul>
-                      <li><codeph>triggered</codeph> – Triggered Tasks</li>
-                      <li><codeph>scheduled</codeph> – Scheduled Tasks</li>
-                      <li><codeph>always_on</codeph> – Ultra Tasks</li>
-                      <li><codeph>manual</codeph> – User-triggered Tasks</li>
-                    </ul>
-                  </p>
-                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>scheduled</codeph></p>
-                </entry>
-              </row>
-              <row>
-                <entry><codeph>project_path</codeph></entry>
-                <entry>string</entry>
-                <entry>Returns information about Task runs for the specified project.
-                  <p>Allowed formats:
-                    <ul>
-                      <li><codeph>/{org}/projects/{project_name}</codeph></li>
-                      <li><codeph>/{org}/shared</codeph></li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-              <row>
-                <entry><codeph>last_hours</codeph></entry>
-                <entry>integer</entry>
-                <entry>Returns information about Task runs within the specified number of hours, counting backwards from the current time.
-                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1080 hours (45 days)</p>
-                  <p><ph conkeyref="k-misc/ph-default"/> 1</p>
-                </entry>
-              </row>
-              <row>
-                <entry><codeph>start</codeph></entry>
-                <entry>integer</entry>
-                <entry>Returns information about Task runs since the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
-              </row>
-              <row>
-                <entry><codeph>end</codeph></entry>
-                <entry>integer</entry>
-                <entry>Returns information about Task runs before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
-              </row>
-              <row conkeyref="k-api/row-query-param-runtime-limit"><entry/></row>
-              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-plex-label"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-cc-label"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-pipe-name"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-user-id"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-state"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-invoker"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-project-path"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-last-hours"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-start"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-end"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-runtime-limit"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-offset"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -166,7 +88,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -181,16 +103,42 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
 
+        <note conkeyref="k-papi/note-note-results-by-permissions"/>
+
         <codeblock outputclass="normalize-space lang-json">
         {
           "response_map": {
-            "entries": [ ... ],
+            "entries": [
+              {
+                "pipe_id": "...",
+                "has_lints": ...,
+                "documents": ...,
+                "user_id": "...",
+                "ccid": "...",
+                "child_has_lints": ...,
+                "runtime_path_id":  "...",
+                "parent_ruuid": "...",
+                "subpipes": { ... },
+                "state_timestamp": "...",
+                "error_documents": ...,
+                "label": "...",
+                "path_id": "...",
+                "state": "...",
+                "create_time": "...",
+                "invoker": "...",
+                "duration": 0,
+                "cc_label": "...",
+                "id": "...",
+                "runtime_label": "...",
+                "mode": "..."
+              }
+            ],
             "total": ...,
             "limit": ...,
             "offset": ...
@@ -206,14 +154,31 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row>
-                <entry><codeph>entries</codeph></entry>
-                <entry>array</entry>
-                <entry><ph conkeyref="k-api/ph-response-array-task-metadata"/></entry>
-              </row>
-              <row conkeyref="k-api/row-response-total"><entry/></row>
-              <row conkeyref="k-api/row-response-limit"><entry/></row>
-              <row conkeyref="k-api/row-response-offset"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-entries"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-pipe-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-has-lints"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-documents"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-user-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-ccid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-child-has-lints"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-runtime-path-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-parent-ruuid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-subpipes"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-state-timestamp"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-error-documents"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-path-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-state"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-create-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-invoker"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-duration"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-runtime-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-mode"><entry/></row>
+              <row conkeyref="k-papi/row-response-total"><entry/></row>
+              <row conkeyref="k-papi/row-response-limit"><entry/></row>
+              <row conkeyref="k-papi/row-response-offset"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -226,12 +191,29 @@
     <section id="section-api-notes" outputclass="api-notes tabcontent">
       <!- - <title>Notes</title> - ->
     </section>
+    -->
 
 
     <section id="section-api-examples" outputclass="api-examples tabcontent">
-      <!- - <title>Example - </title> - ->
+      <title>Examples</title>
+      <ul>
+        <li>To retrieve the status of executed Tasks within the Org for the last hour,
+          <codeblock outputclass="normalize-space">
+            GET https://elastic.snaplogic.com/api/1/rest/public/runtime/myOrg
+          </codeblock>
+        </li>
+        <li>To retrieve the status of executed Tasks within the Org for a specified time range,
+          <codeblock outputclass="normalize-space">
+            GET https://elastic.snaplogic.com/api/1/rest/public/runtime/myOrg?start=&amp;end=
+          </codeblock>
+        </li>
+        <li>To retrieve the status of executed Tasks for the last 4 hours,
+          <codeblock outputclass="normalize-space">
+            GET https://elastic.snaplogic.com/api/1/rest/public/runtime/myOrg?last_hours=4
+          </codeblock>
+        </li>
+      </ul>
     </section>
-    -->
 
   </conbody>
 

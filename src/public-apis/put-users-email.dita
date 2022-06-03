@@ -23,13 +23,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-org-admin-role"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -37,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">PUT</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/users/{email}</ph>
+        <ph id="ph-method">PUT</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/users/{email}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -47,10 +47,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-email"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-email"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -63,7 +63,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -90,15 +90,15 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-request-user-first-name"><entry/></row>
-              <row conkeyref="k-api/row-request-user-last-name"><entry/></row>
-              <row conkeyref="k-api/row-request-user-allow-password-login"><entry/></row>
-              <row conkeyref="k-api/row-request-user-revoke-old-password"><entry/></row>
-              <row conkeyref="k-api/row-request-user-utility"><entry/></row>
-              <row conkeyref="k-api/row-request-user-ui-access"><entry/></row>
-              <row conkeyref="k-api/row-request-created-by"><entry/></row>
-              <row conkeyref="k-api/row-request-user-certificate"><entry/></row>
-              <row conkeyref="k-api/row-request-user-file-handle"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-first-name"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-last-name"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-allow-password-login"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-revoke-old-password"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-utility"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-ui-access"><entry/></row>
+              <row conkeyref="k-papi/row-request-created-by"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-certificate"><entry/></row>
+              <row conkeyref="k-papi/row-request-user-file-handle"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -111,7 +111,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>

@@ -217,7 +217,7 @@
             <row id="row-perm-perms" outputclass="ev-security">
               <entry><codeph>perm</codeph> » <codeph>perms</codeph></entry>
               <entry>array</entry>
-              <entry conkeyref="k-api/entry-permissions-desc"/>
+              <entry conkeyref="k-papi/entry-permissions-desc"/>
             </row>
             <row id="row-perm-subject_type" outputclass="ev-security">
               <entry><codeph>perm</codeph> » <codeph>subject_type</codeph></entry>
@@ -234,7 +234,7 @@
             <row id="row-perm-inherit" outputclass="ev-security">
               <entry><codeph>perm</codeph> » <codeph>inherit</codeph></entry>
               <entry>Boolean</entry>
-              <entry><ph conkeyref="k-api/ph-response-inherit-desc"/></entry>
+              <entry><ph conkeyref="k-papi/ph-response-inherit-desc"/></entry>
             </row>
 
             <!-- "perms_entry": "Full Access", -->

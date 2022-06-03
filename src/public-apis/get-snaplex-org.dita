@@ -16,11 +16,6 @@
       <title>Overview</title>
 
       <p>This API <ph id="ph-shortdesc">retrieves Snaplex and JCC wrapper information about all nodes or about the node, specified by the Snaplex path or the hostname.</ph></p>
-
-      <ul>
-        <li>If called without parameters, the API returns information about all the nodes in the Org.</li>
-        <li>If <varname>plex_path</varname> or <varname>hostname</varname> is specified, the API returns information about the specified nodes only.</li>
-      </ul>
     </section>
 
 
@@ -28,13 +23,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-org-admin-role"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -42,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/{org}</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -52,10 +47,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -71,8 +66,8 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-query-param-plexpath"><entry/></row>
-              <row conkeyref="k-api/row-query-param-hostname-list"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-plexpath"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-hostname-list"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -80,7 +75,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -95,7 +90,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <!--

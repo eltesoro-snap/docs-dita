@@ -24,13 +24,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-org-admin-role"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -38,7 +38,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">POST</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_or_space_path}</ph>
+        <ph id="ph-method">POST</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/acl/{project_or_space_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -48,10 +48,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-projorspacepath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-projorspacepath"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -64,7 +64,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -86,10 +86,10 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-request-grant-type"><entry/></row>
-              <row conkeyref="k-api/row-request-grantee-grant"><entry/></row>
-              <row conkeyref="k-api/row-request-permission-list"><entry/></row>
-              <row conkeyref="k-api/row-request-inherit"><entry/></row>
+              <row conkeyref="k-papi/row-request-grant-type"><entry/></row>
+              <row conkeyref="k-papi/row-request-grantee-grant"><entry/></row>
+              <row conkeyref="k-papi/row-request-permission-list"><entry/></row>
+              <row conkeyref="k-papi/row-request-inherit"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -102,7 +102,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>

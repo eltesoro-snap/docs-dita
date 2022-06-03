@@ -16,6 +16,7 @@
       <topicref href="delete-assetapi-acl-projpath.dita"/>
       <topicref href="post-assetapi-project-projpath.dita"/>
       <topicref href="put-assetapi-project-projpath.dita"/>
+      <topicref href="delete-assetapi-project-projpath.dita"/>
     </topicref>
 
     <topicref href="apis-log.dita" collection-type="family">

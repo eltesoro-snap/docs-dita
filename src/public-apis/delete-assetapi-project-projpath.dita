@@ -1,21 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
-<concept xml:lang="en-US" id="get-snaplex-version">
+<concept xml:lang="en-US" id="delete-assetapi-project-projpath">
 
-  <title>Get All Versions of the Snaplex Package</title>
+  <title>Delete a Project or Project Space</title>
 
   <!-- <shortdesc><ph conref="#./ph-shortdesc"/></shortdesc> -->
 
   <conbody>
 
     <section>
-      <p outputclass="shortsyntax">GET /snaplex/version</p>
+      <p outputclass="shortsyntax">DELETE /assetapi/project/{project_or_space_path}</p>
     </section>
 
     <section>
       <title>Overview</title>
 
-      <p>This API <ph id="ph-shortdesc"> retrieves information about all versions of the Snaplex packages.</ph></p>
+      <p>
+        This API <ph id="ph-shortdesc"> moves an existing project or project space to the Recycle Bin.</ph>
+        <ph conkeyref="k-papi/ph-recycle-bin-purged"/>
+      </p>
     </section>
 
 
@@ -37,7 +40,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/snaplex/version</ph>
+        <ph id="ph-method">DELETE</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/assetapi/project/{project_or_space_path}</ph>
       </codeblock>
 
       <sectiondiv>
@@ -50,6 +53,7 @@
             <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
               <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-projorspacepath-optional"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -82,39 +86,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
-
-        <codeblock outputclass="normalize-space lang-json">
-          {
-            "response_map": [
-              {
-                "version": "...",
-                "comment": "...",
-                "status": "..."
-              },
-              ...
-            ],
-            "http_status_code": 200
-          }
-        </codeblock>
-
-        <table>
-          <tgroup cols="3">
-            <colspec colname="col-key"  colwidth="25%"/>
-            <colspec colname="col-type" colwidth="15%"/>
-            <colspec colname="col-desc" colwidth="60%"/>
-            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
-            <tbody>
-              <row>
-                <entry><codeph>version</codeph></entry>
-                <entry>string</entry>
-                <entry>The Snaplex version.</entry>
-              </row>
-              <row conkeyref="k-papi/row-response-snaplex-version-comment"><entry/></row>
-              <row conkeyref="k-papi/row-response-snaplex-version-status"><entry/></row>
-            </tbody>
-          </tgroup>
-        </table>
-
+        <p>None.</p>
       </sectiondiv>
     </section>
 
@@ -138,11 +110,15 @@
 
 
 <!--
-Source: Tectonic\sldb\src\main\python\sldb\services\public\plex_monitor_handler.py
-Last refreshed: 20211201
-        # get snaplex versions
-        self.add_route('/version', self.get_versions,
-                       methods=[httplib.HTTP_GET])
+Source: Tectonic\sldb\src\main\python\sldb\services\public\asset_handler.py
+Last refreshed: 20220601
+        super(AssetHandlerPublic, self).__init__('assetapi', '1', factory, category='public', use_envelope=False)
+        ...
+        self.add_route('project/<path:path>', self.delete_project, methods=[http_lib.HTTP_DELETE],
+                       arguments=[
+                           Argument(name='path', arg_from=Argument.URL, default='/'),
+                           Argument(name='caller', arg_from=Argument.USER_ID),
+                       ])
 
-Jiras: PLAT-8417
+Jiras: PLAT-8417, STU-632
 -->

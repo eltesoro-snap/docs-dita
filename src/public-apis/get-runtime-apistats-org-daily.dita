@@ -23,13 +23,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-read-access"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -37,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/api-stats/{org}/daily</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/api-stats/{org}/daily</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -47,10 +47,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -81,7 +81,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -96,18 +96,28 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
+
+        <note conkeyref="k-papi/note-note-results-by-permissions"/>
 
         <codeblock outputclass="normalize-space lang-json">
           {
             "response_map": {
               "date": "...",
               "organization": "...",
-              "top_tasks": [ ... ],
+              "top_tasks": [
+                {
+                  "task_id": "...",
+                  "task_name": "...",
+                  "task_path": "...",
+                  "task_owner": "...",
+                  "api_count": ...
+                }
+              ],
               "task_count": ...,
               "daily_call_used": ...,
               "daily_call_available": ...
@@ -123,16 +133,16 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-response-apistats-date"><entry/></row>
-              <row conkeyref="k-api/row-response-organization"><entry/></row>
-              <row conkeyref="k-api/row-response-task-run-top-tasks"><entry/></row>
+              <row conkeyref="k-papi/row-response-apistats-date"><entry/></row>
+              <row conkeyref="k-papi/row-response-organization"><entry/></row>
+              <row conkeyref="k-papi/row-response-task-run-top-tasks"><entry/></row>
               <row>
                 <entry><codeph>task_count</codeph></entry>
                 <entry>integer</entry>
-                <entry><ph conkeyref="k-api/ph-response-number-executed-tasks-today"/></entry>
+                <entry><ph conkeyref="k-papi/ph-response-number-executed-tasks-today"/></entry>
               </row>
-              <row conkeyref="k-api/row-response-task-run-daily-call-used"><entry/></row>
-              <row conkeyref="k-api/row-response-task-run-daily-call-available"><entry/></row>
+              <row conkeyref="k-papi/row-response-task-run-daily-call-used"><entry/></row>
+              <row conkeyref="k-papi/row-response-task-run-daily-call-available"><entry/></row>
             </tbody>
           </tgroup>
         </table>

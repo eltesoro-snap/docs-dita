@@ -23,13 +23,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-read-access"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -37,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/{org}/{ruuid}</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/runtime/{org}/{ruuid}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -47,11 +47,11 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-ruuid"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-ruuid"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -87,7 +87,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -102,11 +102,13 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Body</p>
+
+        <note conkeyref="k-papi/note-note-results-by-permissions"/>
 
         <codeblock outputclass="normalize-space lang-json">
           {
@@ -329,993 +331,112 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-
-              <row>
-                <entry><codeph>feed_call</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the Pipeline increments tha API meter. ???</entry>
-              </row>
-
-              <!-- "subpipeline_parameters": {}, -->
-              <row>
-                <entry><codeph>subpipeline_parameters</codeph></entry>
-                <entry>object</entry>
-                <entry>If the Task was triggered by a parent Pipeline, the key-value pairs of parameters passed to this Task. ???</entry>
-              </row>
-
-              <!--
-              "llfeed_status": {
-                "message_history": [],
-                "messages": [],
-                "documents_count": 0,
-                "max_in_flight": 200,
-                "summary": ""
-              },
-              -->
-              <row>
-                <entry><codeph>llfeed_status</codeph></entry>
-                <entry>object</entry>
-                <entry>???
-                  <ul>
-                    <li><codeph>message_history</codeph>. (array) An array of strings containing the message history.</li>
-                    <li><codeph>messages</codeph>. (array) An array of strings containing messages.</li>
-                    <li><codeph>documents_count</codeph>. (integer) The number of documents processed.</li>
-                    <li><codeph>max_in_flight</codeph>. (integer) <ph conkeyref="k-api/ph-response-task-run-max-concurrent"/> ???</li>
-                    <li><codeph>summary</codeph>. (string) A summary of ???</li>
-                  </ul>
-                </entry>
-              </row>
-
-              <!-- "class_fqid": "956c5931-15f1-4262-9414-436f3b24a06c_26", -->
-              <row>
-                <entry><codeph>class_fqid</codeph></entry>
-                <entry>string</entry>
-                <entry><ph conkeyref="k-api/ph-response-fqid"/></entry>
-              </row>
-
-              <!-- "snode_id": "61c28c4ec9c443425b86a9b7", -->
-              <row>
-                <entry><codeph>snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry><ph conkeyref="k-api/ph-response-snode-id"/></entry>
-              </row>
-
-              <!-- "ttl": 300, -->
-              <row>
-                <entry><codeph>ttl</codeph></entry>
-                <entry>integer</entry>
-                <entry>A Task's ??? time to live, expressed in milliseconds ???.</entry>
-              </row>
-
-              <!-- "org_snode_id": "563cec53d97c824743a013ff", -->
-              <row>
-                <entry><codeph>org_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry><ph conkeyref="k-api/ph-response-org-snode-id"/></entry>
-              </row>
-
-              <!-- "cc_prepare_end_ms": 1642198181274, -->
-              <row>
-                <entry><codeph>cc_prepare_end_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "parent_path": null, -->
-              <row>
-                <entry><codeph>parent_path</codeph></entry>
-                <entry>string</entry>
-                <entry>The path to the parent Pipeline, if this Task is a child.</entry>
-              </row>
-
-              <!-- "delete_time": "2022-02-17T18:39:48.887000+00:00", -->
-              <row>
-                <entry><codeph>delete_time</codeph></entry>
-                <entry>string</entry>
-                <entry>When the Task was deleted. ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "error_list": [], -->
-              <row>
-                <entry><codeph>error_list</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "child_count": 0, -->
-              <row>
-                <entry><codeph>child_count</codeph></entry>
-                <entry>integer</entry>
-                <entry>The number of children of this Task's Pipeline. ???</entry>
-              </row>
-
-              <!-- "data_locations": [], -->
-              <row>
-                <entry><codeph>data_locations</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of objects containing information about each data location (source or target). ???</entry>
-              </row>
-
-              <!-- "env_map": {}, -->
-              <row>
-                <entry><codeph>env_map</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "restart_attempts": 0, -->
-              <row>
-                <entry><codeph>restart_attempts</codeph></entry>
-                <entry>integer</entry>
-                <entry>The number of attempts to restart the Task after a failure or suspension.</entry>
-              </row>
-
-              <!-- "error_documents_count": 0, -->
-              <row>
-                <entry><codeph>error_documents_count</codeph></entry>
-                <entry>integer</entry>
-                <entry>The number of documents that had errors.</entry>
-              </row>
-
-              <!--
-              "env_map_list": [
-                {
-                  "ciphertext": "PNtnB0Vrf0TCp0cuslLkLkt1EUduCl9YordjeB7ZFovpVPtog8QLX7zLBbk6NB6ohHM13ECgJzZAGwOddUZHY0jCR/XfSyqiPkSnsUHTOc0=",
-                  "sym_key": {
-                    "alias": "account-cloud-managed-563cec53d97c824743a013ff-2015-11-06T18:10:02-687379",
-                    "key": "oO4hY15tvgZUPeP5B1Lzi02Wdt2iE+cryEa/5cKswj6/zQxMY28qtzYLxePmlqPqO9LoiqVZKkLL90Oyju99Gr6o9pkz9UwPJgsOaVRe3jcbiN3YmUysPSOzr1HFtEzIhJRMWCfsjuC4GKYZW8xpE8s0Zoy/UwLKMs1+gDVdwOVtSZJIr/OUYbC6V/BvkVxLRj3AJazcLLfDTRuktWPKXbgSljgsDgMMiNui1WaSo83O8JJbw4WsKot6ws/EybALwjZm4KzvBW7ojvM9Rd3ftPJkWsY1+wcL+PnKHFhEexMgq8plm2/18bUZgQXdwoxYQ9zIrKVPpQ1Ct5qmrrw0YQ=="
-                  }
-                }
-              ],
-              -->
-              <row>
-                <entry><codeph>env_map_list</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of Objects containing:
-                  <ul>
-                    <li><codeph>ciphertext</codeph>. (string) ???</li>
-                    <li><codeph>sym_key</codeph>. (Object) An object containing the <codeph>alias</codeph> and <codeph>key</codeph> of ???.</li>
-                  </ul>
-                </entry>
-              </row>
-
-              <!-- "statistics_time_stamp": "", -->
-              <row>
-                <entry><codeph>statistics_time_stamp</codeph></entry>
-                <entry>string</entry>
-                <entry>???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "job_trigger": null, -->
-              <row>
-                <entry><codeph>job_trigger</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "cc_fast_push_expire_time_ms": 1642207375933, -->
-              <row>
-                <entry><codeph>cc_fast_push_expire_time_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "fault_injections": null, -->
-              <row>
-                <entry><codeph>fault_injections</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "slserver_lease_expire_time": "2022-01-14T22:19:26.185000+00:00", -->
-              <row>
-                <entry><codeph>slserver_lease_expire_time</codeph></entry>
-                <entry>string</entry>
-                <entry>???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "cc_poll_ms": 1642531188827, -->
-              <row>
-                <entry><codeph>cc_poll_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "instance_id": "563cec53d97c824743a013ff_c973287b-7c42-4b15-a4c7-c972ae43bdd1", -->
-              <row>
-                <entry><codeph>instance_id</codeph></entry>
-                <entry>string</entry>
-                <entry>The UUID of the Task run. ???</entry>
-              </row>
-
-              <!-- "mode": "standard", -->
-              <row>
-                <entry><codeph>mode</codeph></entry>
-                <entry>string</entry>
-                <entry>The mode of the Task run. ???
-                  <p><ph conkeyref="k-misc/ph-possible"/>
-                    <ul>
-                      <li><codeph>standard</codeph></li>
-                      <li>???</li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-
-              <!-- "async": true, -->
-              <row>
-                <entry><codeph>async</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the Task was run asynchronously.
-                  <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/986285123/Understanding+Synchronous+and+Asynchronous+Execution+of+Triggered+Tasks?search_id=afeaec24-704d-45c9-af23-0c33f117fb44">Understanding Synchronous and Asynchronous Execution of Triggered Tasks</xref></p>
-                </entry>
-              </row>
-
-              <!-- "pipe_invoker": "always_on", -->
-              <row>
-                <entry><codeph>pipe_invoker</codeph></entry>
-                <entry>string</entry>
-                <entry>How the Pipeline was invoked.
-                  <p><ph conkeyref="k-misc/ph-possible"/>
-                    <ul>
-                      <li><codeph>always_on</codeph></li>
-                      <li><codeph>???</codeph></li>
-                      <li><codeph>???</codeph></li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-
-              <!-- "create_time": "2022-01-14T22:09:25.532000+00:00", -->
-              <row>
-                <entry><codeph>create_time</codeph></entry>
-                <entry>string</entry>
-                <entry>The time when the Task run was created. ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "duration": 333022, -->
-              <row>
-                <entry><codeph>duration</codeph></entry>
-                <entry>integer</entry>
-                <entry>The length of time the Task ran, expressed in milliseconds. ???</entry>
-              </row>
-
-              <!--
-              "notification": {
-                "slack_recipients": [
-                  {
-                    "user": [],
-                    "channel": []
-                  }
-                ]
-              },
-              -->
-              <row>
-                <entry><codeph>notification</codeph></entry>
-                <entry>object</entry>
-                <entry>Information about recipients of notifications.</entry>
-              </row>
-
-              <!-- "label": "Flag Ultra 1", -->
-              <row>
-                <entry><codeph>label</codeph></entry>
-                <entry>string</entry>
-                <entry>The label or name of the Task run.</entry>
-              </row>
-
-              <!-- "state": "Completed", -->
-              <row>
-                <entry><codeph>state</codeph></entry>
-                <entry>string</entry>
-                <entry>The status of the Task run. ???
-                  <p><ph conkeyref="k-misc/ph-valid"/>
-                    <ul>
-                      <li>started</li>
-                      <li>???</li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-
-              <!-- "replicaset_label": "_main", -->
-              <row>
-                <entry><codeph>replicaset_label</codeph></entry>
-                <entry>string</entry>
-                <entry>The label of ???</entry>
-              </row>
-
-              <!-- "invoker": "psrikantesh@snaplogic.com", -->
-              <row>
-                <entry><codeph>invoker</codeph></entry>
-                <entry>string</entry>
-                <entry>The user that invoked the Task run. ???</entry>
-              </row>
-
-              <!-- "cc_user": "cc+platformqa@snaplogic.com", -->
-              <row>
-                <entry><codeph>cc_user</codeph></entry>
-                <entry>string</entry>
-                <entry>The user that ???</entry>
-              </row>
-
-              <!-- "time_stamp": "2022-01-18T18:39:38.532000+00:00", -->
-              <row>
-                <entry><codeph>time_stamp</codeph></entry>
-                <entry>string</entry>
-                <entry>The time when the Task run started. ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "cc_external_uri": "http://ip-172-27-177-152.us-west-2.compute.internal:8090", -->
-              <row>
-                <entry><codeph>cc_external_uri</codeph></entry>
-                <entry>string</entry>
-                <entry>The URI of the node where the Task is running. ???</entry>
-              </row>
-
-              <!-- "partition_snode_id": "5f17d1cb42b058b708c9cc80", -->
-              <row>
-                <entry><codeph>partition_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the node partition where the Task is running. ???</entry>
-              </row>
-
-              <!-- "lint_id_list": [], -->
-              <row>
-                <entry><codeph>lint_id_list</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "reason": null, -->
-              <row>
-                <entry><codeph>reason</codeph></entry>
-                <entry>string</entry>
-                <entry>The reason for running the Task, if specified. ???</entry>
-              </row>
-
-              <!-- "threads": [], -->
-              <row>
-                <entry><codeph>threads</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "prepare_handoff_timestamp": "2022-01-14T22:09:26.293000+00:00", -->
-              <row>
-                <entry><codeph>prepare_handoff_timestamp</codeph></entry>
-                <entry>string</entry>
-                <entry>The time when ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "slot_count": 1, -->
-              <row>
-                <entry><codeph>slot_count</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "end_stage": "EXECUTE", -->
-              <row>
-                <entry><codeph>end_stage</codeph></entry>
-                <entry>string</entry>
-                <entry>???
-                  <p><ph conkeyref="k-misc/ph-possible"/>
-                    <ul>
-                      <li><codeph>EXECUTE</codeph></li>
-                      <li>???</li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-
-              <!-- "search": "flag ultra 1 psrikantesh@snaplogic.com groundplex_poornima/ip-172-27-177-152 testing123", -->
-              <row>
-                <entry><codeph>search</codeph></entry>
-                <entry>string</entry>
-                <entry>The search string used to locate this Task run. ???</entry>
-              </row>
-
-              <!-- "limits": null, -->
-              <row>
-                <entry><codeph>limits</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "class_id": "956c5931-15f1-4262-9414-436f3b24a06c", -->
-              <row>
-                <entry><codeph>class_id</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the class that ???</entry>
-              </row>
-
-              <!-- "has_lints": false, -->
-              <row>
-                <entry><codeph>has_lints</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
-              </row>
-
-              <!-- "q_threshold_time": "2022-01-14T22:13:11.185000+00:00", -->
-              <row>
-                <entry><codeph>q_threshold_time</codeph></entry>
-                <entry>string</entry>
-                <entry>The time when ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!--
-              "control_plane_scheduling": [
-                {
-                  "update_buckets": {
-                    "0": 1642198001.933051
-                  },
-                  "_id": "61e1f3e3048673663f58198f",
-                  "stats": {
-                    "active_pipelines": [],
-                    "cpu_user": 0.1875,
-                    "mem_used": 0.03349485,
-                    "active_threads": 210,
-                    "open_file_descriptors": 373,
-                    "system_load_average": 0.155
-                  },
-                  "generation": 5,
-                  "slots_in_use": 227,
-                  "time_stamp": "2022-01-14T22:06:41.933000+00:00",
-                  "leases": {
-                    "563cec53d97c824743a013ff_2c09f7d2-6b4b-4aa8-91ce-583b93fdf882": {
-                      "timestamp": "2022-01-14T22:09:23.850000+00:00",
-                      "slots": 10
-                    },
-                    "563cec53d97c824743a013ff_64e4389c-264c-4337-8432-92a338f960d8": {
-                      "timestamp": "2022-01-14T22:09:25.955000+00:00",
-                      "slots": 3
-                    },
-                    "563cec53d97c824743a013ff_32e3ab1a-51dd-4cfa-9e44-0b96705db63e": {
-                      "timestamp": "2022-01-14T22:09:24.118000+00:00",
-                      "slots": 2
-                    },
-                    "563cec53d97c824743a013ff_d5a28e06-ae0f-424b-a257-f4ec0e6bb038": {
-                      "timestamp": "2022-01-14T22:09:25.976000+00:00",
-                      "slots": 1
-                    },
-                    "563cec53d97c824743a013ff_24ca01ca-c133-4240-8552-56325a80bf05": {
-                      "timestamp": "2022-01-14T22:09:24.550000+00:00",
-                      "slots": 1
-                    }
-                  }
-                }
-              ],
-              -->
-              <row>
-                <entry><codeph>control_plane_scheduling</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of objects that contain ???</entry>
-              </row>
-
-              <!-- "suggest_uris": null, -->
-              <row>
-                <entry><codeph>suggest_uris</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "cc_end_ms": 1642531188803, -->
-              <row>
-                <entry><codeph>cc_end_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "task_status": [], -->
-              <row>
-                <entry><codeph>task_status</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "cc_prepare_start_ms": 1642198166803, -->
-              <row>
-                <entry><codeph>cc_prepare_start_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>??? in milliseconds</entry>
-              </row>
-
-              <!-- "phase_snode_id": "", -->
-              <row>
-                <entry><codeph>phase_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "duration_ms": 333022763, -->
-              <row>
-                <entry><codeph>duration_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "parent_ruuid": null, -->
-              <row>
-                <entry><codeph>parent_ruuid</codeph></entry>
-                <entry>string</entry>
-                <entry>Runtime ID of the (parent) Task that triggered this (child) Task.</entry>
-              </row>
-
-              <!--
-              "references": [
-                {
-                  "path": "/PlatformQA/Poornima/4.28 Ultra/Flag Ultra 1",
-                  "pipe_origin": null,
-                  "time_updated": "2022-01-13T07:50:05.529000+00:00",
-                  "asset_type": "Pipeline",
-                  "snode_id": "61c28c4ec9c443425b86a9b7"
-                }
-              ],
-              -->
-              <row>
-                <entry><codeph>references</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of objects that contain ???</entry>
-              </row>
-
-              <!-- "do_start": true, -->
-              <row>
-                <entry><codeph>do_start</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
-              </row>
-
-              <!--
-              "statistics": {
-                "output_views": {},
-                "input_views": {}
-              },
-              -->
-              <row>
-                <entry><codeph>statistics</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "user_id": "psrikantesh@snaplogic.com", -->
-              <row>
-                <entry><codeph>user_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "connect_pipeline_views": true, -->
-              <row>
-                <entry><codeph>connect_pipeline_views</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, ???</entry>
-              </row>
-
-              <!-- "container_type": "regular", -->
-              <row>
-                <entry><codeph>container_type</codeph></entry>
-                <entry>string</entry>
-                <entry>???
-                  <p><ph conkeyref="k-misc/ph-possible"/>
-                    <ul>
-                      <li><codeph>regular</codeph></li>
-                      <li>???</li>
-                    </ul>
-                  </p>
-                </entry>
-              </row>
-
-              <!-- "priority": 0, -->
-              <row>
-                <entry><codeph>priority</codeph></entry>
-                <entry>integer</entry>
-                <entry>The priority of this Task instance.
-                  <!-- A priority of 0 means ???. -->
-                </entry>
-              </row>
-
-              <!-- "instance_fqid": "", -->
-              <row>
-                <entry><codeph>instance_fqid</codeph></entry>
-                <entry>string</entry>
-                <entry>The fully qualified ID of this Task instance.</entry>
-              </row>
-
-              <!-- "info_flag_list": [], -->
-              <row>
-                <entry><codeph>info_flag_list</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "runtime_path_id": "PlatformQA/rt/sidekick/env", -->
-              <row>
-                <entry><codeph>runtime_path_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "lint_list": [], -->
-              <row>
-                <entry><codeph>lint_list</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "failure": null, -->
-              <row>
-                <entry><codeph>failure</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "state_log": [
-                {
-                  "timestamp": 1642198166801,
-                  "ccid": "61e1f3e3048673663f58198f",
-                  "new_state": "NoUpdate"
-                },
-                {
-                  "timestamp": 1642198181276,
-                  "new_state": "Prepared"
-                },
-                {
-                  "timestamp": 1642198181276,
-                  "new_state": "Started"
-                },
-                {
-                  "timestamp": 1642531188803,
-                  "new_state": "Completed"
-                }
-              ],
-              -->
-              <row>
-                <entry><codeph>state_log</codeph></entry>
-                <entry>array</entry>
-                <entry>An array of objects containing changes in the state, the timestamp for each change, and other information.
-                  <p conkeyref="k-api/p-response-possible-task-run-status"/>
-                </entry>
-              </row>
-
-              <!-- "ruuid": "563cec53d97c824743a013ff_c973287b-7c42-4b15-a4c7-c972ae43bdd1", -->
-              <row>
-                <entry><codeph>ruuid</codeph></entry>
-                <entry>string</entry>
-                <entry>The Runtime ID of the Task run.</entry>
-              </row>
-
-              <!-- "parent_pipeline_fqid": "", -->
-              <row>
-                <entry><codeph>parent_pipeline_fqid</codeph></entry>
-                <entry>string</entry>
-                <entry>The fully qualified ID of the (parent) Pipeline that triggered this Task run.</entry>
-              </row>
-
-              <!-- "execution_timeout": null, -->
-              <row>
-                <entry><codeph>execution_timeout</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "path_id": "/PlatformQA/Poornima/4.28 Ultra", -->
-              <row>
-                <entry><codeph>path_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "plex_snode_id": "60fb01a60ad845396cdc9ba7", -->
-              <row>
-                <entry><codeph>plex_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "error": {}, -->
-              <row>
-                <entry><codeph>error</codeph></entry>
-                <entry>object</entry>
-                <entry>If errors occurred, an object containing metadata about the errors.</entry>
-              </row>
-
-              <!-- "plex_path": "/PlatformQA/shared/Groundplex_poornima", -->
-              <row>
-                <entry><codeph>plex_path</codeph></entry>
-                <entry>string</entry>
-                <entry>The path to the Snaplex where the Task ran. ???</entry>
-              </row>
-
-              <!-- "invoker_snode_id": "61e1d9166416240934be9d20", -->
-              <row>
-                <entry><codeph>invoker_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the Snaplex node where the parent or invoker is located.</entry>
-              </row>
-
-              <!-- "invoker_path_id": "/PlatformQA/Poornima/4.28 Ultra", -->
-              <row>
-                <entry><codeph>invoker_path_id</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "snaplex_label": "Groundplex_poornima/ip-172-27-177-152", -->
-              <row>
-                <entry><codeph>snaplex_label</codeph></entry>
-                <entry>string</entry>
-                <entry>The label or name of the Snaplex where the Task ran.</entry>
-              </row>
-
-              <!--
-              "platform_globals": {
-                "task": {
-                  "start": {
-                    "_snaptype_datetime": "2022-01-14T22:09:25.532Z"
-                  },
-                  "end": {
-                    "_snaptype_datetime": "9999-12-31T23:59:59.999Z"
-                  }
-                }
-              },
-              -->
-              <row>
-                <entry><codeph>platform_globals</codeph></entry>
-                <entry>object</entry>
-                <entry>???
-                  <ul>
-                    <li><codeph>task</codeph> contains the datetimes when the Task run started and ended.</li>
-                    <li>???</li>
-                  </ul>
-                </entry>
-              </row>
-
-              <!-- "init_xid": "e9a58004-e88d-4e87-9ec8-8b81638527a4", -->
-              <row>
-                <entry><codeph>init_xid</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "nested_pipeline": false, -->
-              <row>
-                <entry><codeph>nested_pipeline</codeph></entry>
-                <entry>Boolean</entry>
-                <entry>If <codeph>true</codeph>, the Task run is for a nested Pipeline and was triggered by the Task running the parent Pipeline. ???</entry>
-              </row>
-
-              <!-- "project_snode_id": "61c272cd256f01b4a1a54c0a", -->
-              <row>
-                <entry><codeph>project_snode_id</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the Snaplex node where the project is located.</entry>
-              </row>
-
-              <!-- "class_version": 26, -->
-              <row>
-                <entry><codeph>class_version</codeph></entry>
-                <entry>string</entry>
-                <entry>The version of the class that ???</entry>
-              </row>
-
-              <!-- "warning_list": [], -->
-              <row>
-                <entry><codeph>warning_list</codeph></entry>
-                <entry>array</entry>
-                <entry>If the Task run generated warnings, an array of objects containing metadata about the warnings.</entry>
-              </row>
-
-              <!-- "root_ruuid": "563cec53d97c824743a013ff_c973287b-7c42-4b15-a4c7-c972ae43bdd1", -->
-              <row>
-                <entry><codeph>root_ruuid</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the root Task instance, if this Task is a descendant.</entry>
-              </row>
-
-              <!-- "cc_start_ms": 1642198181276, -->
-              <row>
-                <entry><codeph>cc_start_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>The length of time since the Snaplex node was started, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "poll_time_stamp": "2022-01-18T18:39:48.967000+00:00", -->
-              <row>
-                <entry><codeph>poll_time_stamp</codeph></entry>
-                <entry>string</entry>
-                <entry>???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!--
-              "artifacts_map": {
-                "61c28c4ec9c443425b86a9b7": "art:a8ca59d65d41c5ae9ec270cc6140a059301f4cbe489fa5c8e64698310310b1d5"
-              },
-              -->
-              <row>
-                <entry><codeph>artifacts_map</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "artifact_snap_id_map": {
-                "fcf7d226-d0f6-4b64-8710-4476711e4d0b": "11111111-1111-1111-1111-000000000000"
-              },
-              -->
-              <row>
-                <entry><codeph>artifact_snap_id_map</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "ccid": "61e1f3e3048673663f58198f", -->
-              <row>
-                <entry><codeph>ccid</codeph></entry>
-                <entry>string</entry>
-                <entry>The ID of the Snaplex node where the Task ran.</entry>
-              </row>
-
-              <!-- "delivery_options": {}, -->
-              <row>
-                <entry><codeph>delivery_options</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "metrics": {
-                "queuedCount": 0,
-                "totalSnapDelay": 0,
-                "idleTime": 333007527105322,
-                "memoryOverhead": 0,
-                "inFlightCount": 0,
-                "startTime": 15135302099088213
-              },
-              -->
-              <row>
-                <entry><codeph>metrics</codeph></entry>
-                <entry>object</entry>
-                <entry>Information about ???.
-                  <ul>
-                    <li><codeph>queuedCount</codeph> – The number of ??? waiting in the queue.</li>
-                    <li><codeph>totalSnapDelay</codeph> – The total number of milliseconds that Snaps within the Task run were delayed. ???</li>
-                    <li><codeph>idleTime</codeph> – expressed in milliseconds.</li>
-                    <li><codeph>memoryOverhead</codeph> – ???</li>
-                    <li><codeph>inFlightCount</codeph> – The number of ???</li>
-                    <li><codeph>startTime</codeph> – The number of milliseconds since ??? started.</li>
-                  </ul>
-                </entry>
-              </row>
-
-              <!-- "expire_time": "2022-01-14T22:14:26.185000+00:00", -->
-              <row>
-                <entry><codeph>expire_time</codeph></entry>
-                <entry>string</entry>
-                <entry>When the Task run expires. ???
-                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
-                </entry>
-              </row>
-
-              <!-- "runtime_label": "Groundplex_poornima", -->
-              <row>
-                <entry><codeph>runtime_label</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "close_reason": "Task no longer running on this node", -->
-              <row>
-                <entry><codeph>close_reason</codeph></entry>
-                <entry>string</entry>
-                <entry>Reason for closing the Task.</entry>
-              </row>
-
-              <!-- "cc_stop_ms": 0, -->
-              <row>
-                <entry><codeph>cc_stop_ms</codeph></entry>
-                <entry>integer</entry>
-                <entry>???, expressed in milliseconds.</entry>
-              </row>
-
-              <!-- "root_path": "/PlatformQA/Poornima/4.28 Ultra/Flag Ultra 1", -->
-              <row>
-                <entry><codeph>root_path</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "invoker_name": "ultra test 1", -->
-              <row>
-                <entry><codeph>invoker_name</codeph></entry>
-                <entry>string</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "error_fp_list": [], -->
-              <row>
-                <entry><codeph>error_fp_list</codeph></entry>
-                <entry>array</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "flags": {
-                "immediate_mode": true,
-                "is_suggest": false,
-                "connect_views_to_relay": false
-              },
-              -->
-              <row>
-                <entry><codeph>flags</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "captured_env_map": {
-                "key1": {
-                  "captured": true,
-                  "value": "testing123"
-                }
-              },
-              -->
-              <row>
-                <entry><codeph>captured_env_map</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!--
-              "llfeed_context": {
-                "path_id": "/PlatformQA/Poornima/4.28 Ultra/ultra test 1",
-                "job_alias": null,
-                "masters": [
-                  {
-                    "uri": "https://ip-172-27-187-230.us-west-2.compute.internal:8084",
-                    "certificate": "- - - - -BEGIN CERTIFICATE- - - - -\nMIIDyzCCArOgAwIBAgIEWWm8/DANBgkqhkiG9w0BAQsFADCBnjELMAkGA1UEBhMC\nVVMxEzARBgNVBAgMCkNhbGlmb3JuaWExEjAQBgNVBAcMCVNhbiBNYXRlbzESMBAG\nA1UECgwJU25hcExvZ2ljMSgwJgYDVQQLDB9vcmctY2EtNTYzY2VjNTNkOTdjODI0\nNzQzYTAxM2ZmMSgwJgYDVQQDDB9vcmctY2EtNTYzY2VjNTNkOTdjODI0NzQzYTAx\nM2ZmMB4XDTIxMDcyMzE3NTU0M1oXDTMxMDcyMTE3NTU0M1owgYwxEDAOBgNVBAYT\nB1Vua25vd24xEDAOBgNVBAgTB1Vua25vd24xEDAOBgNVBAcTB1Vua25vd24xEDAO\nBgNVBAoTB1Vua25vd24xCzAJBgNVBAsTAkNDMTUwMwYDVQQDEyxpcC0xNzItMjct\nMTg3LTIzMC51cy13ZXN0LTIuY29tcHV0ZS5pbnRlcm5hbDCCASIwDQYJKoZIhvcN\nAQEBBQADggEPADCCAQoCggEBAMGs8PFWhnmtFhQ9MPZo+S9B5oik9j5RU9iAH/HJ\nyGsdwT0M/E6yAP5S+uKvWWaWGJ8n0E2YoPepNxJZf54QHLt/EzyisPTXOgV1uoZ8\nnwN5ga2YY33wcg2dgbdmh0uiyzCXV5fKDo9mLRhD/ecXwS+d1WuOp1+Mi7J5NGPQ\nQ/gZXgKlSPZecxWrHMAqcMO95f1HBzAhfehchtNAWt/EXsTYJgkCiDKfjKDgjcBe\nrcl1wZDr15mZrjmsRZcXDLT1QgO9rgN7j4RAEEzBONtV3SKfkrgmuDz2R0u0XI+n\nboiUM+NbQijWu0f3RU2RGm8Z9z7D8q7KmzIwX+l90lQyY4MCAwEAAaMhMB8wHQYD\nVR0OBBYEFG7Pt3dgL/P+gR7cOcJ6yMdIt8a7MA0GCSqGSIb3DQEBCwUAA4IBAQAe\nuvMTTMmlTqY3gnJPUI08Q0H9JaBeXJx+Ll2iB0mbqRcTCv5Tnf1z+qpPR2znBu9q\nvwCmqSK2yyygasy0WYppZwrvSoix6hmZRVsJGzE4GbFpDrw6s+Q+cv16JyzeJ7C2\npg0ohNNyisETl7e64WLkeT5YLSZPn8FqIeDavODmx9EMn2lmG3tEmmJoFWETmL9e\n9/VOZCxP0cr2DMp5HPah2QUa/Uub3BI5gCeK5gVYSeWVDJTzPkMQkjttQ/MPnwiV\ng4ehrbBecOBLddr5yeAX2fvoy3/VpKhxwIizgs5INm6X0buQ+SKYhSFWt5l8EKOE\nerdPQBaUxiQHeVfBTQmV\n- - - - -END CERTIFICATE- - - - -\n",
-                    "cc_id": "61e1f3edbd0dd3e958b5f857"
-                  }
-                ],
-                "max_in_flight": 200
-              },
-              -->
-              <row>
-                <entry><codeph>llfeed_context</codeph></entry>
-                <entry>object</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "documents_count": 0, -->
-              <row>
-                <entry><codeph>documents_count</codeph></entry>
-                <entry>integer</entry>
-                <entry>???</entry>
-              </row>
-
-              <!-- "resolution": null -->
-              <row>
-                <entry><codeph>resolution</codeph></entry>
-                <entry>string ???</entry>
-                <entry>???</entry>
-              </row>
-
+              <row conkeyref="k-papi/row-response-runtime-feed-call"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-subpipeline-parameters"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-llfeed-status"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-class-fqid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-ttl"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-org-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-prepare-end-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-parent-path"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-delete-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-error-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-child-count"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-data-locations"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-env-map"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-restart-attempts"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-error-documents-count"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-env-map-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-statistics-time-stamp"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-job-trigger"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-fast-push-expire-time-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-fault-injections"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-slserver-lease-expire-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-poll-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-instance-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-mode"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-async"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-pipe-invoker"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-create-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-duration"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-notification"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-state"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-replicaset-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-invoker"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-user"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-time-stamp"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-external-uri"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-partition-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-lint-id-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-reason"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-threads"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-prepare-handoff-timestamp"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-slot-count"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-end-stage"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-search"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-limits"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-class-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-has-lints"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-q-threshold-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-control-plane-scheduling"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-suggest-uris"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-end-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-task-status"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-prepare-start-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-phase-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-duration-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-parent-ruuid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-references"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-do-start"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-statistics"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-user-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-connect-pipeline-views"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-container-type"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-priority"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-state-log"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-artifact-snap-id-map"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-artifacts-map"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-captured-env-map"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-start-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-cc-stop-ms"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-ccid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-class-version"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-close-reason"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-delivery-options"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-documents-count"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-error"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-error-fp-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-execution-timeout"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-expire-time"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-failure"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-flags"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-info-flag-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-init-xid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-instance-fqid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-invoker-name"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-invoker-path-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-invoker-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-lint-list"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-llfeed-context"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-metrics"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-nested-pipeline"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-parent-pipeline-fqid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-path-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-platform-globals"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-plex-path"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-plex-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-poll-time-stamp"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-project-snode-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-resolution"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-root-path"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-root-ruuid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-runtime-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-runtime-path-id"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-ruuid"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-snaplex-label"><entry/></row>
+              <row conkeyref="k-papi/row-response-runtime-warning-list"><entry/></row>
             </tbody>
           </tgroup>
         </table>

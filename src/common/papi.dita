@@ -1,0 +1,2079 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept xml:lang="en-US" id="papi">
+
+  <title>Conrefs: Public APIs</title>
+
+  <conbody>
+
+    <section>
+      <title>API Tabs</title>
+
+      <!-- <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul> -->
+      <ul id="ul-tabmenu2" outputclass="tabs">
+        <li outputclass="api-request sectiontitle tablink">Request</li>
+        <li outputclass="api-response sectiontitle tablink">Response</li>
+        <li outputclass="api-notes sectiontitle tablink">Notes</li>
+        <li outputclass="api-examples sectiontitle tablink">Examples</li>
+      </ul>
+    </section>
+
+
+    <section>
+      <title>Overviews</title>
+
+      <p>GitHub APIs</p>
+
+        <!-- <ph conkeyref="k-papi/ph-github-cicd"/> -->
+        <ph id="ph-github-cicd">You can use GitHub APIs in Continuous Integration / Continuous Deployment (CI/CD) workflows to pull files from GitHub repositories.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-proj-exists"/> -->
+        <ph id="ph-proj-exists">Your project must already exist.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-proj-associated-with-repo"/> -->
+        <ph id="ph-proj-associated-with-repo">Your project must already be associated with a GitHub repository.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-use-slmgr-to-commit"/> -->
+        <ph id="ph-use-slmgr-to-commit">You must use the SnapLogic Manager UI or GitHub tools to commit changes to your repository.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-use-slmgr-for-initial-checkout"/> -->
+        <ph id="ph-use-slmgr-for-initial-checkout">You must use the SnapLogic Manager UI for the initial checkout.</ph>
+
+      <p>Recycle Bin</p>
+
+        <!-- <ph conkeyref="k-papi/ph-recycle-bin-purged"/> -->
+        <ph id="ph-recycle-bin-purged">Items in the Recycle Bin are purged after a grace period (30 days).</ph>
+
+    </section>
+
+
+    <section>
+      <title>Syntaxes</title>
+
+      <!-- <ph conkeyref="k-papi/ph-endpoint-https"/> -->
+      <!-- NOTE: pod_path is included in the Path Parameters sections. -->
+      <ph id="ph-endpoint-https">https://{pod_path}</ph>
+
+      <!-- <ph conkeyref="k-papi/ph-endpoint-subpath"/> -->
+      <ph id="ph-endpoint-subpath">/api/1/rest/public</ph>
+
+      <!-- <ph conkeyref="k-papi/ph-endpoint-full-url"/> -->
+      <ph id="ph-endpoint-full-url"><ph conref="#./ph-endpoint-https"/><ph conref="#./ph-endpoint-subpath"/></ph>
+
+    </section>
+
+
+    <section>
+      <title>Prereqs</title>
+
+      <ul>
+
+        <!-- <ph conkeyref="k-papi/ph-prereq-read-access-..."/> -->
+        <li><ph id="ph-prereq-read-access">Read access to the assets requested</ph></li>
+        <li><ph id="ph-prereq-read-access-src-proj">Read access to the source Project</ph></li>
+
+        <!-- <ph conkeyref="k-papi/ph-prereq-write-access-..."/> -->
+        <li><ph id="ph-prereq-write-access">Write access to the assets to be added or updated</ph></li>
+        <li><ph id="ph-prereq-write-access-tgt-org">Write access to the target Org</ph></li>
+
+        <!-- <ph conkeyref="k-papi/ph-prereq-org-admin-role"/> -->
+        <li><ph id="ph-prereq-org-admin-role">Org Admin permissions</ph></li>
+
+        <!-- <ph conkeyref="k-papi/ph-prereq-org-admin-role-for-all-orgs-of-user"/> -->
+        <li><ph id="ph-prereq-org-admin-role-for-all-orgs-of-user">Org Admin permissions for all Orgs that the user belongs to</ph></li>
+
+      </ul>
+    </section>
+
+
+    <section>
+      <title>Parameters</title>
+
+      <sectiondiv>
+        <p>Common Descriptions</p>
+
+        <!-- <ph conkeyref="k-papi/ph-unixtime-millisecs"/> -->
+        <ph id="ph-unixtime-millisecs">Time must be provided as Unix time in milliseconds.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-limit-offset-pagination"/> -->
+        <ph id="ph-limit-offset-pagination">You can use <codeph>limit</codeph> and <codeph>offset</codeph> for pagination.</ph>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Plexpath and hostname</p>
+
+        <!-- <ph conkeyref="k-papi/ph-plexpath-desc"/> -->
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-papi/ph-plexpath-format"/></p> -->
+        <!-- <ph conkeyref="k-papi/ph-plexpath-xmpl"/> -->
+        <ph id="ph-plexpath-desc">The path to the Snaplex.</ph>
+        <ph id="ph-plexpath-format"><codeph>/{org}/{project_space}/{project_name}/{snaplex_name}</codeph></ph>
+        <ph id="ph-plexpath-xmpl"><codeph>/snaplogic/shared/My%20Cloud</codeph></ph>
+
+        <!-- <ph conkeyref="k-papi/ph-hostname-desc"/> -->
+        <!-- <ph conkeyref="k-papi/ph-hostname-example"/> -->
+        <ph id="ph-hostname-desc">The JCC node path.</ph>
+        <ph id="ph-hostname-xmpl"><codeph>canxl-jcc8.clouddev.snaplogic.com</codeph></ph>
+
+        <!-- <ph conkeyref="k-papi/ph-hostname-list-desc"/> -->
+        <!-- <ph conkeyref="k-papi/ph-hostname-list-desc"/> -->
+        <ph id="ph-hostname-list-desc">A single JCC node path or a comma-separated list of JCC node paths.</ph>
+        <ph id="ph-hostname-list-xmpl"><codeph>canxl-jcc8.clouddev.snaplogic.com,canxl-jcc9.clouddev.snaplogic.com</codeph></ph>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Other path parameters</p>
+
+        <!-- <ph conkeyref="k-papi/ph-groupname-desc"/> -->
+        <ph id="ph-groupname-desc">The name of the group.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-email-desc"/> -->
+        <ph id="ph-email-desc">The email address of the user.</ph>
+
+        <!-- <ph conkeyref="k-papi/ph-migration-status-token"/> -->
+        <ph id="ph-migration-status-token">The status token of the asynchronous migration process.</ph>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Org and Project</p>
+
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-papi/ph-projpath-format"/></p> -->
+        <ph id="ph-projpath-format"><codeph>/{org}/{project_space}/{project_name}</codeph></ph>
+
+        <!-- <p><ph conkeyref="k-misc/ph-format"/> <ph conkeyref="k-papi/ph-projspace-format"/></p> -->
+        <ph id="ph-projspace-format"><codeph>/{org}/{project_space}</codeph></ph>
+
+        <!-- <note conkeyref="k-misc/note-case-sensitive-path"/> -->
+        <note type="important" id="note-case-sensitive-path">The path comparison is case-sensitive.</note>
+
+
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Path Parameters</p>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead>
+
+              <!-- <row conkeyref="k-papi/row-thead-key-desc"><entry/></row> -->
+              <row id="row-thead-key-desc">
+                <entry colname="col-key"  valign="top">Key</entry>
+                <entry colname="col-desc" valign="top">Description</entry>
+              </row>
+
+            </thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row> -->
+              <row id="row-pathparam-podpath">
+                <entry><codeph>pod_path</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to your SnapLogic pod.
+                  <p><ph conkeyref="k-misc/ph-example"/> <codeph>elastic.snaplogic.com</codeph></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-org"><entry/></row> -->
+              <row id="row-pathparam-org">
+                <entry><codeph>org</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The name of the SnapLogic Org.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-projpath"><entry/></row> -->
+              <row id="row-pathparam-projpath">
+                <entry><codeph>project_path</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic project.
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-projpath-format"/></p>
+                  <note conref="#./note-case-sensitive-path"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-projorspacepath"><entry/></row> -->
+              <row id="row-pathparam-projorspacepath">
+                <entry><codeph>project_or_space_path</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The path to the SnapLogic project or project space.
+                  <p><ph conkeyref="k-misc/ph-format"/>
+                    <ul>
+                      <li>Project: <ph conref="#./ph-projpath-format"/></li>
+                      <li>Project space: <ph conkeyref="k-papi/ph-projspace-format"/></li>
+                    </ul>
+                  </p>
+                  <note conref="#./note-case-sensitive-path"/>
+                </entry>
+              </row>
+              <!-- <row conkeyref="k-papi/row-pathparam-projorspacepath-optional"><entry/></row> -->
+              <row id="row-pathparam-projorspacepath-optional">
+                <entry><codeph>project_or_space_path</codeph></entry>
+                <entry>The path to the SnapLogic project or project space.
+                  <p><ph conkeyref="k-misc/ph-format"/>
+                    <ul>
+                      <li>Project: <ph conref="#./ph-projpath-format"/></li>
+                      <li>Project space: <ph conkeyref="k-papi/ph-projspace-format"/></li>
+                    </ul>
+                  </p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>/</codeph></p>
+                  <note conref="#./note-case-sensitive-path"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-ruuid"><entry/></row> -->
+              <row id="row-pathparam-ruuid">
+                <entry><codeph>ruuid</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> The Runtime ID of the Pipeline.
+                  <p>To get the Runtime ID of a running Pipeline:
+                    <ol>
+                      <li>Go to <menucascade><uicontrol>Dashboard</uicontrol> <uicontrol>Pipeline</uicontrol></menucascade>.</li>
+                      <li>In the <uicontrol>Executing Pipelines of All Projects</uicontrol> list, click the Pipeline you want.</li>
+                      <li>From the address bar of the web browser tab that displays the Pipeline, copy the value of the parameter <codeph>pipe_runtime_id</codeph>.</li>
+                    </ol>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-plexpath"><entry/></row> -->
+              <row id="row-pathparam-plexpath">
+                <entry><codeph>plex_path</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/>
+                  <ph conref="#./ph-plexpath-desc"/>
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-plexpath-xmpl"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-hostname"><entry/></row> -->
+              <row id="row-pathparam-hostname">
+                <entry><codeph>hostname</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-hostname-desc"/>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-hostname-list-xmpl"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-groupname"><entry/></row> -->
+              <row id="row-pathparam-groupname">
+                <entry><codeph>groupname</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-email"><entry/></row> -->
+              <row id="row-pathparam-email">
+                <entry><codeph>email</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-email-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-pathparam-migration-status-token"><entry/></row> -->
+              <row id="row-pathparam-migration-status-token">
+                <entry><codeph>status-token</codeph></entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-migration-status-token"/>
+                  <!-- <p>To determine the status token, ???</p> -->
+                </entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Query Parameters</p>
+
+        <!-- <ph conkeyref="k-papi/ph-desc-..."/> -->
+        <ph id="ph-desc-limit">Returns no more than the specified number of results.</ph>
+        <ph id="ph-desc-offset">Returns a subset of the results starting at this 0-based index.</ph>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+            <tbody>
+
+              <!--
+              <row>
+                <entry><codeph>start</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns ... that occurred since the specified time. <ph conref="#./ph-unixtime-millisecs"/></entry>
+              </row>
+              <row>
+                <entry><codeph>end</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns ... that occurred before the specified time. <ph conref="#./ph-unixtime-millisecs"/></entry>
+              </row>
+              -->
+
+              <!-- <row conkeyref="k-papi/row-query-param-offset"><entry/></row> -->
+              <row id="row-query-param-offset">
+                <entry><codeph>offset</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conref="#./ph-desc-offset"/>
+                  <ph conref="#./ph-limit-offset-pagination"/>
+                  <p><ph conkeyref="k-misc/ph-default"/> 0</p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-plexpath"><entry/></row> -->
+              <row id="row-query-param-plexpath">
+                <entry><codeph>plex_path</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conref="#./ph-plexpath-desc"/>
+                  <p><ph conkeyref="k-misc/ph-format"/> <ph conref="#./ph-plexpath-format"/></p>
+                  <p><ph conkeyref="k-misc/ph-default"/> All Snaplex instances.</p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-hostname"><entry/></row> -->
+              <row id="row-query-param-hostname">
+                <entry><codeph>hostname</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conref="#./ph-hostname-desc"/>
+                  <p>You can specify multiple hostnames separated by commas.</p>
+                  <p><ph conkeyref="k-misc/ph-example"/> <ph conref="#./ph-hostname-xmpl"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-hostname-list"><entry/></row> -->
+              <row id="row-query-param-hostname-list">
+                <entry><codeph>hostname</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conref="#./ph-hostname-list-desc"/>
+                  <p><ph conkeyref="k-misc/ph-default"/> All JCC nodes.</p>
+                  <p><ph conkeyref="k-misc/ph-example"/><ph conref="#./ph-hostname-list-xmpl"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-limit"><entry/></row> -->
+              <row id="row-query-param-limit">
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-papi/ph-desc-limit"/>
+                  <ph conkeyref="k-papi/ph-limit-offset-pagination"/>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 100,000</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 100</p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-limit"><entry/></row> -->
+              <row id="row-query-param-runtime-limit">
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conkeyref="k-papi/ph-desc-limit"/>
+                  <ph conkeyref="k-papi/ph-limit-offset-pagination"/>
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1,000 <!-- ??? --></p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 10
+                    <!-- Source: https://github.com/SnapLogic/Tectonic/blob/67026f401f7ea99ad8e52f0571130beee7ba9021/slserver/src/main/python/slserver/services/pipeline/runtime_handler.py#L1575 -->
+                  </p>
+                </entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-plex-label"><entry/></row> -->
+              <row id="row-query-param-runtime-plex-label">
+                <entry><codeph>plex_label</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified Snaplex.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-cc-label"><entry/></row> -->
+              <row id="row-query-param-runtime-cc-label">
+                <entry><codeph>cc_label</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified CC label (JCC node’s hostname).</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-pipe-name"><entry/></row> -->
+              <row id="row-query-param-runtime-pipe-name">
+                <entry><codeph>pipe_name</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified Pipeline.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-user-id"><entry/></row> -->
+              <row id="row-query-param-runtime-user-id">
+                <entry><codeph>user_id</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs triggered by the specified user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-state"><entry/></row> -->
+              <row id="row-query-param-runtime-state">
+                <entry><codeph>state</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs in the specified state.
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li><codeph>Queued</codeph> – Task is queued for processing; all Tasks start in this state.</li>
+                      <li><codeph>NoUpdate</codeph> – Intermediate state at startup.</li>
+                      <li><codeph>Prepared</codeph> – Task has been prepared.</li>
+                      <li><codeph>Started</codeph> – Task has started running.</li>
+                      <li><codeph>Completed</codeph> – Task has completed successfully.</li>
+                      <li><codeph>Failing</codeph> – Task encountered an error and is waiting for Snaps to complete execution before moving to the Failed state.</li>
+                      <li><codeph>Failed</codeph> – Task failed.</li>
+                      <li><codeph>Stopped</codeph> – Task was stopped either by the user or by the system, as indicated by the "stopper" key.</li>
+                      <li><codeph>Stopping</codeph> – Task is stopping.</li>
+                      <li><codeph>Suspending</codeph> – Resumable Task encountered an error and is storing its state.</li>
+                      <li><codeph>Suspended</codeph> – Resumable Task encountered an error and is suspended.</li>
+                      <li><codeph>Resuming</codeph> – Resumable Task is loading its state and will resume execution where it left off.</li>
+                    </ul>
+                  </p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>Started</codeph></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-invoker"><entry/></row> -->
+              <row id="row-query-param-runtime-invoker">
+                <entry><codeph>invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs that were invoked in the specified way.
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li><codeph>triggered</codeph> – Triggered Tasks</li>
+                      <li><codeph>scheduled</codeph> – Scheduled Tasks</li>
+                      <li><codeph>always_on</codeph> – Ultra Tasks</li>
+                      <li><codeph>manual</codeph> – User-triggered Tasks</li>
+                    </ul>
+                  </p>
+                  <p><ph conkeyref="k-misc/ph-default"/> <codeph>scheduled</codeph></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-project-path"><entry/></row> -->
+              <row id="row-query-param-runtime-project-path">
+                <entry><codeph>project_path</codeph></entry>
+                <entry>string</entry>
+                <entry>Returns information about Task runs for the specified project.
+                  <p>Allowed formats:
+                    <ul>
+                      <li><codeph>/{org}/projects/{project_name}</codeph></li>
+                      <li><codeph>/{org}/shared</codeph></li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-last-hours"><entry/></row> -->
+              <row id="row-query-param-runtime-last-hours">
+                <entry><codeph>last_hours</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs within the specified number of hours, counting backwards from the current time.
+                  <p><ph conkeyref="k-misc/ph-valid"/> 1 to 1080 hours (45 days)</p>
+                  <p><ph conkeyref="k-misc/ph-default"/> 1</p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-start"><entry/></row> -->
+              <row id="row-query-param-runtime-start">
+                <entry><codeph>start</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs since the specified time. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-query-param-runtime-end"><entry/></row> -->
+              <row id="row-query-param-runtime-end">
+                <entry><codeph>end</codeph></entry>
+                <entry>integer</entry>
+                <entry>Returns information about Task runs before the specified time. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-query-param-"><entry/></row> -->
+              <row id="row-query-param-">
+                <entry><codeph></codeph></entry>
+                <entry></entry>
+                <entry></entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+
+    </section>
+
+
+    <section>
+
+      <sectiondiv>
+        <p>Request Header</p>
+
+        <!-- <div conkeyref="k-papi/div-auth"/> -->
+        <div id="div-auth">
+          <p>Specify <codeph>Basic</codeph> for authorization.</p>
+
+          <codeblock id="request-hdr" outputclass="normalize-space">
+            Authorization: Basic {your_encoded_security_credentials}
+          </codeblock>
+        </div>
+
+        <!-- <div conkeyref="k-papi/div-auth-contenttype"/> -->
+        <div id="div-auth-contenttype">
+          <p>Specify <codeph>Basic</codeph> for authorization and <codeph>application/json</codeph> for content type.</p>
+
+          <codeblock id="request-hdr" outputclass="normalize-space">
+            Authorization: Basic {your_encoded_security_credentials}
+            Content-Type: application/json
+          </codeblock>
+        </div>
+      </sectiondiv>
+
+
+      <sectiondiv>
+        <p>Request Body</p>
+
+
+        <!-- <p conkeyref="k-papi/p-valid-values-user-group"/> -->
+        <p id="p-valid-values-user-group"><ph conkeyref="k-misc/ph-valid"/>
+          <ul>
+            <li><codeph>USER</codeph></li>
+            <li><codeph>GROUP</codeph></li>
+          </ul>
+        </p>
+
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-papi/row-request-grant-type"><entry/></row> -->
+              <row id="row-request-grant-type">
+                <entry><codeph>grant_type</codeph></entry>
+                <entry>string</entry>
+                <entry>The type of the <codeph>grantee</codeph>.
+                  <p conref="#./p-valid-values-user-group"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-grantee-grant"><entry/></row> -->
+              <row id="row-request-grantee-grant">
+                <entry><codeph>grantee</codeph></entry>
+                <entry>string</entry>
+                <entry>The user or group to whom to grant access.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-grantee-revoke"><entry/></row> -->
+              <row id="row-request-grantee-revoke">
+                <entry><codeph>grantee</codeph></entry>
+                <entry>string</entry>
+                <entry>The user or group from whom to revoke access.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-subject-type"><entry/></row> -->
+              <row id="row-request-subject-type">
+                <entry><codeph>subject_type</codeph></entry>
+                <entry>string</entry>
+                <entry>The type of the <codeph>subject</codeph>.
+                  <p conref="#./p-valid-values-user-group"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-subject"><entry/></row> -->
+              <row id="row-request-subject">
+                <entry><codeph>subject</codeph></entry>
+                <entry>string</entry>
+                <entry>The user or group who can access the new project or project space.</entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-papi/row-request-permission-list"><entry/></row> -->
+              <row id="row-request-permission-list">
+                <entry><codeph>permission_list</codeph></entry>
+                <entry>array</entry>
+                <entry id="entry-permissions-desc">An array containing one or more of the following permissions:
+                  <ul>
+                    <li><codeph>"R"</codeph> – read</li>
+                    <li><codeph>"W"</codeph> – write</li>
+                    <li><codeph>"X"</codeph> – execute</li>
+                    <!-- <li><codeph>"A"</codeph> – admin</li> Per Slack conversation with TLikarish (https://snaplogic-all.slack.com/archives/D0302D9BY9F/p1643400967793839), won't document "A" since it's not exposed in the UI. -->
+                  </ul>
+                  <p>Learn more: <xref href="../public-apis/api-perms-vs-manager-perms.dita">Permissions in Manager and in APIs</xref></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-perms"><entry/></row> -->
+              <row id="row-request-perms">
+                <entry><codeph>perms</codeph></entry>
+                <entry>array</entry>
+                <entry conref="#./entry-permissions-desc"/>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-inherit"><entry/></row> -->
+              <row id="row-request-inherit">
+                <entry><codeph>inherit</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the permissions also apply to all assets under the specified project or project space.</entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-papi/row-request-user-email"><entry/></row> -->
+              <row id="row-request-user-email">
+                <entry><codeph>email</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conref="#./ph-email-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-groupname"><entry/></row> -->
+              <row id="row-request-groupname">
+                <entry><codeph>name</codeph></entry>
+                <entry>string</entry>
+                <entry><ph conkeyref="k-misc/ph-reqd"/> <ph conref="#./ph-groupname-desc"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-first-name"><entry/></row> -->
+              <row id="row-request-user-first-name">
+                <entry><codeph>first_name</codeph></entry>
+                <entry>string</entry>
+                <entry>The first name of the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-last-name"><entry/></row> -->
+              <row id="row-request-user-last-name">
+                <entry><codeph>last_name</codeph></entry>
+                <entry>string</entry>
+                <entry>The last name of the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-org"><entry/></row> -->
+              <row id="row-request-user-org">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The Org to assign the user to.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-group-org"><entry/></row> -->
+              <row id="row-request-group-org">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The Org to create the group in.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-administrator"><entry/></row> -->
+              <row id="row-request-user-administrator">
+                <entry><codeph>administrator</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user is assigned as an Org administrator.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-allow-password-login"><entry/></row> -->
+              <row id="row-request-user-allow-password-login">
+                <entry><codeph>allow_password_login</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user is allowed to log in with a password.
+                  <!-- Otherwise, ???. -->
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-revoke-old-password"><entry/></row> -->
+              <row id="row-request-user-revoke-old-password">
+                <entry><codeph>revoke_old_password</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user's password is invalidated. <!-- ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-utility"><entry/></row> -->
+              <row id="row-request-user-utility">
+                <entry><codeph>utility</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the account is tagged as a service account, not a user account, for use with automated processes. <!-- ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-ui-access"><entry/></row> -->
+              <row id="row-request-user-ui-access">
+                <entry><codeph>ui_access</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user is granted access to the SnapLogic UI.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-create-home-directory"><entry/></row> -->
+              <row id="row-request-user-create-home-directory">
+                <entry><codeph>create_home_directory</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, a home directory is created for the user.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-email-notification"><entry/></row> -->
+              <row id="row-request-user-email-notification">
+                <entry><codeph>email_notification</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the user is sent a welcome email when the account is created.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-certificate"><entry/></row> -->
+              <row id="row-request-user-certificate">
+                <entry><codeph>certificate</codeph></entry>
+                <entry>string</entry>
+                <entry><!-- ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-user-file-handle"><entry/></row> -->
+              <row id="row-request-user-file-handle">
+                <entry><codeph>file_handle</codeph></entry>
+                <entry>string</entry>
+                <entry><!-- ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-created-by"><entry/></row> -->
+              <row id="row-request-created-by">
+                <entry><codeph>created_by</codeph></entry>
+                <entry>string</entry>
+                <entry>The user who originally created the account, if it is a service account.
+                  <!-- From the old docs (needs verification and clarification): This parameter enables an Org admin to change the user who originally created the service account in cases where the password recovery email for that user needs to be reset. You cannot specify the current Service Account user with this parameter. -->
+                  <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/1439028">Creating a User</xref></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-members-add"><entry/></row> -->
+              <row id="row-request-members-add">
+                <entry><codeph>members</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of strings containing email addresses of users to add to the group.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-request-members-replace"><entry/></row> -->
+              <row id="row-request-members-replace">
+                <entry><codeph>members</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of strings containing the new list of group members' email addresses.</entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-papi/row-request-"><entry/></row> -->
+              <row id="row-request-">
+                <entry><codeph>...</codeph></entry>
+                <entry>...</entry>
+                <entry>...</entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+
+    </section>
+
+
+    <section>
+
+      <sectiondiv>
+        <p>Response Header</p>
+
+        <!-- <div conkeyref="k-papi/div-table-status-code-only"/> -->
+        <div id="div-table-status-code-only">
+          <table>
+            <tgroup cols="2">
+              <colspec colname="col-key"  colwidth="20%"/>
+              <colspec colname="col-desc" colwidth="75%"/>
+              <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
+              <tbody>
+                <row conref="#./row-response-status-code"><entry/></row>
+              </tbody>
+            </tgroup>
+          </table>
+        </div>
+
+        <table>
+          <tgroup cols="2">
+            <colspec colname="col-key"  colwidth="20%"/>
+            <colspec colname="col-desc" colwidth="75%"/>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
+            <tbody>
+
+              <!-- <row conkeyref="k-papi/row-response-status-code"><entry/></row> -->
+              <row id="row-response-status-code">
+                <entry><codeph>X-SL-StatusCode</codeph></entry>
+                <entry>Status code indicating the results of the request.
+                  <p>Learn more: <xref scope="external" format="html" href="https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml">HTTP Status Code Registry</xref></p>
+                </entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+
+      <sectiondiv>
+        <p>Response Body</p>
+
+        <!-- <note conkeyref="k-papi/note-note-results-by-permissions"/> -->
+        <note type="note" id="note-note-results-by-permissions">
+          The results include only the Task runs that you have permissions to view.
+          Org Admins can view all Task runs.
+        </note>
+
+        <table>
+          <tgroup cols="3">
+            <colspec colname="col-key"  colwidth="25%"/>
+            <colspec colname="col-type" colwidth="15%"/>
+            <colspec colname="col-desc" colwidth="60%"/>
+            <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
+            <tbody>
+
+              <row>
+                <entry namest="col-key" nameend="col-desc">
+
+                  <!-- <ph conkeyref="k-papi/ph-response-array-task-metadata"/> -->
+                  <ph id="ph-response-array-task-metadata">An array of objects containing metadata about each Task run.</ph>
+
+                  <!-- <ph conkeyref="k-papi/ph-response-array-activity-metadata"/> -->
+                  <!-- <ph conkeyref="k-papi/ph-response-object-varies-by-event-type"/> -->
+                  <ph id="ph-response-array-activity-metadata">An array of objects containing metadata about each activity.</ph>
+                  <ph id="ph-response-object-varies-by-event-type">The structure of each object depends on the event type.</ph>
+
+
+                  <!-- <ph conkeyref="k-papi/ph-response-number-executed-tasks-today"/> -->
+                  <ph id="ph-response-number-executed-tasks-today">The number of Task runs that were executed in the current day.</ph>
+
+                  <!-- <ph conkeyref="k-papi/ph-response-task-run-max-concurrent"/> -->
+                  <ph id="ph-response-task-run-max-concurrent">The maximum number of concurrent Task runs that the Org is allowed.</ph>
+
+                  <!-- <p conkeyref="k-papi/p-response-possible-snaplex-version-status"/> -->
+                  <p id="p-response-possible-snaplex-version-status">
+                    <ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li>active</li>
+                      <li>deprecated</li>
+                    </ul>
+                  </p>
+
+                  <!-- <p conkeyref="k-papi/p-response-possible-task-run-status"/> -->
+                  <p id="p-response-possible-task-run-status">
+                    <ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li>Started</li>
+                      <li>Prepared</li>
+                      <li>NoUpdate</li>
+                      <!-- <li>???</li> -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-organization"><entry/></row> -->
+              <row id="row-response-organization">
+                <entry><codeph>organization</codeph></entry>
+                <entry>string</entry>
+                <entry>The name of the SnapLogic Org.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-apistats-date"><entry/></row> -->
+              <row id="row-response-apistats-date">
+                <entry><codeph>date</codeph></entry>
+                <entry>string</entry>
+                <entry>The date when the statistics were collected.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-apistats-time"><entry/></row> -->
+              <row id="row-response-apistats-time">
+                <entry><codeph>time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The timestamp when the statistics were collected.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-offset"><entry/></row> -->
+              <row id="row-response-offset">
+                <entry><codeph>offset</codeph></entry>
+                <entry>integer</entry>
+                <entry>The index of the first result returned.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-limit"><entry/></row> -->
+              <row id="row-response-limit">
+                <entry><codeph>limit</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of results returned.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-perm-inherit"><entry/></row> -->
+              <row id="row-response-perm-inherit">
+                <entry><codeph>inherit</codeph></entry>
+                <entry>Boolean</entry>
+                <entry><ph id="ph-response-inherit-desc">If <codeph>true</codeph>, the permissions assigned to the project or project space also apply to all assets under it.</ph></entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-entries"><entry/></row> -->
+              <row id="row-response-runtime-entries">
+                <entry><codeph>entries</codeph></entry>
+                <entry>array</entry>
+                <entry><ph conkeyref="k-papi/ph-response-array-task-metadata"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-pipe-id"><entry/></row> -->
+              <row id="row-response-runtime-pipe-id">
+                <entry><codeph>pipe_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Pipeline.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-has-lints"><entry/></row> -->
+              <row id="row-response-runtime-has-lints">
+                <entry><codeph>has_lints</codeph></entry>
+                <entry>Boolean</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-documents"><entry/></row> -->
+              <row id="row-response-runtime-documents">
+                <entry><codeph>documents</codeph></entry>
+                <entry>integer</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-user-id"><entry/></row> -->
+              <row id="row-response-runtime-user-id">
+                <entry><codeph>user_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The user who ran the Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-ccid"><entry/></row> -->
+              <row id="row-response-runtime-ccid">
+                <entry><codeph>ccid</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the JCC node instance.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-child-has-lints"><entry/></row> -->
+              <row id="row-response-runtime-child-has-lints">
+                <entry><codeph>child_has_lints</codeph></entry>
+                <entry>Boolean</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-runtime-path-id"><entry/></row> -->
+              <row id="row-response-runtime-runtime-path-id">
+                <entry><codeph>runtime_path_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The identifier of the Snaplex.
+                  <ph conkeyref="k-misc/ph-format"/> {subscriber_id}/{plex_environment}/{plex_location}
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-parent-ruuid"><entry/></row> -->
+              <row id="row-response-runtime-parent-ruuid">
+                <entry><codeph>parent_ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>The runtime ID of the parent Pipeline.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-subpipes"><entry/></row> -->
+              <row id="row-response-runtime-subpipes">
+                <entry><codeph>subpipes</codeph></entry>
+                <entry>object</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-state-timestamp"><entry/></row> -->
+              <row id="row-response-runtime-state-timestamp">
+                <entry><codeph>state_timestamp</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-error-documents"><entry/></row> -->
+              <row id="row-response-runtime-error-documents">
+                <entry><codeph>error_documents</codeph></entry>
+                <entry>integer</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-label"><entry/></row> -->
+              <row id="row-response-runtime-label">
+                <entry><codeph>label</codeph></entry>
+                <entry>string</entry>
+                <entry>The label for the Pipeline.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-path-id"><entry/></row> -->
+              <row id="row-response-runtime-path-id">
+                <entry><codeph>path_id</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-state"><entry/></row> -->
+              <row id="row-response-runtime-state">
+                <entry><codeph>state</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-create-time"><entry/></row> -->
+              <row id="row-response-runtime-create-time">
+                <entry><codeph>create_time</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the Task was created.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-invoker"><entry/></row> -->
+              <row id="row-response-runtime-invoker">
+                <entry><codeph>invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>The user who invoked the API.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-duration"><entry/></row> -->
+              <row id="row-response-runtime-duration">
+                <entry><codeph>duration</codeph></entry>
+                <entry>integer</entry>
+                <entry>The duration of the Task run.</entry> <!-- in milliseconds ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-label"><entry/></row> -->
+              <row id="row-response-runtime-cc-label">
+                <entry><codeph>cc_label</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-id"><entry/></row> -->
+              <row id="row-response-runtime-id">
+                <entry><codeph>id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Task.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-runtime-label"><entry/></row> -->
+              <row id="row-response-runtime-label">
+                <entry><codeph>runtime_label</codeph></entry>
+                <entry>string</entry>
+                <entry>The label of the Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-mode"><entry/></row> -->
+              <row id="row-response-runtime-mode">
+                <entry><codeph>mode</codeph></entry>
+                <entry>string</entry>
+                <entry></entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-feed-call"><entry/></row> -->
+              <row id="row-response-runtime-feed-call">
+                <entry><codeph>feed_call</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the Pipeline increments tha API meter.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-subpipeline-parameters"><entry/></row> -->
+              <row id="row-response-runtime-subpipeline-parameters">
+                <entry><codeph>subpipeline_parameters</codeph></entry>
+                <entry>object</entry>
+                <entry>If the Task was triggered by a parent Pipeline, the key-value pairs of parameters passed to this Task.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-llfeed-status"><entry/></row> -->
+              <row id="row-response-runtime-llfeed-status">
+                <entry><codeph>llfeed_status</codeph></entry>
+                <entry>object</entry>
+                <entry><!-- ??? -->
+                  <ul>
+                    <li><codeph>message_history</codeph>. (array) The history of messages received from a FeedMaster.</li> <!-- ??? -->
+                    <li><codeph>messages</codeph>. (array) An array of strings containing recent messages from a FeedMaster during Task run. <!-- ??? -->
+                      Each message includes the following timestamps:
+                      <ul>
+                        <li><codeph>recv_time</codeph>. The time when a FeedMaster node receives the message to send to the JCC node.</li>
+                        <li><codeph>start_time</codeph>. The time when the JCC node receives the message from the FeedMaster node.</li>
+                        <li><codeph>ack_time</codeph>. The time when the JCC node acknowledges the message and removes it.</li>
+                        <li><codeph>reply_time</codeph>.  The time when the JCC node replies to a message sent from the FeedMaster node.</li>
+                      </ul>
+                    </li>
+                    <li><codeph>documents_count</codeph>. (integer) The number of documents processed.</li>
+                    <li><codeph>max_in_flight</codeph>. (integer) <ph conkeyref="k-papi/ph-response-task-run-max-concurrent"/></li> <!-- ??? -->
+                    <li><codeph>summary</codeph>. (string) A summary of the feed status.</li> <!-- ??? -->
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-class-fqid"><entry/></row> -->
+              <row id="row-response-runtime-class-fqid">
+                <entry><codeph>class_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>The fully-qualified ID of a Snap.
+                  <ph conkeyref="k-misc/ph-format"/> <codeph>{Snap_class_id}_{class_version}</codeph>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-snode-id">
+                <entry><codeph>snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex node that contains the Pipeline instance.</entry>
+              </row>
+
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-ttl"><entry/></row> -->
+              <row id="row-response-runtime-ttl">
+                <entry><codeph>ttl</codeph></entry>
+                <entry>integer</entry>
+                <entry>A Task's time to live, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-org-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-org-snode-id">
+                <entry><codeph>org_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex node that hosts the Org of the Pipeline.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-prepare-end-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-prepare-end-ms">
+                <entry><codeph>cc_prepare_end_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>The time when the JCC node completed preparing the Task, expressed in milliseconds.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-parent-path"><entry/></row> -->
+              <row id="row-response-runtime-parent-path">
+                <entry><codeph>parent_path</codeph></entry>
+                <entry>string</entry>
+                <entry>The path to the parent Pipeline, if this Task is a child.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-delete-time"><entry/></row> -->
+              <row id="row-response-runtime-delete-time">
+                <entry><codeph>delete_time</codeph></entry>
+                <entry>string</entry>
+                <entry>When the Task was deleted. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-error-list"><entry/></row> -->
+              <row id="row-response-runtime-error-list">
+                <entry><codeph>error_list</codeph></entry>
+                <entry>array</entry>
+                <entry>Errors encountered at runtime.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-child-count"><entry/></row> -->
+              <row id="row-response-runtime-child-count">
+                <entry><codeph>child_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of children of this Task's Pipeline.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-data-locations"><entry/></row> -->
+              <row id="row-response-runtime-data-locations">
+                <entry><codeph>data_locations</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of objects containing information about each data location (source or target).</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-env-map"><entry/></row> -->
+              <row id="row-response-runtime-env-map">
+                <entry><codeph>env_map</codeph></entry>
+                <entry>object</entry>
+                <entry>Information about the Snaplex environment.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-env-map-list"><entry/></row> -->
+              <row id="row-response-runtime-env-map-list">
+                <entry><codeph>env_map_list</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of objects containing:
+                  <ul>
+                    <li><codeph>ciphertext</codeph>. (string)</li> <!-- ??? -->
+                    <li><codeph>sym_key</codeph>. (Object) An object containing the <codeph>alias</codeph> and <codeph>key</codeph>.</li> <!-- of what ??? -->
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-restart-attempts"><entry/></row> -->
+              <row id="row-response-runtime-restart-attempts">
+                <entry><codeph>restart_attempts</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of attempts to restart the Task after a failure or suspension.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-error-documents-count"><entry/></row> -->
+              <row id="row-response-runtime-error-documents-count">
+                <entry><codeph>error_documents_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of documents that had errors.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-statistics-time-stamp"><entry/></row> -->
+              <row id="row-response-runtime-statistics-time-stamp">
+                <entry><codeph>statistics_time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry> The time when the JCC node collects statistics.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-job-trigger"><entry/></row> -->
+              <row id="row-response-runtime-job-trigger">
+                <entry><codeph>job_trigger</codeph></entry>
+                <entry>string</entry> <!-- ??? -->
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-fast-push-expire-time-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-fast-push-expire-time-ms">
+                <entry><codeph>cc_fast_push_expire_time_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-fault-injections"><entry/></row> -->
+              <row id="row-response-runtime-fault-injections">
+                <entry><codeph>fault_injections</codeph></entry>
+                <entry>string </entry> <!-- ??? -->
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-slserver-lease-expire-time"><entry/></row> -->
+              <row id="row-response-runtime-slserver-lease-expire-time">
+                <entry><codeph>slserver_lease_expire_time</codeph></entry>
+                <entry>string</entry>
+                <entry> <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-poll-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-poll-ms">
+                <entry><codeph>cc_poll_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>The time when the JCC node pushes the runtime status, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-instance-id"><entry/></row> -->
+              <row id="row-response-runtime-instance-id">
+                <entry><codeph>instance_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The identifier of the Task instance; the same as the Pipeline runtime ID.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-mode"><entry/></row> -->
+              <row id="row-response-runtime-mode">
+                <entry><codeph>mode</codeph></entry>
+                <entry>string</entry>
+                <entry>The mode of the Task run. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>standard</codeph></li>
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-async"><entry/></row> -->
+              <row id="row-response-runtime-async">
+                <entry><codeph>async</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the Task was run asynchronously.
+                  <p>Learn more: <xref scope="external" format="html" href="https://docs-snaplogic.atlassian.net/wiki/spaces/SD/pages/986285123/Understanding+Synchronous+and+Asynchronous+Execution+of+Triggered+Tasks?search_id=afeaec24-704d-45c9-af23-0c33f117fb44">Understanding Synchronous and Asynchronous Execution of Triggered Tasks</xref></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-pipe-invoker"><entry/></row> -->
+              <row id="row-response-runtime-pipe-invoker">
+                <entry><codeph>pipe_invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>How the Pipeline was invoked.
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>always_on</codeph></li>
+                      <!-- ??? -->
+                      <!-- ??? -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-create-time"><entry/></row> -->
+              <row id="row-response-runtime-create-time">
+                <entry><codeph>create_time</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the Task was created. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-duration"><entry/></row> -->
+              <row id="row-response-runtime-duration">
+                <entry><codeph>duration</codeph></entry>
+                <entry>integer</entry>
+                <entry>The length of time that the Task ran, expressed in milliseconds.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-notification"><entry/></row> -->
+              <row id="row-response-runtime-notification">
+                <entry><codeph>notification</codeph></entry>
+                <entry>object</entry>
+                <entry>Information about recipients of notifications.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-label"><entry/></row> -->
+              <row id="row-response-runtime-label">
+                <entry><codeph>label</codeph></entry>
+                <entry>string</entry>
+                <entry>The label or name of the Task run.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-state"><entry/></row> -->
+              <row id="row-response-runtime-state">
+                <entry><codeph>state</codeph></entry>
+                <entry>string</entry>
+                <entry>The status of the Task run. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li>started</li>
+                      <!-- ??? -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-replicaset-label"><entry/></row> -->
+              <row id="row-response-runtime-replicaset-label">
+                <entry><codeph>replicaset_label</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- The label of ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-invoker"><entry/></row> -->
+              <row id="row-response-runtime-invoker">
+                <entry><codeph>invoker</codeph></entry>
+                <entry>string</entry>
+                <entry>The user that invoked the Task run.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-user"><entry/></row> -->
+              <row id="row-response-runtime-cc-user">
+                <entry><codeph>cc_user</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- The user that ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-time-stamp"><entry/></row> -->
+              <row id="row-response-runtime-time-stamp">
+                <entry><codeph>time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The timestamp of the current operation, regardless of the runtime state.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-external-uri"><entry/></row> -->
+              <row id="row-response-runtime-cc-external-uri">
+                <entry><codeph>cc_external_uri</codeph></entry>
+                <entry>string</entry>
+                <entry>The external URI of the JCC node where the Task is running.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-partition-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-partition-snode-id">
+                <entry><codeph>partition_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex node partition where the Task ran.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-lint-id-list"><entry/></row> -->
+              <row id="row-response-runtime-lint-id-list">
+                <entry><codeph>lint_id_list</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-reason"><entry/></row> -->
+              <row id="row-response-runtime-reason">
+                <entry><codeph>reason</codeph></entry>
+                <entry>string</entry>
+                <entry>The reason for the failure, if any.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-threads"><entry/></row> -->
+              <row id="row-response-runtime-threads">
+                <entry><codeph>threads</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-prepare-handoff-timestamp"><entry/></row> -->
+              <row id="row-response-runtime-prepare-handoff-timestamp">
+                <entry><codeph>prepare_handoff_timestamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the Task preparation is completed. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-slot-count"><entry/></row> -->
+              <row id="row-response-runtime-slot-count">
+                <entry><codeph>slot_count</codeph></entry>
+                <entry>integer</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-end-stage"><entry/></row> -->
+              <row id="row-response-runtime-end-stage">
+                <entry><codeph>end_stage</codeph></entry>
+                <entry>string</entry>
+                <entry> <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>EXECUTE</codeph></li>
+                      <li></li> <!-- ??? -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-search"><entry/></row> -->
+              <row id="row-response-runtime-search">
+                <entry><codeph>search</codeph></entry>
+                <entry>string</entry>
+                <entry>The search string used to locate this Task run.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-limits"><entry/></row> -->
+              <row id="row-response-runtime-limits">
+                <entry><codeph>limits</codeph></entry>
+                <entry>string</entry> <!-- ??? -->
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-class-id"><entry/></row> -->
+              <row id="row-response-runtime-class-id">
+                <entry><codeph>class_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The identifier of the Pipeline instance.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-has-lints"><entry/></row> -->
+              <row id="row-response-runtime-has-lints">
+                <entry><codeph>has_lints</codeph></entry>
+                <entry>Boolean</entry>
+                <entry></entry> <!-- If <codeph>true</codeph>, ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-q-threshold-time"><entry/></row> -->
+              <row id="row-response-runtime-q-threshold-time">
+                <entry><codeph>q_threshold_time</codeph></entry>
+                <entry>string</entry>
+                <entry><!-- The time when ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-control-plane-scheduling"><entry/></row> -->
+              <row id="row-response-runtime-control-plane-scheduling">
+                <entry><codeph>control_plane_scheduling</codeph></entry>
+                <entry>array</entry>
+                <entry><!-- An array of objects that contain ??? --></entry>
+              </row>
+              <!--
+              "control_plane_scheduling": [
+                {
+                  "update_buckets": {
+                    "0": 1642198001.933051
+                  },
+                  "_id": "61e1f3e3048673663f58198f",
+                  "stats": {
+                    "active_pipelines": [],
+                    "cpu_user": 0.1875,
+                    "mem_used": 0.03349485,
+                    "active_threads": 210,
+                    "open_file_descriptors": 373,
+                    "system_load_average": 0.155
+                  },
+                  "generation": 5,
+                  "slots_in_use": 227,
+                  "time_stamp": "2022-01-14T22:06:41.933000+00:00",
+                  "leases": {
+                    "563cec53d97c824743a013ff_2c09f7d2-6b4b-4aa8-91ce-583b93fdf882": {
+                      "timestamp": "2022-01-14T22:09:23.850000+00:00",
+                      "slots": 10
+                    },
+                    "563cec53d97c824743a013ff_64e4389c-264c-4337-8432-92a338f960d8": {
+                      "timestamp": "2022-01-14T22:09:25.955000+00:00",
+                      "slots": 3
+                    },
+                    "563cec53d97c824743a013ff_32e3ab1a-51dd-4cfa-9e44-0b96705db63e": {
+                      "timestamp": "2022-01-14T22:09:24.118000+00:00",
+                      "slots": 2
+                    },
+                    "563cec53d97c824743a013ff_d5a28e06-ae0f-424b-a257-f4ec0e6bb038": {
+                      "timestamp": "2022-01-14T22:09:25.976000+00:00",
+                      "slots": 1
+                    },
+                    "563cec53d97c824743a013ff_24ca01ca-c133-4240-8552-56325a80bf05": {
+                      "timestamp": "2022-01-14T22:09:24.550000+00:00",
+                      "slots": 1
+                    }
+                  }
+                }
+              ],
+              -->
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-suggest-uris"><entry/></row> -->
+              <row id="row-response-runtime-suggest-uris">
+                <entry><codeph>suggest_uris</codeph></entry>
+                <entry>string</entry> <!-- ??? -->
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-end-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-end-ms">
+                <entry><codeph>cc_end_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>The end of the runtime on the JCC node, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-task-status"><entry/></row> -->
+              <row id="row-response-runtime-task-status">
+                <entry><codeph>task_status</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-prepare-start-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-prepare-start-ms">
+                <entry><codeph>cc_prepare_start_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>The time when the JCC node starts preparing the runtime, expressed in milliseconds</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-phase-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-phase-snode-id">
+                <entry><codeph>phase_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-duration-ms"><entry/></row> -->
+              <row id="row-response-runtime-duration-ms">
+                <entry><codeph>duration_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-parent-ruuid"><entry/></row> -->
+              <row id="row-response-runtime-parent-ruuid">
+                <entry><codeph>parent_ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>Runtime ID of the (parent) Task that triggered this (child) Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-references"><entry/></row> -->
+              <row id="row-response-runtime-references">
+                <entry><codeph>references</codeph></entry>
+                <entry>array</entry>
+                <entry>
+                  The references to other SnapLogic Assets in the Task, including the following reference types:
+                  <ul>
+                    <li><codeph>path</codeph>. The path to the referenced Asset.</li>
+                    <li><codeph>pipe_origin</codeph>.  If applicable, the referenced parent Pipeline (indicated by pipe_exec or subpipeline).</li>
+                    <li><codeph>time_updated</codeph>. The time of the most recent Asset update.</li>
+                    <li><codeph>asset_type</codeph>. The type of Asset that is referenced.</li>
+                    <li><codeph>snode_id</codeph>. The type of ID for the referenced SnapLogic Asset.</li>
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-do-start"><entry/></row> -->
+              <row id="row-response-runtime-do-start">
+                <entry><codeph>do_start</codeph></entry>
+                <entry>Boolean</entry>
+                <entry><!-- If <codeph>true</codeph>, ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-statistics"><entry/></row> -->
+              <row id="row-response-runtime-statistics">
+                <entry><codeph>statistics</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-user-id"><entry/></row> -->
+              <row id="row-response-runtime-user-id">
+                <entry><codeph>user_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The user who ran the Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-connect-pipeline-views"><entry/></row> -->
+              <row id="row-response-runtime-connect-pipeline-views">
+                <entry><codeph>connect_pipeline_views</codeph></entry>
+                <entry>Boolean</entry>
+                <entry><!-- If <codeph>true</codeph>, ??? --></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-container-type"><entry/></row> -->
+              <row id="row-response-runtime-container-type">
+                <entry><codeph>container_type</codeph></entry>
+                <entry>string</entry>
+                <entry>???
+                  <p><ph conkeyref="k-misc/ph-possible"/>
+                    <ul>
+                      <li><codeph>regular</codeph></li>
+                      <li></li> <!-- ??? -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-priority"><entry/></row> -->
+              <row id="row-response-runtime-priority">
+                <entry><codeph>priority</codeph></entry>
+                <entry>integer</entry>
+                <entry>The priority of this Task instance.
+                  <!-- A priority of 0 means ???. -->
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-instance-fqid"><entry/></row> -->
+              <row id="row-response-runtime-instance-fqid">
+                <entry><codeph>instance_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>The fully qualified ID of this Task instance.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-info-flag-list"><entry/></row> -->
+              <row id="row-response-runtime-info-flag-list">
+                <entry><codeph>info_flag_list</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-runtime-path-id"><entry/></row> -->
+              <row id="row-response-runtime-runtime-path-id">
+                <entry><codeph>runtime_path_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The identifier of the Snaplex.
+                  <ph conkeyref="k-misc/ph-format"/> <codeph>{subscriber_id}/{plex_environment}/{plex_location}</codeph>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-lint-list"><entry/></row> -->
+              <row id="row-response-runtime-lint-list">
+                <entry><codeph>lint_list</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-failure"><entry/></row> -->
+              <row id="row-response-runtime-failure">
+                <entry><codeph>failure</codeph></entry>
+                <entry>Boolean</entry> <!-- ??? -->
+                <entry>Indicates if a failure occurred during document processing.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-state-log"><entry/></row> -->
+              <row id="row-response-runtime-state-log">
+                <entry><codeph>state_log</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of objects containing changes in the state, the timestamp for each change, and other information.
+                  <p conkeyref="k-papi/p-response-possible-task-run-status"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-ruuid"><entry/></row> -->
+              <row id="row-response-runtime-ruuid">
+                <entry><codeph>ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>The Runtime ID of the Task run.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-parent-pipeline-fqid"><entry/></row> -->
+              <row id="row-response-runtime-parent-pipeline-fqid">
+                <entry><codeph>parent_pipeline_fqid</codeph></entry>
+                <entry>string</entry>
+                <entry>The fully qualified ID of the (parent) Pipeline that triggered this (child) Task run.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-execution-timeout"><entry/></row> -->
+              <row id="row-response-runtime-execution-timeout">
+                <entry><codeph>execution_timeout</codeph></entry>
+                <entry>string</entry> <!-- ??? -->
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-path-id"><entry/></row> -->
+              <row id="row-response-runtime-path-id">
+                <entry><codeph>path_id</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-plex-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-plex-snode-id">
+                <entry><codeph>plex_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-error"><entry/></row> -->
+              <row id="row-response-runtime-error">
+                <entry><codeph>error</codeph></entry>
+                <entry>object</entry>
+                <entry>If errors occurred, an object containing metadata about the errors.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-plex-path"><entry/></row> -->
+              <row id="row-response-runtime-plex-path">
+                <entry><codeph>plex_path</codeph></entry>
+                <entry>string</entry>
+                <entry>The path to the Snaplex.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-invoker-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-invoker-snode-id">
+                <entry><codeph>invoker_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex node where the parent or invoker is located.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-invoker-path-id"><entry/></row> -->
+              <row id="row-response-runtime-invoker-path-id">
+                <entry><codeph>invoker_path_id</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-snaplex-label"><entry/></row> -->
+              <row id="row-response-runtime-snaplex-label">
+                <entry><codeph>snaplex_label</codeph></entry>
+                <entry>string</entry>
+                <entry>The name of the Snaplex and the label of the JCC node where the Task ran.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-platform-globals"><entry/></row> -->
+              <row id="row-response-runtime-platform-globals">
+                <entry><codeph>platform_globals</codeph></entry>
+                <entry>object</entry>
+                <entry> <!-- ??? -->
+                  <ul>
+                    <li><codeph>task</codeph> contains the datetimes when the Task run started and ended.</li>
+                    <li></li> <!-- ??? -->
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-init-xid"><entry/></row> -->
+              <row id="row-response-runtime-init-xid">
+                <entry><codeph>init_xid</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-nested-pipeline"><entry/></row> -->
+              <row id="row-response-runtime-nested-pipeline">
+                <entry><codeph>nested_pipeline</codeph></entry>
+                <entry>Boolean</entry>
+                <entry>If <codeph>true</codeph>, the Task run is for a nested Pipeline and was triggered by the Task running the parent Pipeline.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-project-snode-id"><entry/></row> -->
+              <row id="row-response-runtime-project-snode-id">
+                <entry><codeph>project_snode_id</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex node where the project of the Pipeline is located.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-class-version"><entry/></row> -->
+              <row id="row-response-runtime-class-version">
+                <entry><codeph>class_version</codeph></entry>
+                <entry>string</entry>
+                <entry>The version of the Snap Pack.</entry> <!-- ??? (from the old topic) -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-warning-list"><entry/></row> -->
+              <row id="row-response-runtime-warning-list">
+                <entry><codeph>warning_list</codeph></entry>
+                <entry>array</entry>
+                <entry>If the Task run generated warnings, an array of objects containing metadata about the warnings.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-root-ruuid"><entry/></row> -->
+              <row id="row-response-runtime-root-ruuid">
+                <entry><codeph>root_ruuid</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the root Task instance, if this Task is a descendant.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-start-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-start-ms">
+                <entry><codeph>cc_start_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>The length of time since the Snaplex node was started, expressed in milliseconds.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-poll-time-stamp"><entry/></row> -->
+              <row id="row-response-runtime-poll-time-stamp">
+                <entry><codeph>poll_time_stamp</codeph></entry>
+                <entry>string</entry>
+                <entry>The time when the SnapLogic Control Plane received the Task from the JCC node.
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-artifacts-map"><entry/></row> -->
+              <row id="row-response-runtime-artifacts-map">
+                <entry><codeph>artifacts_map</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-artifact-snap-id-map"><entry/></row> -->
+              <row id="row-response-runtime-artifact-snap-id-map">
+                <entry><codeph>artifact_snap_id_map</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-ccid"><entry/></row> -->
+              <row id="row-response-runtime-ccid">
+                <entry><codeph>ccid</codeph></entry>
+                <entry>string</entry>
+                <entry>The ID of the Snaplex JCC node where the Task ran.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-delivery-options"><entry/></row> -->
+              <row id="row-response-runtime-delivery-options">
+                <entry><codeph>delivery_options</codeph></entry>
+                <entry>object</entry>
+                <entry>Delivery options set on a child Pipeline.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-metrics"><entry/></row> -->
+              <row id="row-response-runtime-metrics">
+                <entry><codeph>metrics</codeph></entry>
+                <entry>object</entry>
+                <entry><!-- Information about ???. -->
+                  <ul>
+                    <li><codeph>queuedCount</codeph><!--  – The number of items waiting in the queue. --></li>
+                    <li><codeph>totalSnapDelay</codeph> – The total number of milliseconds that Snaps within the Task run were delayed.</li> <!-- ??? -->
+                    <li><codeph>idleTime</codeph><!--  – expressed in milliseconds. --></li>
+                    <li><codeph>memoryOverhead</codeph></li> <!-- ??? -->
+                    <li><codeph>inFlightCount</codeph> <!-- – The number of ??? --></li>
+                    <li><codeph>startTime</codeph> <!-- – The number of milliseconds since ??? started. --></li>
+                  </ul>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-expire-time"><entry/></row> -->
+              <row id="row-response-runtime-expire-time">
+                <entry><codeph>expire_time</codeph></entry>
+                <entry>string</entry>
+                <entry>When the Task run expires. <!-- ??? -->
+                  <p><ph conkeyref="k-misc/ph-format-utc"/></p>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-runtime-label"><entry/></row> -->
+              <row id="row-response-runtime-runtime-label">
+                <entry><codeph>runtime_label</codeph></entry>
+                <entry>string</entry>
+                <entry>The name of the Snaplex.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-close-reason"><entry/></row> -->
+              <row id="row-response-runtime-close-reason">
+                <entry><codeph>close_reason</codeph></entry>
+                <entry>string</entry>
+                <entry>Reason for closing the Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-cc-stop-ms"><entry/></row> -->
+              <row id="row-response-runtime-cc-stop-ms">
+                <entry><codeph>cc_stop_ms</codeph></entry>
+                <entry>integer</entry>
+                <entry>, expressed in milliseconds.</entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-root-path"><entry/></row> -->
+              <row id="row-response-runtime-root-path">
+                <entry><codeph>root_path</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-invoker-name"><entry/></row> -->
+              <row id="row-response-runtime-invoker-name">
+                <entry><codeph>invoker_name</codeph></entry>
+                <entry>string</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-error-fp-list"><entry/></row> -->
+              <row id="row-response-runtime-error-fp-list">
+                <entry><codeph>error_fp_list</codeph></entry>
+                <entry>array</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-flags"><entry/></row> -->
+              <row id="row-response-runtime-flags">
+                <entry><codeph>flags</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-captured-env-map"><entry/></row> -->
+              <row id="row-response-runtime-captured-env-map">
+                <entry><codeph>captured_env_map</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-llfeed-context"><entry/></row> -->
+              <row id="row-response-runtime-llfeed-context">
+                <entry><codeph>llfeed_context</codeph></entry>
+                <entry>object</entry>
+                <entry></entry> <!-- ??? -->
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-documents-count"><entry/></row> -->
+              <row id="row-response-runtime-documents-count">
+                <entry><codeph>documents_count</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of documents processed by the Task.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-runtime-resolution"><entry/></row> -->
+              <row id="row-response-runtime-resolution">
+                <entry><codeph>resolution</codeph></entry>
+                <entry>string</entry> <!-- ??? -->
+                <entry>The suggested action to take when the runtime fails.</entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-jccnode-container_type"><entry/></row> -->
+              <row id="row-response-jccnode-container_type">
+                <entry><codeph>container_type</codeph></entry>
+                <entry>string</entry>
+                <entry>The type of the JCC node.
+                  <p><ph conkeyref="k-misc/ph-valid"/>
+                    <ul>
+                      <li><codeph>regular</codeph></li>  <!-- ??? -->
+                      <li><codeph>mixed</codeph></li>  <!-- ??? -->
+                      <li><codeph>null</codeph></li>  <!-- ??? -->
+                    </ul>
+                  </p>
+                </entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-snaplex-version-comment"><entry/></row> -->
+              <row id="row-response-snaplex-version-comment">
+                <entry><codeph>comment</codeph></entry>
+                <entry>string</entry>
+                <entry>A description of the Snaplex version.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-snaplex-version-status"><entry/></row> -->
+              <row id="row-response-snaplex-version-status">
+                <entry><codeph>status</codeph></entry>
+                <entry>string</entry>
+                <entry>The status of the Snaplex version.
+                  <p conref="#./p-response-possible-snaplex-version-status"/>
+                </entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-daily-limit"><entry/></row> -->
+              <row id="row-response-task-run-daily-limit">
+                <entry><codeph>daily_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry>The maximum number of Task runs that the Org is allowed in a day.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-daily-call-used"><entry/></row> -->
+              <row id="row-response-task-run-daily-call-used">
+                <entry><codeph>daily_call_used</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conref="#./ph-response-number-executed-tasks-today"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-concurrent-limit"><entry/></row> -->
+              <row id="row-response-task-run-concurrent-limit">
+                <entry><codeph>concurrent_limit</codeph></entry>
+                <entry>integer</entry>
+                <entry><ph conref="#./ph-response-task-run-max-concurrent"/></entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-concurrent-call-in-progress"><entry/></row> -->
+              <row id="row-response-task-run-concurrent-call-in-progress">
+                <entry><codeph>concurrent_call_in_progress</codeph></entry>
+                <entry>integer</entry>
+                <entry>The number of Task runs that are concurrently in progress.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-top-tasks"><entry/></row> -->
+              <row id="row-response-task-run-top-tasks">
+                <entry><codeph>top_tasks</codeph></entry>
+                <entry>array</entry>
+                <entry>An array of objects containing metadata about the top 10 Tasks that consumed API calls.</entry>
+              </row>
+
+              <!-- <row conkeyref="k-papi/row-response-task-run-daily-call-available"><entry/></row> -->
+              <row id="row-response-task-run-daily-call-available">
+                <entry><codeph>daily_call_available</codeph></entry>
+                <entry>integer</entry>
+                <entry>The difference between the daily limit for Task runs and the number of Task runs that were already executed during the day.</entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-total"><entry/></row> -->
+              <row id="row-response-total">
+                <entry><codeph>total</codeph></entry>
+                <entry>integer</entry>
+                <entry>The total number of results available.</entry>
+              </row>
+
+
+
+              <!-- <row conkeyref="k-papi/row-response-"><entry/></row> -->
+              <row id="row-response-">
+                <entry><codeph>...</codeph></entry>
+                <entry>...</entry>
+                <entry>...</entry>
+              </row>
+
+            </tbody>
+          </tgroup>
+        </table>
+
+      </sectiondiv>
+
+    </section>
+
+  </conbody>
+
+</concept>

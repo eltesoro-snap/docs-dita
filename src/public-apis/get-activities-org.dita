@@ -39,13 +39,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-read-access"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -53,7 +53,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/activities/{org}</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/activities/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -63,10 +63,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -156,15 +156,15 @@
               <row>
                 <entry><codeph>start</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns activities that occurred since the specified timestamp. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns activities that occurred since the specified timestamp. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
               </row>
               <row>
                 <entry><codeph>end</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns activities that occurred before the specified timestamp. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns activities that occurred before the specified timestamp. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
               </row>
-              <row conkeyref="k-api/row-query-param-limit"><entry/></row>
-              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-limit"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-offset"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -172,7 +172,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -187,7 +187,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -209,15 +209,15 @@
             <colspec colname="col-desc" colwidth="60%"/>
             <thead conkeyref="k-misc/thead-key-type-desc"><row><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-response-total"><entry/></row>
-              <row conkeyref="k-api/row-response-offset"><entry/></row>
-              <row conkeyref="k-api/row-response-limit"><entry/></row>
+              <row conkeyref="k-papi/row-response-total"><entry/></row>
+              <row conkeyref="k-papi/row-response-offset"><entry/></row>
+              <row conkeyref="k-papi/row-response-limit"><entry/></row>
               <row>
                 <entry><codeph>entries</codeph></entry>
                 <entry>array</entry>
                 <entry>
-                  <ph conkeyref="k-api/ph-response-array-activity-metadata"/>
-                  <ph conkeyref="k-api/ph-response-object-varies-by-event-type"/>
+                  <ph conkeyref="k-papi/ph-response-array-activity-metadata"/>
+                  <ph conkeyref="k-papi/ph-response-object-varies-by-event-type"/>
                   <p>Learn more: <xref href="ref-activity-metadata.dita"/></p>
                 </entry>
               </row>

@@ -23,13 +23,13 @@
       <title>Prerequisites</title>
 
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-read-access"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-read-access"/></li>
       </ul>
     </section>
 
 
     <section outputclass="tabs">
-      <ul conkeyref="k-api/ul-tabmenu2"><li/></ul>
+      <ul conkeyref="k-papi/ul-tabmenu2"><li/></ul>
     </section>
 
 
@@ -37,7 +37,7 @@
       <!-- <title>Request</title> -->
 
       <codeblock id="codeblock-endpoint" outputclass="normalize-space lang-uri">
-        <ph id="ph-method">GET</ph> <ph conkeyref="k-api/ph-endpoint-full-url"/><ph id="ph-sig">/log/{org}</ph>?{query_parameters}
+        <ph id="ph-method">GET</ph> <ph conkeyref="k-papi/ph-endpoint-full-url"/><ph id="ph-sig">/log/{org}</ph>?{query_parameters}
       </codeblock>
 
       <sectiondiv>
@@ -47,10 +47,10 @@
           <tgroup cols="2">
             <colspec colname="col-key"  colwidth="20%"/>
             <colspec colname="col-desc" colwidth="75%"/>
-            <thead><row conkeyref="k-api/row-thead-key-desc"><entry/></row></thead>
+            <thead><row conkeyref="k-papi/row-thead-key-desc"><entry/></row></thead>
             <tbody>
-              <row conkeyref="k-api/row-pathparam-podpath"><entry/></row>
-              <row conkeyref="k-api/row-pathparam-org"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-podpath"><entry/></row>
+              <row conkeyref="k-papi/row-pathparam-org"><entry/></row>
             </tbody>
           </tgroup>
         </table>
@@ -85,7 +85,7 @@
                   <p><ph conkeyref="k-misc/ph-default"/> <codeph>info</codeph></p>
                 </entry>
               </row>
-              <row conkeyref="k-api/row-query-param-limit"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-limit"><entry/></row>
 
               <!-- The following are no longer used because they are not used in the call to get_pipeline_logs_from_cc: ccid (JCC node ID), logtype, start, end, offset.
                     self.log_manager.get_pipeline_logs_from_cc(user_id, ruuid, log_level, limit=limit)
@@ -106,14 +106,14 @@
               <row>
                 <entry><codeph>start</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns log entries since the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns log entries since the specified time. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
               </row>
               <row>
                 <entry><codeph>end</codeph></entry>
                 <entry>integer</entry>
-                <entry>Returns log entries before the specified time. <ph conkeyref="k-api/ph-unixtime-millisecs"/></entry>
+                <entry>Returns log entries before the specified time. <ph conkeyref="k-papi/ph-unixtime-millisecs"/></entry>
               </row>
-              <row conkeyref="k-api/row-query-param-offset"><entry/></row>
+              <row conkeyref="k-papi/row-query-param-offset"><entry/></row>
               -->
 
             </tbody>
@@ -123,7 +123,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Request Header</p>
-        <div conkeyref="k-api/div-auth-contenttype"/>
+        <div conkeyref="k-papi/div-auth-contenttype"/>
       </sectiondiv>
 
       <sectiondiv>
@@ -138,7 +138,7 @@
 
       <sectiondiv>
         <p outputclass="sectiondivtitle">Response Header</p>
-        <div conkeyref="k-api/div-table-status-code-only"/>
+        <div conkeyref="k-papi/div-table-status-code-only"/>
       </sectiondiv>
 
       <sectiondiv>

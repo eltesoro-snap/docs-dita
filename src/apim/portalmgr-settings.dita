@@ -23,7 +23,7 @@
 
     <prereq>
       <ul>
-        <li><ph conkeyref="k-api/ph-prereq-org-admin-role"/></li>
+        <li><ph conkeyref="k-papi/ph-prereq-org-admin-role"/></li>
       </ul>
     </prereq>
 
